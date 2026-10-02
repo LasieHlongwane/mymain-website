@@ -24,12 +24,15 @@
         content="KALXA builds digital products that connect communities, businesses, creators and people to local discovery, premium experiences and useful digital services."
     >
 
+
+    <!-- =====================================================
+         STATIC CSS
+         Cloudflare Pages / GitHub compatible
+    ====================================================== -->
+
     <link
         rel="stylesheet"
-        href="{{ url_for(
-            'static',
-            filename='css/style.css'
-        ) }}"
+        href="css/style.css"
     >
 
 </head>
@@ -85,7 +88,10 @@
     <button
         class="menu-button"
         id="menu-button"
+        type="button"
         aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
     >
         ☰
     </button>
@@ -1236,12 +1242,12 @@
 
 
 
-<script
-    src="{{ url_for(
-        'static',
-        filename='js/main.js'
-    ) }}"
-></script>
+<!-- =========================================================
+     STATIC JAVASCRIPT
+     Cloudflare Pages / GitHub compatible
+========================================================= -->
+
+<script src="js/main.js"></script>
 
 
 </body>
