@@ -1,1760 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#e5f5ff">
-
-    <meta
-        name="description"
-        content="KALXA (PTY) LTD is a registered South African technology company providing digital discovery, business advertising, event ticketing technology, creator tools and business software."
-    >
-
+    <meta name="description" content="KALXA develops practical digital platforms for businesses, event organisers, creators and communities in South Africa.">
     <meta name="robots" content="index, follow">
-
-    <title>
-        KALXA (PTY) LTD | Digital Technology & Platform Services
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="/css/style.css?v=4"
-    >
-
-    <!-- Homepage-specific footer improvements -->
+    <title>Digital Technology &amp; Platform Services | KALXA (PTY) LTD</title>
+    <link rel="stylesheet" href="/css/style.css?v=4">
     <style>
-
-        /* ============================================
-           PROFESSIONAL COMPANY FOOTER
-        ============================================ */
-
-        .company-footer {
-            background: linear-gradient(
-                120deg,
-                #edf8ff 0%,
-                #d6efff 45%,
-                #f5fbff 100%
-            );
-
-            padding: 65px 7% 30px;
-            border-top: 1px solid #c4e3f5;
-            color: #263746;
+      :root {
+        --ink: #111318;
+        --muted: #52616d;
+        --line: #dce7ee;
+        --blue: #006aa6;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+      }
+      .site-hero {
+        background: linear-gradient(125deg, #fff, #f2faff 55%, #e4f4ff);
+        padding: 90px 7% 80px;
+      }
+      .site-hero .inner {
+        max-width: 920px;
+        margin: auto;
+        text-align: center;
+      }
+      .site-hero h1 {
+        font-size: clamp(36px, 5vw, 58px);
+        line-height: 1.13;
+        letter-spacing: -1.5px;
+        margin: 15px 0 22px;
+      }
+      .site-hero .lead {
+        font-size: clamp(16px, 2vw, 19px);
+        line-height: 1.8;
+        color: var(--muted);
+        max-width: 750px;
+        margin: 0 auto 26px;
+      }
+      .section-shell {
+        padding: 75px 7%;
+      }
+      .section-shell.soft {
+        background: #f8fafc;
+      }
+      .section-inner {
+        max-width: 1200px;
+        margin: auto;
+      }
+      .section-title {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 36px;
+      }
+      .section-title h2 {
+        font-size: clamp(27px, 3.5vw, 40px);
+        margin: 12px 0;
+      }
+      .section-title p {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+      .card {
+        padding: 30px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+      .card h3 {
+        font-size: 21px;
+        margin: 0 0 13px;
+      }
+      .card p {
+        color: var(--muted);
+        line-height: 1.75;
+        margin: 0 0 22px;
+        flex: 1;
+      }
+      .card a {
+        font-weight: 750;
+        color: var(--blue);
+        text-decoration: none;
+      }
+      .card a:hover {
+        text-decoration: underline;
+      }
+      .actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 25px;
+      }
+      .actions a {
+        text-decoration: none;
+      }
+      .text-block {
+        max-width: 830px;
+        margin: 0 auto;
+      }
+      .text-block p {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.95;
+      }
+      .values {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .values .card p {
+        margin-bottom: 0;
+      }
+      .contact-band {
+        text-align: center;
+        background: linear-gradient(120deg, #f4fbff, #e4f4ff, #f7fcff);
+        padding: 65px 7%;
+      }
+      .contact-band p {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .company-footer {
+        background: linear-gradient(120deg, #edf8ff, #d6efff 45%, #f5fbff);
+        padding: 60px 7% 30px;
+        border-top: 1px solid #c4e3f5;
+        color: #263746;
+      }
+      .footer-main {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 70px;
+        padding-bottom: 40px;
+      }
+      .footer-company h3 {
+        font-size: 24px;
+        margin: 0 0 16px;
+      }
+      .footer-company p,
+      .footer-company address {
+        font-size: 14px;
+        line-height: 1.85;
+        color: #344b5b;
+        font-style: normal;
+      }
+      .footer-navigation h3 {
+        font-size: 18px;
+        margin: 0 0 20px;
+      }
+      .footer-navigation-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      .footer-link-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .footer-link-group h4 {
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #526d80;
+        margin: 0 0 4px;
+      }
+      .footer-link-group a,
+      .footer-support a {
+        color: #263746;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+      }
+      .footer-link-group a:hover,
+      .footer-support a:hover {
+        color: var(--blue);
+        text-decoration: underline;
+      }
+      .footer-support {
+        border-block: 1px solid #c4e3f5;
+        padding: 25px 0;
+      }
+      .footer-support h4 {
+        margin: 0 0 12px;
+      }
+      .footer-support-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 26px;
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+        padding-top: 22px;
+        font-size: 12px;
+        color: #526d80;
+      }
+      .footer-bottom p {
+        margin: 0;
+      }
+      @media (max-width: 760px) {
+        .site-hero {
+          padding: 70px 5%;
         }
-
+        .section-shell {
+          padding: 60px 5%;
+        }
+        .cards,
+        .values,
         .footer-main {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 70px;
-            padding-bottom: 45px;
+          grid-template-columns: 1fr;
         }
-
-        .footer-company {
-            min-width: 0;
+        .company-footer {
+          padding: 50px 5% 25px;
         }
-
-        .footer-company h3 {
-            font-size: 24px;
-            font-weight: 800;
-            color: #111111;
-            margin: 0 0 18px;
-            letter-spacing: -0.02em;
+        .footer-main {
+          gap: 35px;
         }
-
-        .footer-company-type {
-            font-size: 14px;
-            color: #405768;
-            margin: 0 0 20px;
-        }
-
-        .footer-company-details {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 25px;
-        }
-
-        .footer-company-details span {
-            display: block;
-            font-size: 14px;
-            color: #344b5b;
-            line-height: 1.7;
-        }
-
-        .footer-company-details strong {
-            color: #111111;
-        }
-
-        .footer-address {
-            font-style: normal;
-            line-height: 1.9;
-            font-size: 14px;
-            color: #344b5b;
-        }
-
-        .footer-address-title {
-            display: block;
-            color: #111111;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .footer-address span {
-            display: block;
-        }
-
-        /* ============================================
-           FOOTER NAVIGATION
-        ============================================ */
-
-        .footer-navigation h3 {
-            color: #111111;
-            font-size: 18px;
-            font-weight: 800;
-            margin: 0 0 25px;
-        }
-
         .footer-navigation-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 35px;
+          gap: 15px;
         }
-
-        .footer-link-group {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 14px;
+      }
+      @media (max-width: 400px) {
+        .footer-navigation-grid {
+          grid-template-columns: 1fr;
         }
-
-        .footer-link-group h4 {
-            font-size: 12px;
-            font-weight: 800;
-            color: #526d80;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            margin: 0 0 5px;
-        }
-
-        .footer-link-group a {
-            display: block;
-            color: #263746;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            line-height: 1.6;
-            transition: color 0.25s ease;
-        }
-
-        .footer-link-group a:hover {
-            color: #006aa6;
-            text-decoration: underline;
-            text-underline-offset: 5px;
-        }
-
-        /* ============================================
-           FOOTER SUPPORT
-        ============================================ */
-
-        .footer-support {
-            padding: 28px 0;
-            border-top: 1px solid #c4e3f5;
-            border-bottom: 1px solid #c4e3f5;
-        }
-
-        .footer-support h4 {
-            color: #111111;
-            font-size: 15px;
-            font-weight: 800;
-            margin: 0 0 16px;
-        }
-
-        .footer-support-details {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .footer-support-details a {
-            display: block;
-            color: #263746;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            overflow-wrap: anywhere;
-        }
-
-        .footer-support-details a:hover {
-            color: #006aa6;
-            text-decoration: underline;
-        }
-
-        /* ============================================
-           FOOTER COPYRIGHT
-        ============================================ */
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            padding-top: 25px;
-        }
-
-        .footer-bottom p {
-            color: #526d80;
-            font-size: 12px;
-            margin: 0;
-        }
-
-        .footer-bottom strong {
-            color: #111111;
-        }
-
-        /* ============================================
-           TABLET
-        ============================================ */
-
-        @media (max-width: 900px) {
-
-            .company-footer {
-                padding: 55px 5% 25px;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-            }
-
-        }
-
-        /* ============================================
-           MOBILE
-        ============================================ */
-
-        @media (max-width: 650px) {
-
-            .company-footer {
-                padding: 50px 5% 25px;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-
-            .footer-navigation-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 25px;
-            }
-
-            .footer-company h3 {
-                font-size: 22px;
-            }
-
-            .footer-link-group {
-                gap: 12px;
-            }
-
-            .footer-link-group a {
-                font-size: 13px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-        }
-
-        @media (max-width: 360px) {
-
-            .footer-navigation-grid {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
+      }
     </style>
-
-</head>
-
-
-<body>
-
-<a class="skip-link" href="#main">
-    Skip to content
-</a>
-
-
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
-
-<header class="navbar">
-
-    <a
-        class="brand"
-        href="/index.html"
-        aria-label="KALXA Home"
-    >
-
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="navbar">
+      <a class="brand" href="/index.html" aria-label="KALXA Home">
         <span class="brand-text">
-
-            <strong>KALXA</strong>
-
-            <span>
-                DIGITAL TECHNOLOGY & PLATFORM SERVICES
-            </span>
-
+          <strong>KALXA</strong>
+          <span>DIGITAL TECHNOLOGY &amp; PLATFORM SERVICES</span>
         </span>
+      </a>
+      <button class="menu-button" id="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+      <nav id="nav-menu" aria-label="Main navigation">
+        <a href="/index.html" aria-current="page">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/faq.html">FAQs</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </header>
 
-    </a>
-
-    <button
-        class="menu-button"
-        id="menu-button"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="nav-menu"
-    >
-        ☰
-    </button>
-
-    <nav
-        id="nav-menu"
-        aria-label="Main navigation"
-    >
-
-        <a href="/index.html" aria-current="page">
-            Home
-        </a>
-
-        <a href="/services.html">
-            Services
-        </a>
-
-        <a href="/pricing.html">
-            Pricing
-        </a>
-
-        <a href="#about-company">
-            About
-        </a>
-
-        <a href="/faq.html">
-            FAQs
-        </a>
-
-        <a href="/contact.html">
-            Contact
-        </a>
-
-    </nav>
-
-</header>
-
-
-<main id="main">
-
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <p class="eyebrow">
-            MARKETING DIGITAL TECH
-        </p>
-
-        <h1>
-            Connecting people.
-            <br>
-            <span>Empowering businesses.</span>
-        </h1>
-
-        <p class="lead">
-            KALXA is a
-            technology company developing digital
-            platforms and services that connect
-            communities, businesses, event
-            organisers and creators.
-        </p>
-
-        <p class="lead">
-            Our solutions support local discovery,
-            digital advertising, event ticketing,
-            audience engagement and business
-            operations.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a
-                href="/services.html"
-                class="button primary-button"
-            >
-                Explore Our Services →
-            </a>
-
-            <a
-                href="/contact.html"
-                class="button secondary-button"
-            >
-                Contact Our Team
-            </a>
-
+    <main id="main">
+      <section class="site-hero">
+        <div class="inner">
+          <p class="eyebrow">KALXA (PTY) LTD · SOUTH AFRICA</p>
+          <h1>Digital Technology for Real-World Needs.</h1>
+          <p class="lead">We build digital platforms that connect businesses, creators and communities through practical technology.</p>
+          <div class="actions">
+            <a class="button primary-button" href="#products">Explore Our Products →</a>
+            <a class="button secondary-button" href="/about.html">About KALXA</a>
+          </div>
         </div>
+      </section>
 
-    </div>
-
-
-    <div class="hero-visual">
-
-        <div class="access-card">
-
-            <p class="section-label">
-                OUR BUSINESS
-            </p>
-
-            <h3>
-                Digital solutions for
-                modern communities
-            </h3>
-
-            <div class="network-item">
-                <span>01</span>
-                <p>Local Discovery & Advertising</p>
-            </div>
-
-            <div class="network-item">
-                <span>02</span>
-                <p>Event Ticketing Technology</p>
-            </div>
-
-            <div class="network-item">
-                <span>03</span>
-                <p>Creator & Audience Platforms</p>
-            </div>
-
-            <div class="network-item">
-                <span>04</span>
-                <p>Business Software & Automation</p>
-            </div>
-
-            <div class="network-item">
-                <span>05</span>
-                <p>Digital Platform Services</p>
-            </div>
-
+      <section class="section-shell soft" id="products">
+        <div class="section-inner">
+          <div class="section-title">
+            <p class="section-label">OUR PRODUCTS</p>
+            <h2>Explore What We Build.</h2>
+            <p>Find the right platform for your business or creative goals.</p>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <h3>📍 Kalxa Discovery</h3>
+              <p>Helping people discover local businesses, services and opportunities.</p>
+              <a href="/discovery.html">Explore Discovery →</a>
+            </article>
+            <article class="card">
+              <h3>🎟️ Kalxa Ticketing &amp; Restaurant Profiles</h3>
+              <p>Event ticketing, event management and restaurant discovery tools.</p>
+              <a href="/ticketing.html">Explore Ticketing →</a>
+            </article>
+            <article class="card">
+              <h3>🎵 Kalxa Creator CRM</h3>
+              <p>Helping creators publish content, connect with fans and manage audiences.</p>
+              <a href="/creator-crm.html">Explore Creator Tools →</a>
+            </article>
+            <article class="card">
+              <h3>💼 Kalxa Business Finance</h3>
+              <p>Business automation and financial workflow tools. <strong>In development.</strong></p>
+              <a href="/business-finance.html">Learn More →</a>
+            </article>
+          </div>
         </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     COMPANY INTRODUCTION
-========================================================= -->
-
-<section class="content-section">
-
-    <div class="section-head">
-
-        <p class="section-label">
-            WHO WE ARE
-        </p>
-
-        <h2>
-            A registered technology company
-            building practical digital solutions.
-        </h2>
-
-    </div>
-
-    <p class="body-copy">
-        KALXA (PTY) LTD is a private company
-        registered in South Africa.
-
-        We develop and operate digital products
-        designed to make information, services,
-        business opportunities and experiences
-        more accessible.
-    </p>
-
-    <p class="body-copy">
-        Our business focuses on building
-        technology that helps organisations
-        reach customers, manage digital
-        interactions and improve everyday
-        operations.
-    </p>
-
-    <p class="body-copy">
-        Through the KALXA ecosystem,
-        we provide digital platforms
-        and related services to businesses,
-        event organisers, creators and
-        communities.
-    </p>
-
-</section>
-
-
-<!-- =========================================================
-     PRODUCTS AND SERVICES
-========================================================= -->
-
-<section
-    class="content-section soft"
-    id="services"
->
-
-    <div class="section-head">
-
-        <p class="section-label">
-            OUR PRODUCTS & SERVICES
-        </p>
-
-        <h2>
-            Technology designed
-            for real-world needs.
-        </h2>
-
-        <p class="body-copy">
-            KALXA develops digital products
-            serving different business
-            and community needs.
-        </p>
-
-    </div>
-
-
-    <div class="info-grid">
-
-        <!-- DISCOVERY -->
-
-        <article class="info-card">
-
-            <h3>
-                📍 Kalxa Discovery
-            </h3>
-
-            <p>
-                A location-based digital
-                discovery platform connecting
-                people with nearby businesses,
-                food outlets, shops, services,
-                accommodation, events and
-                local opportunities.
-            </p>
-
-            <p>
-                Businesses can enquire about
-                digital advertising,
-                promotional placements and
-                business visibility services.
-            </p>
-
-            <a
-                href="/discovery.html"
-                class="text-link"
-            >
-                Explore Discovery →
-            </a>
-
-        </article>
-
-
-        <!-- TICKETING -->
-
-        <article class="info-card">
-
-            <h3>
-                 Kalxa Ticketing
-            </h3>
-
-            <p>
-                A digital platform supporting
-                event discovery, event
-                promotion and ticketing
-                experiences.
-            </p>
-
-            <p>
-                Event organisers can explore
-                digital tools and services
-                for promoting and managing
-                their events.
-            </p>
-
-            <a
-                href="/ticketing.html"
-                class="text-link"
-            >
-                Explore Ticketing →
-            </a>
-
-        </article>
-
-
-        <!-- CREATOR -->
-
-        <article class="info-card">
-
-            <h3>
-                 Content Creator CRM
-            </h3>
-
-            <p>
-                Digital audience management
-                tools designed for independent
-                artists and content creators.
-            </p>
-
-            <p>
-                The platform supports
-                audience organisation,
-                communication and
-                direct engagement.
-            </p>
-
-            <a
-                href="/creator-crm.html"
-                class="text-link"
-            >
-                Explore Creator Tools →
-            </a>
-
-        </article>
-
-
-        <!-- FINANCE -->
-
-        <article class="info-card">
-
-            <h3>
-                 Kalxa Business Finance
-            </h3>
-
-            <p>
-                Business software and
-                automation tools designed
-                to simplify invoicing,
-                reconciliation, financial
-                reporting and administrative
-                workflows.
-            </p>
-
-            <p>
-                Our technology also explores
-                VAT and payroll compliance
-                support for South African
-                businesses.
-            </p>
-
-            <a
-                href="/business-finance.html"
-                class="text-link"
-            >
-                Explore Business Tools →
-            </a>
-
-        </article>
-
-    </div>
-
-
-    <div class="hero-buttons">
-
-        <a
-            href="/services.html"
-            class="button primary-button"
-        >
-            View All Services →
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     COMMERCIAL SERVICES
-========================================================= -->
-
-<section
-    class="content-section"
-    id="business-services"
->
-
-    <div class="section-head">
-
-        <p class="section-label">
-            COMMERCIAL SERVICES
-        </p>
-
-        <h2>
-            What customers pay KALXA for.
-        </h2>
-
-        <p class="body-copy">
-            KALXA provides digital platform
-            access and related technology
-            services.
-
-            Depending on the product and
-            agreed service package,
-            customers may be charged
-            for the following services.
-        </p>
-
-    </div>
-
-
-    <div class="info-grid">
-
-        <article class="info-card">
-
-            <h3>
-                Business Advertising
-            </h3>
-
-            <p>
-                Digital advertising,
-                featured promotional
-                placements and business
-                visibility services
-                offered through supported
-                KALXA platforms.
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Platform Subscriptions
-            </h3>
-
-            <p>
-                Subscription fees for
-                eligible business,
-                creator or event
-                management platform
-                features.
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Digital Setup Services
-            </h3>
-
-            <p>
-                Setup, configuration
-                and onboarding services
-                for supported digital
-                platforms and business
-                solutions.
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Software Services
-            </h3>
-
-            <p>
-                Access to eligible
-                business software,
-                automation tools and
-                related digital
-                services.
-            </p>
-
-        </article>
-
-    </div>
-
-
-    <div class="hero-buttons">
-
-        <a
-            href="/pricing.html"
-            class="button primary-button"
-        >
-            View Pricing Information →
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     PAYMENTS INFORMATION
-========================================================= -->
-
-<section
-    class="content-section soft"
-    id="payments"
->
-
-    <div class="section-head">
-
-        <p class="section-label">
-            PAYMENTS & BILLING
-        </p>
-
-        <h2>
-            Transparent payments.
-            Clear service terms.
-        </h2>
-
-    </div>
-
-
-    <p class="body-copy">
-        KALXA charges customers for
-        eligible digital products,
-        subscriptions, advertising
-        services and agreed technology
-        services.
-    </p>
-
-    <p class="body-copy">
-        Before making a payment,
-        customers are provided with
-        the applicable service
-        description, confirmed price,
-        payment terms and delivery
-        arrangements.
-    </p>
-
-
-    <div class="info-grid">
-
-        <article class="info-card">
-
-            <h3>
-                Payments to KALXA
-            </h3>
-
-            <p>
-                Payments for KALXA's
-                own products and services
-                may include platform
-                subscriptions, business
-                advertising, digital
-                service setup and
-                software-related fees.
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Third-Party Transactions
-            </h3>
-
-            <p>
-                Certain KALXA platforms
-                may facilitate transactions
-                involving independent
-                event organisers,
-                content creators or
-                other service providers.
-            </p>
-
-            <p>
-                Payment collection and
-                settlement arrangements
-                depend on the applicable
-                service and supported
-                payment provider.
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Customer Protection
-            </h3>
-
-            <p>
-                Customers can review
-                our service terms,
-                refund policy,
-                cancellation policy
-                and digital delivery
-                information before
-                purchasing.
-            </p>
-
-            <a
-                href="/terms.html"
-                class="text-link"
-            >
-                Read Our Terms →
-            </a>
-
-        </article>
-
-    </div>
-
-
-    <p class="body-copy">
-        Payment methods vary by product.
-        Not every KALXA platform
-        currently accepts payments
-        through the same payment
-        provider.
-    </p>
-
-
-    <div class="external-links">
-
-        <a href="/pricing.html">
-            Pricing
-        </a>
-
-        <a href="/refund.html">
-            Refund Policy
-        </a>
-
-        <a href="/cancellation.html">
-            Cancellation Policy
-        </a>
-
-        <a href="/delivery.html">
-            Digital Delivery
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     HOW OUR SERVICES WORK
-========================================================= -->
-
-<section class="content-section">
-
-    <div class="section-head">
-
-        <p class="section-label">
-            HOW IT WORKS
-        </p>
-
-        <h2>
-            A straightforward
-            customer experience.
-        </h2>
-
-    </div>
-
-
-    <div class="info-grid">
-
-        <article class="info-card">
-
-            <h3>
-                01. Choose a Service
-            </h3>
-
-            <p>
-                Explore the available
-                KALXA products and
-                identify the digital
-                service that meets
-                your needs.
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                02. Confirm the Details
-            </h3>
-
-            <p>
-                Review the service
-                description, price
-                or quotation,
-                applicable terms
-                and delivery arrangements.
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                03. Receive Your Service
-            </h3>
-
-            <p>
-                Following confirmation
-                of an eligible order,
-                KALXA provides the
-                agreed digital access,
-                service activation
-                or other deliverables.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     ABOUT COMPANY
-========================================================= -->
-
-<section
-    class="content-section soft"
-    id="about-company"
->
-
-    <div class="section-head">
-
-        <p class="section-label">
-            ABOUT THE COMPANY
-        </p>
-
-        <h2>
-            KALXA (PTY) LTD
-        </h2>
-
-    </div>
-
-
-    <p class="body-copy">
-        KALXA (PTY) LTD is a
-        South African registered
-        private company operating
-        in the digital technology
-        and platform services sector.
-    </p>
-
-    <p class="body-copy">
-        Our business is focused
-        on developing digital
-        products that improve
-        access to information,
-        audiences, services
-        and business opportunities.
-    </p>
-
-    <p class="body-copy">
-        We serve businesses,
-        event organisers,
-        creators and consumers
-        through specialised
-        technology platforms.
-    </p>
-
-</section>
-
-
-<!-- =========================================================
-     REGISTERED COMPANY INFORMATION
-========================================================= -->
-
-<section
-    class="content-section"
-    id="company-information"
->
-
-    <div class="section-head">
-
-        <p class="section-label">
-            COMPANY INFORMATION
-        </p>
-
-        <h2>
-            Registered business details.
-        </h2>
-
-        <p class="body-copy">
-            The following information
-            identifies the registered
-            company responsible for
-            operating the KALXA
-            business and its
-            digital services.
-        </p>
-
-    </div>
-
-
-    <div class="info-grid">
-
-        <article class="info-card">
-
-            <h3>
-                Registered Company
-            </h3>
-
-            <p>
-                <strong>
-                    KALXA (PTY) LTD
-                </strong>
-            </p>
-
-            <p>
-                South African Private Company
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Company Registration
-            </h3>
-
-            <p>
-                CIPC Registration Number
-            </p>
-
-            <p>
-                <strong>
-                    2026/767893/07
-                </strong>
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Business Activities
-            </h3>
-
-            <p>
-                Digital Technology,
-                Software Development,
-                Digital Platforms,
-                Advertising and
-                Related Technology Services.
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Registered Business Address
-            </h3>
-
-            <p>
-                70047 Zakheni
-                <br>
-                KwaMhlanga, 1022
-                <br>
-                Mpumalanga
-                <br>
-                South Africa
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Business Email
-            </h3>
-
-            <p>
-                <a href="mailto:lasi@kalxa.co.za">
-                    lasi@kalxa.co.za
-                </a>
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Business Contact
-            </h3>
-
-            <p>
-                <a
-                    href="https://wa.me/27766114909"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    +27 76 611 4909
-                </a>
-            </p>
-
-            <p>
-                WhatsApp Business Enquiries
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     CUSTOMER POLICIES
-========================================================= -->
-
-<section class="content-section soft">
-
-    <div class="section-head">
-
-        <p class="section-label">
-            CUSTOMER INFORMATION
-        </p>
-
-        <h2>
-            Important customer policies.
-        </h2>
-
-        <p class="body-copy">
-            We encourage customers
-            to review the applicable
-            service information and
-            policies before purchasing
-            KALXA services.
-        </p>
-
-    </div>
-
-
-    <div class="info-grid">
-
-        <article class="info-card">
-
-            <h3>
-                Terms & Conditions
-            </h3>
-
-            <p>
-                Understand the
-                conditions governing
-                the use and purchase
-                of KALXA products
-                and services.
-            </p>
-
-            <a
-                href="/terms.html"
-                class="text-link"
-            >
-                Read Terms →
-            </a>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Refund Policy
-            </h3>
-
-            <p>
-                Information about
-                refund requests,
-                eligibility and
-                customer support
-                procedures.
-            </p>
-
-            <a
-                href="/refund.html"
-                class="text-link"
-            >
-                Read Refund Policy →
-            </a>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Privacy Policy
-            </h3>
-
-            <p>
-                Learn how KALXA
-                handles personal
-                information in
-                connection with
-                its digital services.
-            </p>
-
-            <a
-                href="/privacy.html"
-                class="text-link"
-            >
-                Read Privacy Policy →
-            </a>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Cancellation Policy
-            </h3>
-
-            <p>
-                Information about
-                cancelling eligible
-                recurring subscriptions
-                and related services.
-            </p>
-
-            <a
-                href="/cancellation.html"
-                class="text-link"
-            >
-                Read Cancellation Policy →
-            </a>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Digital Delivery
-            </h3>
-
-            <p>
-                Understand how
-                digital services,
-                access and other
-                agreed deliverables
-                are provided.
-            </p>
-
-            <a
-                href="/delivery.html"
-                class="text-link"
-            >
-                Read Delivery Policy →
-            </a>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Frequently Asked Questions
-            </h3>
-
-            <p>
-                Find answers about
-                our business,
-                services, payments,
-                support and
-                customer policies.
-            </p>
-
-            <a
-                href="/faq.html"
-                class="text-link"
-            >
-                View FAQs →
-            </a>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     CONTACT
-========================================================= -->
-
-<section
-    class="content-section"
-    id="contact"
->
-
-    <div class="section-head">
-
-        <p class="section-label">
-            BUSINESS ENQUIRIES & SUPPORT
-        </p>
-
-        <h2>
-            Contact KALXA.
-        </h2>
-
-        <p class="body-copy">
-            For digital services,
-            business advertising,
-            platform subscriptions,
-            event technology,
-            customer support
-            or partnership enquiries,
-            contact our team.
-        </p>
-
-    </div>
-
-
-    <div class="info-grid">
-
-        <article class="info-card">
-
-            <h3>
-                Email Support
-            </h3>
-
-            <p>
-                <a href="mailto:lasie@kalxa.co.za">
-                    lasie@kalxa.co.za
-                </a>
-            </p>
-
-            <p>
-                Business enquiries,
-                customer support
-                and payment-related
-                questions.
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                WhatsApp
-            </h3>
-
-            <p>
-                <a
-                    href="https://wa.me/27766114909"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    +27 76 611 4909
-                </a>
-            </p>
-
-            <p>
-                Direct communication
-                for business and
-                customer enquiries.
-            </p>
-
-        </article>
-
-
-        <article class="info-card">
-
-            <h3>
-                Registered Address
-            </h3>
-
-            <p>
-                70047 Zakheni
-                <br>
-                KwaMhlanga, 1022
-                <br>
-                Mpumalanga
-                <br>
-                South Africa
-            </p>
-
-        </article>
-
-    </div>
-
-
-    <div class="hero-buttons">
-
-        <a
-            href="/contact.html"
-            class="button primary-button"
-        >
-            Contact Our Team →
-        </a>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-<!-- =========================================================
-     PROFESSIONAL COMPANY FOOTER
-========================================================= -->
-
-<footer class="company-footer">
-
-    <!-- Main footer content -->
-
-    <div class="footer-main">
-
-
-        <!-- =========================================
-             REGISTERED COMPANY INFORMATION
-        ========================================= -->
-
+      </section>
+
+      <section class="contact-band">
+        <p class="section-label">GET IN TOUCH</p>
+        <h2>Let's Connect.</h2>
+        <p>Interested in a KALXA product or exploring a business partnership?</p>
+        <div class="actions">
+          <a class="button primary-button" href="/contact.html">Contact KALXA →</a>
+          <a class="button secondary-button" href="https://wa.me/27766114909" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="company-footer">
+      <div class="footer-main">
         <div class="footer-company">
-
-            <h3>
-                KALXA (PTY) LTD
-            </h3>
-
-            <p class="footer-company-type">
-                Registered South African Private Company
-            </p>
-
-
-            <div class="footer-company-details">
-
-                <span>
-                    <strong>
-                        Registration Number
-                    </strong>
-                </span>
-
-                <span>
-                    2026/767893/07
-                </span>
-
-            </div>
-
-
-            <address class="footer-address">
-
-                <span class="footer-address-title">
-                    Registered Business Address
-                </span>
-
-                <span>
-                    70047 Zakheni
-                </span>
-
-                <span>
-                    KwaMhlanga
-                </span>
-
-                <span>
-                    1022
-                </span>
-
-                <span>
-                    Mpumalanga
-                </span>
-
-                <span>
-                    South Africa
-                </span>
-
-            </address>
-
+          <h3>KALXA (PTY) LTD</h3>
+          <p>Registered South African Private Company<br><strong>Registration Number:</strong> 2026/767893/07</p>
+          <address>
+            <strong>Registered Business Address</strong><br>
+            70047 Zakheni<br>
+            KwaMhlanga, 1022<br>
+            Mpumalanga<br>
+            South Africa
+          </address>
         </div>
-
-
-
-        <!-- =========================================
-             FOOTER NAVIGATION
-        ========================================= -->
-
-        <nav
-            class="footer-navigation"
-            aria-label="Footer navigation"
-        >
-
-            <h3>
-                Quick Links
-            </h3>
-
-
-            <div class="footer-navigation-grid">
-
-
-                <!-- COMPANY LINKS -->
-
-                <div class="footer-link-group">
-
-                    <h4>
-                        Company
-                    </h4>
-
-                    <a href="/index.html">
-                        Home
-                    </a>
-
-                    <a href="/services.html">
-                        Services
-                    </a>
-
-                    <a href="/pricing.html">
-                        Pricing
-                    </a>
-
-                    <a href="/faq.html">
-                        FAQs
-                    </a>
-
-                    <a href="/contact.html">
-                        Contact
-                    </a>
-
-                </div>
-
-
-
-                <!-- LEGAL LINKS -->
-
-                <div class="footer-link-group">
-
-                    <h4>
-                        Legal & Policies
-                    </h4>
-
-                    <a href="/terms.html">
-                        Terms &amp; Conditions
-                    </a>
-
-                    <a href="/privacy.html">
-                        Privacy Policy
-                    </a>
-
-                    <a href="/refund.html">
-                        Refund Policy
-                    </a>
-
-                    <a href="/cancellation.html">
-                        Cancellation Policy
-                    </a>
-
-                    <a href="/delivery.html">
-                        Digital Delivery
-                    </a>
-
-                </div>
-
+        <nav class="footer-navigation" aria-label="Footer navigation">
+          <h3>Quick Links</h3>
+          <div class="footer-navigation-grid">
+            <div class="footer-link-group">
+              <h4>Company</h4>
+              <a href="/index.html">Home</a>
+              <a href="/about.html">About Us</a>
+              <a href="/services.html">Services</a>
+              <a href="/pricing.html">Pricing</a>
+              <a href="/faq.html">FAQs</a>
+              <a href="/contact.html">Contact</a>
             </div>
-
+            <div class="footer-link-group">
+              <h4>Legal &amp; Policies</h4>
+              <a href="/terms.html">Terms &amp; Conditions</a>
+              <a href="/privacy.html">Privacy Policy</a>
+              <a href="/refund.html">Refund Policy</a>
+              <a href="/cancellation.html">Cancellation Policy</a>
+              <a href="/delivery.html">Digital Delivery</a>
+            </div>
+          </div>
         </nav>
-
-    </div>
-
-
-
-    <!-- =========================================
-         CUSTOMER SUPPORT
-    ========================================= -->
-
-    <div class="footer-support">
-
-        <h4>
-            Customer Support & Business Enquiries
-        </h4>
-
-
-        <div class="footer-support-details">
-
-            <a href="mailto:lasi@kalxa.co.za">
-                Email: lasie@kalxa.co.za
-            </a>
-
-            <a href="tel:+27766114909">
-                Phone: +27 76 611 4909
-            </a>
-
-            <a
-                href="https://wa.me/27766114909"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                WhatsApp: +27 76 611 4909
-            </a>
-
+      </div>
+      <div class="footer-support">
+        <h4>Customer Support &amp; Business Enquiries</h4>
+        <div class="footer-support-links">
+          <a href="mailto:lasi@kalxa.co.za">Email: lasi@kalxa.co.za</a>
+          <a href="tel:+27766114909">Phone: +27 76 611 4909</a>
+          <a href="https://wa.me/27766114909" target="_blank" rel="noopener noreferrer">WhatsApp: +27 76 611 4909</a>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <p id="copyright">© KALXA (PTY) LTD. All rights reserved.</p>
+        <p>Registration No: <strong>2026/767893/07</strong></p>
+      </div>
+    </footer>
 
-    </div>
-
-
-
-    <!-- =========================================
-         COPYRIGHT
-    ========================================= -->
-
-    <div class="footer-bottom">
-
-        <p id="copyright">
-            © KALXA (PTY) LTD. All rights reserved.
-        </p>
-
-        <p>
-            Registration No:
-            <strong>2026/767893/07</strong>
-        </p>
-
-    </div>
-
-</footer>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script
-    src="/js/main.js?v=3"
-    defer
-></script>
-
-</body>
+    <script src="/js/main.js?v=3" defer></script>
+  </body>
 </html>
