@@ -1,7 +1,11 @@
 /* ============================================================
    KALXA — OFFICIAL COMPANY WEBSITE
    PROFESSIONAL LIGHT THEME
-   White Background | Black Text | Grey Cards
+
+   White Background
+   Black Typography
+   Grey Cards
+   Faded Sky-Blue Gradient Header & Footer
 ============================================================ */
 
 
@@ -24,6 +28,34 @@
     --light: #ffffff;
 
 
+    /* Sky-blue brand gradient */
+
+    --sky-blue-light: #f4fbff;
+
+    --sky-blue-soft: #e4f4ff;
+
+    --sky-blue: #cbeaff;
+
+    --sky-blue-deep: #b5def8;
+
+    --brand-gradient:
+        linear-gradient(
+            115deg,
+            #f5fbff 0%,
+            #e5f5ff 30%,
+            #cdeaff 65%,
+            #edf8ff 100%
+        );
+
+    --footer-gradient:
+        linear-gradient(
+            120deg,
+            #edf8ff 0%,
+            #d6efff 45%,
+            #f5fbff 100%
+        );
+
+
     /* Typography */
 
     --text: #111111;
@@ -40,6 +72,8 @@
     --line: #e1e3e6;
 
     --line-dark: #cdd1d6;
+
+    --blue-line: #c4e3f5;
 
 
     /* Buttons */
@@ -174,7 +208,7 @@ img {
 
 ::selection {
 
-    background: #dce0e5;
+    background: #dcefff;
 
     color: #111111;
 
@@ -227,7 +261,7 @@ textarea:focus-visible {
 
 
 /* ============================================================
-   4. NAVIGATION
+   4. NAVIGATION — FADED SKY-BLUE GRADIENT
 ============================================================ */
 
 .navbar {
@@ -250,16 +284,18 @@ textarea:focus-visible {
 
     padding: 18px 7%;
 
-    background: rgba(255, 255, 255, 0.97);
+    /* New sky-blue gradient */
+
+    background: var(--brand-gradient);
 
     backdrop-filter: blur(14px);
 
     -webkit-backdrop-filter: blur(14px);
 
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--blue-line);
 
     box-shadow:
-        0 2px 12px rgba(0, 0, 0, 0.025);
+        0 3px 18px rgba(64, 135, 180, 0.08);
 
 }
 
@@ -286,7 +322,7 @@ textarea:focus-visible {
 
 .brand-text strong {
 
-    color: #111111;
+    color: #101820;
 
     font-size: 19px;
 
@@ -300,7 +336,7 @@ textarea:focus-visible {
 
 .brand-text span {
 
-    color: #666d76;
+    color: #4c6575;
 
     font-size: 10px;
 
@@ -327,7 +363,7 @@ textarea:focus-visible {
 
 .navbar nav a {
 
-    color: #454b53;
+    color: #263746;
 
     font-size: 14px;
 
@@ -1051,18 +1087,23 @@ textarea:focus-visible {
 
 
 /* ============================================================
-   16. FOOTER
+   16. FOOTER — FADED SKY-BLUE GRADIENT
 ============================================================ */
 
 footer {
 
     padding: 55px 7%;
 
-    background: #ffffff;
+    /* New sky-blue gradient */
 
-    color: #59616b;
+    background: var(--footer-gradient);
 
-    border-top: 1px solid var(--line);
+    color: #344653;
+
+    border-top: 1px solid var(--blue-line);
+
+    box-shadow:
+        inset 0 8px 20px rgba(255, 255, 255, 0.25);
 
     font-size: 13px;
 
@@ -1094,7 +1135,7 @@ footer .footer-brand strong {
 
 footer .footer-brand span {
 
-    color: #737b85;
+    color: #4f6a7b;
 
     font-size: 11px;
 
@@ -1116,13 +1157,13 @@ footer .footer-links {
 
 footer a {
 
-    color: #343b44;
+    color: #263b4b;
 
     font-weight: 600;
 
     text-decoration: underline;
 
-    text-decoration-color: #c0c5cb;
+    text-decoration-color: #a4c8de;
 
     text-underline-offset: 4px;
 
@@ -1138,7 +1179,7 @@ footer a:hover {
 
 footer p {
 
-    color: #68717b;
+    color: #465b6a;
 
     line-height: 1.8;
 
@@ -1791,12 +1832,12 @@ footer p {
 
         padding: 25px 5%;
 
-        background: #ffffff;
+        background: var(--brand-gradient);
 
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid var(--blue-line);
 
         box-shadow:
-            0 12px 25px rgba(0, 0, 0, 0.06);
+            0 12px 25px rgba(64, 135, 180, 0.1);
 
     }
 
