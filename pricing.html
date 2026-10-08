@@ -1,3099 +1,950 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-    >
-
-    <meta
-        name="theme-color"
-        content="#e5f5ff"
-    >
-
-    <meta
-        name="description"
-        content="Explore KALXA (PTY) LTD pricing for Kalxa Discovery business advertising, Kalxa Ticketing organiser subscriptions and Kalxa Blog Creator CRM."
-    >
-
-    <meta
-        name="robots"
-        content="index, follow"
-    >
-
-    <title>
-        Pricing &amp; Payments | KALXA (PTY) LTD
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="/css/style.css?v=4"
-    >
-
-
-    <!-- =====================================================
-         PRICING PAGE STYLES
-    ===================================================== -->
-
-    <style>
-
-        /* =====================================================
-           PRICING PAGE VARIABLES
-        ===================================================== */
-
-        :root {
-
-            --pricing-white: #ffffff;
-
-            --pricing-page: #f8fafc;
-
-            --pricing-card: #f3f5f7;
-
-            --pricing-border: #dce3e8;
-
-            --pricing-text: #17191d;
-
-            --pricing-muted: #586674;
-
-            --pricing-sky: #e5f5ff;
-
-            --pricing-sky-strong: #cbeaff;
-
-            --pricing-blue: #006aa6;
-
-            --pricing-dark: #111318;
-
-        }
-
-
-        /* =====================================================
-           PRICING PAGE HERO
-        ===================================================== */
-
-        .pricing-hero {
-
-            text-align: center;
-
-            background: linear-gradient(
-                135deg,
-                #ffffff 0%,
-                #f2faff 55%,
-                #e4f4ff 100%
-            );
-
-            padding: 95px 7% 85px;
-
-            border-bottom: 1px solid #dcecf6;
-
-        }
-
-        .pricing-hero .hero-content {
-
-            max-width: 850px;
-
-            margin: 0 auto;
-
-        }
-
-        .pricing-hero h1 {
-
-            font-size: clamp(
-                36px,
-                5vw,
-                60px
-            );
-
-            line-height: 1.12;
-
-            color: var(--pricing-dark);
-
-            margin: 18px 0 22px;
-
-            letter-spacing: -1.8px;
-
-        }
-
-        .pricing-hero .lead {
-
-            max-width: 720px;
-
-            margin: 0 auto;
-
-            color: var(--pricing-muted);
-
-            line-height: 1.85;
-
-        }
-
-
-        /* =====================================================
-           PRODUCT SECTION
-        ===================================================== */
-
-        .pricing-product-section {
-
-            padding: 85px 7%;
-
-            background: #ffffff;
-
-        }
-
-        .pricing-product-section.soft {
-
-            background: #f8fafc;
-
-        }
-
-        .pricing-product-header {
-
-            max-width: 850px;
-
-            margin: 0 auto 45px;
-
-            text-align: center;
-
-        }
-
-        .pricing-product-header .section-label {
-
-            margin-bottom: 14px;
-
-        }
-
-        .pricing-product-header h2 {
-
-            font-size: clamp(
-                28px,
-                3.5vw,
-                42px
-            );
-
-            line-height: 1.2;
-
-            color: var(--pricing-dark);
-
-            margin-bottom: 18px;
-
-        }
-
-        .pricing-product-header p {
-
-            font-size: 15px;
-
-            line-height: 1.9;
-
-            color: var(--pricing-muted);
-
-        }
-
-
-        /* =====================================================
-           PRICING GRID
-        ===================================================== */
-
-        .pricing-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 25px;
-
-            max-width: 1250px;
-
-            margin: 0 auto;
-
-            align-items: stretch;
-
-        }
-
-        .pricing-grid.two-column {
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            max-width: 900px;
-
-        }
-
-
-        /* =====================================================
-           PRICING CARDS
-        ===================================================== */
-
-        .pricing-card {
-
-            position: relative;
-
-            display: flex;
-
-            flex-direction: column;
-
-            background: var(--pricing-card);
-
-            border: 1px solid var(--pricing-border);
-
-            border-radius: 18px;
-
-            padding: 34px 28px;
-
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease,
-                border-color 0.25s ease;
-
-        }
-
-        .pricing-card:hover {
-
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 16px 38px rgba(
-                    30,
-                    50,
-                    70,
-                    0.08
-                );
-
-        }
-
-        .pricing-card.featured {
-
-            background: linear-gradient(
-                180deg,
-                #edf8ff 0%,
-                #f5faff 45%,
-                #ffffff 100%
-            );
-
-            border: 2px solid #a8d9f5;
-
-        }
-
-        .pricing-badge {
-
-            display: inline-block;
-
-            width: fit-content;
-
-            background: #d6efff;
-
-            color: #175a80;
-
-            font-size: 11px;
-
-            font-weight: 800;
-
-            letter-spacing: 0.6px;
-
-            text-transform: uppercase;
-
-            border-radius: 30px;
-
-            padding: 8px 13px;
-
-            margin-bottom: 18px;
-
-        }
-
-        .pricing-card h3 {
-
-            font-size: 23px;
-
-            color: var(--pricing-dark);
-
-            margin: 0 0 12px;
-
-        }
-
-        .pricing-description {
-
-            font-size: 14px;
-
-            line-height: 1.8;
-
-            color: var(--pricing-muted);
-
-            min-height: 75px;
-
-        }
-
-
-        /* =====================================================
-           PRICE DISPLAY
-        ===================================================== */
-
-        .pricing-amount {
-
-            display: flex;
-
-            align-items: baseline;
-
-            flex-wrap: wrap;
-
-            gap: 6px;
-
-            margin: 24px 0 6px;
-
-        }
-
-        .pricing-amount strong {
-
-            font-size: clamp(
-                38px,
-                4vw,
-                48px
-            );
-
-            font-weight: 850;
-
-            letter-spacing: -2px;
-
-            color: var(--pricing-dark);
-
-        }
-
-        .pricing-amount span {
-
-            font-size: 13px;
-
-            color: var(--pricing-muted);
-
-        }
-
-        .pricing-billing {
-
-            font-size: 13px;
-
-            font-weight: 600;
-
-            color: #476173;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        /* =====================================================
-           FEATURES
-        ===================================================== */
-
-        .pricing-features {
-
-            list-style: none;
-
-            padding: 22px 0;
-
-            margin: 0 0 25px;
-
-            border-top: 1px solid #dce3e8;
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 15px;
-
-            flex: 1;
-
-        }
-
-        .pricing-features li {
-
-            display: flex;
-
-            align-items: flex-start;
-
-            gap: 11px;
-
-            font-size: 13px;
-
-            line-height: 1.7;
-
-            color: #34434e;
-
-        }
-
-        .pricing-features li::before {
-
-            content: "✓";
-
-            color: #0875a9;
-
-            font-weight: 900;
-
-            flex-shrink: 0;
-
-        }
-
-        .pricing-features li.unavailable {
-
-            color: #88939b;
-
-        }
-
-        .pricing-features li.unavailable::before {
-
-            content: "—";
-
-            color: #9aa5ad;
-
-        }
-
-
-        /* =====================================================
-           PRICING BUTTON
-        ===================================================== */
-
-        .pricing-button {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            width: 100%;
-
-            min-height: 49px;
-
-            padding: 13px 18px;
-
-            border-radius: 9px;
-
-            background: #111318;
-
-            color: #ffffff;
-
-            text-decoration: none;
-
-            text-align: center;
-
-            font-size: 13px;
-
-            font-weight: 800;
-
-            transition:
-                background 0.25s ease,
-                transform 0.25s ease;
-
-        }
-
-        .pricing-button:hover {
-
-            background: #303b45;
-
-            color: #ffffff;
-
-            transform: translateY(-2px);
-
-        }
-
-        .pricing-card.featured .pricing-button {
-
-            background: #006aa6;
-
-        }
-
-        .pricing-card.featured .pricing-button:hover {
-
-            background: #00527f;
-
-        }
-
-
-        /* =====================================================
-           PRICING NOTES
-        ===================================================== */
-
-        .pricing-note {
-
-            max-width: 1050px;
-
-            margin: 30px auto 0;
-
-            padding: 20px 25px;
-
-            background: #f1f8fc;
-
-            border: 1px solid #d5e8f3;
-
-            border-radius: 12px;
-
-            color: #405768;
-
-            font-size: 13px;
-
-            line-height: 1.9;
-
-        }
-
-        .pricing-note strong {
-
-            color: #172b39;
-
-        }
-
-
-        /* =====================================================
-           COMPARISON TABLE
-        ===================================================== */
-
-        .comparison-section {
-
-            max-width: 1250px;
-
-            margin: 50px auto 0;
-
-        }
-
-        .comparison-section h3 {
-
-            font-size: 23px;
-
-            color: var(--pricing-dark);
-
-            margin-bottom: 22px;
-
-        }
-
-        .comparison-table-wrapper {
-
-            width: 100%;
-
-            overflow-x: auto;
-
-            border: 1px solid #dce3e8;
-
-            border-radius: 14px;
-
-            background: #ffffff;
-
-        }
-
-        .comparison-table {
-
-            width: 100%;
-
-            border-collapse: collapse;
-
-            min-width: 620px;
-
-        }
-
-        .comparison-table th {
-
-            background: #eaf6ff;
-
-            padding: 17px;
-
-            color: #1b3545;
-
-            font-size: 13px;
-
-            font-weight: 800;
-
-            text-align: center;
-
-            border-bottom: 1px solid #dce3e8;
-
-        }
-
-        .comparison-table th:first-child {
-
-            text-align: left;
-
-        }
-
-        .comparison-table td {
-
-            padding: 16px 17px;
-
-            border-bottom: 1px solid #e8edf1;
-
-            font-size: 13px;
-
-            color: #354550;
-
-            text-align: center;
-
-        }
-
-        .comparison-table td:first-child {
-
-            text-align: left;
-
-            font-weight: 600;
-
-        }
-
-        .comparison-table tbody tr:last-child td {
-
-            border-bottom: none;
-
-        }
-
-        .comparison-table tbody tr:nth-child(even) {
-
-            background: #f9fbfc;
-
-        }
-
-
-        /* =====================================================
-           PAYMENT INFORMATION
-        ===================================================== */
-
-        .payment-info-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 25px;
-
-            max-width: 1250px;
-
-            margin: 35px auto 0;
-
-        }
-
-        .payment-info-card {
-
-            background: #ffffff;
-
-            border: 1px solid #e1e7eb;
-
-            border-radius: 14px;
-
-            padding: 28px;
-
-        }
-
-        .payment-info-card h3 {
-
-            font-size: 18px;
-
-            color: #111318;
-
-            margin-bottom: 14px;
-
-        }
-
-        .payment-info-card p {
-
-            font-size: 14px;
-
-            line-height: 1.85;
-
-            color: #52616d;
-
-        }
-
-
-        /* =====================================================
-           CONTACT CTA
-        ===================================================== */
-
-        .pricing-contact {
-
-            background: linear-gradient(
-                120deg,
-                #f4fbff 0%,
-                #e4f4ff 55%,
-                #f7fcff 100%
-            );
-
-            text-align: center;
-
-            padding: 85px 7%;
-
-        }
-
-        .pricing-contact h2 {
-
-            font-size: clamp(
-                28px,
-                4vw,
-                40px
-            );
-
-            color: #111318;
-
-            margin-bottom: 18px;
-
-        }
-
-        .pricing-contact p {
-
-            max-width: 680px;
-
-            margin: 0 auto 25px;
-
-            font-size: 15px;
-
-            line-height: 1.9;
-
-            color: #52616d;
-
-        }
-
-        .pricing-contact-buttons {
-
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 15px;
-
-        }
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        .company-footer {
-
-            background: linear-gradient(
-                120deg,
-                #edf8ff 0%,
-                #d6efff 45%,
-                #f5fbff 100%
-            );
-
-            padding: 65px 7% 30px;
-
-            border-top: 1px solid #c4e3f5;
-
-            color: #263746;
-
-        }
-
-        .footer-main {
-
-            display: grid;
-
-            grid-template-columns: 1.2fr 1fr;
-
-            gap: 70px;
-
-            padding-bottom: 45px;
-
-        }
-
-        .footer-company h3 {
-
-            font-size: 24px;
-
-            font-weight: 800;
-
-            color: #111111;
-
-            margin: 0 0 18px;
-
-        }
-
-        .footer-company-type {
-
-            font-size: 14px;
-
-            color: #405768;
-
-            margin-bottom: 20px;
-
-        }
-
-        .footer-company-details {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 8px;
-
-            margin-bottom: 25px;
-
-        }
-
-        .footer-company-details span {
-
-            display: block;
-
-            font-size: 14px;
-
-            color: #344b5b;
-
-            line-height: 1.7;
-
-        }
-
-        .footer-address {
-
-            font-style: normal;
-
-            line-height: 1.9;
-
-            font-size: 14px;
-
-            color: #344b5b;
-
-        }
-
-        .footer-address-title {
-
-            display: block;
-
-            color: #111111;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            margin-bottom: 10px;
-
-        }
-
-        .footer-address span {
-
-            display: block;
-
-        }
-
-        .footer-navigation h3 {
-
-            color: #111111;
-
-            font-size: 18px;
-
-            font-weight: 800;
-
-            margin: 0 0 25px;
-
-        }
-
-        .footer-navigation-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap: 35px;
-
-        }
-
-        .footer-link-group {
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: flex-start;
-
-            gap: 14px;
-
-        }
-
-        .footer-link-group h4 {
-
-            font-size: 12px;
-
-            font-weight: 800;
-
-            color: #526d80;
-
-            letter-spacing: 1.2px;
-
-            text-transform: uppercase;
-
-            margin: 0 0 5px;
-
-        }
-
-        .footer-link-group a {
-
-            display: block;
-
-            color: #263746;
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            text-decoration: none;
-
-            line-height: 1.6;
-
-        }
-
-        .footer-link-group a:hover {
-
-            color: #006aa6;
-
-            text-decoration: underline;
-
-        }
-
-        .footer-support {
-
-            padding: 28px 0;
-
-            border-top: 1px solid #c4e3f5;
-
-            border-bottom: 1px solid #c4e3f5;
-
-        }
-
-        .footer-support h4 {
-
-            color: #111111;
-
-            font-size: 15px;
-
-            font-weight: 800;
-
-            margin: 0 0 16px;
-
-        }
-
-        .footer-support-details {
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: flex-start;
-
-            gap: 12px;
-
-        }
-
-        .footer-support-details a {
-
-            color: #263746;
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            text-decoration: none;
-
-            overflow-wrap: anywhere;
-
-        }
-
-        .footer-support-details a:hover {
-
-            color: #006aa6;
-
-            text-decoration: underline;
-
-        }
-
-        .footer-bottom {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            flex-wrap: wrap;
-
-            gap: 15px;
-
-            padding-top: 25px;
-
-        }
-
-        .footer-bottom p {
-
-            color: #526d80;
-
-            font-size: 12px;
-
-            margin: 0;
-
-        }
-
-
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
-
-        @media (max-width: 1000px) {
-
-            .pricing-grid {
-
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
-            }
-
-            .payment-info-grid {
-
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
-            }
-
-        }
-
-        @media (max-width: 750px) {
-
-            .pricing-hero {
-
-                padding: 75px 5% 65px;
-
-            }
-
-            .pricing-product-section {
-
-                padding: 65px 5%;
-
-            }
-
-            .pricing-grid,
-            .pricing-grid.two-column {
-
-                grid-template-columns: 1fr;
-
-                max-width: 500px;
-
-            }
-
-            .pricing-card {
-
-                padding: 30px 25px;
-
-            }
-
-            .pricing-description {
-
-                min-height: auto;
-
-            }
-
-            .payment-info-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-            .company-footer {
-
-                padding: 50px 5% 25px;
-
-            }
-
-            .footer-main {
-
-                grid-template-columns: 1fr;
-
-                gap: 45px;
-
-            }
-
-            .footer-navigation-grid {
-
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
-                gap: 25px;
-
-            }
-
-            .footer-bottom {
-
-                flex-direction: column;
-
-            }
-
-        }
-
-        @media (max-width: 400px) {
-
-            .footer-navigation-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-        }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e5f5ff">
+  <meta name="description" content="KALXA pricing for event ticketing, restaurant business profiles, creator CRM and Discovery advertising in South Africa.">
+  <meta name="robots" content="index, follow">
+  <title>Pricing &amp; Payments | KALXA (PTY) LTD</title>
+  <link rel="stylesheet" href="/css/style.css?v=4">
+  <style>
+    :root {
+      --pricing-card: #f3f5f7;
+      --pricing-border: #dce3e8;
+      --pricing-muted: #586674;
+      --pricing-dark: #111318;
+      --pricing-blue: #006aa6;
+    }
+
+    /* Pricing hero */
+    .pricing-hero {
+      text-align: center;
+      background: linear-gradient(135deg, #fff 0%, #f2faff 55%, #e4f4ff 100%);
+      padding: 95px 7% 85px;
+      border-bottom: 1px solid #dcecf6;
+    }
+
+    .pricing-hero .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .pricing-hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      line-height: 1.12;
+      color: var(--pricing-dark);
+      margin: 18px 0 22px;
+      letter-spacing: -1.8px;
+    }
+
+    .pricing-hero .lead {
+      max-width: 720px;
+      margin: auto;
+      color: var(--pricing-muted);
+      line-height: 1.85;
+    }
+
+    .pricing-jump-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .pricing-jump-links a {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid #c4e3f5;
+      border-radius: 100px;
+      color: #1c506d;
+      background: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .pricing-jump-links a:hover {
+      background: #e5f5ff;
+    }
+
+    /* Product sections */
+    .pricing-product-section {
+      padding: 85px 7%;
+      background: #fff;
+    }
+
+    .pricing-product-section.soft {
+      background: #f8fafc;
+    }
+
+    .pricing-product-header {
+      max-width: 850px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .pricing-product-header .section-label {
+      margin-bottom: 14px;
+    }
+
+    .pricing-product-header h2 {
+      font-size: clamp(28px, 3.5vw, 42px);
+      line-height: 1.2;
+      color: var(--pricing-dark);
+      margin-bottom: 18px;
+    }
+
+    .pricing-product-header p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--pricing-muted);
+    }
+
+    .pricing-subheading {
+      max-width: 1250px;
+      margin: 55px auto 28px;
+      padding-top: 15px;
+      border-top: 1px solid #dce3e8;
+    }
+
+    .pricing-subheading h3 {
+      color: var(--pricing-dark);
+      font-size: clamp(23px, 3vw, 30px);
+      margin: 0 0 12px;
+    }
+
+    .pricing-subheading p {
+      max-width: 800px;
+      color: var(--pricing-muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    /* Pricing grids */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+      max-width: 1250px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    .pricing-grid.two-column {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 900px;
+    }
+
+    /* Pricing cards */
+    .pricing-card {
+      min-width: 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--pricing-card);
+      border: 1px solid var(--pricing-border);
+      border-radius: 18px;
+      padding: 34px 28px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 38px rgba(30, 50, 70, 0.08);
+    }
+
+    .pricing-card.featured {
+      background: linear-gradient(180deg, #edf8ff 0%, #f5faff 45%, #fff 100%);
+      border: 2px solid #a8d9f5;
+    }
+
+    .pricing-badge {
+      display: inline-block;
+      width: fit-content;
+      background: #d6efff;
+      color: #175a80;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      border-radius: 30px;
+      padding: 8px 13px;
+      margin-bottom: 18px;
+    }
+
+    .pricing-card h4 {
+      font-size: 23px;
+      color: var(--pricing-dark);
+      margin: 0 0 12px;
+    }
+
+    .pricing-description {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--pricing-muted);
+      min-height: 75px;
+    }
+
+    .pricing-amount {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 24px 0 6px;
+    }
+
+    .pricing-amount strong {
+      font-size: clamp(38px, 4vw, 48px);
+      font-weight: 850;
+      letter-spacing: -2px;
+      color: var(--pricing-dark);
+    }
+
+    .pricing-amount span {
+      font-size: 13px;
+      color: var(--pricing-muted);
+    }
+
+    .pricing-billing {
+      font-size: 13px;
+      font-weight: 600;
+      color: #476173;
+      margin-bottom: 25px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 22px 0;
+      margin: 0 0 25px;
+      border-top: 1px solid #dce3e8;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      flex: 1;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: #34434e;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      color: #0875a9;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .pricing-features li.unavailable {
+      color: #88939b;
+    }
+
+    .pricing-features li.unavailable::before {
+      content: '—';
+      color: #9aa5ad;
+    }
+
+    .pricing-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 49px;
+      padding: 13px 18px;
+      border-radius: 9px;
+      background: #111318;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .pricing-button:hover {
+      background: #303b45;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .pricing-card.featured .pricing-button {
+      background: #006aa6;
+    }
+
+    .pricing-card.featured .pricing-button:hover {
+      background: #00527f;
+    }
+
+    .pricing-note {
+      max-width: 1050px;
+      margin: 30px auto 0;
+      padding: 20px 25px;
+      background: #f1f8fc;
+      border: 1px solid #d5e8f3;
+      border-radius: 12px;
+      color: #405768;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .pricing-note strong {
+      color: #172b39;
+    }
+
+    /* Comparison tables */
+    .comparison-section {
+      max-width: 1250px;
+      margin: 50px auto 0;
+    }
+
+    .comparison-section h3 {
+      font-size: 23px;
+      color: var(--pricing-dark);
+      margin-bottom: 22px;
+    }
+
+    .comparison-table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid #dce3e8;
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+    }
+
+    .comparison-table th {
+      background: #eaf6ff;
+      padding: 17px;
+      color: #1b3545;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+      border-bottom: 1px solid #dce3e8;
+    }
+
+    .comparison-table th:first-child {
+      text-align: left;
+    }
+
+    .comparison-table td {
+      padding: 16px 17px;
+      border-bottom: 1px solid #e8edf1;
+      font-size: 13px;
+      color: #354550;
+      text-align: center;
+    }
+
+    .comparison-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .comparison-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table tbody tr:nth-child(even) {
+      background: #f9fbfc;
+    }
+
+    /* Payment info & policy cards */
+    .payment-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+      max-width: 1250px;
+      margin: 35px auto 0;
+    }
+
+    .payment-info-card {
+      background: #fff;
+      border: 1px solid #e1e7eb;
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .payment-info-card h3 {
+      font-size: 18px;
+      color: #111318;
+      margin-bottom: 14px;
+    }
+
+    .payment-info-card p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: #52616d;
+    }
+
+    .payment-info-card .text-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-weight: 700;
+      color: #006aa6;
+      text-decoration: none;
+    }
+
+    .payment-info-card .text-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact section */
+    .pricing-contact {
+      background: linear-gradient(120deg, #f4fbff 0%, #e4f4ff 55%, #f7fcff 100%);
+      text-align: center;
+      padding: 85px 7%;
+    }
+
+    .pricing-contact h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      color: #111318;
+      margin-bottom: 18px;
+    }
+
+    .pricing-contact p {
+      max-width: 680px;
+      margin: 0 auto 25px;
+      font-size: 15px;
+      line-height: 1.9;
+      color: #52616d;
+    }
+
+    .pricing-contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    /* Footer */
+    .company-footer {
+      background: linear-gradient(120deg, #edf8ff 0%, #d6efff 45%, #f5fbff 100%);
+      padding: 65px 7% 30px;
+      border-top: 1px solid #c4e3f5;
+      color: #263746;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 70px;
+      padding-bottom: 45px;
+    }
+
+    .footer-company h3 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #111;
+      margin: 0 0 18px;
+    }
+
+    .footer-company-type {
+      font-size: 14px;
+      color: #405768;
+      margin-bottom: 20px;
+    }
+
+    .footer-company-details {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 25px;
+    }
+
+    .footer-company-details span {
+      display: block;
+      font-size: 14px;
+      color: #344b5b;
+      line-height: 1.7;
+    }
+
+    .footer-address {
+      font-style: normal;
+      line-height: 1.9;
+      font-size: 14px;
+      color: #344b5b;
+    }
+
+    .footer-address-title {
+      display: block;
+      color: #111;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .footer-address span {
+      display: block;
+    }
+
+    .footer-navigation h3 {
+      color: #111;
+      font-size: 18px;
+      font-weight: 800;
+      margin: 0 0 25px;
+    }
+
+    .footer-navigation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 35px;
+    }
+
+    .footer-link-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .footer-link-group h4 {
+      font-size: 12px;
+      font-weight: 800;
+      color: #526d80;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin: 0 0 5px;
+    }
+
+    .footer-link-group a {
+      display: block;
+      color: #263746;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+
+    .footer-link-group a:hover {
+      color: #006aa6;
+      text-decoration: underline;
+    }
+
+    .footer-support {
+      padding: 28px 0;
+      border-top: 1px solid #c4e3f5;
+      border-bottom: 1px solid #c4e3f5;
+    }
+
+    .footer-support h4 {
+      color: #111;
+      font-size: 15px;
+      font-weight: 800;
+      margin: 0 0 16px;
+    }
+
+    .footer-support-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .footer-support-details a {
+      color: #263746;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-support-details a:hover {
+      color: #006aa6;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 25px;
+    }
+
+    .footer-bottom p {
+      color: #526d80;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .payment-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 750px) {
+      .pricing-hero {
+        padding: 75px 5% 65px;
+      }
+
+      .pricing-product-section {
+        padding: 65px 5%;
+      }
+
+      .pricing-grid,
+      .pricing-grid.two-column {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+
+      .pricing-card {
+        padding: 30px 25px;
+      }
+
+      .pricing-description {
+        min-height: auto;
+      }
+
+      .payment-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .company-footer {
+        padding: 50px 5% 25px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .footer-navigation-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .footer-navigation-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pricing-card,
+      .pricing-button {
+        transition: none;
+      }
+    }
+  </style>
 </head>
-
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<a
-    class="skip-link"
-    href="#main"
->
-    Skip to content
-</a>
-
-
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
-
-<header class="navbar">
-
-    <a
-        class="brand"
-        href="/index.html"
-        aria-label="KALXA Home"
-    >
-
-        <span class="brand-text">
-
-            <strong>
-                KALXA
-            </strong>
-
-            <span>
-                DIGITAL TECHNOLOGY &amp; PLATFORM SERVICES
-            </span>
-
-        </span>
-
+  <!-- HEADER -->
+  <header class="navbar">
+    <a class="brand" href="/index.html" aria-label="KALXA Home">
+      <span class="brand-text">
+        <strong>KALXA</strong>
+        <span>DIGITAL TECHNOLOGY &amp; PLATFORM SERVICES</span>
+      </span>
     </a>
-
-
-    <button
-        class="menu-button"
-        id="menu-button"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="nav-menu"
-    >
-        ☰
-    </button>
-
-
-    <nav
-        id="nav-menu"
-        aria-label="Main navigation"
-    >
-
-        <a href="/index.html">
-            Home
-        </a>
-
-        <a href="/services.html">
-            Services
-        </a>
-
-        <a
-            href="/pricing.html"
-            aria-current="page"
-        >
-            Pricing
-        </a>
-
-        <a href="/faq.html">
-            FAQs
-        </a>
-
-        <a href="/contact.html">
-            Contact
-        </a>
-
+    <button class="menu-button" id="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+    <nav id="nav-menu" aria-label="Main navigation">
+      <a href="/index.html">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/pricing.html" aria-current="page">Pricing</a>
+      <a href="/faq.html">FAQs</a>
+      <a href="/contact.html">Contact</a>
     </nav>
-
-</header>
-
-
-
-<main id="main">
-
-
-<!-- =========================================================
-     PRICING HERO
-========================================================= -->
-
-<section class="pricing-hero">
-
-    <div class="hero-content">
-
-        <p class="eyebrow">
-            KALXA (PTY) LTD · SOUTH AFRICA
-        </p>
-
-        <h1>
-            Simple, Transparent Pricing.
-        </h1>
-
-        <p class="lead">
-
-            Explore affordable digital advertising,
-            event management subscriptions and
-            creator platform packages.
-
-            Choose the solution that fits
-            your business or creative goals.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     KALXA DISCOVERY PRICING
-========================================================= -->
-
-<section
-    class="pricing-product-section"
-    id="discovery-pricing"
->
-
-    <div class="pricing-product-header">
-
-        <p class="section-label">
-            KALXA DISCOVERY
-        </p>
-
-        <h2>
-            Business Advertising Packages
-        </h2>
-
-        <p>
-
-            Help customers discover your business
-            through Kalxa Discovery.
-
-            Select an advertising package based
-            on the visibility and promotional
-            features your business needs.
-
-        </p>
-
-    </div>
-
-
-
-    <div class="pricing-grid">
-
-
-        <!-- BASIC LISTING -->
-
-        <article class="pricing-card">
-
-            <h3>
-                Basic Listing
-            </h3>
-
-            <p class="pricing-description">
-
-                An affordable starting point
-                for businesses that want
-                to establish their presence
-                on Kalxa Discovery.
-
-            </p>
-
-            <div class="pricing-amount">
-
-                <strong>
-                    R49
-                </strong>
-
-                <span>
-                    once-off
-                </span>
-
-            </div>
-
-            <p class="pricing-billing">
-                Valid for 30 days
-            </p>
-
-
-            <ul class="pricing-features">
-
-                <li>
-                    Business profile
-                </li>
-
-                <li>
-                    Business description
-                </li>
-
-                <li>
-                    Contact information
-                </li>
-
-                <li>
-                    Business location
-                </li>
-
-                <li>
-                    Relevant category placement
-                </li>
-
-                <li class="unavailable">
-                    Promotional content
-                </li>
-
-                <li class="unavailable">
-                    Featured placement
-                </li>
-
-            </ul>
-
-
-            <a
-                href="/contact.html?service=discovery-basic"
-                class="pricing-button"
-            >
-                Choose Basic Listing →
-            </a>
-
-        </article>
-
-
-
-        <!-- STANDARD PROMOTION -->
-
-        <article class="pricing-card featured">
-
-            <span class="pricing-badge">
-                Popular Choice
-            </span>
-
-            <h3>
-                Standard Promotion
-            </h3>
-
-            <p class="pricing-description">
-
-                Promote your business,
-                products, services
-                and special offers
-                to local customers.
-
-            </p>
-
-            <div class="pricing-amount">
-
-                <strong>
-                    R99
-                </strong>
-
-                <span>
-                    once-off
-                </span>
-
-            </div>
-
-            <p class="pricing-billing">
-                Valid for 30 days
-            </p>
-
-
-            <ul class="pricing-features">
-
-                <li>
-                    Everything in Basic Listing
-                </li>
-
-                <li>
-                    Business promotional content
-                </li>
-
-                <li>
-                    Products or service highlights
-                </li>
-
-                <li>
-                    Special offer promotion
-                </li>
-
-                <li>
-                    Relevant category placement
-                </li>
-
-                <li class="unavailable">
-                    Featured placement
-                </li>
-
-            </ul>
-
-
-            <a
-                href="/contact.html?service=discovery-standard"
-                class="pricing-button"
-            >
-                Choose Standard →
-            </a>
-
-        </article>
-
-
-
-        <!-- FEATURED PROMOTION -->
-
-        <article class="pricing-card">
-
-            <span class="pricing-badge">
-                Maximum Visibility
-            </span>
-
-            <h3>
-                Featured Promotion
-            </h3>
-
-            <p class="pricing-description">
-
-                Designed for businesses
-                looking for additional
-                visibility within relevant
-                Kalxa Discovery categories.
-
-            </p>
-
-            <div class="pricing-amount">
-
-                <strong>
-                    R199
-                </strong>
-
-                <span>
-                    once-off
-                </span>
-
-            </div>
-
-            <p class="pricing-billing">
-                Valid for 30 days
-            </p>
-
-
-            <ul class="pricing-features">
-
-                <li>
-                    Everything in Standard Promotion
-                </li>
-
-                <li>
-                    Featured business placement
-                </li>
-
-                <li>
-                    Priority category visibility
-                </li>
-
-                <li>
-                    Promotional content
-                </li>
-
-                <li>
-                    Business contact and location
-                </li>
-
-                <li>
-                    Enhanced business exposure
-                </li>
-
-            </ul>
-
-
-            <a
-                href="/contact.html?service=discovery-featured"
-                class="pricing-button"
-            >
-                Choose Featured →
-            </a>
-
-        </article>
-
-    </div>
-
-
-
-    <div class="pricing-note">
-
-        <strong>
-            Discovery Advertising Terms:
-        </strong>
-
-        Each package is a once-off purchase
-        for a 30-day advertising period.
-
-        There is no automatic renewal.
-
-        Businesses can purchase another
-        advertising period after expiry.
-
-        Advertising placements and visibility
-        are subject to the applicable
-        platform rules and availability.
-
-    </div>
-
-
-
-    <!-- DISCOVERY COMPARISON -->
-
-    <div class="comparison-section">
-
-        <h3>
-            Compare Discovery Features
-        </h3>
-
-        <div class="comparison-table-wrapper">
-
-            <table class="comparison-table">
-
-                <thead>
-
-                    <tr>
-
-                        <th scope="col">
-                            Feature
-                        </th>
-
-                        <th scope="col">
-                            Basic
-                        </th>
-
-                        <th scope="col">
-                            Standard
-                        </th>
-
-                        <th scope="col">
-                            Featured
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Price</td>
-                        <td>R49</td>
-                        <td>R99</td>
-                        <td>R199</td>
-                    </tr>
-
-                    <tr>
-                        <td>Duration</td>
-                        <td>30 days</td>
-                        <td>30 days</td>
-                        <td>30 days</td>
-                    </tr>
-
-                    <tr>
-                        <td>Business profile</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Business contact details</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Business location</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Category placement</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Promotional content</td>
-                        <td>—</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Featured placement</td>
-                        <td>—</td>
-                        <td>—</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Priority visibility</td>
-                        <td>—</td>
-                        <td>—</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Automatic renewal</td>
-                        <td>No</td>
-                        <td>No</td>
-                        <td>No</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     KALXA TICKETING PRICING
-========================================================= -->
-
-<section
-    class="pricing-product-section soft"
-    id="ticketing-pricing"
->
-
-    <div class="pricing-product-header">
-
-        <p class="section-label">
-            KALXA TICKETING
-        </p>
-
-        <h2>
-            Event Organiser Subscriptions
-        </h2>
-
-        <p>
-
-            Manage events, create ticket
-            categories, issue QR tickets
-            and monitor ticketing activity
-            through Kalxa Ticketing.
-
-            Choose a monthly plan
-            based on your event needs.
-
-        </p>
-
-    </div>
-
-
-
-    <div class="pricing-grid">
-
-
-        <!-- STARTER -->
-
-        <article class="pricing-card">
-
-            <h3>
-                Starter
-            </h3>
-
-            <p class="pricing-description">
-
-                Ideal for individual
-                organisers hosting
-                a small number of
-                events each month.
-
-            </p>
-
-            <div class="pricing-amount">
-
-                <strong>
-                    R99
-                </strong>
-
-                <span>
-                    /month
-                </span>
-
-            </div>
-
-            <p class="pricing-billing">
-                Monthly subscription
-            </p>
-
-
-            <ul class="pricing-features">
-
-                <li>
-                    Up to 2 events per month
-                </li>
-
-                <li>
-                    Event creation and management
-                </li>
-
-                <li>
-                    Ticket categories
-                </li>
-
-                <li>
-                    QR ticket generation
-                </li>
-
-                <li>
-                    QR ticket verification
-                </li>
-
-                <li>
-                    Organiser dashboard
-                </li>
-
-                <li>
-                    Basic ticket sales reporting
-                </li>
-
-                <li>
-                    Standard event visibility
-                </li>
-
-            </ul>
-
-
-            <a
-                href="/contact.html?service=ticketing-starter"
-                class="pricing-button"
-            >
-                Choose Starter →
-            </a>
-
-        </article>
-
-
-
-        <!-- PROFESSIONAL -->
-
-        <article class="pricing-card featured">
-
-            <span class="pricing-badge">
-                Popular Choice
-            </span>
-
-            <h3>
-                Professional
-            </h3>
-
-            <p class="pricing-description">
-
-                Designed for active
-                event organisers who
-                regularly publish
-                and manage events.
-
-            </p>
-
-            <div class="pricing-amount">
-
-                <strong>
-                    R199
-                </strong>
-
-                <span>
-                    /month
-                </span>
-
-            </div>
-
-            <p class="pricing-billing">
-                Monthly subscription
-            </p>
-
-
-            <ul class="pricing-features">
-
-                <li>
-                    Up to 10 events per month
-                </li>
-
-                <li>
-                    Everything in Starter
-                </li>
-
-                <li>
-                    Multiple ticket categories
-                </li>
-
-                <li>
-                    QR ticket verification
-                </li>
-
-                <li>
-                    Advanced event reporting
-                </li>
-
-                <li>
-                    Enhanced event visibility
-                </li>
-
-                <li>
-                    Organiser dashboard
-                </li>
-
-                <li>
-                    Standard customer support
-                </li>
-
-            </ul>
-
-
-            <a
-                href="/contact.html?service=ticketing-professional"
-                class="pricing-button"
-            >
-                Choose Professional →
-            </a>
-
-        </article>
-
-
-
-        <!-- BUSINESS -->
-
-        <article class="pricing-card">
-
-            <span class="pricing-badge">
-                For Growing Organisers
-            </span>
-
-            <h3>
-                Business
-            </h3>
-
-            <p class="pricing-description">
-
-                Suitable for established
-                event organisers
-                managing frequent
-                events and larger
-                ticketing operations.
-
-            </p>
-
-            <div class="pricing-amount">
-
-                <strong>
-                    R399
-                </strong>
-
-                <span>
-                    /month
-                </span>
-
-            </div>
-
-            <p class="pricing-billing">
-                Monthly subscription
-            </p>
-
-
-            <ul class="pricing-features">
-
-                <li>
-                    Unlimited event creation
-                </li>
-
-                <li>
-                    Everything in Professional
-                </li>
-
-                <li>
-                    QR ticket generation
-                </li>
-
-                <li>
-                    QR ticket verification
-                </li>
-
-                <li>
-                    Advanced reporting
-                </li>
-
-                <li>
-                    Priority event visibility
-                </li>
-
-                <li>
-                    Priority customer support
-                </li>
-
-                <li>
-                    Organiser management tools
-                </li>
-
-            </ul>
-
-
-            <a
-                href="/contact.html?service=ticketing-business"
-                class="pricing-button"
-            >
-                Choose Business →
-            </a>
-
-        </article>
-
-    </div>
-
-
-
-    <div class="pricing-note">
-
-        <strong>
-            Ticketing Subscription Terms:
-        </strong>
-
-        The prices above are monthly
-        fees for access to eligible
-        Kalxa Ticketing organiser tools.
-
-        Subscription charges are separate
-        from ticket purchases.
-
-        Event ticket prices, applicable
-        transaction fees and payment
-        settlement arrangements must
-        be disclosed through the
-        relevant checkout or agreement.
-
-        Subscription renewal and
-        cancellation conditions are
-        governed by the applicable
-        subscription terms.
-
-    </div>
-
-
-
-    <!-- TICKETING COMPARISON -->
-
-    <div class="comparison-section">
-
-        <h3>
-            Compare Ticketing Features
-        </h3>
-
-        <div class="comparison-table-wrapper">
-
-            <table class="comparison-table">
-
-                <thead>
-
-                    <tr>
-
-                        <th scope="col">
-                            Feature
-                        </th>
-
-                        <th scope="col">
-                            Starter
-                        </th>
-
-                        <th scope="col">
-                            Professional
-                        </th>
-
-                        <th scope="col">
-                            Business
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Monthly price</td>
-                        <td>R99</td>
-                        <td>R199</td>
-                        <td>R399</td>
-                    </tr>
-
-                    <tr>
-                        <td>Events per month</td>
-                        <td>2</td>
-                        <td>10</td>
-                        <td>Unlimited</td>
-                    </tr>
-
-                    <tr>
-                        <td>Ticket categories</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>QR ticket generation</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>QR ticket verification</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Organiser dashboard</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Reporting</td>
-                        <td>Basic</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
-                    </tr>
-
-                    <tr>
-                        <td>Event visibility</td>
-                        <td>Standard</td>
-                        <td>Enhanced</td>
-                        <td>Priority</td>
-                    </tr>
-
-                    <tr>
-                        <td>Customer support</td>
-                        <td>Standard</td>
-                        <td>Standard</td>
-                        <td>Priority</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     KALXA BLOG CREATOR CRM PRICING
-========================================================= -->
-
-<section
-    class="pricing-product-section"
-    id="creator-pricing"
->
-
-    <div class="pricing-product-header">
-
-        <p class="section-label">
-            KALXA BLOG CREATOR CRM
-        </p>
-
-        <h2>
-            Creator Website &amp; Audience Tools
-        </h2>
-
-        <p>
-
-            Build your creator presence,
-            publish content and
-            engage with your audience
-            through your own digital space.
-
-            Choose a monthly package
-            that supports your
-            creative activities.
-
-        </p>
-
-    </div>
-
-
-
-    <div class="pricing-grid two-column">
-
-
-        <!-- CREATOR STARTER -->
-
-        <article class="pricing-card">
-
-            <h3>
-                Starter
-            </h3>
-
-            <p class="pricing-description">
-
-                For independent creators
-                who want a personal
-                publishing platform
-                and a way for fans
-                to show their support.
-
-            </p>
-
-            <div class="pricing-amount">
-
-                <strong>
-                    R79
-                </strong>
-
-                <span>
-                    /month
-                </span>
-
-            </div>
-
-            <p class="pricing-billing">
-                Monthly subscription
-            </p>
-
-
-            <ul class="pricing-features">
-
-                <li>
-                    Personal creator website
-                </li>
-
-                <li>
-                    Creator profile
-                </li>
-
-                <li>
-                    Blog articles and stories
-                </li>
-
-                <li>
-                    Reels and image galleries
-                </li>
-
-                <li>
-                    Anonymous comments and replies
-                </li>
-
-                <li>
-                    Email subscriber collection
-                </li>
-
-                <li>
-                    Basic audience management
-                </li>
-
-                <li>
-                    Buy Me a Coffee fan contributions
-                </li>
-
-                <li>
-                    Planned Paystack subaccount integration
-                </li>
-
-                <li class="unavailable">
-                    Paid exclusive content memberships
-                </li>
-
-            </ul>
-
-
-            <a
-                href="/contact.html?service=creator-starter"
-                class="pricing-button"
-            >
-                Choose Starter →
-            </a>
-
-        </article>
-
-
-
-        <!-- CREATOR PREMIUM -->
-
-        <article class="pricing-card featured">
-
-            <span class="pricing-badge">
-                Premium Creator
-            </span>
-
-            <h3>
-                Premium
-            </h3>
-
-            <p class="pricing-description">
-
-                For creators who want
-                additional audience tools,
-                exclusive content
-                capabilities and
-                greater control over
-                their creator website.
-
-            </p>
-
-            <div class="pricing-amount">
-
-                <strong>
-                    R149
-                </strong>
-
-                <span>
-                    /month
-                </span>
-
-            </div>
-
-            <p class="pricing-billing">
-                Monthly subscription
-            </p>
-
-
-            <ul class="pricing-features">
-
-                <li>
-                    Everything in Starter
-                </li>
-
-                <li>
-                    Personal creator website
-                </li>
-
-                <li>
-                    Blog articles and reels
-                </li>
-
-                <li>
-                    Image galleries
-                </li>
-
-                <li>
-                    Buy Me a Coffee contributions
-                </li>
-
-                <li>
-                    Planned Paystack subaccount integration
-                </li>
-
-                <li>
-                    Exclusive video and vlog publishing
-                </li>
-
-                <li>
-                    Paid fan membership features
-                </li>
-
-                <li>
-                    Advanced audience analytics
-                </li>
-
-                <li>
-                    Custom creator branding
-                </li>
-
-                <li>
-                    Priority customer support
-                </li>
-
-            </ul>
-
-
-            <a
-                href="/contact.html?service=creator-premium"
-                class="pricing-button"
-            >
-                Choose Premium →
-            </a>
-
-        </article>
-
-    </div>
-
-
-
-    <div class="pricing-note">
-
-        <strong>
-            Creator Platform Terms:
-        </strong>
-
-        Starter costs R79 per month
-        and Premium costs R149 per month.
-
-        The feature allocations shown
-        are proposed package inclusions
-        and may be refined before
-        the relevant plan is activated.
-
-        Starter includes the intended
-        Buy Me a Coffee contribution
-        feature.
-
-        Paystack subaccount-based
-        creator contributions are
-        subject to payment-provider
-        approval, onboarding
-        requirements and technical
-        availability.
-
-        Paid fan memberships and
-        exclusive content features
-        are intended for the
-        Premium package.
-
-    </div>
-
-
-
-    <!-- CREATOR COMPARISON -->
-
-    <div class="comparison-section">
-
-        <h3>
-            Compare Creator Features
-        </h3>
-
-        <div class="comparison-table-wrapper">
-
-            <table class="comparison-table">
-
-                <thead>
-
-                    <tr>
-
-                        <th scope="col">
-                            Feature
-                        </th>
-
-                        <th scope="col">
-                            Starter
-                        </th>
-
-                        <th scope="col">
-                            Premium
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Monthly price</td>
-                        <td>R79</td>
-                        <td>R149</td>
-                    </tr>
-
-                    <tr>
-                        <td>Creator website</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Creator profile</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Blogs and stories</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Reels and galleries</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Anonymous comments</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Email subscribers</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Audience management</td>
-                        <td>Basic</td>
-                        <td>Advanced</td>
-                    </tr>
-
-                    <tr>
-                        <td>Buy Me a Coffee</td>
-                        <td>Planned</td>
-                        <td>Planned</td>
-                    </tr>
-
-                    <tr>
-                        <td>Paystack subaccounts</td>
-                        <td>Planned</td>
-                        <td>Planned</td>
-                    </tr>
-
-                    <tr>
-                        <td>Exclusive videos</td>
-                        <td>—</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Paid fan memberships</td>
-                        <td>—</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Custom branding</td>
-                        <td>—</td>
-                        <td>✓</td>
-                    </tr>
-
-                    <tr>
-                        <td>Analytics</td>
-                        <td>Basic</td>
-                        <td>Advanced</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAYMENT INFORMATION
-========================================================= -->
-
-<section
-    class="pricing-product-section soft"
-    id="payment-information"
->
-
-    <div class="pricing-product-header">
-
-        <p class="section-label">
-            PAYMENT &amp; BILLING
-        </p>
-
-        <h2>
-            Understand Your Payments
-        </h2>
-
-        <p>
-
-            KALXA provides clear
-            information about
-            applicable charges,
-            subscription arrangements
-            and service delivery.
-
-        </p>
-
-    </div>
-
-
-
-    <div class="payment-info-grid">
-
-
-        <article class="payment-info-card">
-
-            <h3>
-                Once-Off Payments
-            </h3>
-
-            <p>
-
-                Kalxa Discovery advertising
-                packages are purchased
-                for a fixed 30-day period.
-
-                These advertising purchases
-                do not automatically renew.
-
-            </p>
-
-        </article>
-
-
-
-        <article class="payment-info-card">
-
-            <h3>
-                Monthly Subscriptions
-            </h3>
-
-            <p>
-
-                Kalxa Ticketing and
-                Kalxa Blog Creator CRM
-                use monthly subscription
-                pricing.
-
-                The applicable renewal,
-                payment and cancellation
-                terms are provided
-                before activation.
-
-            </p>
-
-        </article>
-
-
-
-        <article class="payment-info-card">
-
-            <h3>
-                Third-Party Transactions
-            </h3>
-
-            <p>
-
-                Event ticket purchases,
-                fan contributions and
-                creator memberships
-                may involve independent
-                organisers or creators.
-
-                The relevant payment
-                arrangement determines
-                the recipient,
-                fees and settlement terms.
-
-            </p>
-
-        </article>
-
-    </div>
-
-
-
-    <div class="pricing-note">
-
-        <strong>
-            Important Payment Information:
-        </strong>
-
-        The prices displayed on this page
-        are in South African rand (ZAR).
-
-        Any applicable taxes, transaction
-        fees or additional charges must
-        be disclosed before payment.
-
-        Payment methods vary by product
-        and availability.
-
-        Selecting a package on this page
-        opens an enquiry route rather
-        than charging your account.
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CUSTOMER POLICIES
-========================================================= -->
-
-<section class="pricing-product-section">
-
-    <div class="pricing-product-header">
-
-        <p class="section-label">
-            CUSTOMER INFORMATION
-        </p>
-
-        <h2>
-            Important Policies
-        </h2>
-
-        <p>
-
-            Before purchasing,
-            please review the
-            policies applicable
-            to your selected
-            KALXA service.
-
-        </p>
-
-    </div>
-
-
-
-    <div class="payment-info-grid">
-
-
-        <article class="payment-info-card">
-
-            <h3>
-                Terms &amp; Conditions
-            </h3>
-
-            <p>
-
-                Review the conditions
-                governing KALXA
-                products, services
-                and subscriptions.
-
-            </p>
-
-            <a
-                href="/terms.html"
-                class="text-link"
-            >
-                Read Terms →
-            </a>
-
-        </article>
-
-
-
-        <article class="payment-info-card">
-
-            <h3>
-                Refund Policy
-            </h3>
-
-            <p>
-
-                Understand refund
-                eligibility,
-                requests and
-                customer support
-                procedures.
-
-            </p>
-
-            <a
-                href="/refund.html"
-                class="text-link"
-            >
-                Read Refund Policy →
-            </a>
-
-        </article>
-
-
-
-        <article class="payment-info-card">
-
-            <h3>
-                Cancellation Policy
-            </h3>
-
-            <p>
-
-                Learn about cancelling
-                eligible recurring
-                subscriptions
-                and related services.
-
-            </p>
-
-            <a
-                href="/cancellation.html"
-                class="text-link"
-            >
-                Read Cancellation Policy →
-            </a>
-
-        </article>
-
-
-
-        <article class="payment-info-card">
-
-            <h3>
-                Privacy Policy
-            </h3>
-
-            <p>
-
-                Learn how KALXA
-                processes personal
-                information.
-
-            </p>
-
-            <a
-                href="/privacy.html"
-                class="text-link"
-            >
-                Read Privacy Policy →
-            </a>
-
-        </article>
-
-
-
-        <article class="payment-info-card">
-
-            <h3>
-                Digital Delivery
-            </h3>
-
-            <p>
-
-                Understand how
-                digital services
-                and platform access
-                are delivered.
-
-            </p>
-
-            <a
-                href="/delivery.html"
-                class="text-link"
-            >
-                Read Delivery Policy →
-            </a>
-
-        </article>
-
-
-
-        <article class="payment-info-card">
-
-            <h3>
-                Frequently Asked Questions
-            </h3>
-
-            <p>
-
-                Find answers about
-                pricing, billing,
-                services and support.
-
-            </p>
-
-            <a
-                href="/faq.html"
-                class="text-link"
-            >
-                View FAQs →
-            </a>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CONTACT CTA
-========================================================= -->
-
-<section class="pricing-contact">
-
-    <p class="section-label">
-        BUSINESS ENQUIRIES
-    </p>
-
-    <h2>
-        Need Help Choosing a Package?
-    </h2>
-
-    <p>
-
-        Contact KALXA for assistance
-        with advertising packages,
-        event organiser subscriptions,
-        creator plans or
-        custom service enquiries.
-
-    </p>
-
-
-    <div class="pricing-contact-buttons">
-
-        <a
-            href="/contact.html"
-            class="button primary-button"
-        >
-            Contact Our Team →
-        </a>
-
-        <a
-            href="https://wa.me/27766114909"
-            class="button secondary-button"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            WhatsApp Us
-        </a>
-
-    </div>
-
-</section>
-
-
-
-</main>
-
-
-
-<!-- =========================================================
-     PROFESSIONAL COMPANY FOOTER
-========================================================= -->
-
-<footer class="company-footer">
-
-
-    <div class="footer-main">
-
-
-        <!-- COMPANY DETAILS -->
-
-        <div class="footer-company">
-
-            <h3>
-                KALXA (PTY) LTD
-            </h3>
-
-            <p class="footer-company-type">
-                Registered South African Private Company
-            </p>
-
-
-            <div class="footer-company-details">
-
-                <span>
-                    <strong>
-                        Registration Number
-                    </strong>
-                </span>
-
-                <span>
-                    2026/767893/07
-                </span>
-
-            </div>
-
-
-            <address class="footer-address">
-
-                <span class="footer-address-title">
-                    Registered Business Address
-                </span>
-
-                <span>
-                    70047 Zakheni
-                </span>
-
-                <span>
-                    KwaMhlanga
-                </span>
-
-                <span>
-                    1022
-                </span>
-
-                <span>
-                    Mpumalanga
-                </span>
-
-                <span>
-                    South Africa
-                </span>
-
-            </address>
-
-        </div>
-
-
-
-        <!-- FOOTER NAVIGATION -->
-
-        <nav
-            class="footer-navigation"
-            aria-label="Footer navigation"
-        >
-
-            <h3>
-                Quick Links
-            </h3>
-
-
-            <div class="footer-navigation-grid">
-
-
-                <div class="footer-link-group">
-
-                    <h4>
-                        Company
-                    </h4>
-
-                    <a href="/index.html">
-                        Home
-                    </a>
-
-                    <a href="/services.html">
-                        Services
-                    </a>
-
-                    <a href="/pricing.html">
-                        Pricing
-                    </a>
-
-                    <a href="/faq.html">
-                        FAQs
-                    </a>
-
-                    <a href="/contact.html">
-                        Contact
-                    </a>
-
-                </div>
-
-
-
-                <div class="footer-link-group">
-
-                    <h4>
-                        Legal &amp; Policies
-                    </h4>
-
-                    <a href="/terms.html">
-                        Terms &amp; Conditions
-                    </a>
-
-                    <a href="/privacy.html">
-                        Privacy Policy
-                    </a>
-
-                    <a href="/refund.html">
-                        Refund Policy
-                    </a>
-
-                    <a href="/cancellation.html">
-                        Cancellation Policy
-                    </a>
-
-                    <a href="/delivery.html">
-                        Digital Delivery
-                    </a>
-
-                </div>
-
-            </div>
-
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="pricing-hero">
+      <div class="hero-content">
+        <p class="eyebrow">KALXA (PTY) LTD · SOUTH AFRICA</p>
+        <h1>Simple, Transparent Pricing.</h1>
+        <p class="lead">Explore monthly subscriptions for event organisers, restaurants and creators, plus affordable once-off business advertising packages.</p>
+        <nav class="pricing-jump-links" aria-label="Pricing categories">
+          <a href="#ticketing-pricing">Ticketing &amp; Restaurants</a>
+          <a href="#creator-pricing">Blog Creator CRM</a>
+          <a href="#discovery-pricing">Discovery Advertising</a>
         </nav>
+      </div>
+    </section>
 
-    </div>
+    <!-- 1. KALXA TICKETING AND BUSINESS PROFILES -->
+    <section class="pricing-product-section" id="ticketing-pricing">
+      <div class="pricing-product-header">
+        <p class="section-label">01 · KALXA TICKETING &amp; BUSINESS PROFILES</p>
+        <h2>Event Ticketing &amp; Restaurant Subscriptions</h2>
+        <p>Monthly platform plans for event organisers and restaurant businesses. Select the tools and visibility features that fit your operations.</p>
+      </div>
 
+      <!-- RESTAURANTS FIRST -->
+      <div class="pricing-subheading" id="restaurant-pricing">
+        <h3>Restaurant Business Profiles</h3>
+        <p>Give customers a place to discover your restaurant, view its content and share experiences. Premium adds Kalxa Stories exposure and tools for understanding customer activity.</p>
+      </div>
+      <div class="pricing-grid two-column">
+        <article class="pricing-card">
+          <h4>Restaurant Standard</h4>
+          <p class="pricing-description">Core restaurant discovery and customer experience tools.</p>
+          <div class="pricing-amount">
+            <strong>R219</strong><span>/month</span>
+          </div>
+          <p class="pricing-billing">Monthly subscription</p>
+          <ul class="pricing-features">
+            <li>Restaurant profile</li>
+            <li>Restaurant Reel / discovery</li>
+            <li>Gallery photos</li>
+            <li>Operational hours</li>
+            <li>Customer experiences</li>
+            <li>Rating QR</li>
+            <li class="unavailable">Kalxa Stories exposure</li>
+            <li class="unavailable">Restaurant analytics</li>
+          </ul>
+          <a class="pricing-button" href="/contact.html?service=restaurant-standard">Choose Restaurant Standard →</a>
+        </article>
+        <article class="pricing-card featured">
+          <span class="pricing-badge">Visibility &amp; Insights</span>
+          <h4>Restaurant Premium</h4>
+          <p class="pricing-description">Your Standard plan already provides the core customer experience tools. Premium adds visibility and performance insights to help you understand how customers interact with your restaurant on Kalxa.</p>
+          <div class="pricing-amount">
+            <strong>R299</strong><span>/month</span>
+          </div>
+          <p class="pricing-billing">Monthly subscription</p>
+          <ul class="pricing-features">
+            <li>Everything in Restaurant Standard</li>
+            <li>Kalxa Stories exposure</li>
+            <li>Restaurant analytics</li>
+            <li>Customer engagement insights</li>
+            <li>Restaurant view visibility</li>
+            <li>Contact &amp; directions activity</li>
+          </ul>
+          <a class="pricing-button" href="/contact.html?service=restaurant-premium">Choose Restaurant Premium →</a>
+        </article>
+      </div>
 
-
-    <!-- CUSTOMER SUPPORT -->
-
-    <div class="footer-support">
-
-        <h4>
-            Customer Support &amp; Business Enquiries
-        </h4>
-
-
-        <div class="footer-support-details">
-
-            <a href="mailto:lasi@kalxa.co.za">
-                Email: lasi@kalxa.co.za
-            </a>
-
-            <a href="tel:+27766114909">
-                Phone: +27 76 611 4909
-            </a>
-
-            <a
-                href="https://wa.me/27766114909"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                WhatsApp: +27 76 611 4909
-            </a>
-
+      <div class="comparison-section">
+        <h3>Compare Restaurant Features</h3>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Standard · R219/month</th>
+                <th scope="col">Premium · R299/month</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Restaurant profile</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Restaurant Reel / discovery</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Gallery photos</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Operational hours</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Customer experiences</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Rating QR</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Kalxa Stories exposure</td><td>—</td><td>✓</td></tr>
+              <tr><td>Restaurant analytics</td><td>—</td><td>✓</td></tr>
+              <tr><td>Customer engagement insights</td><td>—</td><td>✓</td></tr>
+              <tr><td>Restaurant view visibility</td><td>—</td><td>✓</td></tr>
+              <tr><td>Contact &amp; directions activity</td><td>—</td><td>✓</td></tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+      <div class="pricing-note">
+        <strong>Restaurant subscription terms:</strong> Standard costs R219/month and Premium costs R299/month. Kalxa Stories exposure means eligibility for exposure through the Stories platform; it does not guarantee a particular article, placement, number of views or customer enquiries. Analytics describe recorded platform activity and do not guarantee business results. Renewal and cancellation terms are provided before activation.
+      </div>
 
-    </div>
+      <!-- EVENT ORGANISERS -->
+      <div class="pricing-subheading" id="organiser-pricing">
+        <h3>Event Organiser Subscriptions</h3>
+        <p>Create and manage events, configure ticket categories, issue QR tickets and monitor ticketing activity through Kalxa Ticketing.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <h4>Starter</h4>
+          <p class="pricing-description">For organisers hosting a small number of events each month.</p>
+          <div class="pricing-amount">
+            <strong>R99</strong><span>/month</span>
+          </div>
+          <p class="pricing-billing">Monthly subscription</p>
+          <ul class="pricing-features">
+            <li>Up to 2 events per month</li>
+            <li>Event creation and management</li>
+            <li>Ticket categories</li>
+            <li>QR ticket generation</li>
+            <li>QR ticket verification</li>
+            <li>Organiser dashboard</li>
+            <li>Basic ticket sales reporting</li>
+            <li>Standard event visibility</li>
+          </ul>
+          <a class="pricing-button" href="/contact.html?service=ticketing-starter">Choose Starter →</a>
+        </article>
+        <article class="pricing-card featured">
+          <span class="pricing-badge">Popular Choice</span>
+          <h4>Professional</h4>
+          <p class="pricing-description">For active organisers publishing and managing events regularly.</p>
+          <div class="pricing-amount">
+            <strong>R199</strong><span>/month</span>
+          </div>
+          <p class="pricing-billing">Monthly subscription</p>
+          <ul class="pricing-features">
+            <li>Up to 10 events per month</li>
+            <li>Everything in Starter</li>
+            <li>Multiple ticket categories</li>
+            <li>QR ticket verification</li>
+            <li>Advanced event reporting</li>
+            <li>Enhanced event visibility</li>
+            <li>Organiser dashboard</li>
+            <li>Standard customer support</li>
+          </ul>
+          <a class="pricing-button" href="/contact.html?service=ticketing-professional">Choose Professional →</a>
+        </article>
+        <article class="pricing-card">
+          <span class="pricing-badge">For Growing Organisers</span>
+          <h4>Business</h4>
+          <p class="pricing-description">For established organisers managing frequent events and larger operations.</p>
+          <div class="pricing-amount">
+            <strong>R399</strong><span>/month</span>
+          </div>
+          <p class="pricing-billing">Monthly subscription</p>
+          <ul class="pricing-features">
+            <li>Unlimited event creation</li>
+            <li>Everything in Professional</li>
+            <li>QR ticket generation</li>
+            <li>QR ticket verification</li>
+            <li>Advanced reporting</li>
+            <li>Priority event visibility</li>
+            <li>Priority customer support</li>
+            <li>Organiser management tools</li>
+          </ul>
+          <a class="pricing-button" href="/contact.html?service=ticketing-business">Choose Business →</a>
+        </article>
+      </div>
+      <div class="pricing-note">
+        <strong>Ticketing subscription terms:</strong> Monthly organiser subscription fees pay for eligible platform tools and are separate from ticket purchases. Ticket prices, applicable transaction fees, seller identity and settlement arrangements must be disclosed through the relevant checkout or agreement.
+      </div>
 
+      <div class="comparison-section">
+        <h3>Compare Event Organiser Features</h3>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Starter</th>
+                <th scope="col">Professional</th>
+                <th scope="col">Business</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Monthly price</td><td>R99</td><td>R199</td><td>R399</td></tr>
+              <tr><td>Events per month</td><td>2</td><td>10</td><td>Unlimited</td></tr>
+              <tr><td>Ticket categories</td><td>✓</td><td>✓</td><td>✓</td></tr>
+              <tr><td>QR ticket generation</td><td>✓</td><td>✓</td><td>✓</td></tr>
+              <tr><td>QR ticket verification</td><td>✓</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Organiser dashboard</td><td>✓</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Reporting</td><td>Basic</td><td>Advanced</td><td>Advanced</td></tr>
+              <tr><td>Event visibility</td><td>Standard</td><td>Enhanced</td><td>Priority</td></tr>
+              <tr><td>Customer support</td><td>Standard</td><td>Standard</td><td>Priority</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
+    <!-- 2. CREATOR CRM -->
+    <section class="pricing-product-section soft" id="creator-pricing">
+      <div class="pricing-product-header">
+        <p class="section-label">02 · KALXA BLOG CREATOR CRM</p>
+        <h2>Creator Website &amp; Audience Tools</h2>
+        <p>Publish content, grow your audience and build a digital home for your creative work. Choose between Starter and Premium monthly plans.</p>
+      </div>
+      <div class="pricing-grid two-column">
+        <article class="pricing-card">
+          <h4>Starter</h4>
+          <p class="pricing-description">For creators who want to publish content and give fans a way to offer voluntary support.</p>
+          <div class="pricing-amount">
+            <strong>R79</strong><span>/month</span>
+          </div>
+          <p class="pricing-billing">Monthly subscription</p>
+          <ul class="pricing-features">
+            <li>Personal creator website</li>
+            <li>Creator profile</li>
+            <li>Blog articles and stories</li>
+            <li>Reels and image galleries</li>
+            <li>Anonymous comments and replies</li>
+            <li>Email subscriber collection</li>
+            <li>Basic audience management</li>
+            <li>Buy Me a Coffee fan contributions (planned)</li>
+            <li>Paystack subaccount integration (planned)</li>
+            <li class="unavailable">Paid exclusive content memberships</li>
+          </ul>
+          <a class="pricing-button" href="/contact.html?service=creator-starter">Choose Starter →</a>
+        </article>
+        <article class="pricing-card featured">
+          <span class="pricing-badge">Premium Creator</span>
+          <h4>Premium</h4>
+          <p class="pricing-description">For creators who want exclusive content, audience insights and greater control over their website.</p>
+          <div class="pricing-amount">
+            <strong>R149</strong><span>/month</span>
+          </div>
+          <p class="pricing-billing">Monthly subscription</p>
+          <ul class="pricing-features">
+            <li>Everything in Starter</li>
+            <li>Creator website, blogs, reels and galleries</li>
+            <li>Buy Me a Coffee contributions (planned)</li>
+            <li>Paystack subaccount integration (planned)</li>
+            <li>Exclusive video and vlog publishing</li>
+            <li>Paid fan membership features</li>
+            <li>Advanced audience analytics</li>
+            <li>Custom creator branding</li>
+            <li>Priority customer support</li>
+          </ul>
+          <a class="pricing-button" href="/contact.html?service=creator-premium">Choose Premium →</a>
+        </article>
+      </div>
+      <div class="pricing-note">
+        <strong>Creator platform terms:</strong> Starter costs R79/month and Premium costs R149/month. Feature allocations remain proposed pending final confirmation. Starter's Buy Me a Coffee feature is intended for voluntary fan contributions through Paystack subaccounts; activation depends on payment-provider approval, creator onboarding and technical availability. Paid fan memberships are intended for Premium and are separate from the creator's subscription fee.
+      </div>
 
-    <!-- COPYRIGHT -->
-
-    <div class="footer-bottom">
-
-        <p id="copyright">
-            © KALXA (PTY) LTD. All rights reserved.
-        </p>
-
-        <p>
-            Registration No:
-            <strong>
-                2026/767893/07
-            </strong>
-        </p>
-
-    </div>
-
-</footer>
-
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script
-    src="/js/main.js?v=3"
-    defer
-></script>
-
-
-</body>
-
-</html>
+      <div class="comparison-section">
+        <h3>Compare Creator Features</h3>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Starter</th>
+                <th scope="col">Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Monthly price</td><td>R79</td><td>R149</td></tr>
+              <tr><td>Creator website and profile</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Blogs and stories</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Reels and galleries</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Anonymous comments and replies</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Email subscribers</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Audience management</td><td>Basic</td><td>Advanced</td></tr>
+              <tr><td>Buy Me a Coffee</td><td>Planned</td><td>Planned</td></tr>
+              <tr><td>Paystack subaccounts</td><td>Planned</td><td>Planned</td></tr>
+              <tr><td>Exclusive videos</td><td>—</td><td>✓</td></tr>
+              <tr><td>Paid fan memberships</td><td>—</td><td>✓</td></tr>
+              <tr><td>Custom branding</td><td>—</td><td>✓</td></tr>
+              <tr><td>Analytics</td><td>Basic</td><td>Advanced</td></tr>
+            </tbody>
+          </table>
