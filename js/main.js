@@ -1,204 +1,36 @@
-// ============================================================
-// KALXA MAIN WEBSITE
-// main.js
-// ============================================================
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    // ========================================================
-    // MOBILE NAVIGATION
-    // ========================================================
-
-    const menuButton =
-        document.getElementById("menu-button");
-
-    const navMenu =
-        document.getElementById("nav-menu");
-
-
-    if (menuButton && navMenu) {
-
-        menuButton.addEventListener(
-            "click",
-            function () {
-
-                navMenu.classList.toggle("open");
-
-                const menuIsOpen =
-                    navMenu.classList.contains("open");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    menuIsOpen
-                        ? "true"
-                        : "false"
-                );
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    menuIsOpen
-                        ? "Close menu"
-                        : "Open menu"
-                );
-
-                menuButton.textContent =
-                    menuIsOpen
-                        ? "✕"
-                        : "☰";
-
-            }
-        );
-
-
-        // ====================================================
-        // CLOSE MOBILE MENU AFTER LINK CLICK
-        // ====================================================
-
-        const navigationLinks =
-            navMenu.querySelectorAll("a");
-
-
-        navigationLinks.forEach(
-            function (link) {
-
-                link.addEventListener(
-                    "click",
-                    function () {
-
-                        navMenu.classList.remove("open");
-
-                        menuButton.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-                        menuButton.setAttribute(
-                            "aria-label",
-                            "Open menu"
-                        );
-
-                        menuButton.textContent = "☰";
-
-                    }
-                );
-
-            }
-        );
-
-    }
-
-
-    // ========================================================
-    // SMOOTH INTERNAL NAVIGATION
-    // ========================================================
-
-    const internalLinks =
-        document.querySelectorAll(
-            'a[href^="#"]'
-        );
-
-
-    internalLinks.forEach(
-        function (link) {
-
-            link.addEventListener(
-                "click",
-                function (event) {
-
-                    const targetId =
-                        link.getAttribute("href");
-
-                    if (
-                        !targetId ||
-                        targetId === "#"
-                    ) {
-                        return;
-                    }
-
-
-                    const target =
-                        document.querySelector(
-                            targetId
-                        );
-
-
-                    if (!target) {
-                        return;
-                    }
-
-
-                    event.preventDefault();
-
-
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
-                }
-            );
-
-        }
-    );
-
-
-    // ========================================================
-    // DYNAMIC COPYRIGHT YEAR
-    // ========================================================
-
-    const copyright =
-        document.getElementById(
-            "copyright"
-        );
-
-
-    if (copyright) {
-
-        const currentYear =
-            new Date().getFullYear();
-
-
-        copyright.textContent =
-            "© " +
-            currentYear +
-            " KALXA. All rights reserved.";
-
-    }
-
-
-    // ========================================================
-    // CLOSE MOBILE MENU WHEN SCREEN BECOMES DESKTOP
-    // ========================================================
-
-    window.addEventListener(
-        "resize",
-        function () {
-
-            if (
-                window.innerWidth > 768 &&
-                navMenu &&
-                menuButton
-            ) {
-
-                navMenu.classList.remove(
-                    "open"
-                );
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    "Open menu"
-                );
-
-                menuButton.textContent = "☰";
-
-            }
-
-        }
-    );
-
+document.addEventListener('DOMContentLoaded', () => {
+  const button = document.getElementById('menu-button');
+  const nav = document.getElementById('nav-menu');
+
+  function close() {
+    if (!button || !nav) return;
+    nav.classList.remove('open');
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-label', 'Open menu');
+    button.textContent = '☰';
+  }
+
+  if (button && nav) {
+    button.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      button.textContent = open ? '✕' : '☰';
+    });
+
+    nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+  }
+
+  const copyright = document.getElementById('copyright');
+  if (copyright) {
+    copyright.textContent = `© ${new Date().getFullYear()} KALXA. All rights reserved.`;
+  }
 });
