@@ -7,6 +7,9 @@
     <meta name="description" content="KALXA develops digital platforms and custom websites, apps, software and business automation for South African businesses.">
     <meta name="robots" content="index, follow">
     <title>Digital Technology &amp; Platform Services | KALXA (PTY) LTD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css?v=4">
     <style>
       :root {
@@ -14,6 +17,9 @@
         --muted: #52616d;
         --line: #dce7ee;
         --blue: #006aa6;
+        --font-heading: "Plus Jakarta Sans", sans-serif;
+        --font-body: "DM Sans", sans-serif;
+        --font-luxury: "Cormorant Garamond", Georgia, serif;
       }
       * {
         box-sizing: border-box;
@@ -24,7 +30,33 @@
       body {
         margin: 0;
         color: var(--ink);
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: var(--font-body);
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-heading);
+        letter-spacing: -0.035em;
+      }
+      .brand-text strong {
+        font-family: var(--font-heading);
+        font-weight: 800;
+        letter-spacing: -1.5px;
+      }
+      .brand-text span {
+        font-family: var(--font-body);
+        font-size: 10px;
+        letter-spacing: 1.4px;
+        font-weight: 700;
+      }
+      .navbar nav a {
+        font-family: var(--font-body);
+        font-weight: 600;
+        letter-spacing: -0.01em;
       }
       .site-hero {
         background: linear-gradient(125deg, #fff, #f2faff 55%, #e4f4ff);
@@ -36,14 +68,24 @@
         text-align: center;
       }
       .site-hero h1 {
-        font-size: clamp(36px, 5vw, 58px);
-        line-height: 1.13;
-        letter-spacing: -1.5px;
-        margin: 15px 0 22px;
+        font-size: clamp(42px, 6vw, 76px);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.065em;
+        max-width: 950px;
+        margin: 18px auto 26px;
+      }
+      .luxury-text {
+        font-family: var(--font-luxury);
+        font-style: italic;
+        font-weight: 600;
+        color: var(--blue);
+        letter-spacing: -0.035em;
       }
       .site-hero .lead {
-        font-size: clamp(16px, 2vw, 19px);
-        line-height: 1.8;
+        font-family: var(--font-body);
+        font-size: clamp(16px, 2vw, 20px);
+        line-height: 1.85;
         color: var(--muted);
         max-width: 750px;
         margin: 0 auto 26px;
@@ -64,12 +106,16 @@
         margin: 0 auto 36px;
       }
       .section-title h2 {
-        font-size: clamp(27px, 3.5vw, 40px);
+        font-size: clamp(30px, 4vw, 46px);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.045em;
         margin: 12px 0;
       }
       .section-title p {
         color: var(--muted);
-        line-height: 1.8;
+        line-height: 1.85;
+        font-family: var(--font-body);
       }
       .cards {
         display: grid;
@@ -86,17 +132,24 @@
         min-width: 0;
       }
       .card h3 {
-        font-size: 21px;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.35;
+        letter-spacing: -0.035em;
         margin: 0 0 13px;
       }
       .card p {
         color: var(--muted);
-        line-height: 1.75;
+        font-family: var(--font-body);
+        font-size: 15px;
+        line-height: 1.85;
         margin: 0 0 22px;
         flex: 1;
       }
       .card a {
-        font-weight: 750;
+        font-family: var(--font-body);
+        font-weight: 700;
+        letter-spacing: -0.015em;
         color: var(--blue);
         text-decoration: none;
       }
@@ -120,13 +173,16 @@
       }
       .contact-band p {
         color: var(--muted);
-        line-height: 1.8;
+        font-family: var(--font-body);
+        font-size: 15px;
+        line-height: 1.85;
       }
       .company-footer {
         background: linear-gradient(120deg, #edf8ff, #d6efff 45%, #f5fbff);
         padding: 60px 7% 30px;
         border-top: 1px solid #c4e3f5;
         color: #263746;
+        font-family: var(--font-body);
       }
       .footer-main {
         display: grid;
@@ -136,6 +192,8 @@
       }
       .footer-company h3 {
         font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
         margin: 0 0 16px;
       }
       .footer-company p,
@@ -244,9 +302,11 @@
       }
       .eyebrow,
       .section-label {
-        font-weight: 800;
-        letter-spacing: 1.3px;
-        font-size: 12px;
+        font-family: var(--font-body);
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        font-size: 11px;
+        text-transform: uppercase;
         color: #006aa6;
       }
       .button.primary-button,
@@ -254,7 +314,9 @@
         display: inline-block;
         padding: 13px 22px;
         border-radius: 9px;
+        font-family: var(--font-body);
         font-weight: 700;
+        letter-spacing: -0.015em;
       }
       .button.primary-button {
         background: #006aa6;
@@ -295,322 +357,21 @@
           gap: 15px;
         }
       }
+      @media (max-width: 650px) {
+        .site-hero h1 {
+          font-size: clamp(38px, 10vw, 52px);
+          line-height: 1.12;
+        }
+        .section-title h2 {
+          font-size: 30px;
+        }
+      }
       @media (max-width: 400px) {
         .footer-navigation-grid {
           grid-template-columns: 1fr;
         }
       }
-
-        /* =====================================================
-   KALXA PREMIUM TYPOGRAPHY SYSTEM
-===================================================== */
-
-:root {
-
-    --font-heading:
-        "Plus Jakarta Sans",
-        sans-serif;
-
-    --font-body:
-        "DM Sans",
-        sans-serif;
-
-    --font-luxury:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    --premium-ink: #101820;
-
-    --premium-muted: #566575;
-
-    --premium-blue: #006aa6;
-
-}
-
-
-/* GLOBAL */
-
-body {
-
-    font-family: var(--font-body);
-
-    font-weight: 400;
-
-    color: var(--premium-ink);
-
-    -webkit-font-smoothing: antialiased;
-
-    text-rendering: optimizeLegibility;
-
-}
-
-
-/* BRAND */
-
-.brand-text strong {
-
-    font-family: var(--font-heading);
-
-    font-weight: 800;
-
-    letter-spacing: -1.5px;
-
-}
-
-.brand-text span {
-
-    font-family: var(--font-body);
-
-    font-size: 10px;
-
-    letter-spacing: 1.4px;
-
-    font-weight: 700;
-
-}
-
-
-/* MAIN HEADINGS */
-
-h1,
-h2,
-h3,
-h4 {
-
-    font-family: var(--font-heading);
-
-    letter-spacing: -0.035em;
-
-}
-
-
-/* HERO */
-
-.site-hero h1 {
-
-    font-family: var(--font-heading);
-
-    font-weight: 800;
-
-    font-size: clamp(
-        42px,
-        6vw,
-        76px
-    );
-
-    line-height: 1.08;
-
-    letter-spacing: -0.065em;
-
-    max-width: 950px;
-
-    margin: 18px auto 26px;
-
-}
-
-
-/* LUXURY ACCENT */
-
-.luxury-text {
-
-    font-family: var(--font-luxury);
-
-    font-style: italic;
-
-    font-weight: 600;
-
-    color: var(--premium-blue);
-
-    letter-spacing: -0.035em;
-
-}
-
-
-/* HERO DESCRIPTION */
-
-.site-hero .lead {
-
-    font-family: var(--font-body);
-
-    font-size: clamp(
-        16px,
-        2vw,
-        20px
-    );
-
-    font-weight: 400;
-
-    line-height: 1.85;
-
-    color: var(--premium-muted);
-
-}
-
-
-/* SECTION LABELS */
-
-.eyebrow,
-.section-label {
-
-    font-family: var(--font-body);
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: 2.5px;
-
-    text-transform: uppercase;
-
-}
-
-
-/* SECTION TITLES */
-
-.section-title h2 {
-
-    font-family: var(--font-heading);
-
-    font-size: clamp(
-        30px,
-        4vw,
-        46px
-    );
-
-    font-weight: 800;
-
-    line-height: 1.2;
-
-    letter-spacing: -0.045em;
-
-}
-
-
-/* PRODUCT CARD TITLES */
-
-.card h3 {
-
-    font-family: var(--font-heading);
-
-    font-size: 22px;
-
-    font-weight: 700;
-
-    line-height: 1.35;
-
-    letter-spacing: -0.035em;
-
-}
-
-
-/* PARAGRAPHS */
-
-.card p,
-.section-title p,
-.contact-band p {
-
-    font-family: var(--font-body);
-
-    font-size: 15px;
-
-    font-weight: 400;
-
-    line-height: 1.85;
-
-}
-
-
-/* NAVIGATION */
-
-.navbar nav a {
-
-    font-family: var(--font-body);
-
-    font-weight: 600;
-
-    letter-spacing: -0.01em;
-
-}
-
-
-/* BUTTONS */
-
-.button,
-.card a {
-
-    font-family: var(--font-body);
-
-    font-weight: 700;
-
-    letter-spacing: -0.015em;
-
-}
-
-
-/* FOOTER */
-
-.company-footer {
-
-    font-family: var(--font-body);
-
-}
-
-.footer-company h3 {
-
-    font-family: var(--font-heading);
-
-    font-weight: 800;
-
-    letter-spacing: -0.04em;
-
-}
-
-
-/* MOBILE */
-
-@media (max-width: 650px) {
-
-    .site-hero h1 {
-
-        font-size: clamp(
-            38px,
-            10vw,
-            52px
-        );
-
-        line-height: 1.12;
-
-    }
-
-    .section-title h2 {
-
-        font-size: 30px;
-
-    }
-
-}  
     </style>
-
-    <!-- ==========================================
-     GOOGLE FONTS — KALXA PREMIUM TYPOGRAPHY
-========================================== -->
-
-<link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
->
-
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
->
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -636,7 +397,7 @@ h4 {
       <section class="site-hero">
         <div class="inner">
           <p class="eyebrow">OUR KALXA</p>
-          <h1>Digital Tech for Real-World Needs.</h1>
+          <h1>Digital Tech for<br><span class="luxury-text">Real-World Needs.</span></h1>
           <p class="lead">We build digital platforms that connect businesses, creators and communities through practical technology.</p>
           <div class="actions">
             <a class="button primary-button" href="#products">Explore Our Products →</a>
@@ -652,11 +413,9 @@ h4 {
             <h2>Our Services.</h2>
             <p>Find the right platform for your business or creative goals.</p>
           </div>
-
-          
           <div class="cards">
             <article class="card">
-              <h3> Ticketing, Restaurants &amp; Business Profiles</h3>
+              <h3>Ticketing, Restaurants &amp; Business Profiles</h3>
               <p>Event ticketing, event management and restaurant discovery tools.</p>
               <a href="/ticketing.html">Explore Ticketing →</a>
             </article>
@@ -671,7 +430,7 @@ h4 {
               <a href="/discovery.html">Explore Discovery →</a>
             </article>
             <article class="card">
-              <h3> Business Finance</h3>
+              <h3>Business Finance</h3>
               <p>Business automation and financial workflow tools. <strong>In development.</strong></p>
               <a href="/business-finance.html">Learn More →</a>
             </article>
@@ -683,12 +442,12 @@ h4 {
         <div class="section-inner">
           <div class="section-title">
             <p class="section-label">CUSTOM DEVELOPMENT SERVICES</p>
-            <h2> We Build Websites,Web|Mobile Apps & Business Systems  </h2>
+            <h2>We Build Websites, Web &amp; Mobile Apps &amp; Business Systems</h2>
           </div>
           <div class="service-highlight">
             <div>
               <h3>💻 Websites, Apps &amp; Software Built for You</h3>
-              <p> Whether you need a powerful website, a custom application, or a full business management system, KALXA builds technology that moves your business forward — on your terms.</p>
+              <p>Whether you need a powerful website, a custom application, or a full business management system, KALXA builds technology that moves your business forward — on your terms.</p>
             </div>
             <a class="button primary-button" href="/custom-development.html">Build With KALXA →</a>
           </div>
@@ -759,4 +518,4 @@ h4 {
 
     <script src="/js/main.js?v=3" defer></script>
   </body>
-</html> 
+</html>
