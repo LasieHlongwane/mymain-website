@@ -1,151 +1,3373 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="General terms for the KALXA company website and services supplied directly by KALXA.">
-  <title>Terms &amp; Conditions | KALXA (PTY) LTD</title>
-  <link rel="stylesheet" href="/css/style.css?v=3">
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <meta
+        name="theme-color"
+        content="#e5f5ff"
+    >
+
+    <meta
+        name="description"
+        content="Read KALXA (PTY) LTD Terms and Conditions covering event ticketing, creator monetisation, restaurant subscriptions, Discovery advertising and digital services."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <title>
+        Terms &amp; Conditions | KALXA (PTY) LTD
+    </title>
+
+    <!-- =====================================================
+         FONTS
+    ===================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         EXISTING STYLESHEET
+    ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css?v=4"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           DESIGN SYSTEM
+        ===================================================== */
+
+        :root {
+
+            --ink: #14191f;
+
+            --muted: #526272;
+
+            --blue: #006aa6;
+
+            --blue-dark: #004c78;
+
+            --blue-light: #e5f5ff;
+
+            --line: #dbe7ef;
+
+            --soft: #f8fafc;
+
+            --white: #ffffff;
+
+            --font-heading:
+                "Plus Jakarta Sans", Arial, sans-serif;
+
+            --font-body:
+                "DM Sans", Arial, sans-serif;
+
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            margin: 0;
+
+            font-family: var(--font-body);
+
+            color: var(--ink);
+
+            background: var(--white);
+
+            line-height: 1.8;
+
+            -webkit-font-smoothing: antialiased;
+
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+
+            font-family: var(--font-heading);
+
+            letter-spacing: -0.035em;
+
+        }
+
+        a {
+            color: var(--blue);
+        }
+
+        a:hover {
+            color: var(--blue-dark);
+        }
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .brand-text strong {
+
+            font-family: var(--font-heading);
+
+            font-weight: 800;
+
+        }
+
+        .brand-text span {
+
+            font-family: var(--font-body);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+        }
+
+        .navbar nav a {
+
+            font-family: var(--font-body);
+
+            font-weight: 600;
+
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .terms-hero {
+
+            background:
+                linear-gradient(
+                    125deg,
+                    #ffffff,
+                    #f2faff 55%,
+                    #e4f4ff
+                );
+
+            padding: 90px 7% 80px;
+
+            text-align: center;
+
+            border-bottom: 1px solid #dcecf6;
+
+        }
+
+        .terms-hero-inner {
+
+            max-width: 850px;
+
+            margin: 0 auto;
+
+        }
+
+        .eyebrow,
+        .section-label {
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: var(--blue);
+
+        }
+
+        .terms-hero h1 {
+
+            font-size: clamp(36px, 5vw, 60px);
+
+            font-weight: 800;
+
+            line-height: 1.15;
+
+            letter-spacing: -0.055em;
+
+            margin: 18px 0 24px;
+
+        }
+
+        .terms-hero .lead {
+
+            max-width: 720px;
+
+            margin: 0 auto;
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+        }
+
+        .terms-updated {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 9px 16px;
+
+            background: #fff;
+
+            border: 1px solid #cce5f5;
+
+            border-radius: 30px;
+
+            color: #476173;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+        }
+
+        /* =====================================================
+           QUICK NAVIGATION
+        ===================================================== */
+
+        .terms-navigation {
+
+            padding: 35px 7%;
+
+            background: #fff;
+
+            border-bottom: 1px solid var(--line);
+
+        }
+
+        .terms-navigation-inner {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+        }
+
+        .terms-navigation h2 {
+
+            font-size: 18px;
+
+            margin: 0 0 20px;
+
+        }
+
+        .terms-links {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+        }
+
+        .terms-links a {
+
+            display: inline-block;
+
+            padding: 9px 15px;
+
+            border: 1px solid #dbe7ef;
+
+            border-radius: 30px;
+
+            background: #f8fafc;
+
+            color: #315268;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            transition:
+                background .25s ease,
+                border-color .25s ease;
+
+        }
+
+        .terms-links a:hover {
+
+            background: #e5f5ff;
+
+            border-color: #9bc8e2;
+
+        }
+
+        /* =====================================================
+           CONTENT SECTIONS
+        ===================================================== */
+
+        .terms-section {
+
+            padding: 65px 7%;
+
+            scroll-margin-top: 25px;
+
+        }
+
+        .terms-section.soft {
+
+            background: var(--soft);
+
+        }
+
+        .terms-container {
+
+            max-width: 1050px;
+
+            margin: 0 auto;
+
+        }
+
+        .terms-section h2 {
+
+            font-size: clamp(25px, 3vw, 34px);
+
+            font-weight: 800;
+
+            line-height: 1.3;
+
+            margin: 12px 0 25px;
+
+        }
+
+        .terms-section h3 {
+
+            font-size: 19px;
+
+            font-weight: 700;
+
+            margin: 30px 0 12px;
+
+        }
+
+        .terms-section p {
+
+            font-size: 15px;
+
+            line-height: 1.95;
+
+            color: var(--muted);
+
+            margin: 0 0 20px;
+
+        }
+
+        .terms-section ul {
+
+            margin: 15px 0 25px;
+
+            padding-left: 23px;
+
+        }
+
+        .terms-section li {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.9;
+
+            margin-bottom: 10px;
+
+        }
+
+        .terms-section strong {
+            color: #263746;
+        }
+
+        /* =====================================================
+           INFORMATION BOX
+        ===================================================== */
+
+        .terms-notice {
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #f4fbff,
+                    #eaf7ff
+                );
+
+            border: 1px solid #cde5f3;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            margin: 25px 0;
+
+        }
+
+        .terms-notice h3 {
+
+            margin: 0 0 10px;
+
+            font-size: 18px;
+
+        }
+
+        .terms-notice p {
+
+            margin: 0;
+
+            font-size: 14px;
+
+        }
+
+        /* =====================================================
+           TABLES
+        ===================================================== */
+
+        .terms-table-wrapper {
+
+            width: 100%;
+
+            overflow-x: auto;
+
+            margin: 25px 0;
+
+            border: 1px solid var(--line);
+
+            border-radius: 14px;
+
+            background: #fff;
+
+        }
+
+        .terms-table {
+
+            width: 100%;
+
+            min-width: 520px;
+
+            border-collapse: collapse;
+
+        }
+
+        .terms-table th {
+
+            background: #eaf6ff;
+
+            padding: 16px;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            color: #263746;
+
+            text-align: left;
+
+            border-bottom: 1px solid var(--line);
+
+        }
+
+        .terms-table td {
+
+            padding: 16px;
+
+            border-bottom: 1px solid #e8edf1;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            color: #405768;
+
+        }
+
+        .terms-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .terms-table tbody tr:nth-child(even) {
+            background: #f9fbfc;
+        }
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .terms-contact {
+
+            padding: 70px 7%;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #f4fbff,
+                    #e4f4ff,
+                    #f7fcff
+                );
+
+            text-align: center;
+
+        }
+
+        .terms-contact h2 {
+
+            font-size: clamp(27px, 4vw, 39px);
+
+            margin: 12px 0 18px;
+
+        }
+
+        .terms-contact p {
+
+            max-width: 650px;
+
+            margin: 0 auto 25px;
+
+            font-size: 15px;
+
+            color: var(--muted);
+
+        }
+
+        .terms-contact-actions {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 13px;
+
+        }
+
+        .terms-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 13px 23px;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            text-decoration: none;
+
+            background: var(--blue);
+
+            color: #fff;
+
+        }
+
+        .terms-button:hover {
+
+            background: var(--blue-dark);
+
+            color: #fff;
+
+        }
+
+        .terms-button.secondary {
+
+            background: #fff;
+
+            color: var(--blue-dark);
+
+            border: 1px solid #9bc8e2;
+
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .terms-footer {
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #edf8ff,
+                    #d6efff 45%,
+                    #f5fbff
+                );
+
+            padding: 60px 7% 30px;
+
+            color: #263746;
+
+            border-top: 1px solid #c4e3f5;
+
+        }
+
+        .terms-footer-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+        .terms-footer h3 {
+
+            font-size: 22px;
+
+            font-weight: 800;
+
+            margin: 0 0 18px;
+
+        }
+
+        .terms-footer p,
+        .terms-footer address {
+
+            font-size: 14px;
+
+            line-height: 1.85;
+
+            color: #344b5b;
+
+            font-style: normal;
+
+        }
+
+        .terms-footer-links {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 12px 20px;
+
+        }
+
+        .terms-footer-links a {
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            color: #263746;
+
+            text-decoration: none;
+
+        }
+
+        .terms-footer-links a:hover {
+
+            color: var(--blue);
+
+            text-decoration: underline;
+
+        }
+
+        .terms-footer-bottom {
+
+            max-width: 1200px;
+
+            margin: 35px auto 0;
+
+            padding-top: 22px;
+
+            border-top: 1px solid #c4e3f5;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            font-size: 12px;
+
+            color: #526d80;
+
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 760px) {
+
+            .terms-hero {
+                padding: 70px 5%;
+            }
+
+            .terms-section {
+                padding: 50px 5%;
+            }
+
+            .terms-navigation {
+                padding: 30px 5%;
+            }
+
+            .terms-footer {
+                padding: 50px 5% 25px;
+            }
+
+            .terms-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+        }
+
+        @media (max-width: 450px) {
+
+            .terms-footer-links {
+                grid-template-columns: 1fr;
+            }
+
+            .terms-notice {
+                padding: 20px;
+            }
+
+            .terms-table th,
+            .terms-table td {
+                padding: 12px;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            .terms-links a {
+                transition: none;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="navbar">
-    <a class="brand" href="/index.html">
-      <span class="brand-text">
-        <strong>KALXA</strong>
-        <span>DIGITAL TECHNOLOGY &amp; PLATFORM SERVICES</span>
-      </span>
+    <a
+        class="skip-link"
+        href="#main"
+    >
+        Skip to content
     </a>
-    <button class="menu-button" id="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
-    <nav id="nav-menu" aria-label="Main navigation">
-      <a href="/index.html">Home</a>
-      <a href="/services.html">Services</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/faq.html">FAQs</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <main id="main">
-    <!-- Page hero -->
-    <section class="page-hero">
-      <div class="hero-content">
-        <p class="eyebrow">KALXA (PTY) LTD · SOUTH AFRICA</p>
-        <h1>Terms &amp; Conditions</h1>
-        <p class="lead">General terms for the KALXA company website and services supplied directly by KALXA.</p>
-      </div>
-    </section>
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
 
-    <!-- Business identity -->
-    <section class="content-section">
-      <div class="section-head">
-        <p class="section-label">BUSINESS IDENTITY</p>
-      </div>
-      <p class="body-copy">
-        This website is operated by <strong>KALXA</strong>, a private company registered in South Africa under registration number <strong>2026/767893/07</strong>. Its registered address is:<br>
-        70047 Zakheni<br>
-        KwaMhlanga, 1022<br>
-        Mpumalanga<br>
-        South Africa
-      </p>
-    </section>
+    <header class="navbar">
 
-    <!-- Scope & acceptance -->
-    <section class="content-section soft">
-      <div class="section-head">
-        <p class="section-label">SCOPE &amp; ACCEPTANCE</p>
-      </div>
-      <p class="body-copy">These terms govern use of this company website and purchases of services contracted directly with KALXA (PTY) LTD. Individual KALXA products and independent event organisers or creators may have additional terms disclosed before a transaction. By ordering a service, customers accept the confirmed order terms and these general terms.</p>
-    </section>
+        <a
+            class="brand"
+            href="/index.html"
+            aria-label="KALXA Home"
+        >
 
-    <!-- Orders & payment -->
-    <section class="content-section">
-      <div class="section-head">
-        <p class="section-label">ORDERS &amp; PAYMENT</p>
-        <h2>Service descriptions and charges</h2>
-      </div>
-      <p class="body-copy">We confirm the scope, price, payment frequency (if recurring), delivery arrangements and applicable conditions before accepting an order. A displayed product description does not itself guarantee availability. Customers must provide accurate order information.</p>
-      <p class="body-copy">Payments to KALXA for its own services are separate from transactions involving independent event organisers or creators. The seller and payment arrangements for third-party offerings should be identified at the relevant checkout.</p>
-    </section>
+            <span class="brand-text">
 
-    <!-- Acceptable use -->
-    <section class="content-section soft">
-      <div class="section-head">
-        <p class="section-label">ACCEPTABLE USE</p>
-        <h2>Customer responsibilities</h2>
-      </div>
-      <p class="body-copy">Users must not submit unlawful, fraudulent, misleading, abusive or infringing content, or misuse our platforms. We may restrict prohibited activity subject to applicable law and relevant service agreements.</p>
-    </section>
+                <strong>KALXA</strong>
 
-    <!-- Service delivery -->
-    <section class="content-section">
-      <div class="section-head">
-        <p class="section-label">SERVICE DELIVERY</p>
-        <h2>Access and performance</h2>
-      </div>
-      <p class="body-copy">Digital services are delivered as agreed in the accepted order and our <a href="/delivery.html">digital delivery policy</a>. Contact our team if a confirmed service has not been provided as agreed.</p>
-    </section>
+                <span>
+                    DIGITAL TECHNOLOGY &amp; PLATFORM SERVICES
+                </span>
 
-    <!-- Refunds & cancellation -->
-    <section class="content-section soft">
-      <div class="section-head">
-        <p class="section-label">REFUNDS &amp; CANCELLATION</p>
-        <h2>Customer rights</h2>
-      </div>
-      <p class="body-copy">Refund requests are assessed under our <a href="/refund.html">refund policy</a> and applicable South African law. Recurring service cancellations are covered by our <a href="/cancellation.html">cancellation policy</a>. Nothing in these terms excludes rights that cannot lawfully be excluded.</p>
-    </section>
+            </span>
 
-    <!-- Third parties -->
-    <section class="content-section">
-      <div class="section-head">
-        <p class="section-label">THIRD PARTIES</p>
-        <h2>Independent providers</h2>
-      </div>
-      <p class="body-copy">External websites, payment providers, event organisers and creators may apply separate terms. KALXA is responsible for obligations it has expressly agreed to perform. The identity and obligations of any independent seller should be disclosed before payment.</p>
-    </section>
+        </a>
 
-    <!-- Applicable law & contact -->
-    <section class="content-section">
-      <div class="section-head">
-        <p class="section-label">APPLICABLE LAW &amp; CONTACT</p>
-        <h2>Questions about these terms</h2>
-      </div>
-      <p class="body-copy">These terms are governed by the laws of South Africa, subject to applicable mandatory consumer protections. Email <a href="mailto:lasi@kalxa.co.za">lasi@kalxa.co.za</a> or call <a href="tel:+27766114909">+27 76 611 4909</a>.</p>
-      <p class="body-copy">
-        <strong>Registered company:</strong> KALXA (PTY) LTD · <strong>Registration:</strong> 2026/767893/07 · <strong>Address:</strong><br>
-        
-        KwaMhlanga, 1022<br>
-        Mpumalanga<br>
-        South Africa
-      </p>
-    </section>
-  </main>
+        <button
+            class="menu-button"
+            id="menu-button"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+        >
+            ☰
+        </button>
 
-  <footer>
-    <div class="footer-brand">
-      <strong>KALXA</strong>
-      <span>Digital technology &amp; platform services</span>
-    </div>
-    <p><strong>KALXA (PTY) LTD</strong><br>Registration number: 2026/767893/07</p>
-    <p>Registered address:<br>70047 Zakheni<br>KwaMhlanga, 1022<br>Mpumalanga<br>South Africa</p>
-    <div class="footer-links">
-      <a href="/index.html">Home</a>
-      <a href="/services.html">Services</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/faq.html">FAQs</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/terms.html">Terms &amp; Conditions</a>
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/refund.html">Refund Policy</a>
-      <a href="/cancellation.html">Cancellation Policy</a>
-      <a href="/delivery.html">Digital Delivery</a>
-    </div>
-    <p>Business enquiries &amp; support: <a href="mailto:lasi@kalxa.co.za">lasi@kalxa.co.za</a> · <a href="https://wa.me/27766114909" target="_blank" rel="noopener noreferrer">+27 76 611 4909</a></p>
-    <p id="copyright">© KALXA (PTY) LTD</p>
-  </footer>
+        <nav
+            id="nav-menu"
+            aria-label="Main navigation"
+        >
 
-  <script src="/js/main.js?v=3" defer></script>
+            <a href="/index.html">
+                Home
+            </a>
+
+            <a href="/services.html">
+                Services
+            </a>
+
+            <a href="/pricing.html">
+                Pricing
+            </a>
+
+            <a href="/faq.html">
+                FAQs
+            </a>
+
+            <a href="/contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+    <main id="main">
+
+        <!-- =====================================================
+             HERO
+        ===================================================== -->
+
+        <section class="terms-hero">
+
+            <div class="terms-hero-inner">
+
+                <p class="eyebrow">
+                    KALXA (PTY) LTD · SOUTH AFRICA
+                </p>
+
+                <h1>
+                    Terms &amp; Conditions
+                </h1>
+
+                <p class="lead">
+                    These Terms and Conditions explain
+                    the rules, responsibilities,
+                    pricing arrangements and
+                    service conditions applicable
+                    to KALXA's digital platforms
+                    and services.
+                </p>
+
+                <span class="terms-updated">
+                    Last Updated: 12 October 2026
+                </span>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             QUICK NAVIGATION
+        ===================================================== -->
+
+        <section
+            class="terms-navigation"
+            aria-label="Terms sections"
+        >
+
+            <div class="terms-navigation-inner">
+
+                <h2>
+                    Jump to a Section
+                </h2>
+
+                <nav
+                    class="terms-links"
+                    aria-label="Terms and conditions navigation"
+                >
+
+                    <a href="#company-information">
+                        Company Information
+                    </a>
+
+                    <a href="#acceptance">
+                        Acceptance
+                    </a>
+
+                    <a href="#ticketing-terms">
+                        Event Ticketing
+                    </a>
+
+                    <a href="#event-promotions">
+                        Event Promotions
+                    </a>
+
+                    <a href="#restaurant-terms">
+                        Restaurants
+                    </a>
+
+                    <a href="#creator-terms">
+                        Creator CRM
+                    </a>
+
+                    <a href="#discovery-terms">
+                        Discovery Advertising
+                    </a>
+
+                    <a href="#payments">
+                        Payments
+                    </a>
+
+                    <a href="#refunds">
+                        Refunds
+                    </a>
+
+                    <a href="#privacy">
+                        Privacy
+                    </a>
+
+                    <a href="#liability">
+                        Liability
+                    </a>
+
+                    <a href="#contact-information">
+                        Contact
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             1. COMPANY INFORMATION
+        ===================================================== -->
+
+        <section
+            class="terms-section"
+            id="company-information"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    01 · BUSINESS IDENTITY
+                </p>
+
+                <h2>
+                    About KALXA
+                </h2>
+
+                <p>
+                    This website is operated by
+                    <strong>KALXA (PTY) LTD</strong>,
+                    a private company registered
+                    in the Republic of South Africa.
+                </p>
+
+                <p>
+                    KALXA develops and operates
+                    digital platforms and provides
+                    technology-related services
+                    for businesses, event organisers,
+                    restaurants, independent creators
+                    and local communities.
+                </p>
+
+                <div class="terms-notice">
+
+                    <h3>
+                        Registered Company Information
+                    </h3>
+
+                    <p>
+                        <strong>Company:</strong>
+                        KALXA (PTY) LTD
+                        <br>
+
+                        <strong>Registration Number:</strong>
+                        2026/767893/07
+                        <br>
+
+                        <strong>Registered Address:</strong>
+                        70047 Zakheni,
+                        KwaMhlanga, 1022,
+                        Mpumalanga,
+                        South Africa
+                        <br>
+
+                        <strong>Email:</strong>
+                        <a href="mailto:lasie@kalxa.co.za">
+                            lasie@kalxa.co.za
+                        </a>
+                        <br>
+
+                        <strong>Telephone:</strong>
+                        <a href="tel:+27766114909">
+                            +27 76 611 4909
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             2. ACCEPTANCE
+        ===================================================== -->
+
+        <section
+            class="terms-section soft"
+            id="acceptance"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    02 · SCOPE &amp; ACCEPTANCE
+                </p>
+
+                <h2>
+                    Acceptance of These Terms
+                </h2>
+
+                <p>
+                    These Terms and Conditions govern
+                    the use of KALXA's company website,
+                    its digital platforms and services
+                    supplied directly by KALXA.
+                </p>
+
+                <p>
+                    By registering for an account,
+                    purchasing a service, submitting
+                    a listing or completing a transaction,
+                    you agree to the applicable terms
+                    presented to you during that process.
+                </p>
+
+                <p>
+                    Individual KALXA products may
+                    have additional product-specific
+                    terms, payment conditions
+                    and onboarding requirements.
+                </p>
+
+                <p>
+                    Where a product-specific agreement
+                    applies, it should be read together
+                    with these general terms.
+                    Any conflict will be resolved
+                    according to the applicable agreement
+                    and mandatory South African law.
+                </p>
+
+                <p>
+                    If you do not agree with the
+                    applicable terms, you should not
+                    proceed with the relevant transaction.
+                </p>
+
+                <h3>
+                    Changes to Terms
+                </h3>
+
+                <p>
+                    KALXA may update these Terms and
+                    Conditions as its products,
+                    services or legal obligations change.
+                </p>
+
+                <p>
+                    Material changes affecting an
+                    existing contractual arrangement
+                    will be communicated where required
+                    by law or the applicable agreement.
+                    Changes will not retrospectively
+                    remove accrued rights or statutory
+                    consumer protections.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             3. EVENT TICKETING
+        ===================================================== -->
+
+        <section
+            class="terms-section"
+            id="ticketing-terms"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    03 · KALXA TICKETING
+                </p>
+
+                <h2>
+                    Event Ticketing Terms
+                </h2>
+
+                <p>
+                    KALXA Ticketing provides
+                    digital tools that enable
+                    event organisers to create,
+                    publish and manage events,
+                    sell tickets and support
+                    QR-based ticket verification.
+                </p>
+
+                <h3>
+                    3.1 Ticketing Commission
+                </h3>
+
+                <p>
+                    KALXA's advertised platform
+                    commission is
+                    <strong>4% per ticket sold</strong>.
+                </p>
+
+                <p>
+                    The commission is calculated
+                    using the applicable ticket
+                    selling price, subject to
+                    the transaction's confirmed
+                    payment and settlement terms.
+                </p>
+
+                <div class="terms-table-wrapper">
+
+                    <table class="terms-table">
+
+                        <thead>
+
+                            <tr>
+                                <th scope="col">
+                                    Example Transaction
+                                </th>
+
+                                <th scope="col">
+                                    Amount
+                                </th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    Ticket Selling Price
+                                </td>
+
+                                <td>
+                                    R200.00
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    KALXA Commission (4%)
+                                </td>
+
+                                <td>
+                                    R8.00
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Balance Before Other Charges
+                                </td>
+
+                                <td>
+                                    <strong>R192.00</strong>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    The example excludes payment
+                    processing fees, taxes, refunds,
+                    chargebacks and any other
+                    applicable transaction adjustments.
+                </p>
+
+                <p>
+                    The responsible party for payment
+                    processing fees and the final
+                    settlement calculation must be
+                    disclosed through the applicable
+                    checkout or organiser agreement.
+                </p>
+
+                <h3>
+                    3.2 Event Organiser Responsibilities
+                </h3>
+
+                <p>
+                    Event organisers are responsible
+                    for the accuracy and legality
+                    of the events they publish.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Providing accurate event dates,
+                        locations and descriptions.
+                    </li>
+
+                    <li>
+                        Displaying correct ticket prices,
+                        categories and availability.
+                    </li>
+
+                    <li>
+                        Obtaining necessary permissions,
+                        licences and venue approvals.
+                    </li>
+
+                    <li>
+                        Managing event operations,
+                        safety and access requirements.
+                    </li>
+
+                    <li>
+                        Communicating event changes
+                        and cancellations.
+                    </li>
+
+                    <li>
+                        Complying with applicable
+                        consumer protection laws.
+                    </li>
+
+                    <li>
+                        Providing accurate business
+                        and payment information.
+                    </li>
+
+                </ul>
+
+                <h3>
+                    3.3 Ticket Buyers
+                </h3>
+
+                <p>
+                    Ticket buyers should review
+                    the event details, organiser identity,
+                    ticket price and applicable
+                    event conditions before payment.
+                </p>
+
+                <p>
+                    Digital tickets may contain
+                    QR codes or other verification
+                    information used to confirm
+                    entry eligibility.
+                </p>
+
+                <p>
+                    Buyers must not intentionally
+                    duplicate, manipulate,
+                    forge or misuse digital tickets.
+                </p>
+
+                <h3>
+                    3.4 Event Cancellation and Refunds
+                </h3>
+
+                <p>
+                    Event cancellation and refund
+                    obligations depend on the
+                    applicable transaction,
+                    the identity of the seller,
+                    the event circumstances
+                    and South African law.
+                </p>
+
+                <p>
+                    Where an independent organiser
+                    is the seller of the event ticket,
+                    the organiser may be responsible
+                    for the event and applicable
+                    refund obligations.
+                </p>
+
+                <p>
+                    KALXA remains responsible
+                    for any obligations it has
+                    expressly undertaken
+                    or that apply to it by law.
+                </p>
+
+                <p>
+                    Additional information is available
+                    in our
+                    <a href="/refund.html">
+                        Refund Policy
+                    </a>.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             4. EVENT PROMOTIONS
+        ===================================================== -->
+
+        <section
+            class="terms-section soft"
+            id="event-promotions"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    04 · PAID EVENT PROMOTION
+                </p>
+
+                <h2>
+                    Featured Listings &amp; Event Boosts
+                </h2>
+
+                <p>
+                    KALXA may offer optional
+                    paid promotional services
+                    for event organisers.
+                </p>
+
+                <p>
+                    These may include
+                    Featured Event Listings,
+                    Event Boosts and other
+                    promotional placements.
+                </p>
+
+                <h3>
+                    4.1 Featured Event Listings
+                </h3>
+
+                <p>
+                    A Featured Event Listing
+                    provides additional visibility
+                    within designated promotional
+                    areas of the KALXA platform.
+                </p>
+
+                <p>
+                    Placement, duration,
+                    availability and pricing
+                    must be confirmed before
+                    the promotional service
+                    is purchased.
+                </p>
+
+                <h3>
+                    4.2 Event Boosts
+                </h3>
+
+                <p>
+                    Event Boosts are optional
+                    promotional campaigns intended
+                    to increase the visibility
+                    of selected events.
+                </p>
+
+                <p>
+                    Campaign pricing, placement
+                    and duration depend on
+                    the offering selected
+                    and the terms presented
+                    before payment.
+                </p>
+
+                <h3>
+                    4.3 Promotional Charges
+                </h3>
+
+                <p>
+                    Featured Listing and Event Boost
+                    charges are separate from
+                    the standard 4% ticketing commission.
+                </p>
+
+                <p>
+                    KALXA will communicate
+                    the applicable promotional
+                    price and conditions before
+                    accepting a paid promotion.
+                </p>
+
+                <h3>
+                    4.4 No Guaranteed Results
+                </h3>
+
+                <p>
+                    Paid promotional placement
+                    does not guarantee a specific
+                    number of ticket sales,
+                    event attendees, impressions,
+                    enquiries or conversions.
+                </p>
+
+                <p>
+                    Promotional services are
+                    subject to available placements,
+                    platform policies and
+                    the confirmed campaign terms.
+                </p>
+
+                <h3>
+                    4.5 Promotion Cancellation
+                </h3>
+
+                <p>
+                    Cancellation or refund requests
+                    for paid promotions will be
+                    assessed against the confirmed
+                    campaign agreement, services
+                    already supplied and applicable
+                    consumer protection laws.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             5. RESTAURANT SUBSCRIPTIONS
+        ===================================================== -->
+
+        <section
+            class="terms-section"
+            id="restaurant-terms"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    05 · RESTAURANT BUSINESS PROFILES
+                </p>
+
+                <h2>
+                    Restaurant Subscription Terms
+                </h2>
+
+                <p>
+                    KALXA provides restaurant
+                    business profile services
+                    that allow participating
+                    restaurants to display
+                    business information,
+                    media and customer experiences.
+                </p>
+
+                <h3>
+                    5.1 Subscription Pricing
+                </h3>
+
+                <div class="terms-table-wrapper">
+
+                    <table class="terms-table">
+
+                        <thead>
+
+                            <tr>
+                                <th scope="col">
+                                    Restaurant Plan
+                                </th>
+
+                                <th scope="col">
+                                    Monthly Fee
+                                </th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    Restaurant Standard
+                                </td>
+
+                                <td>
+                                    <strong>R219/month</strong>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Restaurant Premium
+                                </td>
+
+                                <td>
+                                    <strong>R299/month</strong>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <h3>
+                    5.2 Restaurant Standard
+                </h3>
+
+                <p>
+                    Standard provides access
+                    to eligible restaurant
+                    profile and discovery tools.
+                </p>
+
+                <p>
+                    Features may include
+                    restaurant information,
+                    image galleries,
+                    promotional reels,
+                    operating hours,
+                    customer experiences
+                    and rating QR functionality.
+                </p>
+
+                <h3>
+                    5.3 Restaurant Premium
+                </h3>
+
+                <p>
+                    Premium includes eligible
+                    Standard features together
+                    with additional engagement
+                    insights and visibility tools.
+                </p>
+
+                <p>
+                    Premium may provide eligibility
+                    for Kalxa Stories exposure
+                    and available restaurant analytics.
+                </p>
+
+                <p>
+                    Kalxa Stories exposure does
+                    not guarantee a particular
+                    editorial article,
+                    promotional placement,
+                    number of views,
+                    customers or sales.
+                </p>
+
+                <h3>
+                    5.4 Billing and Renewal
+                </h3>
+
+                <p>
+                    Restaurant subscriptions
+                    are charged monthly according
+                    to the plan selected.
+                </p>
+
+                <p>
+                    The billing date,
+                    renewal arrangement,
+                    applicable taxes and
+                    cancellation conditions
+                    must be disclosed
+                    before activation.
+                </p>
+
+                <p>
+                    Where recurring payments
+                    are authorised, charges
+                    will follow the agreed
+                    billing arrangement.
+                </p>
+
+                <h3>
+                    5.5 Cancellation
+                </h3>
+
+                <p>
+                    Customers may request
+                    cancellation of their
+                    subscription according
+                    to the applicable agreement
+                    and our
+                    <a href="/cancellation.html">
+                        Cancellation Policy
+                    </a>.
+                </p>
+
+                <p>
+                    Any statutory rights to
+                    terminate a fixed-term
+                    consumer agreement remain
+                    applicable where required
+                    by South African law.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             6. CREATOR CRM
+        ===================================================== -->
+
+        <section
+            class="terms-section soft"
+            id="creator-terms"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    06 · KALXA CREATOR
+                </p>
+
+                <h2>
+                    Creator Platform &amp; Monetisation
+                </h2>
+
+                <p>
+                    KALXA Creator is a digital
+                    platform being developed
+                    for independent creators,
+                    writers, bloggers,
+                    artists and other
+                    content publishers.
+                </p>
+
+                <p>
+                    The platform is designed
+                    to support content publishing,
+                    audience engagement
+                    and eligible monetisation
+                    through supporter contributions
+                    and other features.
+                </p>
+
+                <h3>
+                    6.1 Creator Plans
+                </h3>
+
+                <p>
+                    KALXA Creator offers the
+                    following advertised
+                    activation pricing structure.
+                </p>
+
+                <div class="terms-table-wrapper">
+
+                    <table class="terms-table">
+
+                        <thead>
+
+                            <tr>
+                                <th scope="col">
+                                    Creator Plan
+                                </th>
+
+                                <th scope="col">
+                                    Activation Fee
+                                </th>
+
+                                <th scope="col">
+                                    KALXA Commission
+                                </th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    Free
+                                </td>
+
+                                <td>
+                                    R0
+                                </td>
+
+                                <td>
+                                    23%
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Standard
+                                </td>
+
+                                <td>
+                                    R100 once-off
+                                </td>
+
+                                <td>
+                                    3%
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Premium
+                                </td>
+
+                                <td>
+                                    R150 once-off
+                                </td>
+
+                                <td>
+                                    3%
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    Standard and Premium
+                    activation fees are
+                    <strong>once-off payments</strong>,
+                    not monthly subscriptions.
+                </p>
+
+                <p>
+                    Payment of an activation fee
+                    does not automatically include
+                    third-party domain registration,
+                    processing fees or other
+                    separately disclosed services.
+                </p>
+
+                <h3>
+                    6.2 Creator Revenue Sharing
+                </h3>
+
+                <p>
+                    KALXA's proposed revenue-sharing
+                    structure depends on the
+                    creator's active plan.
+                </p>
+
+                <div class="terms-table-wrapper">
+
+                    <table class="terms-table">
+
+                        <thead>
+
+                            <tr>
+                                <th scope="col">
+                                    Plan
+                                </th>
+
+                                <th scope="col">
+                                    KALXA Share
+                                </th>
+
+                                <th scope="col">
+                                    Creator Share
+                                </th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Free</td>
+                                <td>23%</td>
+                                <td>77%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Standard</td>
+                                <td>3%</td>
+                                <td>97%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Premium</td>
+                                <td>3%</td>
+                                <td>97%</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    These percentages represent
+                    the proposed platform revenue
+                    split before payment processing
+                    fees, taxes, refunds,
+                    chargebacks and other
+                    applicable adjustments.
+                </p>
+
+                <p>
+                    Final settlement calculations,
+                    fee allocation and payment
+                    responsibilities must be disclosed
+                    before payment functionality
+                    is activated.
+                </p>
+
+                <h3>
+                    6.3 Buy Me a Coffee
+                </h3>
+
+                <p>
+                    KALXA Creator is developing
+                    Buy Me a Coffee functionality
+                    through which supporters
+                    may make voluntary
+                    contributions to creators.
+                </p>
+
+                <p>
+                    Buy Me a Coffee is intended
+                    to be available across
+                    Free, Standard and Premium plans.
+                </p>
+
+                <p>
+                    The applicable KALXA commission
+                    will depend on the creator's
+                    active plan.
+                </p>
+
+                <p>
+                    Availability depends on
+                    payment provider approval,
+                    successful integration,
+                    applicable onboarding
+                    and verification requirements.
+                </p>
+
+                <h3>
+                    6.4 Donations and Fundraising
+                </h3>
+
+                <p>
+                    Separate donation and fundraising
+                    functionality is planned
+                    for eligible paid creator plans.
+                </p>
+
+                <p>
+                    These features are not
+                    included in the Free plan.
+                </p>
+
+                <p>
+                    Where fundraising is supported,
+                    creators must provide accurate
+                    campaign information and
+                    comply with all applicable laws.
+                </p>
+
+                <h3>
+                    6.5 Exclusive Paid Content
+                </h3>
+
+                <p>
+                    Exclusive paid content
+                    and fan membership functionality
+                    are planned monetisation
+                    features for eligible
+                    paid creator plans.
+                </p>
+
+                <p>
+                    Creators are responsible
+                    for content they publish,
+                    the accuracy of descriptions
+                    and the lawful fulfilment
+                    of their commitments
+                    to paying supporters.
+                </p>
+
+                <h3>
+                    6.6 Standard-to-Premium Upgrade
+                </h3>
+
+                <p>
+                    A creator who has previously
+                    paid the full
+                    <strong>R100 Standard activation fee</strong>
+                    may qualify to upgrade
+                    to Premium by paying an
+                    additional
+                    <strong>R50 once-off</strong>.
+                </p>
+
+                <p>
+                    This represents the difference
+                    between the R100 Standard
+                    activation fee and the
+                    R150 Premium activation fee.
+                </p>
+
+                <p>
+                    The discounted upgrade is
+                    available only after KALXA
+                    verifies the previous
+                    successful Standard payment
+                    using its payment records
+                    or authorised provider
+                    verification process.
+                </p>
+
+                <p>
+                    An unverified, failed,
+                    cancelled, refunded
+                    or reversed Standard payment
+                    does not qualify for the
+                    discounted upgrade.
+                </p>
+
+                <h3>
+                    6.7 Premium Custom Domains
+                </h3>
+
+                <p>
+                    Custom domain support
+                    is planned for eligible
+                    Premium creators.
+                </p>
+
+                <p>
+                    Domain registration,
+                    renewal and external
+                    service provider fees
+                    may be charged separately
+                    where applicable.
+                </p>
+
+                <h3>
+                    6.8 Creator Earnings
+                </h3>
+
+                <p>
+                    KALXA does not guarantee
+                    any particular creator income,
+                    supporter contribution amount,
+                    audience growth or
+                    content sales.
+                </p>
+
+                <p>
+                    Actual earnings depend
+                    on supporter activity,
+                    applicable commissions,
+                    payment processing charges
+                    and other relevant factors.
+                </p>
+
+                <h3>
+                    6.9 Payment Provider Availability
+                </h3>
+
+                <p>
+                    Planned creator payment
+                    integrations may use
+                    third-party payment services,
+                    including Paystack.
+                </p>
+
+                <p>
+                    Any payment splitting,
+                    subaccount arrangements,
+                    creator settlement or
+                    payout functionality
+                    is subject to provider
+                    approval and supported
+                    technical capabilities.
+                </p>
+
+                <p>
+                    Features described as planned
+                    do not constitute a guarantee
+                    that those features are
+                    currently operational
+                    or will become available
+                    on a specific date.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             7. DISCOVERY ADVERTISING
+        ===================================================== -->
+
+        <section
+            class="terms-section"
+            id="discovery-terms"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    07 · KALXA DISCOVERY
+                </p>
+
+                <h2>
+                    Business Advertising Terms
+                </h2>
+
+                <p>
+                    KALXA Discovery allows
+                    eligible businesses to
+                    advertise products,
+                    services, special offers
+                    and business information
+                    within relevant local
+                    discovery categories.
+                </p>
+
+                <h3>
+                    7.1 Advertising Packages
+                </h3>
+
+                <div class="terms-table-wrapper">
+
+                    <table class="terms-table">
+
+                        <thead>
+
+                            <tr>
+                                <th scope="col">
+                                    Advertising Package
+                                </th>
+
+                                <th scope="col">
+                                    Price
+                                </th>
+
+                                <th scope="col">
+                                    Duration
+                                </th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Basic Listing</td>
+                                <td>R49</td>
+                                <td>30 days</td>
+                            </tr>
+
+                            <tr>
+                                <td>Standard Promotion</td>
+                                <td>R99</td>
+                                <td>30 days</td>
+                            </tr>
+
+                            <tr>
+                                <td>Featured Promotion</td>
+                                <td>R199</td>
+                                <td>30 days</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <h3>
+                    7.2 Once-Off Advertising
+                </h3>
+
+                <p>
+                    Discovery advertising packages
+                    are purchased once for
+                    the selected 30-day period.
+                </p>
+
+                <p>
+                    These packages do not
+                    automatically renew.
+                </p>
+
+                <p>
+                    A business may purchase
+                    another advertising period
+                    after expiry.
+                </p>
+
+                <h3>
+                    7.3 Advertising Content
+                </h3>
+
+                <p>
+                    Advertisers are responsible
+                    for ensuring that submitted
+                    information is accurate,
+                    lawful and not misleading.
+                </p>
+
+                <p>
+                    KALXA may review,
+                    reject or remove
+                    advertising that violates
+                    applicable laws or
+                    platform policies.
+                </p>
+
+                <h3>
+                    7.4 Featured Placement
+                </h3>
+
+                <p>
+                    Featured Promotion provides
+                    eligible priority visibility
+                    within relevant KALXA
+                    Discovery categories.
+                </p>
+
+                <p>
+                    Placement depends on
+                    category availability,
+                    platform rules and
+                    the applicable
+                    advertising agreement.
+                </p>
+
+                <h3>
+                    7.5 Advertising Results
+                </h3>
+
+                <p>
+                    KALXA does not guarantee
+                    any specific number of views,
+                    enquiries, leads,
+                    customer visits or sales
+                    from an advertising package.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             8. PAYMENTS & BILLING
+        ===================================================== -->
+
+        <section
+            class="terms-section soft"
+            id="payments"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    08 · PAYMENTS &amp; BILLING
+                </p>
+
+                <h2>
+                    Payment Terms
+                </h2>
+
+                <h3>
+                    8.1 Currency
+                </h3>
+
+                <p>
+                    Unless expressly stated
+                    otherwise, KALXA's
+                    advertised prices
+                    are denominated in
+                    South African rand (ZAR).
+                </p>
+
+                <h3>
+                    8.2 Payment Processing
+                </h3>
+
+                <p>
+                    KALXA may use third-party
+                    payment service providers
+                    to process eligible payments.
+                </p>
+
+                <p>
+                    Payment methods and
+                    processing arrangements
+                    may vary between
+                    KALXA products.
+                </p>
+
+                <h3>
+                    8.3 Additional Charges
+                </h3>
+
+                <p>
+                    Platform commissions
+                    may be separate from
+                    payment processing fees,
+                    taxes, chargebacks,
+                    refunds and other
+                    applicable charges.
+                </p>
+
+                <p>
+                    The total amount payable
+                    and any additional charges
+                    for which a customer is
+                    responsible must be
+                    disclosed before payment.
+                </p>
+
+                <h3>
+                    8.4 Transaction Records
+                </h3>
+
+                <p>
+                    Customers should retain
+                    transaction confirmations
+                    and payment references
+                    for their records.
+                </p>
+
+                <p>
+                    Where applicable,
+                    KALXA or the relevant
+                    payment provider will
+                    make transaction information
+                    available in accordance
+                    with the applicable service
+                    and legal requirements.
+                </p>
+
+                <h3>
+                    8.5 Payment Verification
+                </h3>
+
+                <p>
+                    KALXA may require
+                    successful payment
+                    verification before
+                    activating paid services
+                    or providing access
+                    to restricted features.
+                </p>
+
+                <p>
+                    Failed, reversed or
+                    unauthorised payments
+                    do not establish
+                    entitlement to paid services.
+                </p>
+
+                <h3>
+                    8.6 Third-Party Transactions
+                </h3>
+
+                <p>
+                    Some transactions involve
+                    independent event organisers,
+                    creators or other merchants.
+                </p>
+
+                <p>
+                    The relevant checkout
+                    or agreement should identify
+                    the contracting parties,
+                    applicable fees,
+                    recipient of funds and
+                    settlement arrangements.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             9. REFUNDS & CANCELLATION
+        ===================================================== -->
+
+        <section
+            class="terms-section"
+            id="refunds"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    09 · REFUNDS &amp; CANCELLATIONS
+                </p>
+
+                <h2>
+                    Refund and Cancellation Terms
+                </h2>
+
+                <p>
+                    Refund and cancellation requests
+                    are assessed according to
+                    the relevant product agreement,
+                    service status,
+                    payment circumstances
+                    and applicable
+                    South African law.
+                </p>
+
+                <h3>
+                    9.1 Once-Off Purchases
+                </h3>
+
+                <p>
+                    Once-off purchases include
+                    Creator activation fees,
+                    Creator plan upgrades
+                    and Discovery advertising.
+                </p>
+
+                <p>
+                    Refund eligibility depends
+                    on applicable statutory rights,
+                    the agreed service terms
+                    and whether the relevant
+                    service has been supplied.
+                </p>
+
+                <h3>
+                    9.2 Monthly Subscriptions
+                </h3>
+
+                <p>
+                    Restaurant subscriptions
+                    are subject to the
+                    agreed monthly billing
+                    and cancellation arrangements.
+                </p>
+
+                <p>
+                    Where applicable,
+                    customers retain their
+                    statutory rights regarding
+                    cancellation of fixed-term
+                    consumer agreements.
+                </p>
+
+                <h3>
+                    9.3 Event Transactions
+                </h3>
+
+                <p>
+                    Ticket cancellation and
+                    refund requests may require
+                    coordination with the
+                    relevant event organiser.
+                </p>
+
+                <p>
+                    The responsible seller
+                    remains subject to
+                    applicable consumer
+                    protection obligations.
+                </p>
+
+                <h3>
+                    9.4 Statutory Consumer Rights
+                </h3>
+
+                <p>
+                    Nothing in these terms
+                    excludes, restricts
+                    or limits any consumer
+                    right that cannot lawfully
+                    be excluded under
+                    South African law.
+                </p>
+
+                <p>
+                    Any applicable electronic
+                    transaction cooling-off rights
+                    and statutory exceptions
+                    will be respected.
+                </p>
+
+                <p>
+                    For more information,
+                    please read our
+                    <a href="/refund.html">
+                        Refund Policy
+                    </a>
+                    and
+                    <a href="/cancellation.html">
+                        Cancellation Policy
+                    </a>.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             10. ACCEPTABLE USE
+        ===================================================== -->
+
+        <section
+            class="terms-section soft"
+            id="acceptable-use"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    10 · ACCEPTABLE USE
+                </p>
+
+                <h2>
+                    User Responsibilities
+                </h2>
+
+                <p>
+                    Users must use KALXA platforms
+                    lawfully and responsibly.
+                </p>
+
+                <p>
+                    The following activities
+                    are prohibited:
+                </p>
+
+                <ul>
+
+                    <li>
+                        Publishing fraudulent,
+                        unlawful or misleading content.
+                    </li>
+
+                    <li>
+                        Selling fraudulent or
+                        unauthorised event tickets.
+                    </li>
+
+                    <li>
+                        Uploading content that
+                        infringes another person's
+                        intellectual property rights.
+                    </li>
+
+                    <li>
+                        Attempting unauthorised access
+                        to KALXA systems or accounts.
+                    </li>
+
+                    <li>
+                        Using automated tools
+                        to disrupt the platform
+                        or misuse its infrastructure.
+                    </li>
+
+                    <li>
+                        Impersonating another
+                        individual or business.
+                    </li>
+
+                    <li>
+                        Conducting unlawful fundraising
+                        or misleading supporter campaigns.
+                    </li>
+
+                    <li>
+                        Manipulating payment records,
+                        QR tickets or transaction data.
+                    </li>
+
+                </ul>
+
+                <p>
+                    KALXA may investigate
+                    suspected violations
+                    and take proportionate
+                    action, including restricting
+                    access or removing content,
+                    subject to applicable law.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             11. ACCOUNT SECURITY
+        ===================================================== -->
+
+        <section
+            class="terms-section"
+            id="account-security"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    11 · ACCOUNT SECURITY
+                </p>
+
+                <h2>
+                    Account Registration &amp; Security
+                </h2>
+
+                <p>
+                    Users must provide accurate
+                    information when registering
+                    for KALXA services.
+                </p>
+
+                <p>
+                    Users are responsible
+                    for keeping account
+                    credentials confidential
+                    and reporting suspected
+                    unauthorised account access.
+                </p>
+
+                <p>
+                    KALXA may require
+                    identity verification,
+                    business verification
+                    or payment verification
+                    before granting access
+                    to certain services.
+                </p>
+
+                <p>
+                    Verification requirements
+                    may depend on applicable law,
+                    fraud prevention measures
+                    and payment provider rules.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             12. INTELLECTUAL PROPERTY
+        ===================================================== -->
+
+        <section
+            class="terms-section soft"
+            id="intellectual-property"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    12 · INTELLECTUAL PROPERTY
+                </p>
+
+                <h2>
+                    Ownership of Content &amp; Technology
+                </h2>
+
+                <p>
+                    KALXA's platform software,
+                    branding, website design,
+                    proprietary functionality
+                    and related intellectual property
+                    belong to KALXA or its
+                    respective licensors.
+                </p>
+
+                <p>
+                    Creators, organisers
+                    and businesses generally
+                    retain ownership of
+                    content they lawfully
+                    create and upload,
+                    subject to any applicable
+                    third-party rights.
+                </p>
+
+                <p>
+                    By submitting content
+                    to a KALXA platform,
+                    users grant KALXA
+                    a non-exclusive licence
+                    to host, store,
+                    display and process
+                    that content as reasonably
+                    necessary to provide
+                    the requested services.
+                </p>
+
+                <p>
+                    Any additional promotional
+                    use of submitted content
+                    will be governed by
+                    the applicable consent
+                    or service agreement.
+                </p>
+
+                <p>
+                    Users must have the
+                    necessary rights and
+                    permissions to submit
+                    content to the platform.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             13. PRIVACY
+        ===================================================== -->
+
+        <section
+            class="terms-section"
+            id="privacy"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    13 · DATA PROTECTION
+                </p>
+
+                <h2>
+                    Privacy &amp; Personal Information
+                </h2>
+
+                <p>
+                    KALXA processes personal
+                    information in accordance
+                    with its
+                    <a href="/privacy.html">
+                        Privacy Policy
+                    </a>
+                    and applicable South African
+                    data protection laws,
+                    including the Protection
+                    of Personal Information Act
+                    where applicable.
+                </p>
+
+                <p>
+                    Personal information may
+                    be processed for account
+                    management, transactions,
+                    customer support,
+                    platform security
+                    and other lawful
+                    operational purposes.
+                </p>
+
+                <p>
+                    Certain services rely
+                    on third-party technology
+                    providers for hosting,
+                    payments, databases
+                    or digital media.
+                </p>
+
+                <p>
+                    Details about relevant
+                    processing activities,
+                    service providers
+                    and user rights
+                    are described in
+                    the Privacy Policy.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             14. SERVICE AVAILABILITY
+        ===================================================== -->
+
+        <section
+            class="terms-section soft"
+            id="service-availability"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    14 · SERVICE AVAILABILITY
+                </p>
+
+                <h2>
+                    Platform Availability &amp; Development
+                </h2>
+
+                <p>
+                    KALXA aims to provide
+                    reliable digital services.
+                </p>
+
+                <p>
+                    However, platform availability
+                    may be affected by maintenance,
+                    technical faults,
+                    connectivity problems
+                    or third-party service outages.
+                </p>
+
+                <p>
+                    Some KALXA products
+                    and features remain
+                    under active development.
+                </p>
+
+                <p>
+                    Features described
+                    as planned or in development
+                    are not guaranteed
+                    to be available immediately
+                    or launched on a
+                    specific date.
+                </p>
+
+                <p>
+                    Where a paid service
+                    cannot be provided
+                    as contractually agreed,
+                    the applicable agreement
+                    and statutory remedies
+                    will apply.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             15. THIRD PARTIES
+        ===================================================== -->
+
+        <section
+            class="terms-section"
+            id="third-parties"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    15 · THIRD-PARTY SERVICES
+                </p>
+
+                <h2>
+                    External Providers &amp; Merchants
+                </h2>
+
+                <p>
+                    KALXA may integrate
+                    with third-party technology
+                    platforms for payment
+                    processing, hosting,
+                    database services
+                    and media management.
+                </p>
+
+                <p>
+                    These providers operate
+                    under their own applicable
+                    service terms and policies.
+                </p>
+
+                <p>
+                    Independent event organisers,
+                    restaurant businesses
+                    and creators may also
+                    offer products or services
+                    through KALXA platforms.
+                </p>
+
+                <p>
+                    The relevant seller
+                    or service provider
+                    should be identified
+                    before a transaction
+                    is completed.
+                </p>
+
+                <p>
+                    KALXA remains responsible
+                    for obligations it has
+                    expressly undertaken
+                    and those imposed
+                    by applicable law.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             16. LIABILITY
+        ===================================================== -->
+
+        <section
+            class="terms-section soft"
+            id="liability"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    16 · LIABILITY
+                </p>
+
+                <h2>
+                    Responsibilities &amp; Limitations
+                </h2>
+
+                <p>
+                    KALXA provides technology
+                    infrastructure and services
+                    according to the applicable
+                    agreement.
+                </p>
+
+                <p>
+                    Independent event organisers,
+                    creators and businesses
+                    remain responsible
+                    for their own lawful
+                    activities, representations
+                    and contractual commitments.
+                </p>
+
+                <p>
+                    To the extent permitted
+                    by applicable law,
+                    KALXA does not guarantee
+                    business performance,
+                    event attendance,
+                    advertising conversions
+                    or creator earnings.
+                </p>
+
+                <p>
+                    Nothing in these terms
+                    excludes liability
+                    where doing so would
+                    be prohibited by
+                    applicable South African law.
+                </p>
+
+                <p>
+                    Any contractual limitations
+                    of liability are subject
+                    to mandatory consumer
+                    protection requirements
+                    and the terms of
+                    the relevant agreement.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             17. DISPUTES
+        ===================================================== -->
+
+        <section
+            class="terms-section"
+            id="disputes"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    17 · COMPLAINTS &amp; DISPUTES
+                </p>
+
+                <h2>
+                    Resolving Customer Concerns
+                </h2>
+
+                <p>
+                    Customers who experience
+                    a problem with a KALXA
+                    service should contact
+                    customer support.
+                </p>
+
+                <p>
+                    Please provide the relevant
+                    transaction reference,
+                    account information
+                    and a description
+                    of the issue.
+                </p>
+
+                <p>
+                    KALXA will review
+                    complaints relating
+                    to services for which
+                    it is responsible.
+                </p>
+
+                <p>
+                    Where a dispute relates
+                    to an independent seller,
+                    KALXA may direct
+                    the customer to
+                    the relevant organiser,
+                    creator or business
+                    while addressing
+                    its own applicable obligations.
+                </p>
+
+                <p>
+                    Customers retain the
+                    right to approach
+                    relevant regulatory,
+                    consumer protection
+                    or dispute resolution
+                    bodies where applicable.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             18. GOVERNING LAW
+        ===================================================== -->
+
+        <section
+            class="terms-section soft"
+            id="governing-law"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    18 · APPLICABLE LAW
+                </p>
+
+                <h2>
+                    Governing Law
+                </h2>
+
+                <p>
+                    These Terms and Conditions
+                    are governed by the
+                    laws of the Republic
+                    of South Africa.
+                </p>
+
+                <p>
+                    Applicable legislation
+                    may include the
+                    Consumer Protection Act,
+                    Electronic Communications
+                    and Transactions Act,
+                    Protection of Personal
+                    Information Act
+                    and other relevant laws.
+                </p>
+
+                <p>
+                    Nothing in these Terms
+                    removes statutory rights
+                    or remedies that cannot
+                    lawfully be excluded.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             19. CONTACT INFORMATION
+        ===================================================== -->
+
+        <section
+            class="terms-section"
+            id="contact-information"
+        >
+
+            <div class="terms-container">
+
+                <p class="section-label">
+                    19 · CONTACT INFORMATION
+                </p>
+
+                <h2>
+                    Contact KALXA
+                </h2>
+
+                <p>
+                    For questions about
+                    these Terms and Conditions,
+                    payment arrangements,
+                    platform services
+                    or customer support,
+                    please contact us.
+                </p>
+
+                <div class="terms-notice">
+
+                    <h3>
+                        KALXA (PTY) LTD
+                    </h3>
+
+                    <p>
+
+                        <strong>
+                            Registration Number:
+                        </strong>
+
+                        2026/767893/07
+
+                        <br>
+
+                        <strong>
+                            Email:
+                        </strong>
+
+                        <a href="mailto:lasie@kalxa.co.za">
+                            lasie@kalxa.co.za
+                        </a>
+
+                        <br>
+
+                        <strong>
+                            Phone:
+                        </strong>
+
+                        <a href="tel:+27766114909">
+                            +27 76 611 4909
+                        </a>
+
+                        <br>
+
+                        <strong>
+                            Registered Address:
+                        </strong>
+
+                        <br>
+
+                        70047 Zakheni
+
+                        <br>
+
+                        KwaMhlanga, 1022
+
+                        <br>
+
+                        Mpumalanga
+
+                        <br>
+
+                        South Africa
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             CONTACT CTA
+        ===================================================== -->
+
+        <section class="terms-contact">
+
+            <p class="section-label">
+                NEED ASSISTANCE?
+            </p>
+
+            <h2>
+                Questions About Our Terms?
+            </h2>
+
+            <p>
+                Contact the KALXA team
+                for assistance with
+                our platforms, payments,
+                subscriptions or
+                service conditions.
+            </p>
+
+            <div class="terms-contact-actions">
+
+                <a
+                    class="terms-button"
+                    href="/contact.html"
+                >
+
+                    Contact KALXA
+
+                    <i
+                        class="fa-solid fa-arrow-right"
+                        aria-hidden="true"
+                    ></i>
+
+                </a>
+
+                <a
+                    class="terms-button secondary"
+                    href="https://wa.me/27766114909"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <i
+                        class="fa-brands fa-whatsapp"
+                        aria-hidden="true"
+                    ></i>
+
+                    WhatsApp Us
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="terms-footer">
+
+        <div class="terms-footer-grid">
+
+            <div>
+
+                <h3>
+                    KALXA (PTY) LTD
+                </h3>
+
+                <p>
+                    Registered South African Private Company
+                </p>
+
+                <p>
+                    <strong>
+                        Registration Number:
+                    </strong>
+
+                    2026/767893/07
+                </p>
+
+                <address>
+
+                    70047 Zakheni
+
+                    <br>
+
+                    KwaMhlanga, 1022
+
+                    <br>
+
+                    Mpumalanga
+
+                    <br>
+
+                    South Africa
+
+                </address>
+
+                <p>
+
+                    <a href="mailto:lasie@kalxa.co.za">
+                        lasie@kalxa.co.za
+                    </a>
+
+                    <br>
+
+                    <a href="tel:+27766114909">
+                        +27 76 611 4909
+                    </a>
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <nav
+                    class="terms-footer-links"
+                    aria-label="Footer navigation"
+                >
+
+                    <a href="/index.html">
+                        Home
+                    </a>
+
+                    <a href="/services.html">
+                        Services
+                    </a>
+
+                    <a href="/ticketing.html">
+                        Ticketing
+                    </a>
+
+                    <a href="/creator-crm.html">
+                        Creator CRM
+                    </a>
+
+                    <a href="/pricing.html">
+                        Pricing
+                    </a>
+
+                    <a href="/faq.html">
+                        FAQs
+                    </a>
+
+                    <a href="/contact.html">
+                        Contact
+                    </a>
+
+                    <a href="/terms.html">
+                        Terms &amp; Conditions
+                    </a>
+
+                    <a href="/privacy.html">
+                        Privacy Policy
+                    </a>
+
+                    <a href="/refund.html">
+                        Refund Policy
+                    </a>
+
+                    <a href="/cancellation.html">
+                        Cancellation Policy
+                    </a>
+
+                    <a href="/delivery.html">
+                        Digital Delivery
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+        <div class="terms-footer-bottom">
+
+            <span id="copyright">
+                © 2026 KALXA (PTY) LTD.
+                All rights reserved.
+            </span>
+
+            <span>
+                Registration No:
+                2026/767893/07
+            </span>
+
+        </div>
+
+    </footer>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script
+        src="/js/main.js?v=3"
+        defer
+    ></script>
+
+    <script>
+
+        const copyrightElement =
+            document.getElementById("copyright");
+
+        if (copyrightElement) {
+
+            copyrightElement.textContent =
+                `© ${new Date().getFullYear()} KALXA (PTY) LTD. All rights reserved.`;
+
+        }
+
+    </script>
+
 </body>
+
 </html>
