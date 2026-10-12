@@ -61,6 +61,14 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
+    <!-- PRELOAD FIRST HERO IMAGE -->
+
+    <link
+        rel="preload"
+        as="image"
+        href="/images/kalxa-hero-bg.png"
+    >
+
     <style>
 
         /* ==========================================
@@ -160,29 +168,72 @@
         }
 
         /* ==========================================
-           HERO BACKGROUND IMAGE
+           HERO SECTION
+           FOUR-IMAGE AUTOMATIC SLIDESHOW
         ========================================== */
 
         .site-hero {
 
             /*
-             * KALXA Hero Background
+             * Background images are now handled
+             * by .hero-slideshow.
              *
-             * Image:
-             * /images/kalxa-hero-bg.png
-             *
-             * Overlay:
-             * 45% to 55%
+             * Do not add background-image here.
              */
 
-            background-image:
-                linear-gradient(
-                    125deg,
-                    rgba(255, 255, 255, 0.50) 0%,
-                    rgba(255, 255, 255, 0.45) 50%,
-                    rgba(235, 247, 255, 0.55) 100%
-                ),
-                url("/images/kalxa-hero-bg.png");
+            position: relative;
+
+            isolation: isolate;
+
+            overflow: hidden;
+
+            background-color: #e5f5ff;
+
+            min-height: 440px;
+
+            padding: 100px 7% 95px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+        /* ==========================================
+           SLIDESHOW CONTAINER
+        ========================================== */
+
+        .hero-slideshow {
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: -1;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            background-color: #e5f5ff;
+
+        }
+
+        /* ==========================================
+           INDIVIDUAL BACKGROUND IMAGES
+        ========================================== */
+
+        .hero-slide {
+
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+
+            height: 100%;
 
             background-size: cover;
 
@@ -190,17 +241,69 @@
 
             background-repeat: no-repeat;
 
-            background-color: #e5f5ff;
+            opacity: 0;
 
-            padding: 100px 7% 95px;
+            visibility: hidden;
 
-            position: relative;
+            transition:
+                opacity 1s ease-in-out,
+                visibility 1s ease-in-out;
 
-            isolation: isolate;
+            will-change: opacity;
 
         }
 
+        /* ==========================================
+           ACTIVE BACKGROUND IMAGE
+        ========================================== */
+
+        .hero-slide.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+        /* ==========================================
+           VERY LIGHT IMAGE OVERLAY
+
+           Desktop: 15% opacity
+
+           This makes images significantly
+           clearer than the previous
+           45% to 55% overlay.
+        ========================================== */
+
+        .hero-slideshow::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 2;
+
+            background:
+                linear-gradient(
+                    125deg,
+                    rgba(255, 255, 255, 0.15) 0%,
+                    rgba(255, 255, 255, 0.10) 50%,
+                    rgba(235, 247, 255, 0.15) 100%
+                );
+
+            pointer-events: none;
+
+        }
+
+        /* ==========================================
+           HERO CONTENT
+        ========================================== */
+
         .site-hero .inner {
+
+            width: 100%;
 
             max-width: 920px;
 
@@ -210,7 +313,7 @@
 
             position: relative;
 
-            z-index: 1;
+            z-index: 3;
 
         }
 
@@ -249,9 +352,12 @@
 
         .site-hero .eyebrow {
 
-            color: #005988;
+            color: #003d61;
 
             font-weight: 800;
+
+            text-shadow:
+                0 1px 2px rgba(255, 255, 255, 0.85);
 
         }
 
@@ -270,6 +376,79 @@
             margin: 0 auto 26px;
 
             font-weight: 500;
+
+        }
+
+        /* ==========================================
+           SLIDESHOW INDICATORS
+        ========================================== */
+
+        .hero-slide-indicators {
+
+            position: absolute;
+
+            bottom: 25px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            z-index: 5;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+        }
+
+        .hero-indicator {
+
+            width: 9px;
+
+            height: 9px;
+
+            padding: 0;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.65);
+
+            box-shadow:
+                0 1px 5px rgba(0, 0, 0, 0.18);
+
+            cursor: pointer;
+
+            transition:
+                background 0.25s ease,
+                transform 0.25s ease;
+
+        }
+
+        .hero-indicator.active {
+
+            background: #006aa6;
+
+            transform: scale(1.2);
+
+        }
+
+        .hero-indicator:hover {
+
+            background: #006aa6;
+
+        }
+
+        .hero-indicator:focus-visible {
+
+            outline: 3px solid #006aa6;
+
+            outline-offset: 4px;
 
         }
 
@@ -501,16 +680,8 @@
 
         /* ==========================================
            HERO BUTTONS
-           NEW: COMPLETELY TRANSPARENT
+           COMPLETELY TRANSPARENT
         ========================================== */
-
-        /*
-         * These styles only apply to the
-         * two buttons inside the hero section.
-         *
-         * Other website buttons keep
-         * their original colours.
-         */
 
         .site-hero .actions .button.primary-button,
         .site-hero .actions .button.secondary-button {
@@ -523,7 +694,7 @@
 
             color: #073d5c;
 
-            border: 1.5px solid rgba(0, 74, 115, 0.65);
+            border: 1.5px solid rgba(0, 74, 115, 0.85);
 
             box-shadow: none;
 
@@ -540,6 +711,9 @@
             font-weight: 800;
 
             text-decoration: none;
+
+            text-shadow:
+                0 1px 2px rgba(255, 255, 255, 0.85);
 
             transition:
                 transform 0.25s ease,
@@ -1139,9 +1313,9 @@
 
             .site-hero {
 
-                padding: 80px 5%;
+                min-height: 400px;
 
-                background-position: center center;
+                padding: 80px 5%;
 
             }
 
@@ -1209,23 +1383,30 @@
 
         @media (max-width: 650px) {
 
-            /*
-             * Mobile background overlay:
-             * 55% to 60%
-             */
+            /* ======================================
+               MOBILE HERO BACKGROUND
 
-            .site-hero {
+               Overlay reduced to 20%
+            ====================================== */
 
-                background-image:
-                    linear-gradient(
-                        rgba(255, 255, 255, 0.55),
-                        rgba(245, 251, 255, 0.60)
-                    ),
-                    url("/images/kalxa-hero-bg.png");
+            .hero-slide {
+
+                background-position: center center;
 
             }
 
-            /* Transparent hero buttons on mobile */
+            .hero-slideshow::after {
+
+                background:
+                    linear-gradient(
+                        180deg,
+                        rgba(255, 255, 255, 0.20),
+                        rgba(245, 251, 255, 0.20)
+                    );
+
+            }
+
+            /* Transparent hero buttons */
 
             .site-hero .actions {
 
@@ -1242,7 +1423,7 @@
 
                 background-image: none;
 
-                border: 1.5px solid rgba(0, 74, 115, 0.70);
+                border: 1.5px solid rgba(0, 74, 115, 0.85);
 
                 color: #073d5c;
 
@@ -1310,7 +1491,27 @@
                 grid-template-columns: 1fr;
             }
 
+            .site-hero .actions {
+
+                flex-direction: column;
+
+                align-items: center;
+
+            }
+
+            .site-hero .actions .button {
+
+                width: 100%;
+
+                max-width: 270px;
+
+            }
+
         }
+
+        /* ==========================================
+           REDUCED MOTION
+        ========================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
@@ -1318,11 +1519,27 @@
                 scroll-behavior: auto;
             }
 
+            .hero-slide {
+
+                transition: none;
+
+                will-change: auto;
+
+            }
+
+            .hero-indicator {
+
+                transition: none;
+
+            }
+
             .partner-card,
             .footer-contact-link,
             .footer-contact-link i,
             .button {
+
                 transition: none;
+
             }
 
         }
@@ -1408,13 +1625,56 @@
     <main id="main">
 
         <!-- ==========================================
-             HERO WITH TRANSPARENT BUTTONS
+             HERO WITH FOUR BACKGROUND IMAGES
         ========================================== -->
 
         <section
             class="site-hero"
-            aria-labelledby="hero-heading"
+            aria-label="KALXA Digital Technology"
         >
+
+            <!-- ======================================
+                 BACKGROUND SLIDESHOW
+            ====================================== -->
+
+            <div
+                class="hero-slideshow"
+                aria-hidden="true"
+            >
+
+                <!-- SLIDE 1 -->
+
+                <div
+                    class="hero-slide active"
+                    style="background-image: url('/images/kalxa-hero-bg.png');"
+                ></div>
+
+                <!-- SLIDE 2 -->
+
+                <div
+                    class="hero-slide"
+                    style="background-image: url('/images/kalxa-hero-bg-2.png');"
+                ></div>
+
+                <!-- SLIDE 3 -->
+
+                <div
+                    class="hero-slide"
+                    style="background-image: url('/images/kalxa-hero-bg-3.png');"
+                ></div>
+
+                <!-- SLIDE 4 -->
+
+                <div
+                    class="hero-slide"
+                    style="background-image: url('/images/kalxa-hero-bg-4.png');"
+                ></div>
+
+            </div>
+
+            <!-- ======================================
+                 HERO CONTENT
+            ====================================== -->
 
             <div class="inner">
 
@@ -1439,6 +1699,49 @@
                     </a>
 
                 </div>
+
+            </div>
+
+            <!-- ======================================
+                 SLIDESHOW INDICATORS
+            ====================================== -->
+
+            <div
+                class="hero-slide-indicators"
+                aria-label="Background slideshow controls"
+            >
+
+                <button
+                    class="hero-indicator active"
+                    type="button"
+                    aria-label="Show background image 1"
+                    aria-pressed="true"
+                    data-slide="0"
+                ></button>
+
+                <button
+                    class="hero-indicator"
+                    type="button"
+                    aria-label="Show background image 2"
+                    aria-pressed="false"
+                    data-slide="1"
+                ></button>
+
+                <button
+                    class="hero-indicator"
+                    type="button"
+                    aria-label="Show background image 3"
+                    aria-pressed="false"
+                    data-slide="2"
+                ></button>
+
+                <button
+                    class="hero-indicator"
+                    type="button"
+                    aria-label="Show background image 4"
+                    aria-pressed="false"
+                    data-slide="3"
+                ></button>
 
             </div>
 
@@ -1997,6 +2300,221 @@
         src="/js/main.js?v=3"
         defer
     ></script>
+
+    <!-- ==========================================
+         HERO SLIDESHOW JAVASCRIPT
+
+         Changes image every 4 seconds.
+    ========================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const slides = Array.from(
+                    document.querySelectorAll(".hero-slide")
+                );
+
+                const indicators = Array.from(
+                    document.querySelectorAll(".hero-indicator")
+                );
+
+                if (slides.length <= 1) {
+                    return;
+                }
+
+                let currentSlide = 0;
+
+                let slideshowTimer = null;
+
+                const slideInterval = 4000;
+
+                const reducedMotion = window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                );
+
+                /* =====================================
+                   DISPLAY A SPECIFIC SLIDE
+                ===================================== */
+
+                function showSlide(index) {
+
+                    if (
+                        index < 0 ||
+                        index >= slides.length
+                    ) {
+                        return;
+                    }
+
+                    currentSlide = index;
+
+                    slides.forEach(
+                        function (slide, slideIndex) {
+
+                            slide.classList.toggle(
+                                "active",
+                                slideIndex === currentSlide
+                            );
+
+                        }
+                    );
+
+                    indicators.forEach(
+                        function (indicator, indicatorIndex) {
+
+                            const isActive =
+                                indicatorIndex === currentSlide;
+
+                            indicator.classList.toggle(
+                                "active",
+                                isActive
+                            );
+
+                            indicator.setAttribute(
+                                "aria-pressed",
+                                String(isActive)
+                            );
+
+                        }
+                    );
+
+                }
+
+                /* =====================================
+                   NEXT SLIDE
+                ===================================== */
+
+                function nextSlide() {
+
+                    const nextIndex =
+                        (currentSlide + 1) % slides.length;
+
+                    showSlide(nextIndex);
+
+                }
+
+                /* =====================================
+                   STOP AUTOMATIC SLIDESHOW
+                ===================================== */
+
+                function stopSlideshow() {
+
+                    if (slideshowTimer !== null) {
+
+                        clearInterval(slideshowTimer);
+
+                        slideshowTimer = null;
+
+                    }
+
+                }
+
+                /* =====================================
+                   START AUTOMATIC SLIDESHOW
+                ===================================== */
+
+                function startSlideshow() {
+
+                    stopSlideshow();
+
+                    if (
+                        reducedMotion.matches ||
+                        document.hidden
+                    ) {
+                        return;
+                    }
+
+                    slideshowTimer = setInterval(
+                        nextSlide,
+                        slideInterval
+                    );
+
+                }
+
+                /* =====================================
+                   MANUAL SLIDE SELECTION
+                ===================================== */
+
+                indicators.forEach(
+                    function (indicator) {
+
+                        indicator.addEventListener(
+                            "click",
+                            function () {
+
+                                const slideIndex =
+                                    Number(
+                                        indicator.dataset.slide
+                                    );
+
+                                if (
+                                    Number.isInteger(slideIndex)
+                                ) {
+
+                                    showSlide(slideIndex);
+
+                                    startSlideshow();
+
+                                }
+
+                            }
+                        );
+
+                    }
+                );
+
+                /* =====================================
+                   PAUSE WHEN TAB IS HIDDEN
+                ===================================== */
+
+                document.addEventListener(
+                    "visibilitychange",
+                    function () {
+
+                        if (document.hidden) {
+
+                            stopSlideshow();
+
+                        } else {
+
+                            startSlideshow();
+
+                        }
+
+                    }
+                );
+
+                /* =====================================
+                   ACCESSIBILITY:
+                   REDUCED MOTION
+                ===================================== */
+
+                if (
+                    typeof reducedMotion.addEventListener ===
+                    "function"
+                ) {
+
+                    reducedMotion.addEventListener(
+                        "change",
+                        startSlideshow
+                    );
+
+                }
+
+                /* =====================================
+                   INITIALISE
+                ===================================== */
+
+                showSlide(0);
+
+                startSlideshow();
+
+            }
+        );
+
+    </script>
 
 </body>
 
