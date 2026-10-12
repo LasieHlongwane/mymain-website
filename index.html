@@ -161,23 +161,31 @@
 
         /* ==========================================
            HERO BACKGROUND IMAGE
+           UPDATED: MORE VISIBLE IMAGE
         ========================================== */
 
         .site-hero {
 
             /*
-             * Image location:
+             * KALXA Hero Image
+             *
+             * File:
              * /images/kalxa-hero-bg.png
              *
-             * Light overlay improves text readability.
+             * Desktop overlay reduced to
+             * approximately 45–55%.
+             *
+             * This makes the background
+             * more visible while maintaining
+             * text readability.
              */
 
             background-image:
                 linear-gradient(
                     125deg,
-                    rgba(255, 255, 255, 0.82) 0%,
-                    rgba(255, 255, 255, 0.76) 50%,
-                    rgba(235, 247, 255, 0.82) 100%
+                    rgba(255, 255, 255, 0.50) 0%,
+                    rgba(255, 255, 255, 0.45) 50%,
+                    rgba(235, 247, 255, 0.55) 100%
                 ),
                 url("/images/kalxa-hero-bg.png");
 
@@ -1050,6 +1058,7 @@
 
         /* ==========================================
            MOBILE
+           UPDATED IMAGE OVERLAY
         ========================================== */
 
         @media (max-width: 760px) {
@@ -1126,12 +1135,17 @@
 
         @media (max-width: 650px) {
 
+            /*
+             * Mobile image overlay:
+             * Reduced from 88% to 55–60%.
+             */
+
             .site-hero {
 
                 background-image:
                     linear-gradient(
-                        rgba(255, 255, 255, 0.88),
-                        rgba(245, 251, 255, 0.88)
+                        rgba(255, 255, 255, 0.55),
+                        rgba(245, 251, 255, 0.60)
                     ),
                     url("/images/kalxa-hero-bg.png");
 
@@ -1291,7 +1305,7 @@
     <main id="main">
 
         <!-- ==========================================
-             HERO WITH BACKGROUND IMAGE
+             HERO WITH UPDATED BACKGROUND IMAGE
         ========================================== -->
 
         <section
