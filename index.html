@@ -160,20 +160,40 @@
         }
 
         /* ==========================================
-           HERO
+           HERO BACKGROUND IMAGE
         ========================================== */
 
         .site-hero {
 
-            background:
+            /*
+             * Image location:
+             * /images/kalxa-hero-bg.png
+             *
+             * Light overlay improves text readability.
+             */
+
+            background-image:
                 linear-gradient(
                     125deg,
-                    #fff,
-                    #f2faff 55%,
-                    #e4f4ff
-                );
+                    rgba(255, 255, 255, 0.82) 0%,
+                    rgba(255, 255, 255, 0.76) 50%,
+                    rgba(235, 247, 255, 0.82) 100%
+                ),
+                url("/images/kalxa-hero-bg.png");
 
-            padding: 90px 7% 80px;
+            background-size: cover;
+
+            background-position: center center;
+
+            background-repeat: no-repeat;
+
+            background-color: #e5f5ff;
+
+            padding: 100px 7% 95px;
+
+            position: relative;
+
+            isolation: isolate;
 
         }
 
@@ -185,9 +205,14 @@
 
             text-align: center;
 
+            position: relative;
+
+            z-index: 1;
+
         }
 
-        .site-hero h1 {
+        .site-hero h1,
+        .site-hero h2 {
 
             font-size: clamp(42px, 6vw, 76px);
 
@@ -200,6 +225,8 @@
             max-width: 950px;
 
             margin: 18px auto 26px;
+
+            color: #111318;
 
         }
 
@@ -217,6 +244,14 @@
 
         }
 
+        .site-hero .eyebrow {
+
+            color: #005988;
+
+            font-weight: 800;
+
+        }
+
         .site-hero .lead {
 
             font-family: var(--font-body);
@@ -225,11 +260,13 @@
 
             line-height: 1.85;
 
-            color: var(--muted);
+            color: #344b5b;
 
             max-width: 750px;
 
             margin: 0 auto 26px;
+
+            font-weight: 500;
 
         }
 
@@ -426,6 +463,10 @@
 
             letter-spacing: -0.015em;
 
+            transition:
+                transform 0.25s ease,
+                filter 0.25s ease;
+
         }
 
         .button.primary-button {
@@ -447,7 +488,11 @@
         }
 
         .button:hover {
+
             filter: brightness(0.95);
+
+            transform: translateY(-2px);
+
         }
 
         /* ==========================================
@@ -537,7 +582,7 @@
         }
 
         /* ==========================================
-           NEW: TECHNOLOGY PARTNERS
+           TECHNOLOGY PARTNERS
         ========================================== */
 
         .kalxa-partners {
@@ -1010,7 +1055,32 @@
         @media (max-width: 760px) {
 
             .site-hero {
-                padding: 70px 5%;
+
+                padding: 80px 5%;
+
+                background-position: center center;
+
+            }
+
+            .site-hero .inner {
+                max-width: 100%;
+            }
+
+            .site-hero h1,
+            .site-hero h2 {
+
+                font-size: clamp(36px, 9vw, 52px);
+
+                line-height: 1.12;
+
+            }
+
+            .site-hero .lead {
+
+                font-size: 16px;
+
+                line-height: 1.8;
+
             }
 
             .section-shell {
@@ -1056,11 +1126,14 @@
 
         @media (max-width: 650px) {
 
-            .site-hero h1 {
+            .site-hero {
 
-                font-size: clamp(38px, 10vw, 52px);
-
-                line-height: 1.12;
+                background-image:
+                    linear-gradient(
+                        rgba(255, 255, 255, 0.88),
+                        rgba(245, 251, 255, 0.88)
+                    ),
+                    url("/images/kalxa-hero-bg.png");
 
             }
 
@@ -1130,7 +1203,8 @@
 
             .partner-card,
             .footer-contact-link,
-            .footer-contact-link i {
+            .footer-contact-link i,
+            .button {
                 transition: none;
             }
 
@@ -1217,10 +1291,13 @@
     <main id="main">
 
         <!-- ==========================================
-             HERO
+             HERO WITH BACKGROUND IMAGE
         ========================================== -->
 
-        <section class="site-hero">
+        <section
+            class="site-hero"
+            aria-labelledby="hero-heading"
+        >
 
             <div class="inner">
 
@@ -1228,9 +1305,9 @@
                     Digital AdTech
                 </p>
 
-                <h2>
+                <h1 id="hero-heading">
                     For Real-World Needs.
-                </h2>
+                </h1>
 
                 <p class="lead">
                     We build digital platforms that connect
@@ -1417,7 +1494,7 @@
         </section>
 
         <!-- ==========================================
-             NEW: TECHNOLOGY THAT POWERS KALXA
+             TECHNOLOGY THAT POWERS KALXA
         ========================================== -->
 
         <section
