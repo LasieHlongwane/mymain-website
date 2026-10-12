@@ -1,681 +1,1819 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#e5f5ff">
-    <meta name="description" content="KALXA develops digital platforms and custom websites, apps, software and business automation for South African businesses.">
-    <meta name="robots" content="index, follow">
-    <title>Digital Technology &amp; Platform Services | KALXA (PTY) LTD</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css?v=4">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <meta
+        name="theme-color"
+        content="#e5f5ff"
+    >
+
+    <meta
+        name="description"
+        content="KALXA develops digital platforms and custom websites, apps, software and business automation for South African businesses."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <title>
+        Digital Technology &amp; Platform Services | KALXA (PTY) LTD
+    </title>
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- EXISTING CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css?v=4"
+    >
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
     <style>
-      :root {
-        --ink: #111318;
-        --muted: #52616d;
-        --line: #dce7ee;
-        --blue: #006aa6;
-        --font-heading: "Plus Jakarta Sans", sans-serif;
-        --font-body: "DM Sans", sans-serif;
-        --font-luxury: "Cormorant Garamond", Georgia, serif;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        margin: 0;
-        color: var(--ink);
-        font-family: var(--font-body);
-        font-weight: 400;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-      }
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-family: var(--font-heading);
-        letter-spacing: -0.035em;
-      }
-      .brand-text strong {
-        font-family: var(--font-heading);
-        font-weight: 800;
-        letter-spacing: -1.5px;
-      }
-      .brand-text span {
-        font-family: var(--font-body);
-        font-size: 10px;
-        letter-spacing: 1.4px;
-        font-weight: 700;
-      }
-      .navbar nav a {
-        font-family: var(--font-body);
-        font-weight: 600;
-        letter-spacing: -0.01em;
-      }
-      .site-hero {
-        background: linear-gradient(125deg, #fff, #f2faff 55%, #e4f4ff);
-        padding: 90px 7% 80px;
-      }
-      .site-hero .inner {
-        max-width: 920px;
-        margin: auto;
-        text-align: center;
-      }
-      .site-hero h1 {
-        font-size: clamp(42px, 6vw, 76px);
-        font-weight: 800;
-        line-height: 1.08;
-        letter-spacing: -0.065em;
-        max-width: 950px;
-        margin: 18px auto 26px;
-      }
-      .luxury-text {
-        font-family: var(--font-luxury);
-        font-style: italic;
-        font-weight: 600;
-        color: var(--blue);
-        letter-spacing: -0.035em;
-      }
-      .site-hero .lead {
-        font-family: var(--font-body);
-        font-size: clamp(16px, 2vw, 20px);
-        line-height: 1.85;
-        color: var(--muted);
-        max-width: 750px;
-        margin: 0 auto 26px;
-      }
-      .section-shell {
-        padding: 75px 7%;
-      }
-      .section-shell.soft {
-        background: #f8fafc;
-      }
-      .section-inner {
-        max-width: 1200px;
-        margin: auto;
-      }
-      .section-title {
-        text-align: center;
-        max-width: 760px;
-        margin: 0 auto 36px;
-      }
-      .section-title h2 {
-        font-size: clamp(30px, 4vw, 46px);
-        font-weight: 800;
-        line-height: 1.2;
-        letter-spacing: -0.045em;
-        margin: 12px 0;
-      }
-      .section-title p {
-        color: var(--muted);
-        line-height: 1.85;
-        font-family: var(--font-body);
-      }
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
-      }
-      .card {
-        padding: 30px;
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        background: #fff;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-      }
-      .card h3 {
-        font-size: 22px;
-        font-weight: 700;
-        line-height: 1.35;
-        letter-spacing: -0.035em;
-        margin: 0 0 13px;
-      }
-      .card p {
-        color: var(--muted);
-        font-family: var(--font-body);
-        font-size: 15px;
-        line-height: 1.85;
-        margin: 0 0 22px;
-        flex: 1;
-      }
-      .card a {
-        font-family: var(--font-body);
-        font-weight: 700;
-        letter-spacing: -0.015em;
-        color: var(--blue);
-        text-decoration: none;
-      }
-      .card a:hover {
-        text-decoration: underline;
-      }
-      .actions {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 25px;
-      }
-      .actions a {
-        text-decoration: none;
-      }
-      .contact-band {
-        text-align: center;
-        background: linear-gradient(120deg, #f4fbff, #e4f4ff, #f7fcff);
-        padding: 65px 7%;
-      }
-      .contact-band p {
-        color: var(--muted);
-        font-family: var(--font-body);
-        font-size: 15px;
-        line-height: 1.85;
-      }
-      .company-footer {
-        background: linear-gradient(120deg, #edf8ff, #d6efff 45%, #f5fbff);
-        padding: 60px 7% 30px;
-        border-top: 1px solid #c4e3f5;
-        color: #263746;
-        font-family: var(--font-body);
-      }
-      .footer-main {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 70px;
-        padding-bottom: 40px;
-      }
-      .footer-company h3 {
-        font-size: 24px;
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        margin: 0 0 16px;
-      }
-      .footer-company p,
-      .footer-company address {
-        font-size: 14px;
-        line-height: 1.85;
-        color: #344b5b;
-        font-style: normal;
-      }
-      .footer-navigation h3 {
-        font-size: 18px;
-        margin: 0 0 20px;
-      }
-      .footer-navigation-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-      }
-      .footer-link-group {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .footer-link-group h4 {
-        font-size: 12px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #526d80;
-        margin: 0 0 4px;
-      }
-      .footer-link-group a,
-      .footer-support a {
-        color: #263746;
-        text-decoration: none;
-        font-size: 14px;
-        line-height: 1.6;
-        overflow-wrap: anywhere;
-      }
-      .footer-link-group a:hover,
-      .footer-support a:hover {
-        color: var(--blue);
-        text-decoration: underline;
-      }
-      .footer-support {
-        border-block: 1px solid #c4e3f5;
-        padding: 25px 0;
-      }
-      .footer-support h4 {
-        margin: 0 0 12px;
-      }
-      .footer-support-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px 26px;
-      }
-      .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        gap: 15px;
-        flex-wrap: wrap;
-        padding-top: 22px;
-        font-size: 12px;
-        color: #526d80;
-      }
-      .footer-bottom p {
-        margin: 0;
-      }
 
+        /* ==========================================
+           GLOBAL VARIABLES
+        ========================================== */
 
-      /* ==========================================
-   KALXA FOOTER CONTACT ICONS
-========================================== */
+        :root {
 
-.footer-support-links {
+            --ink: #111318;
 
-    display: flex;
+            --muted: #52616d;
 
-    align-items: center;
+            --line: #dce7ee;
 
-    flex-wrap: wrap;
+            --blue: #006aa6;
 
-    gap: 18px 30px;
+            --font-heading:
+                "Plus Jakarta Sans", sans-serif;
 
-}
+            --font-body:
+                "DM Sans", sans-serif;
 
-.footer-contact-link {
+            --font-luxury:
+                "Cormorant Garamond", Georgia, serif;
 
-    display: inline-flex;
+        }
 
-    align-items: center;
+        * {
+            box-sizing: border-box;
+        }
 
-    gap: 10px;
+        html {
+            scroll-behavior: smooth;
+        }
 
-    text-decoration: none;
+        body {
 
-    font-family: var(--font-body);
+            margin: 0;
 
-    font-size: 14px;
+            color: var(--ink);
 
-    font-weight: 600;
+            font-family: var(--font-body);
 
-    color: #263746;
+            font-weight: 400;
 
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
+            -webkit-font-smoothing: antialiased;
 
-}
+            text-rendering: optimizeLegibility;
 
-.footer-contact-link i {
+        }
 
-    font-size: 19px;
+        h1,
+        h2,
+        h3,
+        h4 {
 
-    color: #006aa6;
+            font-family: var(--font-heading);
 
-    transition: transform 0.25s ease;
+            letter-spacing: -0.035em;
 
-}
+        }
 
-.footer-contact-link:hover {
+        /* ==========================================
+           BRAND
+        ========================================== */
 
-    transform: translateY(-2px);
+        .brand-text strong {
 
-    opacity: 0.85;
+            font-family: var(--font-heading);
 
-}
+            font-weight: 800;
 
-.footer-contact-link:hover i {
+            letter-spacing: -1.5px;
 
-    transform: scale(1.12);
+        }
 
-}
+        .brand-text span {
 
-.footer-contact-link:focus-visible {
+            font-family: var(--font-body);
 
-    outline: 2px solid #006aa6;
+            font-size: 10px;
 
-    outline-offset: 5px;
+            letter-spacing: 1.4px;
 
-    border-radius: 3px;
+            font-weight: 700;
 
-}
+        }
 
-/* MOBILE */
+        .navbar nav a {
 
-@media (max-width: 650px) {
+            font-family: var(--font-body);
 
-    .footer-support-links {
+            font-weight: 600;
 
-        flex-direction: column;
+            letter-spacing: -0.01em;
 
-        align-items: flex-start;
+        }
 
-        gap: 18px;
+        /* ==========================================
+           HERO
+        ========================================== */
 
-    }
-
-    .footer-contact-link {
-
-        font-size: 14px;
-
-    }
-
-    .footer-contact-link i {
-
-        font-size: 20px;
-
-    }
-
-}
-      .service-highlight {
-        margin-top: 25px;
-        border: 1px solid #b8def3;
-        background: linear-gradient(125deg, #fff, #edf8ff);
-        border-radius: 18px;
-        padding: 34px;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        gap: 25px;
-      }
-      .service-highlight h3 {
-        font-size: clamp(23px, 3vw, 30px);
-        margin: 10px 0;
-      }
-      .service-highlight p {
-        color: var(--muted);
-        line-height: 1.8;
-        margin: 0;
-      }
-      .service-highlight .button {
-        white-space: nowrap;
-        text-decoration: none;
-      }
-      .steps {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
-      }
-      .steps .card p {
-        margin-bottom: 0;
-      }
-      .section-copy {
-        max-width: 780px;
-        margin: 0 auto 32px;
-        color: var(--muted);
-        line-height: 1.9;
-        text-align: center;
-      }
-      .eyebrow,
-      .section-label {
-        font-family: var(--font-body);
-        font-weight: 700;
-        letter-spacing: 2.5px;
-        font-size: 11px;
-        text-transform: uppercase;
-        color: #006aa6;
-      }
-      .button.primary-button,
-      .button.secondary-button {
-        display: inline-block;
-        padding: 13px 22px;
-        border-radius: 9px;
-        font-family: var(--font-body);
-        font-weight: 700;
-        letter-spacing: -0.015em;
-      }
-      .button.primary-button {
-        background: #006aa6;
-        color: #fff;
-      }
-      .button.secondary-button {
-        border: 1px solid #9bc8e2;
-        color: #075f91;
-        background: #fff;
-      }
-      .button:hover {
-        filter: brightness(0.95);
-      }
-      @media (max-width: 760px) {
         .site-hero {
-          padding: 70px 5%;
+
+            background:
+                linear-gradient(
+                    125deg,
+                    #fff,
+                    #f2faff 55%,
+                    #e4f4ff
+                );
+
+            padding: 90px 7% 80px;
+
         }
-        .section-shell {
-          padding: 60px 5%;
+
+        .site-hero .inner {
+
+            max-width: 920px;
+
+            margin: auto;
+
+            text-align: center;
+
         }
-        .cards,
-        .steps,
-        .footer-main,
-        .service-highlight {
-          grid-template-columns: 1fr;
-        }
-        .service-highlight .button {
-          white-space: normal;
-          text-align: center;
-        }
-        .company-footer {
-          padding: 50px 5% 25px;
-        }
-        .footer-main {
-          gap: 35px;
-        }
-        .footer-navigation-grid {
-          gap: 15px;
-        }
-      }
-      @media (max-width: 650px) {
+
         .site-hero h1 {
-          font-size: clamp(38px, 10vw, 52px);
-          line-height: 1.12;
+
+            font-size: clamp(42px, 6vw, 76px);
+
+            font-weight: 800;
+
+            line-height: 1.08;
+
+            letter-spacing: -0.065em;
+
+            max-width: 950px;
+
+            margin: 18px auto 26px;
+
         }
+
+        .luxury-text {
+
+            font-family: var(--font-luxury);
+
+            font-style: italic;
+
+            font-weight: 600;
+
+            color: var(--blue);
+
+            letter-spacing: -0.035em;
+
+        }
+
+        .site-hero .lead {
+
+            font-family: var(--font-body);
+
+            font-size: clamp(16px, 2vw, 20px);
+
+            line-height: 1.85;
+
+            color: var(--muted);
+
+            max-width: 750px;
+
+            margin: 0 auto 26px;
+
+        }
+
+        /* ==========================================
+           SECTIONS
+        ========================================== */
+
+        .section-shell {
+
+            padding: 75px 7%;
+
+        }
+
+        .section-shell.soft {
+
+            background: #f8fafc;
+
+        }
+
+        .section-inner {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            max-width: 760px;
+
+            margin: 0 auto 36px;
+
+        }
+
         .section-title h2 {
-          font-size: 30px;
+
+            font-size: clamp(30px, 4vw, 46px);
+
+            font-weight: 800;
+
+            line-height: 1.2;
+
+            letter-spacing: -0.045em;
+
+            margin: 12px 0;
+
         }
-      }
-      @media (max-width: 400px) {
+
+        .section-title p {
+
+            color: var(--muted);
+
+            line-height: 1.85;
+
+            font-family: var(--font-body);
+
+        }
+
+        .eyebrow,
+        .section-label {
+
+            font-family: var(--font-body);
+
+            font-weight: 700;
+
+            letter-spacing: 2.5px;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            color: var(--blue);
+
+        }
+
+        /* ==========================================
+           PRODUCT CARDS
+        ========================================== */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 22px;
+
+        }
+
+        .card {
+
+            padding: 30px;
+
+            border: 1px solid var(--line);
+
+            border-radius: 16px;
+
+            background: #fff;
+
+            display: flex;
+
+            flex-direction: column;
+
+            min-width: 0;
+
+        }
+
+        .card h3 {
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+            line-height: 1.35;
+
+            letter-spacing: -0.035em;
+
+            margin: 0 0 13px;
+
+        }
+
+        .card p {
+
+            color: var(--muted);
+
+            font-family: var(--font-body);
+
+            font-size: 15px;
+
+            line-height: 1.85;
+
+            margin: 0 0 22px;
+
+            flex: 1;
+
+        }
+
+        .card a {
+
+            font-family: var(--font-body);
+
+            font-weight: 700;
+
+            letter-spacing: -0.015em;
+
+            color: var(--blue);
+
+            text-decoration: none;
+
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ==========================================
+           BUTTONS
+        ========================================== */
+
+        .actions {
+
+            display: flex;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            margin-top: 25px;
+
+        }
+
+        .actions a {
+            text-decoration: none;
+        }
+
+        .button.primary-button,
+        .button.secondary-button {
+
+            display: inline-block;
+
+            padding: 13px 22px;
+
+            border-radius: 9px;
+
+            font-family: var(--font-body);
+
+            font-weight: 700;
+
+            letter-spacing: -0.015em;
+
+        }
+
+        .button.primary-button {
+
+            background: #006aa6;
+
+            color: #fff;
+
+        }
+
+        .button.secondary-button {
+
+            border: 1px solid #9bc8e2;
+
+            color: #075f91;
+
+            background: #fff;
+
+        }
+
+        .button:hover {
+            filter: brightness(0.95);
+        }
+
+        /* ==========================================
+           CUSTOM DEVELOPMENT
+        ========================================== */
+
+        .service-highlight {
+
+            margin-top: 25px;
+
+            border: 1px solid #b8def3;
+
+            background:
+                linear-gradient(
+                    125deg,
+                    #fff,
+                    #edf8ff
+                );
+
+            border-radius: 18px;
+
+            padding: 34px;
+
+            display: grid;
+
+            grid-template-columns: 1fr auto;
+
+            align-items: center;
+
+            gap: 25px;
+
+        }
+
+        .service-highlight h3 {
+
+            font-size: clamp(23px, 3vw, 30px);
+
+            margin: 10px 0;
+
+        }
+
+        .service-highlight p {
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            margin: 0;
+
+        }
+
+        .service-highlight .button {
+
+            white-space: nowrap;
+
+            text-decoration: none;
+
+        }
+
+        .steps {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 20px;
+
+        }
+
+        .steps .card p {
+            margin-bottom: 0;
+        }
+
+        .section-copy {
+
+            max-width: 780px;
+
+            margin: 0 auto 32px;
+
+            color: var(--muted);
+
+            line-height: 1.9;
+
+            text-align: center;
+
+        }
+
+        /* ==========================================
+           NEW: TECHNOLOGY PARTNERS
+        ========================================== */
+
+        .kalxa-partners {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f7fbff 0%,
+                    #edf8ff 50%,
+                    #f8fcff 100%
+                );
+
+            padding: 85px 7%;
+
+            border-top: 1px solid #e0edf5;
+
+            border-bottom: 1px solid #e0edf5;
+
+        }
+
+        .partners-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+        .partners-header {
+
+            text-align: center;
+
+            max-width: 760px;
+
+            margin: 0 auto 42px;
+
+        }
+
+        .partners-header h2 {
+
+            font-size: clamp(30px, 4vw, 46px);
+
+            font-weight: 800;
+
+            line-height: 1.2;
+
+            letter-spacing: -0.045em;
+
+            margin: 14px 0;
+
+        }
+
+        .partners-description {
+
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            font-family: var(--font-body);
+
+            font-size: 16px;
+
+            line-height: 1.85;
+
+            color: var(--muted);
+
+        }
+
+        .partners-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 20px;
+
+        }
+
+        .partner-card {
+
+            background: #fff;
+
+            padding: 32px 20px;
+
+            border: 1px solid #dbe9f3;
+
+            border-radius: 16px;
+
+            min-height: 160px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            gap: 12px;
+
+            text-decoration: none;
+
+            color: var(--ink);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+
+        }
+
+        .partner-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #86bfdf;
+
+            box-shadow:
+                0 12px 28px rgba(0, 76, 125, 0.08);
+
+        }
+
+        .partner-card:focus-visible {
+
+            outline: 3px solid #006aa6;
+
+            outline-offset: 4px;
+
+        }
+
+        .partner-name {
+
+            font-family: var(--font-heading);
+
+            font-size: 24px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.045em;
+
+            line-height: 1.3;
+
+        }
+
+        .partner-role {
+
+            font-family: var(--font-body);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            color: #667987;
+
+            line-height: 1.5;
+
+        }
+
+        .partners-note {
+
+            max-width: 720px;
+
+            margin: 30px auto 0;
+
+            text-align: center;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+            color: #71818d;
+
+        }
+
+        /* ==========================================
+           CONTACT BAND
+        ========================================== */
+
+        .contact-band {
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #f4fbff,
+                    #e4f4ff,
+                    #f7fcff
+                );
+
+            padding: 65px 7%;
+
+        }
+
+        .contact-band p {
+
+            color: var(--muted);
+
+            font-family: var(--font-body);
+
+            font-size: 15px;
+
+            line-height: 1.85;
+
+        }
+
+        .contact-band .section-label {
+
+            color: var(--blue);
+
+        }
+
+        /* ==========================================
+           FOOTER
+        ========================================== */
+
+        .company-footer {
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #edf8ff,
+                    #d6efff 45%,
+                    #f5fbff
+                );
+
+            padding: 60px 7% 30px;
+
+            border-top: 1px solid #c4e3f5;
+
+            color: #263746;
+
+            font-family: var(--font-body);
+
+        }
+
+        .footer-main {
+
+            display: grid;
+
+            grid-template-columns: 1.2fr 1fr;
+
+            gap: 70px;
+
+            padding-bottom: 40px;
+
+        }
+
+        .footer-company h3 {
+
+            font-size: 24px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.04em;
+
+            margin: 0 0 16px;
+
+        }
+
+        .footer-company p,
+        .footer-company address {
+
+            font-size: 14px;
+
+            line-height: 1.85;
+
+            color: #344b5b;
+
+            font-style: normal;
+
+        }
+
+        .footer-navigation h3 {
+
+            font-size: 18px;
+
+            margin: 0 0 20px;
+
+        }
+
         .footer-navigation-grid {
-          grid-template-columns: 1fr;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+
         }
-      }
+
+        .footer-link-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+        }
+
+        .footer-link-group h4 {
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            color: #526d80;
+
+            margin: 0 0 4px;
+
+        }
+
+        .footer-link-group a,
+        .footer-support a {
+
+            color: #263746;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            overflow-wrap: anywhere;
+
+        }
+
+        .footer-link-group a:hover,
+        .footer-support a:hover {
+
+            color: var(--blue);
+
+            text-decoration: underline;
+
+        }
+
+        /* ==========================================
+           FOOTER SUPPORT
+        ========================================== */
+
+        .footer-support {
+
+            border-block: 1px solid #c4e3f5;
+
+            padding: 25px 0;
+
+        }
+
+        .footer-support h4 {
+            margin: 0 0 12px;
+        }
+
+        .footer-support-links {
+
+            display: flex;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 18px 30px;
+
+        }
+
+        .footer-contact-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+
+            font-family: var(--font-body);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: #263746;
+
+            transition:
+                transform 0.25s ease,
+                opacity 0.25s ease;
+
+        }
+
+        .footer-contact-link i {
+
+            font-size: 19px;
+
+            color: #006aa6;
+
+            transition: transform 0.25s ease;
+
+        }
+
+        .footer-contact-link:hover {
+
+            transform: translateY(-2px);
+
+            opacity: 0.85;
+
+        }
+
+        .footer-contact-link:hover i {
+
+            transform: scale(1.12);
+
+        }
+
+        .footer-contact-link:focus-visible {
+
+            outline: 2px solid #006aa6;
+
+            outline-offset: 5px;
+
+            border-radius: 3px;
+
+        }
+
+        .footer-bottom {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            padding-top: 22px;
+
+            font-size: 12px;
+
+            color: #526d80;
+
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        /* ==========================================
+           TABLET
+        ========================================== */
+
+        @media (max-width: 900px) {
+
+            .partners-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+            }
+
+        }
+
+        /* ==========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 760px) {
+
+            .site-hero {
+                padding: 70px 5%;
+            }
+
+            .section-shell {
+                padding: 60px 5%;
+            }
+
+            .cards,
+            .steps,
+            .footer-main,
+            .service-highlight {
+                grid-template-columns: 1fr;
+            }
+
+            .service-highlight .button {
+
+                white-space: normal;
+
+                text-align: center;
+
+            }
+
+            .kalxa-partners {
+                padding: 65px 5%;
+            }
+
+            .partners-header {
+                margin-bottom: 30px;
+            }
+
+            .company-footer {
+                padding: 50px 5% 25px;
+            }
+
+            .footer-main {
+                gap: 35px;
+            }
+
+            .footer-navigation-grid {
+                gap: 15px;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .site-hero h1 {
+
+                font-size: clamp(38px, 10vw, 52px);
+
+                line-height: 1.12;
+
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .partners-grid {
+                gap: 12px;
+            }
+
+            .partner-card {
+
+                padding: 24px 12px;
+
+                min-height: 135px;
+
+                border-radius: 12px;
+
+            }
+
+            .partner-name {
+                font-size: 19px;
+            }
+
+            .partner-role {
+                font-size: 11px;
+            }
+
+            .footer-support-links {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 18px;
+
+            }
+
+            .footer-contact-link {
+                font-size: 14px;
+            }
+
+            .footer-contact-link i {
+                font-size: 20px;
+            }
+
+        }
+
+        @media (max-width: 400px) {
+
+            .footer-navigation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            .partner-card,
+            .footer-contact-link,
+            .footer-contact-link i {
+                transition: none;
+            }
+
+        }
+
     </style>
 
-<!-- FONT AWESOME ICONS -->
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
->
-    
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main">
+        Skip to content
+    </a>
+
+    <!-- ==========================================
+         NAVIGATION
+    ========================================== -->
+
     <header class="navbar">
-      <a class="brand" href="/index.html" aria-label="KALXA Home">
-        <span class="brand-text">
-          <strong>KALXA</strong>
-          <span>DIGITAL TECHNOLOGY &amp; PLATFORM SERVICES</span>
-        </span>
-      </a>
-      <button class="menu-button" id="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
-      <nav id="nav-menu" aria-label="Main navigation">
-        <a href="/index.html" aria-current="page">Home</a>
-        <a href="/about.html">About Us</a>
-        <a href="/services.html">Services</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/faq.html">FAQs</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
+
+        <a
+            class="brand"
+            href="/index.html"
+            aria-label="KALXA Home"
+        >
+
+            <span class="brand-text">
+
+                <strong>KALXA</strong>
+
+                <span>
+                    DIGITAL TECHNOLOGY &amp; PLATFORM SERVICES
+                </span>
+
+            </span>
+
+        </a>
+
+        <button
+            class="menu-button"
+            id="menu-button"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+        >
+            ☰
+        </button>
+
+        <nav
+            id="nav-menu"
+            aria-label="Main navigation"
+        >
+
+            <a href="/index.html" aria-current="page">
+                Home
+            </a>
+
+            <a href="/about.html">
+                About Us
+            </a>
+
+            <a href="/services.html">
+                Services
+            </a>
+
+            <a href="/pricing.html">
+                Pricing
+            </a>
+
+            <a href="/faq.html">
+                FAQs
+            </a>
+
+            <a href="/contact.html">
+                Contact
+            </a>
+
+        </nav>
+
     </header>
 
     <main id="main">
-      <section class="site-hero">
-        <div class="inner">
-          <p class="eyebrow">Digital AdTech </p>
-          <h2>For Real-World Needs.</h2>
-          <p class="lead">We build digital platforms that connect businesses, creators and communities through practical technology.</p>
-          <div class="actions">
-            <a class="button primary-button" href="#products">Explore Our Products →</a>
-            <a class="button secondary-button" href="/about.html">About KALXA</a>
-          </div>
-        </div>
-      </section>
 
-      <section class="section-shell soft" id="products">
-        <div class="section-inner">
-          <div class="section-title">
-            <p class="section-label">OUR PRODUCTS</p>
-            <p>Find the right platform for your business or creative goals.</p>
-          </div>
-          <div class="cards">
-            <article class="card">
-              <h3>Ticketing &amp; Business Profiles</h3>
-              <p>Event ticketing, event management and restaurant discovery tools.</p>
-              <a href="/ticketing.html">Explore Ticketing →</a>
-            </article>
-            <article class="card">
-              <h3>Content Creator CRM</h3>
-              <p>Helping creators publish content, connect with fans and manage audiences.</p>
-              <a href="/creator-crm.html">Explore Creator Tools →</a>
-            </article>
-            <article class="card">
-              <h3>Kalxa Discovery</h3>
-              <p>Helping people discover local businesses, services and opportunities.</p>
-              <a href="/discovery.html">Explore Discovery →</a>
-            </article>
-            <article class="card">
-              <h3>Business Finance</h3>
-              <p>Business automation and financial workflow tools. <strong>In development.</strong></p>
-              <a href="/business-finance.html">Learn More →</a>
-            </article>
-          </div>
-        </div>
-      </section>
+        <!-- ==========================================
+             HERO
+        ========================================== -->
 
-      <section class="section-shell" id="custom-services">
-        <div class="section-inner">
-          <div class="section-title">
-            <p class="section-label">CUSTOM DEVELOPMENT SERVICES</p>
-            <h3>We Build Websites, Mobile Apps &amp; Business Systems</h3>
-          </div>
-          <div class="service-highlight">
-            <div>
-              <h3> 💻Tailored to your business </h3>
-              <p>Whether you need a powerful website, a custom application, or a full business management system, KALXA builds technology that moves your business forward — on your terms.</p>
+        <section class="site-hero">
+
+            <div class="inner">
+
+                <p class="eyebrow">
+                    Digital AdTech
+                </p>
+
+                <h2>
+                    For Real-World Needs.
+                </h2>
+
+                <p class="lead">
+                    We build digital platforms that connect
+                    businesses, creators and communities
+                    through practical technology.
+                </p>
+
+                <div class="actions">
+
+                    <a
+                        class="button primary-button"
+                        href="#products"
+                    >
+                        Explore Our Products →
+                    </a>
+
+                    <a
+                        class="button secondary-button"
+                        href="/about.html"
+                    >
+                        About KALXA
+                    </a>
+
+                </div>
+
             </div>
-            <a class="button primary-button" href="/custom-development.html">Build With KALXA →</a>
-          </div>
-        </div>
-      </section>
 
-      <section class="contact-band">
-        <p class="section-label">GET IN TOUCH</p>
-      
-        <p>Interested in a KALXA product, custom development or a business partnership?</p>
-        <div class="actions">
-          <a class="button primary-button" href="/contact.html">Contact Us→</a>
-          <a class="button secondary-button" href="https://wa.me/27766114909" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
-        </div>
-      </section>
+        </section>
+
+        <!-- ==========================================
+             PRODUCTS
+        ========================================== -->
+
+        <section
+            class="section-shell soft"
+            id="products"
+        >
+
+            <div class="section-inner">
+
+                <div class="section-title">
+
+                    <p class="section-label">
+                        OUR PRODUCTS
+                    </p>
+
+                    <p>
+                        Find the right platform for your
+                        business or creative goals.
+                    </p>
+
+                </div>
+
+                <div class="cards">
+
+                    <article class="card">
+
+                        <h3>
+                            Ticketing &amp; Business Profiles
+                        </h3>
+
+                        <p>
+                            Event ticketing, event management
+                            and restaurant discovery tools.
+                        </p>
+
+                        <a href="/ticketing.html">
+                            Explore Ticketing →
+                        </a>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>
+                            Content Creator CRM
+                        </h3>
+
+                        <p>
+                            Helping creators publish content,
+                            connect with fans and manage audiences.
+                        </p>
+
+                        <a href="/creator-crm.html">
+                            Explore Creator Tools →
+                        </a>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>
+                            Kalxa Discovery
+                        </h3>
+
+                        <p>
+                            Helping people discover local businesses,
+                            services and opportunities.
+                        </p>
+
+                        <a href="/discovery.html">
+                            Explore Discovery →
+                        </a>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>
+                            Business Finance
+                        </h3>
+
+                        <p>
+                            Business automation and financial
+                            workflow tools.
+                            <strong>In development.</strong>
+                        </p>
+
+                        <a href="/business-finance.html">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             CUSTOM DEVELOPMENT
+        ========================================== -->
+
+        <section
+            class="section-shell"
+            id="custom-services"
+        >
+
+            <div class="section-inner">
+
+                <div class="section-title">
+
+                    <p class="section-label">
+                        CUSTOM DEVELOPMENT SERVICES
+                    </p>
+
+                    <h3>
+                        We Build Websites, Mobile Apps
+                        &amp; Business Systems
+                    </h3>
+
+                </div>
+
+                <div class="service-highlight">
+
+                    <div>
+
+                        <h3>
+                            💻 Tailored to your business
+                        </h3>
+
+                        <p>
+                            Whether you need a powerful website,
+                            a custom application, or a full business
+                            management system, KALXA builds technology
+                            that moves your business forward —
+                            on your terms.
+                        </p>
+
+                    </div>
+
+                    <a
+                        class="button primary-button"
+                        href="/custom-development.html"
+                    >
+                        Build With KALXA →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             NEW: TECHNOLOGY THAT POWERS KALXA
+        ========================================== -->
+
+        <section
+            class="kalxa-partners"
+            id="technology-partners"
+            aria-labelledby="partners-heading"
+        >
+
+            <div class="partners-container">
+
+                <div class="partners-header">
+
+                    <p class="section-label">
+                        OUR TECHNOLOGY ECOSYSTEM
+                    </p>
+
+                    <h2 id="partners-heading">
+                        Technology That Powers
+                        <span class="luxury-text">KALXA</span>
+                    </h2>
+
+                    <p class="partners-description">
+                        Built with trusted technology and infrastructure
+                        providers that support secure payments,
+                        reliable hosting, cloud databases
+                        and digital content delivery.
+                    </p>
+
+                </div>
+
+                <div class="partners-grid">
+
+                    <!-- PAYSTACK -->
+
+                    <a
+                        class="partner-card"
+                        href="https://paystack.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit Paystack website"
+                    >
+
+                        <span class="partner-name">
+                            Paystack
+                        </span>
+
+                        <span class="partner-role">
+                            Payment Infrastructure
+                        </span>
+
+                    </a>
+
+                    <!-- YOCO -->
+
+                    <a
+                        class="partner-card"
+                        href="https://www.yoco.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit Yoco website"
+                    >
+
+                        <span class="partner-name">
+                            Yoco
+                        </span>
+
+                        <span class="partner-role">
+                            Online Payments
+                        </span>
+
+                    </a>
+
+                    <!-- HOSTAFRICA -->
+
+                    <a
+                        class="partner-card"
+                        href="https://hostafrica.co.za/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit HOSTAFRICA website"
+                    >
+
+                        <span class="partner-name">
+                            HOSTAFRICA
+                        </span>
+
+                        <span class="partner-role">
+                            Domain Infrastructure
+                        </span>
+
+                    </a>
+
+                    <!-- RENDER -->
+
+                    <a
+                        class="partner-card"
+                        href="https://render.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit Render website"
+                    >
+
+                        <span class="partner-name">
+                            Render
+                        </span>
+
+                        <span class="partner-role">
+                            Cloud Application Hosting
+                        </span>
+
+                    </a>
+
+                    <!-- NEON -->
+
+                    <a
+                        class="partner-card"
+                        href="https://neon.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit Neon website"
+                    >
+
+                        <span class="partner-name">
+                            Neon
+                        </span>
+
+                        <span class="partner-role">
+                            PostgreSQL Cloud Database
+                        </span>
+
+                    </a>
+
+                    <!-- CLOUDINARY -->
+
+                    <a
+                        class="partner-card"
+                        href="https://cloudinary.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit Cloudinary website"
+                    >
+
+                        <span class="partner-name">
+                            Cloudinary
+                        </span>
+
+                        <span class="partner-role">
+                            Image &amp; Video Infrastructure
+                        </span>
+
+                    </a>
+
+                </div>
+
+                <p class="partners-note">
+                    These companies provide technology services
+                    used within the KALXA ecosystem.
+                    Their inclusion does not imply
+                    an official commercial partnership,
+                    sponsorship or endorsement.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             CONTACT
+        ========================================== -->
+
+        <section class="contact-band">
+
+            <p class="section-label">
+                GET IN TOUCH
+            </p>
+
+            <p>
+                Interested in a KALXA product,
+                custom development or a business partnership?
+            </p>
+
+            <div class="actions">
+
+                <a
+                    class="button primary-button"
+                    href="/contact.html"
+                >
+                    Contact Us →
+                </a>
+
+                <a
+                    class="button secondary-button"
+                    href="https://wa.me/27766114909"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp Us
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
 
+    <!-- ==========================================
+         FOOTER
+    ========================================== -->
+
     <footer class="company-footer">
-      <div class="footer-main">
-        <div class="footer-company">
-        
-          <address>
-            KwaMhlanga <br>
-            1022<br>
-            Mpumalanga<br>
-            South Africa
-          </address>
+
+        <div class="footer-main">
+
+            <div class="footer-company">
+
+                <address>
+
+                    KwaMhlanga<br>
+
+                    1022<br>
+
+                    Mpumalanga<br>
+
+                    South Africa
+
+                </address>
+
+            </div>
+
+            <nav
+                class="footer-navigation"
+                aria-label="Footer navigation"
+            >
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <div class="footer-navigation-grid">
+
+                    <div class="footer-link-group">
+
+                        <h4>
+                            Company
+                        </h4>
+
+                        <a href="/index.html">
+                            Home
+                        </a>
+
+                        <a href="/about.html">
+                            About Us
+                        </a>
+
+                        <a href="/services.html">
+                            Services
+                        </a>
+
+                        <a href="/custom-development.html">
+                            Custom Development
+                        </a>
+
+                        <a href="/pricing.html">
+                            Pricing
+                        </a>
+
+                        <a href="/faq.html">
+                            FAQs
+                        </a>
+
+                        <a href="/contact.html">
+                            Contact
+                        </a>
+
+                    </div>
+
+                    <div class="footer-link-group">
+
+                        <h4>
+                            Legal &amp; Policies
+                        </h4>
+
+                        <a href="/terms.html">
+                            Terms &amp; Conditions
+                        </a>
+
+                        <a href="/privacy.html">
+                            Privacy Policy
+                        </a>
+
+                        <a href="/refund.html">
+                            Refund Policy
+                        </a>
+
+                        <a href="/cancellation.html">
+                            Cancellation Policy
+                        </a>
+
+                        <a href="/delivery.html">
+                            Digital Delivery
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
         </div>
-        <nav class="footer-navigation" aria-label="Footer navigation">
-          <h3>Quick Links</h3>
-          <div class="footer-navigation-grid">
-            <div class="footer-link-group">
-              <h4>Company</h4>
-              <a href="/index.html">Home</a>
-              <a href="/about.html">About Us</a>
-              <a href="/services.html">Services</a>
-              <a href="/custom-development.html">Custom Development</a>
-              <a href="/pricing.html">Pricing</a>
-              <a href="/faq.html">FAQs</a>
-              <a href="/contact.html">Contact</a>
+
+        <!-- ==========================================
+             CUSTOMER SUPPORT
+        ========================================== -->
+
+        <div class="footer-support">
+
+            <h4>
+                Customer Support &amp; Business Enquiries
+            </h4>
+
+            <div class="footer-support-links">
+
+                <!-- EMAIL -->
+
+                <a
+                    href="mailto:lasie@kalxa.co.za"
+                    class="footer-contact-link"
+                    aria-label="Email KALXA"
+                >
+
+                    <i
+                        class="fa-solid fa-envelope"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        lasie@kalxa.co.za
+                    </span>
+
+                </a>
+
+                <!-- PHONE -->
+
+                <a
+                    href="tel:+27766114909"
+                    class="footer-contact-link"
+                    aria-label="Call KALXA"
+                >
+
+                    <i
+                        class="fa-solid fa-phone"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        +27 76 611 4909
+                    </span>
+
+                </a>
+
+                <!-- WHATSAPP -->
+
+                <a
+                    href="https://wa.me/27766114909"
+                    class="footer-contact-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat with KALXA on WhatsApp"
+                >
+
+                    <i
+                        class="fa-brands fa-whatsapp"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        WhatsApp Us
+                    </span>
+
+                </a>
+
             </div>
-            <div class="footer-link-group">
-              <h4>Legal &amp; Policies</h4>
-              <a href="/terms.html">Terms &amp; Conditions</a>
-              <a href="/privacy.html">Privacy Policy</a>
-              <a href="/refund.html">Refund Policy</a>
-              <a href="/cancellation.html">Cancellation Policy</a>
-              <a href="/delivery.html">Digital Delivery</a>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <!-- ==========================================
-     CUSTOMER SUPPORT & BUSINESS ENQUIRIES
-========================================== -->
 
-<div class="footer-support">
+        </div>
 
-    <h4>
-        Customer Support &amp; Business Enquiries
-    </h4>
-
-    <div class="footer-support-links">
-
-        <!-- EMAIL -->
-        <a
-            href="mailto:lasie@kalxa.co.za"
-            class="footer-contact-link"
-            aria-label="Email KALXA"
-        >
-            <i
-                class="fa-solid fa-envelope"
-                aria-hidden="true"
-            ></i>
-
-            <span>
-                lasie@kalxa.co.za
-            </span>
-        </a>
-
-        <!-- PHONE -->
-        <a
-            href="tel:+27766114909"
-            class="footer-contact-link"
-            aria-label="Call KALXA"
-        >
-            <i
-                class="fa-solid fa-phone"
-                aria-hidden="true"
-            ></i>
-
-            <span>
-                +27 76 611 4909
-            </span>
-        </a>
-
-        <!-- WHATSAPP -->
-        <a
-            href="https://wa.me/27766114909"
-            class="footer-contact-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat with KALXA on WhatsApp"
-        >
-            <i
-                class="fa-brands fa-whatsapp"
-                aria-hidden="true"
-            ></i>
-
-            <span>
-                WhatsApp Us
-            </span>
-        </a>
-
-    </div>
-
-</div>
     </footer>
 
-    <script src="/js/main.js?v=3" defer></script>
-  </body>
+    <!-- ==========================================
+         EXISTING JAVASCRIPT
+    ========================================== -->
+
+    <script
+        src="/js/main.js?v=3"
+        defer
+    ></script>
+
+</body>
+
 </html>
