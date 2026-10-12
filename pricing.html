@@ -3,27 +3,133 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#e5f5ff">
-    <meta name="description"
-        content="KALXA pricing for event ticketing, restaurant business profiles, creator CRM and Discovery advertising in South Africa.">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <meta
+        name="theme-color"
+        content="#e5f5ff"
+    >
+
+    <meta
+        name="description"
+        content="Explore KALXA pricing for event ticketing with 4% commission, restaurant subscriptions, creator monetisation plans and Discovery advertising."
+    >
+
     <meta name="robots" content="index, follow">
-    <title>Pricing &amp; Payments | KALXA (PTY) LTD</title>
-    <link rel="stylesheet" href="/css/style.css?v=4">
+
+    <title>
+        Pricing &amp; Payments | KALXA (PTY) LTD
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css?v=4"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
     <style>
+
+        /* =====================================================
+           DESIGN SYSTEM
+        ===================================================== */
+
         :root {
             --pricing-card: #f3f5f7;
             --pricing-border: #dce3e8;
             --pricing-muted: #586674;
             --pricing-dark: #111318;
             --pricing-blue: #006aa6;
+            --pricing-blue-dark: #00527f;
+            --pricing-soft: #f8fafc;
+            --pricing-green: #147d52;
+
+            --font-heading:
+                "Plus Jakarta Sans", Arial, sans-serif;
+
+            --font-body:
+                "DM Sans", Arial, sans-serif;
         }
 
-        /* Pricing hero */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            color: var(--pricing-dark);
+            background: #fff;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-heading);
+            letter-spacing: -0.035em;
+        }
+
+        a {
+            color: var(--pricing-blue);
+        }
+
+        .brand-text strong {
+            font-family: var(--font-heading);
+            font-weight: 800;
+        }
+
+        .brand-text span,
+        .navbar nav a {
+            font-family: var(--font-body);
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
         .pricing-hero {
             text-align: center;
-            background: linear-gradient(135deg, #fff 0%, #f2faff 55%, #e4f4ff 100%);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff 0%,
+                    #f2faff 55%,
+                    #e4f4ff 100%
+                );
+
             padding: 95px 7% 85px;
+
             border-bottom: 1px solid #dcecf6;
         }
 
@@ -37,7 +143,7 @@
             line-height: 1.12;
             color: var(--pricing-dark);
             margin: 18px 0 22px;
-            letter-spacing: -1.8px;
+            letter-spacing: -0.055em;
         }
 
         .pricing-hero .lead {
@@ -45,6 +151,20 @@
             margin: auto;
             color: var(--pricing-muted);
             line-height: 1.85;
+            font-size: 16px;
+        }
+
+        .eyebrow,
+        .section-label {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--pricing-blue);
+        }
+
+        .pricing-highlight {
+            color: var(--pricing-blue);
         }
 
         .pricing-jump-links {
@@ -65,13 +185,17 @@
             font-size: 13px;
             font-weight: 700;
             text-decoration: none;
+            transition: background .25s ease;
         }
 
         .pricing-jump-links a:hover {
             background: #e5f5ff;
         }
 
-        /* Product sections */
+        /* =====================================================
+           PRODUCT SECTIONS
+        ===================================================== */
+
         .pricing-product-section {
             padding: 85px 7%;
             background: #fff;
@@ -95,7 +219,7 @@
             font-size: clamp(28px, 3.5vw, 42px);
             line-height: 1.2;
             color: var(--pricing-dark);
-            margin-bottom: 18px;
+            margin: 12px 0 18px;
         }
 
         .pricing-product-header p {
@@ -124,7 +248,10 @@
             line-height: 1.85;
         }
 
-        /* Pricing grids */
+        /* =====================================================
+           PRICING GRIDS
+        ===================================================== */
+
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -139,7 +266,10 @@
             max-width: 900px;
         }
 
-        /* Pricing cards */
+        /* =====================================================
+           PRICING CARDS
+        ===================================================== */
+
         .pricing-card {
             min-width: 0;
             position: relative;
@@ -149,16 +279,27 @@
             border: 1px solid var(--pricing-border);
             border-radius: 18px;
             padding: 34px 28px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease,
+                border-color .25s ease;
         }
 
         .pricing-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 16px 38px rgba(30, 50, 70, 0.08);
+            box-shadow: 0 16px 38px rgba(30, 50, 70, .08);
         }
 
         .pricing-card.featured {
-            background: linear-gradient(180deg, #edf8ff 0%, #f5faff 45%, #fff 100%);
+            background:
+                linear-gradient(
+                    180deg,
+                    #edf8ff 0%,
+                    #f5faff 45%,
+                    #fff 100%
+                );
+
             border: 2px solid #a8d9f5;
         }
 
@@ -169,7 +310,7 @@
             color: #175a80;
             font-size: 11px;
             font-weight: 800;
-            letter-spacing: 0.6px;
+            letter-spacing: .6px;
             text-transform: uppercase;
             border-radius: 30px;
             padding: 8px 13px;
@@ -199,9 +340,10 @@
 
         .pricing-amount strong {
             font-size: clamp(38px, 4vw, 48px);
-            font-weight: 850;
+            font-weight: 800;
             letter-spacing: -2px;
             color: var(--pricing-dark);
+            line-height: 1.2;
         }
 
         .pricing-amount span {
@@ -209,11 +351,30 @@
             color: var(--pricing-muted);
         }
 
+        .pricing-amount.text-price strong {
+            font-size: clamp(23px, 3vw, 29px);
+            letter-spacing: -1px;
+        }
+
         .pricing-billing {
             font-size: 13px;
             font-weight: 600;
             color: #476173;
             margin-bottom: 25px;
+        }
+
+        .commission-tag {
+            display: inline-flex;
+            align-self: flex-start;
+            align-items: center;
+            gap: 7px;
+            background: #e7f7ef;
+            color: #116b46;
+            padding: 9px 14px;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 800;
+            margin: 4px 0 22px;
         }
 
         .pricing-features {
@@ -266,7 +427,10 @@
             text-align: center;
             font-size: 13px;
             font-weight: 800;
-            transition: background 0.25s ease, transform 0.25s ease;
+
+            transition:
+                background .25s ease,
+                transform .25s ease;
         }
 
         .pricing-button:hover {
@@ -282,6 +446,10 @@
         .pricing-card.featured .pricing-button:hover {
             background: #00527f;
         }
+
+        /* =====================================================
+           NOTICES
+        ===================================================== */
 
         .pricing-note {
             max-width: 1050px;
@@ -299,7 +467,18 @@
             color: #172b39;
         }
 
-        /* Comparison tables */
+        .pricing-note p {
+            margin: 0 0 12px;
+        }
+
+        .pricing-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =====================================================
+           COMPARISON TABLES
+        ===================================================== */
+
         .comparison-section {
             max-width: 1250px;
             margin: 50px auto 0;
@@ -360,7 +539,82 @@
             background: #f9fbfc;
         }
 
-        /* Payment info & policy cards */
+        /* =====================================================
+           COMMISSION EXAMPLES
+        ===================================================== */
+
+        .commission-example {
+            max-width: 1050px;
+            margin: 35px auto 0;
+            padding: 30px;
+            background: linear-gradient(125deg, #f4fbff, #e8f6ff);
+            border: 1px solid #b8def3;
+            border-radius: 18px;
+        }
+
+        .commission-example h3 {
+            margin: 0 0 12px;
+            font-size: 22px;
+        }
+
+        .commission-example p {
+            font-size: 13px;
+            color: var(--pricing-muted);
+            line-height: 1.8;
+        }
+
+        /* =====================================================
+           CREATOR UPGRADE
+        ===================================================== */
+
+        .creator-upgrade {
+            max-width: 1050px;
+            margin: 35px auto 0;
+            padding: 30px;
+            background: #fff;
+            border: 1px solid #b8def3;
+            border-radius: 18px;
+
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .creator-upgrade h3 {
+            font-size: 23px;
+            margin: 0 0 12px;
+        }
+
+        .creator-upgrade p {
+            font-size: 14px;
+            color: var(--pricing-muted);
+            margin: 0;
+        }
+
+        .upgrade-price {
+            text-align: center;
+        }
+
+        .upgrade-price strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 43px;
+            font-weight: 800;
+            color: var(--pricing-blue);
+            letter-spacing: -2px;
+        }
+
+        .upgrade-price span {
+            display: block;
+            font-size: 12px;
+            color: var(--pricing-muted);
+        }
+
+        /* =====================================================
+           PAYMENT INFORMATION
+        ===================================================== */
+
         .payment-info-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -400,9 +654,19 @@
             text-decoration: underline;
         }
 
-        /* Contact section */
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
         .pricing-contact {
-            background: linear-gradient(120deg, #f4fbff 0%, #e4f4ff 55%, #f7fcff 100%);
+            background:
+                linear-gradient(
+                    120deg,
+                    #f4fbff 0%,
+                    #e4f4ff 55%,
+                    #f7fcff 100%
+                );
+
             text-align: center;
             padding: 85px 7%;
         }
@@ -428,9 +692,42 @@
             gap: 15px;
         }
 
-        /* Footer */
+        .button.primary-button,
+        .button.secondary-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 22px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .button.primary-button {
+            background: #006aa6;
+            color: #fff;
+        }
+
+        .button.secondary-button {
+            background: #fff;
+            border: 1px solid #9bc8e2;
+            color: #075f91;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
         .company-footer {
-            background: linear-gradient(120deg, #edf8ff 0%, #d6efff 45%, #f5fbff 100%);
+            background:
+                linear-gradient(
+                    120deg,
+                    #edf8ff 0%,
+                    #d6efff 45%,
+                    #f5fbff 100%
+                );
+
             padding: 65px 7% 30px;
             border-top: 1px solid #c4e3f5;
             color: #263746;
@@ -467,7 +764,6 @@
             display: block;
             font-size: 14px;
             color: #344b5b;
-            line-height: 1.7;
         }
 
         .footer-address {
@@ -524,7 +820,6 @@
             font-size: 14px;
             font-weight: 600;
             text-decoration: none;
-            line-height: 1.6;
         }
 
         .footer-link-group a:hover {
@@ -560,11 +855,6 @@
             overflow-wrap: anywhere;
         }
 
-        .footer-support-details a:hover {
-            color: #006aa6;
-            text-decoration: underline;
-        }
-
         .footer-bottom {
             display: flex;
             justify-content: space-between;
@@ -579,8 +869,12 @@
             margin: 0;
         }
 
-        /* Responsive */
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
         @media (max-width: 1000px) {
+
             .pricing-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
@@ -588,9 +882,11 @@
             .payment-info-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
+
         }
 
         @media (max-width: 750px) {
+
             .pricing-hero {
                 padding: 75px 5% 65px;
             }
@@ -617,6 +913,11 @@
                 grid-template-columns: 1fr;
             }
 
+            .creator-upgrade {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
             .company-footer {
                 padding: 50px 5% 25px;
             }
@@ -634,788 +935,2447 @@
             .footer-bottom {
                 flex-direction: column;
             }
+
         }
 
         @media (max-width: 400px) {
+
             .footer-navigation-grid {
                 grid-template-columns: 1fr;
             }
+
+            .commission-example {
+                padding: 20px;
+            }
+
         }
 
         @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
             .pricing-card,
             .pricing-button {
                 transition: none;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- HEADER -->
+    <a class="skip-link" href="#main">
+        Skip to content
+    </a>
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
     <header class="navbar">
-        <a class="brand" href="/index.html" aria-label="KALXA Home">
+
+        <a
+            class="brand"
+            href="/index.html"
+            aria-label="KALXA Home"
+        >
+
             <span class="brand-text">
+
                 <strong>KALXA</strong>
-                <span>DIGITAL TECHNOLOGY &amp; PLATFORM SERVICES</span>
+
+                <span>
+                    DIGITAL TECHNOLOGY &amp; PLATFORM SERVICES
+                </span>
+
             </span>
+
         </a>
-        <button class="menu-button" id="menu-button" type="button" aria-label="Open menu" aria-expanded="false"
-            aria-controls="nav-menu">☰</button>
-        <nav id="nav-menu" aria-label="Main navigation">
-            <a href="/index.html">Home</a>
-            <a href="/services.html">Services</a>
-            <a href="/pricing.html" aria-current="page">Pricing</a>
-            <a href="/faq.html">FAQs</a>
-            <a href="/contact.html">Contact</a>
+
+        <button
+            class="menu-button"
+            id="menu-button"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+        >
+            ☰
+        </button>
+
+        <nav
+            id="nav-menu"
+            aria-label="Main navigation"
+        >
+
+            <a href="/index.html">
+                Home
+            </a>
+
+            <a href="/services.html">
+                Services
+            </a>
+
+            <a href="/pricing.html" aria-current="page">
+                Pricing
+            </a>
+
+            <a href="/faq.html">
+                FAQs
+            </a>
+
+            <a href="/contact.html">
+                Contact
+            </a>
+
         </nav>
+
     </header>
 
     <main id="main">
-        <!-- HERO -->
+
+        <!-- =====================================================
+             HERO
+        ===================================================== -->
+
         <section class="pricing-hero">
+
             <div class="hero-content">
-                <p class="eyebrow"> OUR KALXA </p>
-                <h1>Transparent Pricing.</h1>
-                <p class="lead">Explore monthly subscriptions for event organisers, restaurants and creators, plus
-                    affordable once-off business advertising packages.</p>
-                <nav class="pricing-jump-links" aria-label="Pricing categories">
-                    <a href="#ticketing-pricing">Ticketing &amp; Restaurants</a>
-                    <a href="#creator-pricing">Blog Creator CRM</a>
-                    <a href="#discovery-pricing">Discovery Advertising</a>
+
+                <p class="eyebrow">
+                    KALXA PRODUCTS &amp; SERVICES
+                </p>
+
+                <h1>
+                    Transparent Pricing.
+                    <span class="pricing-highlight">
+                        Built Around Your Needs.
+                    </span>
+                </h1>
+
+                <p class="lead">
+                    Explore commission-based event ticketing,
+                    monthly restaurant subscriptions,
+                    once-off creator activation plans
+                    and affordable local advertising.
+                </p>
+
+                <nav
+                    class="pricing-jump-links"
+                    aria-label="Pricing categories"
+                >
+
+                    <a href="#ticketing-pricing">
+                        Event Ticketing
+                    </a>
+
+                    <a href="#restaurant-pricing">
+                        Restaurants
+                    </a>
+
+                    <a href="#creator-pricing">
+                        Creator CRM
+                    </a>
+
+                    <a href="#discovery-pricing">
+                        Discovery Advertising
+                    </a>
+
                 </nav>
+
             </div>
+
         </section>
 
-        <!-- 1. KALXA TICKETING AND BUSINESS PROFILES -->
-        <section class="pricing-product-section" id="ticketing-pricing">
+        <!-- =====================================================
+             01. EVENT TICKETING
+        ===================================================== -->
+
+        <section
+            class="pricing-product-section"
+            id="ticketing-pricing"
+        >
+
             <div class="pricing-product-header">
-                <p class="section-label">01 · KALXA TICKETING &amp; BUSINESS PROFILES</p>
-                <h2>Event Ticketing &amp; Restaurant Subscriptions</h2>
-                <p>Monthly platform plans for event organisers and restaurant businesses. Select the tools and
-                    visibility features that fit your operations.</p>
+
+                <p class="section-label">
+                    01 · KALXA EVENT TICKETING
+                </p>
+
+                <h2>
+                    Sell Tickets.
+                    Pay a 4% Commission.
+                </h2>
+
+                <p>
+                    KALXA Ticketing uses a
+                    commission-based pricing model.
+                    Organisers can create events,
+                    sell digital tickets and manage
+                    QR-based event entry without
+                    purchasing one of the previous
+                    monthly organiser packages.
+                </p>
+
             </div>
 
-            <!-- RESTAURANTS FIRST -->
-            <div class="pricing-subheading" id="restaurant-pricing">
-                <h3>Restaurant Business Profiles</h3>
-                <p>Give customers a place to discover your restaurant, view its content and share experiences. Premium
-                    adds Kalxa Stories exposure and tools for understanding customer activity.</p>
-            </div>
-            <div class="pricing-grid two-column">
-                <article class="pricing-card">
-                    <h4>Restaurant Standard</h4>
-                    <p class="pricing-description">Core restaurant discovery and customer experience tools.</p>
-                    <div class="pricing-amount">
-                        <strong>R219</strong><span>/month</span>
-                    </div>
-                    <p class="pricing-billing">Monthly subscription</p>
-                    <ul class="pricing-features">
-                        <li>Restaurant profile</li>
-                        <li>Restaurant Reel / discovery</li>
-                        <li>Gallery photos</li>
-                        <li>Operational hours</li>
-                        <li>Customer experiences</li>
-                        <li>Rating QR</li>
-                        <li class="unavailable">Kalxa Stories exposure</li>
-                        <li class="unavailable">Restaurant analytics</li>
-                    </ul>
-                    <a class="pricing-button" href="https://tickets.kalxa.co.za/organizer/signup">Choose Restaurant
-                        Standard →</a>
-                </article>
+            <div class="pricing-grid">
+
+                <!-- EVENT TICKETING -->
+
                 <article class="pricing-card featured">
-                    <span class="pricing-badge">Visibility &amp; Insights</span>
-                    <h4>Restaurant Premium</h4>
-                    <p class="pricing-description">Your Standard plan already provides the core customer experience
-                        tools. Premium adds visibility and performance insights to help you understand how customers
-                        interact with your restaurant on Kalxa.</p>
+
+                    <span class="pricing-badge">
+                        CORE TICKETING
+                    </span>
+
+                    <h4>
+                        Event Ticketing
+                    </h4>
+
+                    <p class="pricing-description">
+                        Create events, sell tickets
+                        and manage attendance
+                        using KALXA's digital
+                        ticketing tools.
+                    </p>
+
                     <div class="pricing-amount">
-                        <strong>R299</strong><span>/month</span>
+
+                        <strong>
+                            4%
+                        </strong>
+
+                        <span>
+                            per ticket sold
+                        </span>
+
                     </div>
-                    <p class="pricing-billing">Monthly subscription</p>
+
+                    <p class="pricing-billing">
+                        Commission-based pricing
+                    </p>
+
                     <ul class="pricing-features">
-                        <li>Everything in Restaurant Standard</li>
-                        <li>Kalxa Stories exposure</li>
-                        <li>Restaurant analytics</li>
-                        <li>Customer engagement insights</li>
-                        <li>Restaurant view visibility</li>
-                        <li>Contact &amp; directions activity</li>
+
+                        <li>
+                            Event creation and management
+                        </li>
+
+                        <li>
+                            Ticket categories and pricing
+                        </li>
+
+                        <li>
+                            Online ticket sales
+                        </li>
+
+                        <li>
+                            Digital QR tickets
+                        </li>
+
+                        <li>
+                            QR ticket verification
+                        </li>
+
+                        <li>
+                            Organiser dashboard
+                        </li>
+
+                        <li>
+                            Ticket sales monitoring
+                        </li>
+
+                        <li>
+                            Standard event listing
+                        </li>
+
                     </ul>
-                    <a class="pricing-button" href="https://tickets.kalxa.co.za/organizer/signup">Choose Restaurant
-                        Premium →</a>
+
+                    <a
+                        class="pricing-button"
+                        href="https://tickets.kalxa.co.za"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Start Selling Tickets →
+                    </a>
+
                 </article>
+
+                <!-- FEATURED LISTING -->
+
+                <article class="pricing-card">
+
+                    <span class="pricing-badge">
+                        OPTIONAL PROMOTION
+                    </span>
+
+                    <h4>
+                        Featured Event Listing
+                    </h4>
+
+                    <p class="pricing-description">
+                        Increase your event's visibility
+                        through designated featured
+                        placements within KALXA.
+                    </p>
+
+                    <div class="pricing-amount text-price">
+
+                        <strong>
+                            Pricing on Request
+                        </strong>
+
+                    </div>
+
+                    <p class="pricing-billing">
+                        Optional paid placement
+                    </p>
+
+                    <ul class="pricing-features">
+
+                        <li>
+                            Featured event placement
+                        </li>
+
+                        <li>
+                            Additional event visibility
+                        </li>
+
+                        <li>
+                            Promotional listing display
+                        </li>
+
+                        <li>
+                            Agreed placement duration
+                        </li>
+
+                        <li>
+                            Subject to available placements
+                        </li>
+
+                        <li>
+                            Separate from ticket commission
+                        </li>
+
+                    </ul>
+
+                    <a
+                        class="pricing-button"
+                        href="/contact.html?service=event-featured"
+                    >
+                        Enquire About Featured Listings →
+                    </a>
+
+                </article>
+
+                <!-- EVENT BOOST -->
+
+                <article class="pricing-card">
+
+                    <span class="pricing-badge">
+                        OPTIONAL PROMOTION
+                    </span>
+
+                    <h4>
+                        Event Boost
+                    </h4>
+
+                    <p class="pricing-description">
+                        Promote your event through
+                        selected paid visibility
+                        campaigns within the
+                        KALXA ecosystem.
+                    </p>
+
+                    <div class="pricing-amount text-price">
+
+                        <strong>
+                            Pricing on Request
+                        </strong>
+
+                    </div>
+
+                    <p class="pricing-billing">
+                        Optional campaign purchase
+                    </p>
+
+                    <ul class="pricing-features">
+
+                        <li>
+                            Paid promotional placement
+                        </li>
+
+                        <li>
+                            Campaign-based visibility
+                        </li>
+
+                        <li>
+                            Agreed campaign duration
+                        </li>
+
+                        <li>
+                            Campaign details confirmed in advance
+                        </li>
+
+                        <li>
+                            Subject to platform availability
+                        </li>
+
+                        <li>
+                            Separate from ticket commission
+                        </li>
+
+                    </ul>
+
+                    <a
+                        class="pricing-button"
+                        href="/contact.html?service=event-boost"
+                    >
+                        Enquire About Event Boosts →
+                    </a>
+
+                </article>
+
             </div>
+
+            <!-- COMMISSION EXAMPLE -->
+
+            <div class="commission-example">
+
+                <h3>
+                    <i
+                        class="fa-solid fa-calculator"
+                        aria-hidden="true"
+                    ></i>
+
+                    Example: Selling a Ticket for R200
+                </h3>
+
+                <div class="comparison-table-wrapper">
+
+                    <table class="comparison-table">
+
+                        <thead>
+
+                            <tr>
+                                <th scope="col">
+                                    Transaction
+                                </th>
+
+                                <th scope="col">
+                                    Amount
+                                </th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Ticket Selling Price</td>
+                                <td>R200.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>KALXA Commission (4%)</td>
+                                <td>R8.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Balance Before Other Fees
+                                </td>
+
+                                <td>
+                                    <strong>R192.00</strong>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    This is an illustrative calculation.
+                    Payment processing fees, taxes,
+                    refunds and other applicable
+                    adjustments are excluded.
+                    The final settlement amount may differ.
+                </p>
+
+            </div>
+
+            <div class="pricing-note">
+
+                <strong>
+                    Event ticketing terms:
+                </strong>
+
+                KALXA charges a 4% platform commission
+                on tickets sold. The ticketing commission
+                is separate from optional Featured Listing
+                and Event Boost charges.
+
+                Any applicable payment processing fees,
+                taxes or additional charges must be
+                disclosed before payment.
+
+                Paid promotion does not guarantee
+                ticket sales, attendance or
+                a particular number of views.
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             02. RESTAURANT BUSINESS PROFILES
+        ===================================================== -->
+
+        <section
+            class="pricing-product-section soft"
+            id="restaurant-pricing"
+        >
+
+            <div class="pricing-product-header">
+
+                <p class="section-label">
+                    02 · RESTAURANT BUSINESS PROFILES
+                </p>
+
+                <h2>
+                    Put Your Restaurant on KALXA
+                </h2>
+
+                <p>
+                    Give customers a place to discover
+                    your restaurant, explore photos,
+                    view operating hours and share
+                    customer experiences.
+
+                    Premium adds eligible
+                    Kalxa Stories exposure and
+                    restaurant engagement analytics.
+                </p>
+
+            </div>
+
+            <div class="pricing-grid two-column">
+
+                <!-- RESTAURANT STANDARD -->
+
+                <article class="pricing-card">
+
+                    <h4>
+                        Restaurant Standard
+                    </h4>
+
+                    <p class="pricing-description">
+                        Core restaurant discovery
+                        and customer engagement tools.
+                    </p>
+
+                    <div class="pricing-amount">
+
+                        <strong>
+                            R219
+                        </strong>
+
+                        <span>
+                            /month
+                        </span>
+
+                    </div>
+
+                    <p class="pricing-billing">
+                        Monthly subscription
+                    </p>
+
+                    <ul class="pricing-features">
+
+                        <li>
+                            Restaurant business profile
+                        </li>
+
+                        <li>
+                            Restaurant Reel / discovery
+                        </li>
+
+                        <li>
+                            Gallery photos
+                        </li>
+
+                        <li>
+                            Operating hours
+                        </li>
+
+                        <li>
+                            Customer experiences
+                        </li>
+
+                        <li>
+                            Rating QR
+                        </li>
+
+                        <li>
+                            Business contact information
+                        </li>
+
+                        <li class="unavailable">
+                            Kalxa Stories exposure
+                        </li>
+
+                        <li class="unavailable">
+                            Restaurant analytics
+                        </li>
+
+                    </ul>
+
+                    <a
+                        class="pricing-button"
+                        href="https://tickets.kalxa.co.za"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Explore Restaurant Standard →
+                    </a>
+
+                </article>
+
+                <!-- RESTAURANT PREMIUM -->
+
+                <article class="pricing-card featured">
+
+                    <span class="pricing-badge">
+                        VISIBILITY &amp; INSIGHTS
+                    </span>
+
+                    <h4>
+                        Restaurant Premium
+                    </h4>
+
+                    <p class="pricing-description">
+                        Additional visibility,
+                        engagement analytics
+                        and opportunities to
+                        reach more customers.
+                    </p>
+
+                    <div class="pricing-amount">
+
+                        <strong>
+                            R299
+                        </strong>
+
+                        <span>
+                            /month
+                        </span>
+
+                    </div>
+
+                    <p class="pricing-billing">
+                        Monthly subscription
+                    </p>
+
+                    <ul class="pricing-features">
+
+                        <li>
+                            Everything in Standard
+                        </li>
+
+                        <li>
+                            Kalxa Stories exposure opportunities
+                        </li>
+
+                        <li>
+                            Restaurant analytics
+                        </li>
+
+                        <li>
+                            Customer engagement insights
+                        </li>
+
+                        <li>
+                            Restaurant view visibility
+                        </li>
+
+                        <li>
+                            Contact activity
+                        </li>
+
+                        <li>
+                            Directions activity
+                        </li>
+
+                    </ul>
+
+                    <a
+                        class="pricing-button"
+                        href="https://tickets.kalxa.co.za"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Explore Restaurant Premium →
+                    </a>
+
+                </article>
+
+            </div>
+
+            <!-- RESTAURANT COMPARISON -->
 
             <div class="comparison-section">
-                <h3>Compare Restaurant Features</h3>
+
+                <h3>
+                    Compare Restaurant Features
+                </h3>
+
                 <div class="comparison-table-wrapper">
+
                     <table class="comparison-table">
+
                         <thead>
+
                             <tr>
                                 <th scope="col">Feature</th>
-                                <th scope="col">Standard · R219/month</th>
-                                <th scope="col">Premium · R299/month</th>
+                                <th scope="col">
+                                    Standard
+                                </th>
+                                <th scope="col">
+                                    Premium
+                                </th>
                             </tr>
+
                         </thead>
+
                         <tbody>
+
                             <tr>
-                                <td>Restaurant profile</td>
+                                <td>Monthly Price</td>
+                                <td>R219</td>
+                                <td>R299</td>
+                            </tr>
+
+                            <tr>
+                                <td>Restaurant Profile</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Restaurant Reel / discovery</td>
+                                <td>Restaurant Reel</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Gallery photos</td>
+                                <td>Gallery Photos</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Operational hours</td>
+                                <td>Operating Hours</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Customer experiences</td>
+                                <td>Customer Experiences</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
                                 <td>Rating QR</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Kalxa Stories exposure</td>
+                                <td>Kalxa Stories Exposure</td>
+                                <td>—</td>
+                                <td>Eligible</td>
+                            </tr>
+
+                            <tr>
+                                <td>Restaurant Analytics</td>
                                 <td>—</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Restaurant analytics</td>
+                                <td>Engagement Insights</td>
                                 <td>—</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Customer engagement insights</td>
+                                <td>Contact &amp; Directions Activity</td>
                                 <td>—</td>
                                 <td>✓</td>
                             </tr>
-                            <tr>
-                                <td>Restaurant view visibility</td>
-                                <td>—</td>
-                                <td>✓</td>
-                            </tr>
-                            <tr>
-                                <td>Contact &amp; directions activity</td>
-                                <td>—</td>
-                                <td>✓</td>
-                            </tr>
+
                         </tbody>
+
                     </table>
+
                 </div>
-            </div>
-            <div class="pricing-note">
-                <strong>Restaurant subscription terms:</strong> Standard costs R219/month and Premium costs R299/month.
-                Kalxa Stories exposure means eligibility for exposure through the Stories platform; it does not
-                guarantee a particular article, placement, number of views or customer enquiries. Analytics describe
-                recorded platform activity and do not guarantee business results. Renewal and cancellation terms are
-                provided before activation.
+
             </div>
 
-            <!-- EVENT ORGANISERS -->
-            <div class="pricing-subheading" id="organiser-pricing">
-                <h3>Event Organiser Subscriptions</h3>
-                <p>Create and manage events, configure ticket categories, issue QR tickets and monitor ticketing
-                    activity through Kalxa Ticketing.</p>
-            </div>
-            <div class="pricing-grid">
-                <article class="pricing-card">
-                    <h4>Starter</h4>
-                    <p class="pricing-description">For organisers hosting a small number of events each month.</p>
-                    <div class="pricing-amount">
-                        <strong>R99</strong><span>/month</span>
-                    </div>
-                    <p class="pricing-billing">Monthly subscription</p>
-                    <ul class="pricing-features">
-                        <li>Up to 2 events per month</li>
-                        <li>Event creation and management</li>
-                        <li>Ticket categories</li>
-                        <li>QR ticket generation</li>
-                        <li>QR ticket verification</li>
-                        <li>Organiser dashboard</li>
-                        <li>Basic ticket sales reporting</li>
-                        <li>Standard event visibility</li>
-                    </ul>
-                    <a class="pricing-button" href="https://tickets.kalxa.co.za/organizer/signup">Choose Starter →</a>
-                </article>
-                <article class="pricing-card featured">
-                    <span class="pricing-badge">Popular Choice</span>
-                    <h4>Professional</h4>
-                    <p class="pricing-description">For active organisers publishing and managing events regularly.</p>
-                    <div class="pricing-amount">
-                        <strong>R199</strong><span>/month</span>
-                    </div>
-                    <p class="pricing-billing">Monthly subscription</p>
-                    <ul class="pricing-features">
-                        <li>Up to 10 events per month</li>
-                        <li>Everything in Starter</li>
-                        <li>Multiple ticket categories</li>
-                        <li>QR ticket verification</li>
-                        <li>Advanced event reporting</li>
-                        <li>Enhanced event visibility</li>
-                        <li>Organiser dashboard</li>
-                        <li>Standard customer support</li>
-                    </ul>
-                    <a class="pricing-button" href="https://tickets.kalxa.co.za/organizer/signup">Choose Professional
-                        →</a>
-                </article>
-                <article class="pricing-card">
-                    <span class="pricing-badge">For Growing Organisers</span>
-                    <h4>Business</h4>
-                    <p class="pricing-description">For established organisers managing frequent events and larger
-                        operations.</p>
-                    <div class="pricing-amount">
-                        <strong>R399</strong><span>/month</span>
-                    </div>
-                    <p class="pricing-billing">Monthly subscription</p>
-                    <ul class="pricing-features">
-                        <li>Unlimited event creation</li>
-                        <li>Everything in Professional</li>
-                        <li>QR ticket generation</li>
-                        <li>QR ticket verification</li>
-                        <li>Advanced reporting</li>
-                        <li>Priority event visibility</li>
-                        <li>Priority customer support</li>
-                        <li>Organiser management tools</li>
-                    </ul>
-                    <a class="pricing-button" href="https://tickets.kalxa.co.za/organizer/signup">Choose Business →</a>
-                </article>
-            </div>
             <div class="pricing-note">
-                <strong>Ticketing subscription terms:</strong> Monthly organiser subscription fees pay for eligible
-                platform tools and are separate from ticket purchases. Ticket prices, applicable transaction fees,
-                seller identity and settlement arrangements must be disclosed through the relevant checkout or
-                agreement.
+
+                <strong>
+                    Restaurant subscription terms:
+                </strong>
+
+                Standard costs R219/month.
+                Premium costs R299/month.
+
+                Kalxa Stories exposure means
+                eligibility for promotional or
+                editorial exposure opportunities.
+
+                It does not guarantee a specific
+                article, placement, number of views
+                or customer enquiries.
+
+                Subscription renewal and cancellation
+                terms are provided before activation.
+
             </div>
 
-            <div class="comparison-section">
-                <h3>Compare Event Organiser Features</h3>
-                <div class="comparison-table-wrapper">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Feature</th>
-                                <th scope="col">Starter</th>
-                                <th scope="col">Professional</th>
-                                <th scope="col">Business</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Monthly price</td>
-                                <td>R99</td>
-                                <td>R199</td>
-                                <td>R399</td>
-                            </tr>
-                            <tr>
-                                <td>Events per month</td>
-                                <td>2</td>
-                                <td>10</td>
-                                <td>Unlimited</td>
-                            </tr>
-                            <tr>
-                                <td>Ticket categories</td>
-                                <td>✓</td>
-                                <td>✓</td>
-                                <td>✓</td>
-                            </tr>
-                            <tr>
-                                <td>QR ticket generation</td>
-                                <td>✓</td>
-                                <td>✓</td>
-                                <td>✓</td>
-                            </tr>
-                            <tr>
-                                <td>QR ticket verification</td>
-                                <td>✓</td>
-                                <td>✓</td>
-                                <td>✓</td>
-                            </tr>
-                            <tr>
-                                <td>Organiser dashboard</td>
-                                <td>✓</td>
-                                <td>✓</td>
-                                <td>✓</td>
-                            </tr>
-                            <tr>
-                                <td>Reporting</td>
-                                <td>Basic</td>
-                                <td>Advanced</td>
-                                <td>Advanced</td>
-                            </tr>
-                            <tr>
-                                <td>Event visibility</td>
-                                <td>Standard</td>
-                                <td>Enhanced</td>
-                                <td>Priority</td>
-                            </tr>
-                            <tr>
-                                <td>Customer support</td>
-                                <td>Standard</td>
-                                <td>Standard</td>
-                                <td>Priority</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </section>
 
-        <!-- 2. CREATOR CRM -->
-        <section class="pricing-product-section soft" id="creator-pricing">
+        <!-- =====================================================
+             03. KALXA CREATOR CRM
+        ===================================================== -->
+
+        <section
+            class="pricing-product-section"
+            id="creator-pricing"
+        >
+
             <div class="pricing-product-header">
-                <p class="section-label">02 · KALXA BLOG CONTENT CREATOR CRM</p>
-                <h2>Creator Website &amp; Audience Tools</h2>
-                <p>Publish content, grow your audience and build a digital home for your creative work. Choose between
-                    Starter and Premium monthly plans.</p>
-            </div>
-            <div class="pricing-grid two-column">
-                <article class="pricing-card">
-                    <h4>Starter</h4>
-                    <p class="pricing-description">For creators who want to publish content and give fans a way to
-                        offer voluntary support.</p>
-                    <div class="pricing-amount">
-                        <strong>R79</strong><span>/month</span>
-                    </div>
-                    <p class="pricing-billing">Monthly subscription</p>
-                    <ul class="pricing-features">
-                        <li>Personal creator website</li>
-                        <li>Creator profile</li>
-                        <li>Blog articles and stories</li>
-                        <li>Reels and image galleries</li>
-                        <li>Anonymous comments and replies</li>
-                        <li>Email subscriber collection</li>
-                        <li>Basic audience management</li>
-                        <li>Buy Me a Coffee fan contributions (planned)</li>
-                        <li>Paystack subaccount integration (planned)</li>
-                        <li class="unavailable">Paid exclusive content memberships</li>
-                    </ul>
-                    <a class="pricing-button" href="/contact.html?service=creator-starter">Choose Starter →</a>
-                </article>
-                <article class="pricing-card featured">
-                    <span class="pricing-badge">Premium Creator</span>
-                    <h4>Premium</h4>
-                    <p class="pricing-description">For creators who want exclusive content, audience insights and
-                        greater control over their website.</p>
-                    <div class="pricing-amount">
-                        <strong>R149</strong><span>/month</span>
-                    </div>
-                    <p class="pricing-billing">Monthly subscription</p>
-                    <ul class="pricing-features">
-                        <li>Everything in Starter</li>
-                        <li>Creator website, blogs, reels and galleries</li>
-                        <li>Buy Me a Coffee contributions (planned)</li>
-                        <li>Paystack subaccount integration (planned)</li>
-                        <li>Exclusive video and vlog publishing</li>
-                        <li>Paid fan membership features</li>
-                        <li>Advanced audience analytics</li>
-                        <li>Custom creator branding</li>
-                        <li>Priority customer support</li>
-                    </ul>
-                    <a class="pricing-button" href="/contact.html?service=creator-premium">Choose Premium →</a>
-                </article>
-            </div>
-            <div class="pricing-note">
-                <strong>Creator platform terms:</strong> Starter costs R79/month and Premium costs R149/month. Feature
-                allocations remain proposed pending final confirmation. Starter's Buy Me a Coffee feature is intended
-                for voluntary fan contributions through Paystack subaccounts; activation depends on payment-provider
-                approval, creator onboarding and technical availability. Paid fan memberships are intended for Premium
-                and are separate from the creator's subscription fee.
+
+                <p class="section-label">
+                    03 · KALXA CREATOR
+                </p>
+
+                <h2>
+                    Publish Content.
+                    Build an Audience.
+                    Earn From Supporters.
+                </h2>
+
+                <p>
+                    KALXA Creator is being developed
+                    for independent creators,
+                    bloggers, writers and digital artists.
+
+                    Choose Free, Standard or Premium
+                    based on your publishing and
+                    monetisation needs.
+
+                    Standard and Premium use
+                    once-off activation fees,
+                    not monthly subscriptions.
+                </p>
+
             </div>
 
+            <div class="pricing-grid">
+
+                <!-- CREATOR FREE -->
+
+                <article class="pricing-card">
+
+                    <span class="pricing-badge">
+                        START FREE
+                    </span>
+
+                    <h4>
+                        Creator Free
+                    </h4>
+
+                    <p class="pricing-description">
+                        Build your creator profile,
+                        publish content and start
+                        growing your audience
+                        without an activation fee.
+                    </p>
+
+                    <div class="pricing-amount">
+
+                        <strong>
+                            R0
+                        </strong>
+
+                    </div>
+
+                    <p class="pricing-billing">
+                        Free activation
+                    </p>
+
+                    <div class="commission-tag">
+
+                        <i class="fa-solid fa-percent"></i>
+
+                        23% KALXA Commission
+
+                    </div>
+
+                    <ul class="pricing-features">
+
+                        <li>
+                            Creator profile
+                        </li>
+
+                        <li>
+                            Blog posts and stories
+                        </li>
+
+                        <li>
+                            Reels and image galleries
+                        </li>
+
+                        <li>
+                            Anonymous comments and replies
+                        </li>
+
+                        <li>
+                            Email subscriber collection
+                        </li>
+
+                        <li>
+                            Buy Me a Coffee contributions — planned
+                        </li>
+
+                        <li>
+                            Creator receives 77%
+                            before processing fees
+                        </li>
+
+                        <li class="unavailable">
+                            Donations and fundraising
+                        </li>
+
+                        <li class="unavailable">
+                            Exclusive paid content
+                        </li>
+
+                        <li class="unavailable">
+                            Custom domain
+                        </li>
+
+                    </ul>
+
+                    <a
+                        class="pricing-button"
+                        href="https://blog-creator-e5pz.onrender.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Explore Creator Free →
+                    </a>
+
+                </article>
+
+                <!-- CREATOR STANDARD -->
+
+                <article class="pricing-card featured">
+
+                    <span class="pricing-badge">
+                        LOWER COMMISSION
+                    </span>
+
+                    <h4>
+                        Creator Standard
+                    </h4>
+
+                    <p class="pricing-description">
+                        Activate additional
+                        monetisation capabilities
+                        and reduce KALXA's commission
+                        on eligible supporter payments.
+                    </p>
+
+                    <div class="pricing-amount">
+
+                        <strong>
+                            R100
+                        </strong>
+
+                        <span>
+                            once-off
+                        </span>
+
+                    </div>
+
+                    <p class="pricing-billing">
+                        One-time activation
+                    </p>
+
+                    <div class="commission-tag">
+
+                        <i class="fa-solid fa-percent"></i>
+
+                        3% KALXA Commission
+
+                    </div>
+
+                    <ul class="pricing-features">
+
+                        <li>
+                            Everything in Creator Free
+                        </li>
+
+                        <li>
+                            Creator receives 97%
+                            before processing fees
+                        </li>
+
+                        <li>
+                            Buy Me a Coffee — planned
+                        </li>
+
+                        <li>
+                            Donations — planned
+                        </li>
+
+                        <li>
+                            Fundraising campaigns — planned
+                        </li>
+
+                        <li>
+                            Exclusive paid content — planned
+                        </li>
+
+                        <li>
+                            Upgrade to Premium
+                            for R50 once-off
+                        </li>
+
+                        <li class="unavailable">
+                            Custom domain
+                        </li>
+
+                    </ul>
+
+                    <a
+                        class="pricing-button"
+                        href="https://blog-creator-e5pz.onrender.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Explore Creator Standard →
+                    </a>
+
+                </article>
+
+                <!-- CREATOR PREMIUM -->
+
+                <article class="pricing-card">
+
+                    <span class="pricing-badge">
+                        ADVANCED CREATOR
+                    </span>
+
+                    <h4>
+                        Creator Premium
+                    </h4>
+
+                    <p class="pricing-description">
+                        Advanced branding and
+                        monetisation tools
+                        for creators building
+                        an independent
+                        digital presence.
+                    </p>
+
+                    <div class="pricing-amount">
+
+                        <strong>
+                            R150
+                        </strong>
+
+                        <span>
+                            once-off
+                        </span>
+
+                    </div>
+
+                    <p class="pricing-billing">
+                        One-time activation
+                    </p>
+
+                    <div class="commission-tag">
+
+                        <i class="fa-solid fa-percent"></i>
+
+                        3% KALXA Commission
+
+                    </div>
+
+                    <ul class="pricing-features">
+
+                        <li>
+                            Everything in Creator Standard
+                        </li>
+
+                        <li>
+                            Creator receives 97%
+                            before processing fees
+                        </li>
+
+                        <li>
+                            Buy Me a Coffee — planned
+                        </li>
+
+                        <li>
+                            Donations — planned
+                        </li>
+
+                        <li>
+                            Fundraising campaigns — planned
+                        </li>
+
+                        <li>
+                            Exclusive paid content — planned
+                        </li>
+
+                        <li>
+                            Advanced creator branding
+                        </li>
+
+                        <li>
+                            Custom domain support — planned
+                        </li>
+
+                    </ul>
+
+                    <a
+                        class="pricing-button"
+                        href="https://blog-creator-e5pz.onrender.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Explore Creator Premium →
+                    </a>
+
+                </article>
+
+            </div>
+
+            <!-- CREATOR UPGRADE -->
+
+            <div class="creator-upgrade">
+
+                <div>
+
+                    <h3>
+                        Already Paid for Standard?
+                        Upgrade to Premium.
+                    </h3>
+
+                    <p>
+                        If you have already successfully
+                        paid the R100 Standard activation
+                        fee, you only pay the additional
+                        R50 difference to upgrade.
+
+                        KALXA must verify your previous
+                        successful Standard payment
+                        before making the discounted
+                        upgrade available.
+                    </p>
+
+                </div>
+
+                <div class="upgrade-price">
+
+                    <strong>
+                        R50
+                    </strong>
+
+                    <span>
+                        Once-off upgrade
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- COMMISSION COMPARISON -->
+
             <div class="comparison-section">
-                <h3>Compare Creator Features</h3>
+
+                <h3>
+                    Compare Creator Plans
+                </h3>
+
                 <div class="comparison-table-wrapper">
+
                     <table class="comparison-table">
+
                         <thead>
+
                             <tr>
                                 <th scope="col">Feature</th>
-                                <th scope="col">Starter</th>
+                                <th scope="col">Free</th>
+                                <th scope="col">Standard</th>
                                 <th scope="col">Premium</th>
                             </tr>
+
                         </thead>
+
                         <tbody>
+
                             <tr>
-                                <td>Monthly price</td>
-                                <td>R79</td>
-                                <td>R149</td>
+                                <td>Activation Fee</td>
+                                <td>R0</td>
+                                <td>R100 once-off</td>
+                                <td>R150 once-off</td>
                             </tr>
+
                             <tr>
-                                <td>Creator website and profile</td>
-                                <td>✓</td>
-                                <td>✓</td>
+                                <td>Monthly Subscription</td>
+                                <td>No</td>
+                                <td>No</td>
+                                <td>No</td>
                             </tr>
+
                             <tr>
-                                <td>Blogs and stories</td>
-                                <td>✓</td>
-                                <td>✓</td>
+                                <td>KALXA Commission</td>
+                                <td>23%</td>
+                                <td>3%</td>
+                                <td>3%</td>
                             </tr>
+
                             <tr>
-                                <td>Reels and galleries</td>
-                                <td>✓</td>
-                                <td>✓</td>
+                                <td>
+                                    Creator Share
+                                    Before Processing Fees
+                                </td>
+                                <td>77%</td>
+                                <td>97%</td>
+                                <td>97%</td>
                             </tr>
+
                             <tr>
-                                <td>Anonymous comments and replies</td>
+                                <td>Creator Profile</td>
+                                <td>✓</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Email subscribers</td>
+                                <td>Blogs and Stories</td>
+                                <td>✓</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Audience management</td>
-                                <td>Basic</td>
-                                <td>Advanced</td>
+                                <td>Reels and Galleries</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
                             </tr>
+
+                            <tr>
+                                <td>Comments and Replies</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+
+                            <tr>
+                                <td>Email Subscribers</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+
                             <tr>
                                 <td>Buy Me a Coffee</td>
                                 <td>Planned</td>
                                 <td>Planned</td>
+                                <td>Planned</td>
                             </tr>
+
                             <tr>
-                                <td>Paystack subaccounts</td>
+                                <td>Donations</td>
+                                <td>—</td>
                                 <td>Planned</td>
                                 <td>Planned</td>
                             </tr>
+
                             <tr>
-                                <td>Exclusive videos</td>
+                                <td>Fundraising Campaigns</td>
                                 <td>—</td>
-                                <td>✓</td>
+                                <td>Planned</td>
+                                <td>Planned</td>
                             </tr>
+
                             <tr>
-                                <td>Paid fan memberships</td>
+                                <td>Exclusive Paid Content</td>
                                 <td>—</td>
-                                <td>✓</td>
+                                <td>Planned</td>
+                                <td>Planned</td>
                             </tr>
+
                             <tr>
-                                <td>Custom branding</td>
+                                <td>Custom Domain</td>
                                 <td>—</td>
-                                <td>✓</td>
+                                <td>—</td>
+                                <td>Planned</td>
                             </tr>
+
                             <tr>
-                                <td>Analytics</td>
-                                <td>Basic</td>
-                                <td>Advanced</td>
+                                <td>
+                                    Upgrade to Premium
+                                </td>
+                                <td>—</td>
+                                <td>R50 once-off</td>
+                                <td>Already Premium</td>
                             </tr>
+
                         </tbody>
+
                     </table>
+
                 </div>
+
             </div>
+
+            <!-- CREATOR COMMISSION EXAMPLE -->
+
+            <div class="commission-example">
+
+                <h3>
+                    Example: A Supporter Sends R100
+                </h3>
+
+                <div class="comparison-table-wrapper">
+
+                    <table class="comparison-table">
+
+                        <thead>
+
+                            <tr>
+                                <th scope="col">Creator Plan</th>
+                                <th scope="col">KALXA Receives</th>
+                                <th scope="col">Creator Share</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Free</td>
+                                <td>R23.00</td>
+                                <td>R77.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>Standard</td>
+                                <td>R3.00</td>
+                                <td>R97.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>Premium</td>
+                                <td>R3.00</td>
+                                <td>R97.00</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    The example shows the proposed
+                    KALXA platform revenue split
+                    before Paystack processing fees,
+                    taxes, refunds and other applicable
+                    deductions.
+
+                    The creator's actual payout
+                    may therefore be lower.
+                </p>
+
+            </div>
+
+            <div class="pricing-note">
+
+                <strong>
+                    Creator monetisation terms:
+                </strong>
+
+                <p>
+                    Free activation costs R0.
+                    Standard activation costs
+                    R100 once-off.
+                    Premium activation costs
+                    R150 once-off.
+
+                    An eligible existing Standard
+                    creator pays an additional
+                    R50 once-off to upgrade to Premium.
+                </p>
+
+                <p>
+                    KALXA's proposed commission on
+                    eligible supporter payments is
+                    23% for Free creators and
+                    3% for Standard and Premium creators.
+                    These percentages exclude applicable
+                    Paystack processing fees.
+                </p>
+
+                <p>
+                    Buy Me a Coffee, donations,
+                    fundraising and exclusive paid
+                    content are planned monetisation
+                    capabilities.
+
+                    Availability depends on development,
+                    payment provider approval,
+                    technical integration and
+                    applicable onboarding requirements.
+                </p>
+
+                <p>
+                    The Standard-to-Premium upgrade
+                    discount requires server-side
+                    verification of the creator's
+                    previous successful Standard payment.
+                    Feature availability and final
+                    payment terms must be confirmed
+                    before activation.
+                </p>
+
+            </div>
+
         </section>
 
-        <!-- 3. DISCOVERY -->
-        <section class="pricing-product-section" id="discovery-pricing">
+        <!-- =====================================================
+             04. KALXA DISCOVERY
+        ===================================================== -->
+
+        <section
+            class="pricing-product-section soft"
+            id="discovery-pricing"
+        >
+
             <div class="pricing-product-header">
-                <p class="section-label">03 · KALXA DISCOVERY</p>
-                <h2>Business Advertising Packages</h2>
-                <p>Help customers discover your business with affordable 30-day advertising packages. Pay once for the
-                    selected period, with no automatic renewal.</p>
-            </div>
-            <div class="pricing-grid">
-                <article class="pricing-card">
-                    <h4>Basic Listing</h4>
-                    <p class="pricing-description">An affordable starting point for businesses establishing their
-                        presence on Kalxa Discovery.</p>
-                    <div class="pricing-amount">
-                        <strong>R49</strong><span>once-off</span>
-                    </div>
-                    <p class="pricing-billing">Valid for 30 days</p>
-                    <ul class="pricing-features">
-                        <li>Business profile</li>
-                        <li>Business description</li>
-                        <li>Contact information</li>
-                        <li>Business location</li>
-                        <li>Relevant category placement</li>
-                        <li class="unavailable">Promotional content</li>
-                        <li class="unavailable">Featured placement</li>
-                    </ul>
-                    <a class="pricing-button" href="/contact.html?service=discovery-basic">Choose Basic Listing →</a>
-                </article>
-                <article class="pricing-card featured">
-                    <span class="pricing-badge">Popular Choice</span>
-                    <h4>Standard Promotion</h4>
-                    <p class="pricing-description">Promote your business, products, services and special offers to
-                        local customers.</p>
-                    <div class="pricing-amount">
-                        <strong>R99</strong><span>once-off</span>
-                    </div>
-                    <p class="pricing-billing">Valid for 30 days</p>
-                    <ul class="pricing-features">
-                        <li>Everything in Basic Listing</li>
-                        <li>Business promotional content</li>
-                        <li>Product or service highlights</li>
-                        <li>Special offer promotion</li>
-                        <li>Relevant category placement</li>
-                        <li class="unavailable">Featured placement</li>
-                    </ul>
-                    <a class="pricing-button" href="/contact.html?service=discovery-standard">Choose Standard →</a>
-                </article>
-                <article class="pricing-card">
-                    <span class="pricing-badge">Maximum Visibility</span>
-                    <h4>Featured Promotion</h4>
-                    <p class="pricing-description">Additional visibility within relevant Kalxa Discovery categories.
-                    </p>
-                    <div class="pricing-amount">
-                        <strong>R199</strong><span>once-off</span>
-                    </div>
-                    <p class="pricing-billing">Valid for 30 days</p>
-                    <ul class="pricing-features">
-                        <li>Everything in Standard Promotion</li>
-                        <li>Featured business placement</li>
-                        <li>Priority category visibility</li>
-                        <li>Promotional content</li>
-                        <li>Business contact and location</li>
-                        <li>Enhanced business exposure</li>
-                    </ul>
-                    <a class="pricing-button" href="/contact.html?service=discovery-featured">Choose Featured →</a>
-                </article>
-            </div>
-            <div class="pricing-note">
-                <strong>Discovery advertising terms:</strong> All packages are once-off purchases valid for 30 days.
-                There is no automatic renewal. Businesses may purchase another period after expiry. Featured visibility
-                is subject to platform rules and availability; no specific number of views or sales is guaranteed.
+
+                <p class="section-label">
+                    04 · KALXA DISCOVERY
+                </p>
+
+                <h2>
+                    Business Advertising Packages
+                </h2>
+
+                <p>
+                    Help customers discover your
+                    business through affordable
+                    30-day advertising packages.
+
+                    Pay once for the selected
+                    advertising period,
+                    with no automatic renewal.
+                </p>
+
             </div>
 
+            <div class="pricing-grid">
+
+                <!-- BASIC -->
+
+                <article class="pricing-card">
+
+                    <h4>
+                        Basic Listing
+                    </h4>
+
+                    <p class="pricing-description">
+                        An affordable starting point
+                        for businesses establishing
+                        their presence on
+                        KALXA Discovery.
+                    </p>
+
+                    <div class="pricing-amount">
+
+                        <strong>
+                            R49
+                        </strong>
+
+                        <span>
+                            once-off
+                        </span>
+
+                    </div>
+
+                    <p class="pricing-billing">
+                        Valid for 30 days
+                    </p>
+
+                    <ul class="pricing-features">
+
+                        <li>Business profile</li>
+
+                        <li>Business description</li>
+
+                        <li>Contact information</li>
+
+                        <li>Business location</li>
+
+                        <li>Relevant category placement</li>
+
+                        <li class="unavailable">
+                            Promotional content
+                        </li>
+
+                        <li class="unavailable">
+                            Featured placement
+                        </li>
+
+                    </ul>
+
+                    <a
+                        class="pricing-button"
+                        href="/contact.html?service=discovery-basic"
+                    >
+                        Choose Basic Listing →
+                    </a>
+
+                </article>
+
+                <!-- STANDARD -->
+
+                <article class="pricing-card featured">
+
+                    <span class="pricing-badge">
+                        POPULAR CHOICE
+                    </span>
+
+                    <h4>
+                        Standard Promotion
+                    </h4>
+
+                    <p class="pricing-description">
+                        Promote your business,
+                        products, services and
+                        special offers to
+                        local customers.
+                    </p>
+
+                    <div class="pricing-amount">
+
+                        <strong>
+                            R99
+                        </strong>
+
+                        <span>
+                            once-off
+                        </span>
+
+                    </div>
+
+                    <p class="pricing-billing">
+                        Valid for 30 days
+                    </p>
+
+                    <ul class="pricing-features">
+
+                        <li>Everything in Basic Listing</li>
+
+                        <li>Business promotional content</li>
+
+                        <li>Product or service highlights</li>
+
+                        <li>Special offer promotion</li>
+
+                        <li>Relevant category placement</li>
+
+                        <li class="unavailable">
+                            Featured placement
+                        </li>
+
+                    </ul>
+
+                    <a
+                        class="pricing-button"
+                        href="/contact.html?service=discovery-standard"
+                    >
+                        Choose Standard →
+                    </a>
+
+                </article>
+
+                <!-- FEATURED -->
+
+                <article class="pricing-card">
+
+                    <span class="pricing-badge">
+                        MAXIMUM VISIBILITY
+                    </span>
+
+                    <h4>
+                        Featured Promotion
+                    </h4>
+
+                    <p class="pricing-description">
+                        Additional visibility
+                        within relevant
+                        KALXA Discovery categories.
+                    </p>
+
+                    <div class="pricing-amount">
+
+                        <strong>
+                            R199
+                        </strong>
+
+                        <span>
+                            once-off
+                        </span>
+
+                    </div>
+
+                    <p class="pricing-billing">
+                        Valid for 30 days
+                    </p>
+
+                    <ul class="pricing-features">
+
+                        <li>
+                            Everything in Standard Promotion
+                        </li>
+
+                        <li>
+                            Featured business placement
+                        </li>
+
+                        <li>
+                            Priority category visibility
+                        </li>
+
+                        <li>
+                            Promotional content
+                        </li>
+
+                        <li>
+                            Business contact and location
+                        </li>
+
+                        <li>
+                            Enhanced business exposure
+                        </li>
+
+                    </ul>
+
+                    <a
+                        class="pricing-button"
+                        href="/contact.html?service=discovery-featured"
+                    >
+                        Choose Featured →
+                    </a>
+
+                </article>
+
+            </div>
+
+            <!-- DISCOVERY COMPARISON -->
+
             <div class="comparison-section">
-                <h3>Compare Discovery Features</h3>
+
+                <h3>
+                    Compare Discovery Features
+                </h3>
+
                 <div class="comparison-table-wrapper">
+
                     <table class="comparison-table">
+
                         <thead>
+
                             <tr>
                                 <th scope="col">Feature</th>
                                 <th scope="col">Basic</th>
                                 <th scope="col">Standard</th>
                                 <th scope="col">Featured</th>
                             </tr>
+
                         </thead>
+
                         <tbody>
+
                             <tr>
                                 <td>Price</td>
                                 <td>R49</td>
                                 <td>R99</td>
                                 <td>R199</td>
                             </tr>
+
                             <tr>
                                 <td>Duration</td>
                                 <td>30 days</td>
                                 <td>30 days</td>
                                 <td>30 days</td>
                             </tr>
+
                             <tr>
-                                <td>Business profile</td>
+                                <td>Business Profile</td>
                                 <td>✓</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Business contact details</td>
+                                <td>Business Contact Details</td>
                                 <td>✓</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Business location</td>
+                                <td>Business Location</td>
                                 <td>✓</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Category placement</td>
+                                <td>Category Placement</td>
                                 <td>✓</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Promotional content</td>
+                                <td>Promotional Content</td>
                                 <td>—</td>
                                 <td>✓</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Featured placement</td>
+                                <td>Featured Placement</td>
                                 <td>—</td>
                                 <td>—</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Priority visibility</td>
+                                <td>Priority Visibility</td>
                                 <td>—</td>
                                 <td>—</td>
                                 <td>✓</td>
                             </tr>
+
                             <tr>
-                                <td>Automatic renewal</td>
+                                <td>Automatic Renewal</td>
                                 <td>No</td>
                                 <td>No</td>
                                 <td>No</td>
                             </tr>
+
                         </tbody>
+
                     </table>
+
                 </div>
-            </div>
-        </section>
 
-        <!-- PAYMENT INFORMATION -->
-        <section class="pricing-product-section soft" id="payment-information">
-            <div class="pricing-product-header">
-                <p class="section-label">PAYMENT &amp; BILLING</p>
-                <h2>Understand Your Payments</h2>
-                <p>Clear information about charges, subscriptions and digital delivery before you purchase.</p>
             </div>
-            <div class="payment-info-grid">
-                <article class="payment-info-card">
-                    <h3>Once-Off Payments</h3>
-                    <p>Kalxa Discovery advertising packages are purchased for a fixed 30-day period and do not renew
-                        automatically.</p>
-                </article>
-                <article class="payment-info-card">
-                    <h3>Monthly Subscriptions</h3>
-                    <p>Kalxa Ticketing organiser plans, restaurant business profiles and Kalxa Blog Creator CRM are
-                        priced monthly. Renewal and cancellation conditions are provided before activation.</p>
-                </article>
-                <article class="payment-info-card">
-                    <h3>Third-Party Transactions</h3>
-                    <p>Event tickets, creator memberships and fan contributions may involve independent organisers or
-                        creators. The applicable checkout or agreement identifies the seller, recipient, fees and
-                        settlement arrangements.</p>
-                </article>
-            </div>
+
             <div class="pricing-note">
-                <strong>Important payment information:</strong> All prices are stated in South African rand (ZAR). Any
-                applicable taxes, transaction fees or additional charges must be disclosed before payment. Payment
-                methods vary by product. The package buttons on this page open enquiries, not a payment checkout.
+
+                <strong>
+                    Discovery advertising terms:
+                </strong>
+
+                All packages are once-off purchases
+                valid for 30 days.
+
+                There is no automatic renewal.
+
+                Businesses may purchase another
+                advertising period after expiry.
+
+                Featured visibility is subject
+                to platform rules and availability.
+
+                No particular number of views,
+                enquiries or sales is guaranteed.
+
             </div>
+
         </section>
 
-        <!-- CUSTOMER POLICIES -->
-        <section class="pricing-product-section">
+        <!-- =====================================================
+             PAYMENT INFORMATION
+        ===================================================== -->
+
+        <section
+            class="pricing-product-section"
+            id="payment-information"
+        >
+
             <div class="pricing-product-header">
-                <p class="section-label">CUSTOMER INFORMATION</p>
-                <h2>Important Policies</h2>
-                <p>Please review the policies applicable to your selected KALXA service before purchasing.</p>
+
+                <p class="section-label">
+                    PAYMENT &amp; BILLING
+                </p>
+
+                <h2>
+                    Understand Your Payments
+                </h2>
+
+                <p>
+                    Different KALXA products
+                    use different pricing models.
+
+                    Review the applicable charges
+                    and terms before purchasing.
+                </p>
+
             </div>
+
             <div class="payment-info-grid">
+
+                <!-- COMMISSION -->
+
                 <article class="payment-info-card">
-                    <h3>Terms &amp; Conditions</h3>
-                    <p>Conditions governing KALXA products, services and subscriptions.</p>
-                    <a class="text-link" href="/terms.html">Read Terms →</a>
+
+                    <h3>
+                        <i class="fa-solid fa-percent"></i>
+                        Commission-Based Payments
+                    </h3>
+
+                    <p>
+                        Event ticketing carries
+                        a 4% KALXA platform commission
+                        per ticket sold.
+
+                        Creator monetisation has
+                        proposed commissions of
+                        23% on Free and
+                        3% on paid plans.
+
+                        Processing fees and other
+                        applicable charges are separate
+                        unless explicitly stated otherwise.
+                    </p>
+
                 </article>
+
+                <!-- ONCE OFF -->
+
                 <article class="payment-info-card">
-                    <h3>Refund Policy</h3>
-                    <p>Refund eligibility, requests and customer support procedures.</p>
-                    <a class="text-link" href="/refund.html">Read Refund Policy →</a>
+
+                    <h3>
+                        <i class="fa-solid fa-credit-card"></i>
+                        Once-Off Payments
+                    </h3>
+
+                    <p>
+                        Creator Standard and Premium
+                        use once-off activation fees.
+
+                        Discovery advertising
+                        packages are also purchased
+                        once for a fixed 30-day period.
+
+                        Optional event promotions
+                        are priced separately.
+                    </p>
+
                 </article>
+
+                <!-- MONTHLY -->
+
                 <article class="payment-info-card">
-                    <h3>Cancellation Policy</h3>
-                    <p>Information about cancelling eligible recurring subscriptions.</p>
-                    <a class="text-link" href="/cancellation.html">Read Cancellation Policy →</a>
+
+                    <h3>
+                        <i class="fa-solid fa-calendar"></i>
+                        Monthly Subscriptions
+                    </h3>
+
+                    <p>
+                        Restaurant Standard and
+                        Restaurant Premium are
+                        monthly subscriptions.
+
+                        Creator activation fees
+                        and the 4% event ticketing
+                        commission are not
+                        monthly subscriptions.
+                    </p>
+
                 </article>
+
+                <!-- THIRD PARTY -->
+
                 <article class="payment-info-card">
-                    <h3>Privacy Policy</h3>
-                    <p>How KALXA processes personal information.</p>
-                    <a class="text-link" href="/privacy.html">Read Privacy Policy →</a>
+
+                    <h3>
+                        <i class="fa-solid fa-wallet"></i>
+                        Third-Party Transactions
+                    </h3>
+
+                    <p>
+                        Event ticket purchases
+                        and creator supporter
+                        contributions may involve
+                        independent organisers
+                        or creators.
+
+                        The applicable checkout
+                        or agreement should identify
+                        the relevant parties,
+                        fees and settlement arrangements.
+                    </p>
+
                 </article>
+
+                <!-- PROCESSING -->
+
                 <article class="payment-info-card">
-                    <h3>Digital Delivery</h3>
-                    <p>How digital services and platform access are delivered.</p>
-                    <a class="text-link" href="/delivery.html">Read Delivery Policy →</a>
+
+                    <h3>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Payment Processing Fees
+                    </h3>
+
+                    <p>
+                        Payment providers may charge
+                        additional processing fees.
+
+                        KALXA's advertised commission
+                        percentages do not automatically
+                        include those fees.
+
+                        Actual payouts depend on
+                        the agreed settlement arrangement
+                        and applicable deductions.
+                    </p>
+
                 </article>
+
+                <!-- DELIVERY -->
+
                 <article class="payment-info-card">
-                    <h3>Frequently Asked Questions</h3>
-                    <p>Answers about pricing, billing, services and support.</p>
-                    <a class="text-link" href="/faq.html">View FAQs →</a>
+
+                    <h3>
+                        <i class="fa-solid fa-cloud"></i>
+                        Digital Service Delivery
+                    </h3>
+
+                    <p>
+                        Digital platform access,
+                        subscriptions and promotional
+                        placements are delivered
+                        according to the applicable
+                        product terms.
+
+                        Feature availability
+                        may depend on activation,
+                        verification or technical readiness.
+                    </p>
+
+                    <a
+                        class="text-link"
+                        href="/delivery.html"
+                    >
+                        Read Delivery Policy →
+                    </a>
+
                 </article>
+
             </div>
+
+            <div class="pricing-note">
+
+                <strong>
+                    Important payment information:
+                </strong>
+
+                <p>
+                    All advertised prices are
+                    stated in South African rand (ZAR).
+                </p>
+
+                <p>
+                    Any applicable taxes,
+                    payment processing fees
+                    or additional charges must
+                    be disclosed before payment.
+                </p>
+
+                <p>
+                    Payment methods vary by product.
+
+                    Creator payment integrations
+                    and certain monetisation
+                    features remain subject
+                    to technical availability
+                    and provider approval.
+                </p>
+
+                <p>
+                    The buttons on this page
+                    open KALXA product platforms
+                    or enquiry pages.
+
+                    They do not themselves
+                    complete a payment.
+                </p>
+
+            </div>
+
         </section>
 
-        <!-- CONTACT -->
-        <section class="pricing-contact">
-            <p class="section-label">BUSINESS ENQUIRIES</p>
-            <h2>Need Help Choosing a Package?</h2>
-            <p>Contact KALXA for assistance with event organiser plans, restaurant business profiles, creator
-                subscriptions or Discovery advertising.</p>
-            <div class="pricing-contact-buttons">
-                <a class="button primary-button" href="/contact.html">Contact Our Team →</a>
-                <a class="button secondary-button" href="https://wa.me/27766114909" target="_blank"
-                    rel="noopener noreferrer">WhatsApp Us</a>
+        <!-- =====================================================
+             CUSTOMER POLICIES
+        ===================================================== -->
+
+        <section class="pricing-product-section soft">
+
+            <div class="pricing-product-header">
+
+                <p class="section-label">
+                    CUSTOMER INFORMATION
+                </p>
+
+                <h2>
+                    Important Policies
+                </h2>
+
+                <p>
+                    Please review the policies
+                    applicable to your selected
+                    KALXA service before purchasing.
+                </p>
+
             </div>
+
+            <div class="payment-info-grid">
+
+                <article class="payment-info-card">
+
+                    <h3>
+                        Terms &amp; Conditions
+                    </h3>
+
+                    <p>
+                        Conditions governing
+                        KALXA products,
+                        platform services,
+                        transactions and subscriptions.
+                    </p>
+
+                    <a
+                        class="text-link"
+                        href="/terms.html"
+                    >
+                        Read Terms →
+                    </a>
+
+                </article>
+
+                <article class="payment-info-card">
+
+                    <h3>
+                        Refund Policy
+                    </h3>
+
+                    <p>
+                        Refund eligibility,
+                        requests and customer
+                        support procedures.
+                    </p>
+
+                    <a
+                        class="text-link"
+                        href="/refund.html"
+                    >
+                        Read Refund Policy →
+                    </a>
+
+                </article>
+
+                <article class="payment-info-card">
+
+                    <h3>
+                        Cancellation Policy
+                    </h3>
+
+                    <p>
+                        Information about cancelling
+                        eligible recurring subscriptions.
+                    </p>
+
+                    <a
+                        class="text-link"
+                        href="/cancellation.html"
+                    >
+                        Read Cancellation Policy →
+                    </a>
+
+                </article>
+
+                <article class="payment-info-card">
+
+                    <h3>
+                        Privacy Policy
+                    </h3>
+
+                    <p>
+                        How KALXA processes
+                        personal information.
+                    </p>
+
+                    <a
+                        class="text-link"
+                        href="/privacy.html"
+                    >
+                        Read Privacy Policy →
+                    </a>
+
+                </article>
+
+                <article class="payment-info-card">
+
+                    <h3>
+                        Digital Delivery
+                    </h3>
+
+                    <p>
+                        How digital platform access
+                        and services are delivered.
+                    </p>
+
+                    <a
+                        class="text-link"
+                        href="/delivery.html"
+                    >
+                        Read Delivery Policy →
+                    </a>
+
+                </article>
+
+                <article class="payment-info-card">
+
+                    <h3>
+                        Frequently Asked Questions
+                    </h3>
+
+                    <p>
+                        Answers about pricing,
+                        billing, services and support.
+                    </p>
+
+                    <a
+                        class="text-link"
+                        href="/faq.html"
+                    >
+                        View FAQs →
+                    </a>
+
+                </article>
+
+            </div>
+
         </section>
+
+        <!-- =====================================================
+             CONTACT
+        ===================================================== -->
+
+        <section class="pricing-contact">
+
+            <p class="section-label">
+                BUSINESS ENQUIRIES
+            </p>
+
+            <h2>
+                Need Help Choosing a KALXA Service?
+            </h2>
+
+            <p>
+                Contact KALXA for assistance
+                with event ticketing,
+                promotional placements,
+                restaurant subscriptions,
+                Creator CRM plans
+                or Discovery advertising.
+            </p>
+
+            <div class="pricing-contact-buttons">
+
+                <a
+                    class="button primary-button"
+                    href="/contact.html"
+                >
+                    Contact Our Team →
+                </a>
+
+                <a
+                    class="button secondary-button"
+                    href="https://wa.me/27766114909"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp Us
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
 
-    <!-- PROFESSIONAL COMPANY FOOTER -->
+    <!-- =====================================================
+         COMPANY FOOTER
+    ===================================================== -->
+
     <footer class="company-footer">
+
         <div class="footer-main">
+
             <div class="footer-company">
-                <h3>KALXA (PTY) LTD</h3>
-                <p class="footer-company-type">Registered South African Private Company</p>
+
+                <h3>
+                    KALXA (PTY) LTD
+                </h3>
+
+                <p class="footer-company-type">
+                    Registered South African Private Company
+                </p>
+
                 <div class="footer-company-details">
-                    <span><strong>Registration Number</strong></span>
-                    <span>2026/767893/07</span>
+
+                    <span>
+                        <strong>
+                            Registration Number
+                        </strong>
+                    </span>
+
+                    <span>
+                        2026/767893/07
+                    </span>
+
                 </div>
+
                 <address class="footer-address">
-                    <span class="footer-address-title">Registered Business Address</span>
-                    <span>70047 Zakheni</span>
-                    <span>KwaMhlanga</span>
-                    <span>1022</span>
-                    <span>Mpumalanga</span>
-                    <span>South Africa</span>
+
+                    <span class="footer-address-title">
+                        Registered Business Address
+                    </span>
+
+                    <span>
+                        70047 Zakheni
+                    </span>
+
+                    <span>
+                        KwaMhlanga
+                    </span>
+
+                    <span>
+                        1022
+                    </span>
+
+                    <span>
+                        Mpumalanga
+                    </span>
+
+                    <span>
+                        South Africa
+                    </span>
+
                 </address>
+
             </div>
-            <nav class="footer-navigation" aria-label="Footer navigation">
-                <h3>Quick Links</h3>
+
+            <nav
+                class="footer-navigation"
+                aria-label="Footer navigation"
+            >
+
+                <h3>
+                    Quick Links
+                </h3>
+
                 <div class="footer-navigation-grid">
+
                     <div class="footer-link-group">
-                        <h4>Company</h4>
-                        <a href="/index.html">Home</a>
-                        <a href="/services.html">Services</a>
-                        <a href="/pricing.html">Pricing</a>
-                        <a href="/faq.html">FAQs</a>
-                        <a href="/contact.html">Contact</a>
+
+                        <h4>
+                            Company
+                        </h4>
+
+                        <a href="/index.html">
+                            Home
+                        </a>
+
+                        <a href="/services.html">
+                            Services
+                        </a>
+
+                        <a href="/ticketing.html">
+                            Ticketing
+                        </a>
+
+                        <a href="/creator-crm.html">
+                            Creator CRM
+                        </a>
+
+                        <a href="/pricing.html">
+                            Pricing
+                        </a>
+
+                        <a href="/faq.html">
+                            FAQs
+                        </a>
+
+                        <a href="/contact.html">
+                            Contact
+                        </a>
+
                     </div>
+
                     <div class="footer-link-group">
-                        <h4>Legal &amp; Policies</h4>
-                        <a href="/terms.html">Terms &amp; Conditions</a>
-                        <a href="/privacy.html">Privacy Policy</a>
-                        <a href="/refund.html">Refund Policy</a>
-                        <a href="/cancellation.html">Cancellation Policy</a>
-                        <a href="/delivery.html">Digital Delivery</a>
+
+                        <h4>
+                            Legal &amp; Policies
+                        </h4>
+
+                        <a href="/terms.html">
+                            Terms &amp; Conditions
+                        </a>
+
+                        <a href="/privacy.html">
+                            Privacy Policy
+                        </a>
+
+                        <a href="/refund.html">
+                            Refund Policy
+                        </a>
+
+                        <a href="/cancellation.html">
+                            Cancellation Policy
+                        </a>
+
+                        <a href="/delivery.html">
+                            Digital Delivery
+                        </a>
+
                     </div>
+
                 </div>
+
             </nav>
+
         </div>
+
+        <!-- =====================================================
+             SUPPORT
+        ===================================================== -->
+
         <div class="footer-support">
-            <h4>Customer Support &amp; Business Enquiries</h4>
+
+            <h4>
+                Customer Support &amp; Business Enquiries
+            </h4>
+
             <div class="footer-support-details">
-                <a href="mailto:lasi@kalxa.co.za">Email: lasi@kalxa.co.za</a>
-                <a href="tel:+27766114909">Phone: +27 76 611 4909</a>
-                <a href="https://wa.me/27766114909" target="_blank" rel="noopener noreferrer">WhatsApp: +27 76 611
-                    4909</a>
+
+                <a href="mailto:lasie@kalxa.co.za">
+                    Email: lasie@kalxa.co.za
+                </a>
+
+                <a href="tel:+27766114909">
+                    Phone: +27 76 611 4909
+                </a>
+
+                <a
+                    href="https://wa.me/27766114909"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp: +27 76 611 4909
+                </a>
+
             </div>
+
         </div>
+
+        <!-- =====================================================
+             FOOTER BOTTOM
+        ===================================================== -->
+
         <div class="footer-bottom">
-            <p id="copyright">© KALXA (PTY) LTD. All rights reserved.</p>
-            <p>Registration No: <strong>2026/767893/07</strong></p>
+
+            <p id="copyright">
+                © KALXA (PTY) LTD.
+                All rights reserved.
+            </p>
+
+            <p>
+                Registration No:
+                <strong>
+                    2026/767893/07
+                </strong>
+            </p>
+
         </div>
+
     </footer>
-    <script src="/js/main.js?v=3" defer></script>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script
+        src="/js/main.js?v=3"
+        defer
+    ></script>
+
+    <script>
+
+        const copyrightElement =
+            document.getElementById("copyright");
+
+        if (copyrightElement) {
+
+            const currentYear =
+                new Date().getFullYear();
+
+            copyrightElement.textContent =
+                `© ${currentYear} KALXA (PTY) LTD. All rights reserved.`;
+
+        }
+
+    </script>
+
 </body>
 
 </html>
