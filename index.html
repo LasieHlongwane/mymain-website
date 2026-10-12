@@ -169,13 +169,13 @@
 
         /* ==========================================
            HERO SECTION
-           FOUR-IMAGE AUTOMATIC SLIDESHOW
+           FIVE-IMAGE AUTOMATIC SLIDESHOW
         ========================================== */
 
         .site-hero {
 
             /*
-             * Background images are now handled
+             * Background images are handled
              * by .hero-slideshow.
              *
              * Do not add background-image here.
@@ -268,11 +268,9 @@
         /* ==========================================
            VERY LIGHT IMAGE OVERLAY
 
-           Desktop: 15% opacity
+           Desktop: 10% to 15% opacity
 
-           This makes images significantly
-           clearer than the previous
-           45% to 55% overlay.
+           Keeps images clearly visible.
         ========================================== */
 
         .hero-slideshow::after {
@@ -1386,7 +1384,7 @@
             /* ======================================
                MOBILE HERO BACKGROUND
 
-               Overlay reduced to 20%
+               Overlay: 20%
             ====================================== */
 
             .hero-slide {
@@ -1625,7 +1623,7 @@
     <main id="main">
 
         <!-- ==========================================
-             HERO WITH FOUR BACKGROUND IMAGES
+             HERO WITH FIVE BACKGROUND IMAGES
         ========================================== -->
 
         <section
@@ -1635,6 +1633,7 @@
 
             <!-- ======================================
                  BACKGROUND SLIDESHOW
+                 FIVE IMAGES
             ====================================== -->
 
             <div
@@ -1668,6 +1667,13 @@
                 <div
                     class="hero-slide"
                     style="background-image: url('/images/kalxa-hero-bg-4.png');"
+                ></div>
+
+                <!-- SLIDE 5: NEW -->
+
+                <div
+                    class="hero-slide"
+                    style="background-image: url('/images/kalxa-hero-bg-5.png');"
                 ></div>
 
             </div>
@@ -1704,10 +1710,12 @@
 
             <!-- ======================================
                  SLIDESHOW INDICATORS
+                 FIVE BUTTONS
             ====================================== -->
 
             <div
                 class="hero-slide-indicators"
+                role="group"
                 aria-label="Background slideshow controls"
             >
 
@@ -1741,6 +1749,16 @@
                     aria-label="Show background image 4"
                     aria-pressed="false"
                     data-slide="3"
+                ></button>
+
+                <!-- FIFTH INDICATOR: NEW -->
+
+                <button
+                    class="hero-indicator"
+                    type="button"
+                    aria-label="Show background image 5"
+                    aria-pressed="false"
+                    data-slide="4"
                 ></button>
 
             </div>
@@ -2305,6 +2323,7 @@
          HERO SLIDESHOW JAVASCRIPT
 
          Changes image every 4 seconds.
+         Automatically supports all five slides.
     ========================================== -->
 
     <script>
