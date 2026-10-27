@@ -208,14 +208,6 @@
             outline-offset: 4px;
         }
 
-        /*
-         * MOBILE MENU BUTTON
-         *
-         * A minimum 48px touch target is provided.
-         * Explicit positioning and z-index help prevent
-         * the button from being covered by other elements.
-         */
-
         .menu-button {
             position: relative;
             z-index: 10002;
@@ -279,12 +271,6 @@
             display: block;
             pointer-events: none;
         }
-
-        /*
-         * The mobile navigation uses a dedicated open class.
-         * Its stacking order is below the button but above
-         * the page content.
-         */
 
         @media (max-width: 760px) {
             .navbar {
@@ -1764,7 +1750,7 @@
         </div>
 
         <p class="stats-note">
-            Platform statistics will appear here when connected to verified live data.
+            Platform statistics are updated from available verified live data.
         </p>
 
     </section>
@@ -2594,9 +2580,9 @@
 
 </footer>
 
-<!-- EXISTING SITE JAVASCRIPT -->
+<!-- EXISTING SITE JAVASCRIPT: UPDATED CACHE VERSION -->
 
-<script src="/js/main.js?v=3" defer></script>
+<script src="/js/main.js?v=4" defer></script>
 
 <!-- HOMEPAGE INTERACTIONS -->
 
@@ -2609,110 +2595,16 @@
         /*
          * MOBILE NAVIGATION
          *
-         * The handler is attached directly to the menu button.
-         * The document-level handler only closes the menu when
-         * the user taps outside both the button and the navigation.
+         * main.js already manages the menu button.
+         * Do not attach a second click handler here.
          */
 
         const menuButton = document.getElementById("menu-button");
         const navMenu = document.getElementById("nav-menu");
 
-        if (menuButton && navMenu) {
-
-            function setMenuOpen(open) {
-
-                navMenu.classList.toggle("open", open);
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    String(open)
-                );
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    open ? "Close navigation menu" : "Open navigation menu"
-                );
-
-                menuButton.innerHTML = open
-                    ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
-                    : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-
-            }
-
-            /*
-             * Prevent duplicate event handlers if another script
-             * causes initialisation to run more than once.
-             */
-
-            if (menuButton.dataset.menuInitialised !== "true") {
-
-                menuButton.dataset.menuInitialised = "true";
-
-                menuButton.addEventListener("click", function (event) {
-
-                    event.preventDefault();
-                    event.stopPropagation();
-
-                    const isOpen =
-                        menuButton.getAttribute("aria-expanded") === "true";
-
-                    setMenuOpen(!isOpen);
-
-                });
-
-                navMenu.querySelectorAll("a").forEach(function (link) {
-
-                    link.addEventListener("click", function () {
-                        setMenuOpen(false);
-                    });
-
-                });
-
-                document.addEventListener("click", function (event) {
-
-                    if (
-                        !navMenu.contains(event.target) &&
-                        !menuButton.contains(event.target)
-                    ) {
-                        setMenuOpen(false);
-                    }
-
-                });
-
-                document.addEventListener("keydown", function (event) {
-
-                    if (event.key === "Escape") {
-
-                        setMenuOpen(false);
-
-                        if (window.innerWidth <= 760) {
-                            menuButton.focus();
-                        }
-
-                    }
-
-                });
-
-                /*
-                 * If the device is rotated or the viewport becomes
-                 * desktop-sized, reset the mobile menu state.
-                 */
-
-                window.addEventListener("resize", function () {
-
-                    if (window.innerWidth > 760) {
-                        setMenuOpen(false);
-                    }
-
-                });
-
-                setMenuOpen(false);
-
-            }
-
-        }
-
-        /* HERO BACKGROUND SLIDESHOW */
+        /*
+         * HERO BACKGROUND SLIDESHOW
+         */
 
         const slides = Array.from(
             document.querySelectorAll(".hero-slide")
@@ -2741,12 +2633,10 @@
             currentSlide = (index + slides.length) % slides.length;
 
             slides.forEach(function (slide, slideIndex) {
-
                 slide.classList.toggle(
                     "active",
                     slideIndex === currentSlide
                 );
-
             });
 
             indicators.forEach(function (indicator, indicatorIndex) {
@@ -2907,18 +2797,11 @@
             yearElement.textContent = String(new Date().getFullYear());
         }
 
-        /*
-         * LIVE STATISTICS
-         *
-         * Statistics intentionally remain as placeholders until
-         * the real KALXA backend endpoints are connected.
-         */
-
     }
 
     /*
      * Initialise whether this script executes before or after
-     * DOMContentLoaded. This avoids silently skipping setup.
+     * DOMContentLoaded.
      */
 
     if (document.readyState === "loading") {
@@ -2932,6 +2815,111 @@
     } else {
 
         initialiseHomepage();
+
+    }
+
+})();
+</script>
+
+<!-- LIVE KALXA STATISTICS -->
+
+<script>
+(function () {
+    "use strict";
+
+    const statsEndpoint =
+        "https://tickets.kalxa.co.za/api/public/stats";
+
+    const selectors = {
+        businesses_listed: '[data-stat="businesses"]',
+        events_published: '[data-stat="events"]'
+    };
+
+    function formatStatistic(value) {
+        return new Intl.NumberFormat().format(value);
+    }
+
+    async function loadLiveStatistics() {
+
+        const businessElement = document.querySelector(
+            selectors.businesses_listed
+        );
+
+        const eventElement = document.querySelector(
+            selectors.events_published
+        );
+
+        if (!businessElement && !eventElement) {
+            console.warn(
+                "KALXA statistics: No matching statistic elements were found."
+            );
+            return;
+        }
+
+        try {
+
+            console.info("KALXA statistics: Requesting live data.");
+
+            const response = await fetch(statsEndpoint, {
+                method: "GET",
+                headers: {
+                    Accept: "application/json"
+                },
+                cache: "no-store"
+            });
+
+            if (!response.ok) {
+                throw new Error(
+                    "Statistics API returned HTTP " + response.status
+                );
+            }
+
+            const data = await response.json();
+
+            console.info("KALXA statistics: API response received.", data);
+
+            if (
+                businessElement &&
+                Number.isSafeInteger(data.businesses_listed) &&
+                data.businesses_listed >= 0
+            ) {
+                businessElement.textContent = formatStatistic(
+                    data.businesses_listed
+                );
+            }
+
+            if (
+                eventElement &&
+                Number.isSafeInteger(data.events_published) &&
+                data.events_published >= 0
+            ) {
+                eventElement.textContent = formatStatistic(
+                    data.events_published
+                );
+            }
+
+        } catch (error) {
+
+            console.error(
+                "KALXA statistics: Could not load live statistics.",
+                error
+            );
+
+        }
+
+    }
+
+    if (document.readyState === "loading") {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            loadLiveStatistics,
+            { once: true }
+        );
+
+    } else {
+
+        loadLiveStatistics();
 
     }
 
