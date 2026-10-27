@@ -1,2394 +1,2763 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0879bd"><meta
+    name="description"
+    content="Discover local businesses, services, events and opportunities with KALXA. Explore digital business tools and technology services connecting KwaNdebele's local economy."
+>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-    >
+<meta name="robots" content="index, follow">
 
-    <meta
-        name="theme-color"
-        content="#e5f5ff"
-    >
+<title>KALXA | Connecting KwaNdebele's Local Economy</title>
 
-    <meta
-        name="description"
-        content="KALXA develops digital platforms and custom websites, apps, software and business automation for South African businesses."
-    >
+<link rel="canonical" href="https://kalxa.co.za/">
 
-    <meta
-        name="robots"
-        content="index, follow"
-    >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <title>
-        Digital Technology &amp; Platform Services | KALXA (PTY) LTD
-    </title>
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
 
-    <!-- GOOGLE FONTS -->
+<link rel="stylesheet" href="/css/style.css?v=5">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+<link
+    rel="preload"
+    as="image"
+    href="/images/kalxa-hero-bg.png"
+>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
-        rel="stylesheet"
-    >
+<style>
+    :root {
+        --ink: #102338;
+        --muted: #617386;
+        --blue: #0879bd;
+        --blue-dark: #07538b;
+        --blue-light: #eaf7ff;
+        --line: #dce8f2;
+        --white: #ffffff;
+        --heading: "Plus Jakarta Sans", sans-serif;
+        --body: "DM Sans", sans-serif;
+        --luxury: "Cormorant Garamond", Georgia, serif;
+        --shadow: 0 16px 45px rgba(18, 67, 104, 0.09);
+    }
 
-    <!-- EXISTING CSS -->
+    * {
+        box-sizing: border-box;
+    }
 
-    <link
-        rel="stylesheet"
-        href="/css/style.css?v=4"
-    >
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+    }
 
-    <!-- FONT AWESOME -->
+    body {
+        margin: 0;
+        color: var(--ink);
+        font-family: var(--body);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        background: #fff;
+    }
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+    body,
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
 
-    <!-- PRELOAD FIRST HERO IMAGE -->
+    button,
+    input,
+    textarea,
+    select {
+        font: inherit;
+    }
 
-    <link
-        rel="preload"
-        as="image"
-        href="/images/kalxa-hero-bg.png"
-    >
+    img {
+        max-width: 100%;
+    }
 
-    <style>
+    a {
+        color: inherit;
+    }
 
-        /* ==========================================
-           GLOBAL VARIABLES
-        ========================================== */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: var(--heading);
+        letter-spacing: -0.04em;
+    }
 
-        :root {
+    p {
+        overflow-wrap: break-word;
+    }
 
-            --ink: #111318;
+    .skip-link {
+        position: absolute;
+        left: 12px;
+        top: -100px;
+        z-index: 10000;
+        padding: 12px 16px;
+        color: #fff;
+        background: #073d61;
+        border-radius: 8px;
+    }
 
-            --muted: #52616d;
+    .skip-link:focus {
+        top: 12px;
+    }
 
-            --line: #dce7ee;
+    /* NAVIGATION */
 
-            --blue: #006aa6;
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        min-height: 78px;
+        padding: 14px 7%;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid rgba(220, 232, 242, 0.9);
+        box-shadow: 0 4px 20px rgba(17, 61, 91, 0.035);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
 
-            --font-heading:
-                "Plus Jakarta Sans", sans-serif;
+    .brand {
+        display: inline-flex;
+        align-items: center;
+        min-width: 0;
+        text-decoration: none;
+    }
 
-            --font-body:
-                "DM Sans", sans-serif;
+    .brand-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
 
-            --font-luxury:
-                "Cormorant Garamond", Georgia, serif;
+    .brand-text strong {
+        font-family: var(--heading);
+        font-size: 29px;
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -1.8px;
+        color: var(--blue-dark);
+    }
 
-        }
+    .brand-text span {
+        font-size: 9px;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        font-weight: 700;
+        color: #627b8e;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    .navbar nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 7px;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    .navbar nav a {
+        padding: 10px 12px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #344b60;
+        text-decoration: none;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
 
-        body {
+    .navbar nav a:hover,
+    .navbar nav a[aria-current="page"] {
+        color: var(--blue-dark);
+        background: var(--blue-light);
+    }
 
-            margin: 0;
+    .navbar nav a:focus-visible,
+    .brand:focus-visible {
+        outline: 3px solid #56b7ed;
+        outline-offset: 4px;
+    }
 
-            color: var(--ink);
+    .menu-button {
+        display: none;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 10px 13px;
+        background: #fff;
+        color: var(--blue-dark);
+        font-size: 20px;
+        cursor: pointer;
+    }
 
-            font-family: var(--font-body);
+    /* HERO */
 
-            font-weight: 400;
+    .site-hero {
+        position: relative;
+        isolation: isolate;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 580px;
+        overflow: hidden;
+        padding: 100px 7% 110px;
+        background: #e5f5ff;
+    }
 
-            -webkit-font-smoothing: antialiased;
+    .hero-slideshow {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        overflow: hidden;
+        background: #e5f5ff;
+        pointer-events: none;
+    }
 
-            text-rendering: optimizeLegibility;
+    .hero-slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.025);
+        transition:
+            opacity 1s ease,
+            visibility 1s ease,
+            transform 5s ease;
+    }
 
-        }
+    .hero-slide.active {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
 
-        h1,
-        h2,
-        h3,
-        h4 {
+    .hero-slideshow::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+            linear-gradient(
+                115deg,
+                rgba(246, 251, 255, 0.95) 0%,
+                rgba(236, 248, 255, 0.88) 48%,
+                rgba(221, 242, 255, 0.76) 100%
+            );
+    }
 
-            font-family: var(--font-heading);
+    .hero-inner {
+        width: 100%;
+        max-width: 1040px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 3;
+        text-align: center;
+    }
 
-            letter-spacing: -0.035em;
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        padding: 10px 15px;
+        border: 1px solid rgba(8, 121, 189, 0.2);
+        border-radius: 100px;
+        color: #07538b;
+        background: rgba(255, 255, 255, 0.76);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+    }
 
-        }
+    .hero-badge i {
+        color: #0795d8;
+    }
 
-        /* ==========================================
-           BRAND
-        ========================================== */
+    .site-hero h1 {
+        max-width: 950px;
+        margin: 25px auto 22px;
+        font-size: clamp(43px, 7vw, 78px);
+        line-height: 1.06;
+        font-weight: 800;
+        letter-spacing: -0.075em;
+        color: #102b43;
+    }
 
-        .brand-text strong {
+    .luxury-text {
+        font-family: var(--luxury);
+        font-style: italic;
+        font-weight: 600;
+        letter-spacing: -0.035em;
+        color: var(--blue);
+    }
 
-            font-family: var(--font-heading);
+    .hero-lead {
+        max-width: 760px;
+        margin: 0 auto;
+        color: #40596d;
+        font-size: clamp(16px, 2vw, 19px);
+        line-height: 1.9;
+    }
 
-            font-weight: 800;
+    .actions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 13px;
+        margin-top: 30px;
+    }
 
-            letter-spacing: -1.5px;
+    .button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 13px 21px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.4;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+            transform 0.22s ease,
+            box-shadow 0.22s ease,
+            background 0.22s ease,
+            border-color 0.22s ease;
+    }
 
-        }
+    .button:hover {
+        transform: translateY(-3px);
+    }
 
-        .brand-text span {
+    .button:focus-visible {
+        outline: 3px solid #63bdf0;
+        outline-offset: 4px;
+    }
 
-            font-family: var(--font-body);
+    .primary-button {
+        background: linear-gradient(135deg, #0879bd, #07538b);
+        color: #fff;
+        box-shadow: 0 8px 22px rgba(8, 121, 189, 0.2);
+    }
 
-            font-size: 10px;
+    .primary-button:hover {
+        box-shadow: 0 12px 28px rgba(8, 121, 189, 0.26);
+    }
 
-            letter-spacing: 1.4px;
+    .secondary-button {
+        color: #07538b;
+        background: rgba(255, 255, 255, 0.85);
+        border-color: #a8d4ec;
+    }
 
-            font-weight: 700;
+    .secondary-button:hover {
+        background: #fff;
+        border-color: #0879bd;
+    }
 
+    .hero-trust-line {
+        margin: 28px 0 0;
+        color: #526d80;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .hero-trust-line i {
+        margin-right: 6px;
+        color: var(--blue);
+    }
+
+    .hero-slide-indicators {
+        position: absolute;
+        bottom: 27px;
+        left: 50%;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transform: translateX(-50%);
+    }
+
+    .hero-indicator {
+        width: 9px;
+        height: 9px;
+        padding: 0;
+        border: none;
+        border-radius: 50px;
+        background: rgba(7, 83, 139, 0.3);
+        cursor: pointer;
+        transition: width 0.25s ease, background 0.25s ease;
+    }
+
+    .hero-indicator.active {
+        width: 26px;
+        background: var(--blue);
+    }
+
+    .hero-indicator:focus-visible {
+        outline: 3px solid var(--blue);
+        outline-offset: 4px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section-shell {
+        padding: 82px 7%;
+    }
+
+    .section-shell.soft {
+        background: #f6faff;
+    }
+
+    .section-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        max-width: 780px;
+        margin: 0 auto 42px;
+        text-align: center;
+    }
+
+    .section-label,
+    .eyebrow {
+        margin: 0 0 12px;
+        color: var(--blue);
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 1.7;
+        letter-spacing: 2.1px;
+        text-transform: uppercase;
+    }
+
+    .section-title h2 {
+        margin: 10px 0 16px;
+        color: #102b43;
+        font-size: clamp(30px, 4vw, 45px);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.055em;
+    }
+
+    .section-title > p:not(.section-label) {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    /* STATISTICS */
+
+    .stats-section {
+        position: relative;
+        z-index: 4;
+        padding: 0 7%;
+        background: #fff;
+    }
+
+    .stats-panel {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        max-width: 1200px;
+        margin: -36px auto 0;
+        position: relative;
+        padding: 29px 18px;
+        border: 1px solid #e0edf6;
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: var(--shadow);
+    }
+
+    .stat-item {
+        padding: 8px 15px;
+        text-align: center;
+        border-right: 1px solid #e3edf4;
+    }
+
+    .stat-item:last-child {
+        border-right: none;
+    }
+
+    .stat-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 12px;
+        border-radius: 13px;
+        color: #0879bd;
+        background: #eaf7ff;
+        font-size: 17px;
+    }
+
+    .stat-number {
+        display: block;
+        color: #102b43;
+        font-family: var(--heading);
+        font-size: clamp(25px, 3vw, 35px);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.05em;
+    }
+
+    .stat-label {
+        display: block;
+        margin-top: 7px;
+        color: #617386;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .stats-note {
+        margin: 17px auto 0;
+        max-width: 700px;
+        color: #77899a;
+        font-size: 11px;
+        line-height: 1.7;
+        text-align: center;
+    }
+
+    /* HORIZONTAL CAROUSELS */
+
+    .carousel-heading {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+
+    .carousel-heading h2 {
+        margin: 0;
+        color: #102b43;
+        font-size: clamp(27px, 3.5vw, 39px);
+        line-height: 1.2;
+    }
+
+    .carousel-heading p {
+        max-width: 640px;
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .carousel-controls {
+        display: flex;
+        flex-shrink: 0;
+        gap: 9px;
+    }
+
+    .carousel-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid #d6e6f1;
+        border-radius: 50%;
+        color: #07538b;
+        background: #fff;
+        cursor: pointer;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .carousel-arrow:hover {
+        color: #fff;
+        background: var(--blue);
+    }
+
+    .carousel-arrow:focus-visible {
+        outline: 3px solid #63bdf0;
+        outline-offset: 3px;
+    }
+
+    .carousel-track {
+        display: grid;
+        grid-auto-columns: minmax(250px, 1fr);
+        grid-auto-flow: column;
+        gap: 18px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding: 5px 3px 22px;
+        scrollbar-width: thin;
+        scrollbar-color: #a9cfe5 #edf5fa;
+    }
+
+    .carousel-track > * {
+        min-width: 0;
+        scroll-snap-align: start;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+        height: 7px;
+    }
+
+    .carousel-track::-webkit-scrollbar-track {
+        background: #edf5fa;
+        border-radius: 10px;
+    }
+
+    .carousel-track::-webkit-scrollbar-thumb {
+        background: #a9cfe5;
+        border-radius: 10px;
+    }
+
+    /* PRODUCT CARDS */
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 300px;
+        padding: 27px;
+        border: 1px solid #e0eaf2;
+        border-radius: 17px;
+        background: #fff;
+        box-shadow: 0 7px 22px rgba(17, 61, 91, 0.035);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+    }
+
+    .product-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 54px;
+        height: 54px;
+        margin-bottom: 23px;
+        border-radius: 16px;
+        color: #0879bd;
+        background: linear-gradient(135deg, #e7f6ff, #f5fbff);
+        font-size: 22px;
+    }
+
+    .product-card h3 {
+        margin: 0 0 12px;
+        color: #102b43;
+        font-size: 21px;
+        font-weight: 800;
+        line-height: 1.4;
+    }
+
+    .product-card p {
+        flex: 1;
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .text-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        align-self: flex-start;
+        color: #0879bd;
+        font-size: 13px;
+        font-weight: 800;
+        text-decoration: none;
+    }
+
+    .text-link i {
+        transition: transform 0.2s ease;
+    }
+
+    .text-link:hover i {
+        transform: translateX(4px);
+    }
+
+    .text-link:focus-visible {
+        outline: 2px solid #0879bd;
+        outline-offset: 4px;
+    }
+
+    /* BUSINESS SHOWCASE */
+
+    .business-showcase {
+        overflow: hidden;
+        background:
+            radial-gradient(circle at top right, #e4f5ff 0, transparent 35%),
+            #f7fbff;
+    }
+
+    .business-card {
+        overflow: hidden;
+        border: 1px solid #dfeaf2;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(17, 61, 91, 0.05);
+    }
+
+    .business-card-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 150px;
+        padding: 20px;
+        background: linear-gradient(135deg, #e5f5ff, #f4faff);
+        color: #0879bd;
+        font-size: 39px;
+    }
+
+    .business-card-body {
+        padding: 22px;
+    }
+
+    .business-category {
+        display: inline-block;
+        margin-bottom: 9px;
+        color: #0879bd;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+    }
+
+    .business-card h3 {
+        margin: 0 0 10px;
+        font-size: 19px;
+        line-height: 1.4;
+    }
+
+    .business-card p {
+        min-height: 48px;
+        margin: 0 0 19px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .business-note {
+        margin: 20px 0 0;
+        color: #738698;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    /* BUSINESS BENEFITS */
+
+    .benefit-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .benefit-card {
+        padding: 29px;
+        border: 1px solid #e0eaf2;
+        border-radius: 16px;
+        background: #fff;
+    }
+
+    .benefit-card .product-icon {
+        margin-bottom: 18px;
+    }
+
+    .benefit-card h3 {
+        margin: 0 0 12px;
+        font-size: 20px;
+    }
+
+    .benefit-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    /* HOW IT WORKS */
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .step-card {
+        position: relative;
+        padding: 29px;
+        border: 1px solid #dfeaf2;
+        border-radius: 16px;
+        background: #fff;
+    }
+
+    .step-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        margin-bottom: 21px;
+        border-radius: 14px;
+        background: #e8f6ff;
+        color: #0879bd;
+        font-family: var(--heading);
+        font-size: 15px;
+        font-weight: 800;
+    }
+
+    .step-card h3 {
+        margin: 0 0 11px;
+        font-size: 20px;
+    }
+
+    .step-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials-section {
+        background: #f5faff;
+    }
+
+    .testimonial-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 255px;
+        padding: 29px;
+        border: 1px solid #dce9f3;
+        border-radius: 17px;
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(17, 61, 91, 0.04);
+    }
+
+    .testimonial-stars {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 18px;
+        color: #e2a42a;
+        font-size: 13px;
+    }
+
+    .testimonial-quote {
+        flex: 1;
+        margin: 0 0 25px;
+        color: #40566a;
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .testimonial-author {
+        padding-top: 17px;
+        border-top: 1px solid #edf2f6;
+    }
+
+    .testimonial-author strong {
+        display: block;
+        color: #102b43;
+        font-size: 13px;
+    }
+
+    .testimonial-author span {
+        display: block;
+        margin-top: 5px;
+        color: #718395;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .testimonial-disclaimer {
+        margin: 14px 0 0;
+        color: #77899a;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    /* CUSTOM DEVELOPMENT */
+
+    .service-highlight {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 30px;
+        padding: 36px;
+        border: 1px solid #c6e6f8;
+        border-radius: 20px;
+        background: linear-gradient(125deg, #fff, #eaf7ff);
+    }
+
+    .service-highlight h3 {
+        margin: 10px 0 13px;
+        font-size: clamp(24px, 3vw, 31px);
+        line-height: 1.3;
+    }
+
+    .service-highlight p {
+        max-width: 750px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    /* FAQ */
+
+    .faq-list {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        margin-bottom: 12px;
+        overflow: hidden;
+        border: 1px solid #dfeaf2;
+        border-radius: 12px;
+        background: #fff;
+    }
+
+    .faq-item summary {
+        position: relative;
+        padding: 20px 48px 20px 20px;
+        color: #102b43;
+        font-family: var(--heading);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.7;
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .faq-item summary::after {
+        content: "+";
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        color: #0879bd;
+        font-size: 23px;
+        font-weight: 400;
+        transform: translateY(-50%);
+    }
+
+    .faq-item[open] summary::after {
+        content: "−";
+    }
+
+    .faq-item summary:focus-visible {
+        outline: 3px solid #63bdf0;
+        outline-offset: -3px;
+    }
+
+    .faq-answer {
+        padding: 0 20px 20px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .faq-answer p {
+        margin: 0;
+    }
+
+    /* PARTNERS */
+
+    .kalxa-partners {
+        padding: 75px 7%;
+        border-top: 1px solid #e0edf5;
+        border-bottom: 1px solid #e0edf5;
+        background: linear-gradient(135deg, #f7fbff, #edf8ff, #f8fcff);
+    }
+
+    .partners-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .partners-header {
+        max-width: 760px;
+        margin: 0 auto 35px;
+        text-align: center;
+    }
+
+    .partners-header h2 {
+        margin: 12px 0;
+        font-size: clamp(29px, 4vw, 43px);
+        line-height: 1.2;
+    }
+
+    .partners-description {
+        margin: 0 auto;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .partner-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-height: 150px;
+        padding: 27px 20px;
+        border: 1px solid #dbe9f3;
+        border-radius: 16px;
+        color: var(--ink);
+        background: #fff;
+        text-align: center;
+        text-decoration: none;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .partner-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+    }
+
+    .partner-name {
+        font-family: var(--heading);
+        font-size: 23px;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+    }
+
+    .partner-role {
+        color: #667987;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .partners-note {
+        max-width: 720px;
+        margin: 25px auto 0;
+        color: #71818d;
+        font-size: 11px;
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    /* CONTACT CTA */
+
+    .contact-band {
+        padding: 78px 7%;
+        text-align: center;
+        background:
+            radial-gradient(circle at 20% 20%, rgba(255,255,255,.16), transparent 30%),
+            linear-gradient(125deg, #07538b, #0879bd 55%, #25a1df);
+        color: #fff;
+    }
+
+    .contact-band .section-label {
+        color: #c9edff;
+    }
+
+    .contact-band h2 {
+        max-width: 800px;
+        margin: 12px auto 16px;
+        font-size: clamp(31px, 4.5vw, 49px);
+        line-height: 1.2;
+        letter-spacing: -0.055em;
+    }
+
+    .contact-band > p:not(.section-label) {
+        max-width: 700px;
+        margin: 0 auto;
+        color: #e2f5ff;
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    .contact-band .primary-button {
+        color: #07538b;
+        background: #fff;
+        box-shadow: none;
+    }
+
+    .contact-band .secondary-button {
+        color: #fff;
+        background: transparent;
+        border-color: rgba(255,255,255,.6);
+    }
+
+    .contact-band .secondary-button:hover {
+        background: rgba(255,255,255,.12);
+    }
+
+    /* FOOTER */
+
+    .company-footer {
+        padding: 60px 7% 28px;
+        border-top: 1px solid #c4e3f5;
+        color: #263746;
+        background: linear-gradient(120deg, #edf8ff, #d6efff 45%, #f5fbff);
+    }
+
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 70px;
+        padding-bottom: 38px;
+    }
+
+    .footer-company h3 {
+        margin: 0 0 16px;
+        font-size: 24px;
+        font-weight: 800;
+    }
+
+    .footer-company p,
+    .footer-company address {
+        color: #344b5b;
+        font-size: 13px;
+        line-height: 1.9;
+        font-style: normal;
+    }
+
+    .footer-navigation h3 {
+        margin: 0 0 20px;
+        font-size: 18px;
+    }
+
+    .footer-navigation-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .footer-link-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .footer-link-group h4 {
+        margin: 0 0 4px;
+        color: #526d80;
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .footer-link-group a,
+    .footer-support a {
+        color: #263746;
+        font-size: 13px;
+        line-height: 1.7;
+        text-decoration: none;
+        overflow-wrap: anywhere;
+    }
+
+    .footer-link-group a:hover,
+    .footer-support a:hover {
+        color: var(--blue);
+        text-decoration: underline;
+    }
+
+    .footer-support {
+        padding: 24px 0;
+        border-top: 1px solid #c4e3f5;
+        border-bottom: 1px solid #c4e3f5;
+    }
+
+    .footer-support h4 {
+        margin: 0 0 15px;
+        font-size: 13px;
+    }
+
+    .footer-support-links {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 17px 30px;
+    }
+
+    .footer-contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .footer-contact-link i {
+        color: #006aa6;
+        font-size: 18px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 22px;
+        color: #526d80;
+        font-size: 11px;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1000px) {
+        .navbar {
+            padding-inline: 5%;
         }
 
         .navbar nav a {
-
-            font-family: var(--font-body);
-
-            font-weight: 600;
-
-            letter-spacing: -0.01em;
-
+            padding: 9px;
+            font-size: 12px;
         }
 
-        /* ==========================================
-           HERO SECTION
-           FIVE-IMAGE AUTOMATIC SLIDESHOW
-        ========================================== */
-
-        .site-hero {
-
-            /*
-             * Background images are handled
-             * by .hero-slideshow.
-             *
-             * Do not add background-image here.
-             */
-
-            position: relative;
-
-            isolation: isolate;
-
-            overflow: hidden;
-
-            background-color: #e5f5ff;
-
-            min-height: 440px;
-
-            padding: 100px 7% 95px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
+        .stats-section {
+            padding-inline: 5%;
         }
-
-        /* ==========================================
-           SLIDESHOW CONTAINER
-        ========================================== */
-
-        .hero-slideshow {
-
-            position: absolute;
-
-            inset: 0;
-
-            z-index: -1;
-
-            overflow: hidden;
-
-            pointer-events: none;
-
-            background-color: #e5f5ff;
-
-        }
-
-        /* ==========================================
-           INDIVIDUAL BACKGROUND IMAGES
-        ========================================== */
-
-        .hero-slide {
-
-            position: absolute;
-
-            inset: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            background-size: cover;
-
-            background-position: center center;
-
-            background-repeat: no-repeat;
-
-            opacity: 0;
-
-            visibility: hidden;
-
-            transition:
-                opacity 1s ease-in-out,
-                visibility 1s ease-in-out;
-
-            will-change: opacity;
-
-        }
-
-        /* ==========================================
-           ACTIVE BACKGROUND IMAGE
-        ========================================== */
-
-        .hero-slide.active {
-
-            opacity: 1;
-
-            visibility: visible;
-
-        }
-
-        /* ==========================================
-           VERY LIGHT IMAGE OVERLAY
-
-           Desktop: 10% to 15% opacity
-
-           Keeps images clearly visible.
-        ========================================== */
-
-        .hero-slideshow::after {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            z-index: 2;
-
-            background:
-                linear-gradient(
-                    125deg,
-                    rgba(255, 255, 255, 0.15) 0%,
-                    rgba(255, 255, 255, 0.10) 50%,
-                    rgba(235, 247, 255, 0.15) 100%
-                );
-
-            pointer-events: none;
-
-        }
-
-        /* ==========================================
-           HERO CONTENT
-        ========================================== */
-
-        .site-hero .inner {
-
-            width: 100%;
-
-            max-width: 920px;
-
-            margin: auto;
-
-            text-align: center;
-
-            position: relative;
-
-            z-index: 3;
-
-        }
-
-        .site-hero h1,
-        .site-hero h2 {
-
-            font-size: clamp(42px, 6vw, 76px);
-
-            font-weight: 800;
-
-            line-height: 1.08;
-
-            letter-spacing: -0.065em;
-
-            max-width: 950px;
-
-            margin: 18px auto 26px;
-
-            color: #111318;
-
-        }
-
-        .luxury-text {
-
-            font-family: var(--font-luxury);
-
-            font-style: italic;
-
-            font-weight: 600;
-
-            color: var(--blue);
-
-            letter-spacing: -0.035em;
-
-        }
-
-        .site-hero .eyebrow {
-
-            color: #003d61;
-
-            font-weight: 800;
-
-            text-shadow:
-                0 1px 2px rgba(255, 255, 255, 0.85);
-
-        }
-
-        .site-hero .lead {
-
-            font-family: var(--font-body);
-
-            font-size: clamp(16px, 2vw, 20px);
-
-            line-height: 1.85;
-
-            color: #344b5b;
-
-            max-width: 750px;
-
-            margin: 0 auto 26px;
-
-            font-weight: 500;
-
-        }
-
-        /* ==========================================
-           SLIDESHOW INDICATORS
-        ========================================== */
-
-        .hero-slide-indicators {
-
-            position: absolute;
-
-            bottom: 25px;
-
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            z-index: 5;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 10px;
-
-        }
-
-        .hero-indicator {
-
-            width: 9px;
-
-            height: 9px;
-
-            padding: 0;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: rgba(255, 255, 255, 0.65);
-
-            box-shadow:
-                0 1px 5px rgba(0, 0, 0, 0.18);
-
-            cursor: pointer;
-
-            transition:
-                background 0.25s ease,
-                transform 0.25s ease;
-
-        }
-
-        .hero-indicator.active {
-
-            background: #006aa6;
-
-            transform: scale(1.2);
-
-        }
-
-        .hero-indicator:hover {
-
-            background: #006aa6;
-
-        }
-
-        .hero-indicator:focus-visible {
-
-            outline: 3px solid #006aa6;
-
-            outline-offset: 4px;
-
-        }
-
-        /* ==========================================
-           SECTIONS
-        ========================================== */
 
         .section-shell {
-
-            padding: 75px 7%;
-
+            padding-inline: 5%;
         }
 
-        .section-shell.soft {
-
-            background: #f8fafc;
-
-        }
-
-        .section-inner {
-
-            max-width: 1200px;
-
-            margin: auto;
-
-        }
-
-        .section-title {
-
-            text-align: center;
-
-            max-width: 760px;
-
-            margin: 0 auto 36px;
-
-        }
-
-        .section-title h2 {
-
-            font-size: clamp(30px, 4vw, 46px);
-
-            font-weight: 800;
-
-            line-height: 1.2;
-
-            letter-spacing: -0.045em;
-
-            margin: 12px 0;
-
-        }
-
-        .section-title p {
-
-            color: var(--muted);
-
-            line-height: 1.85;
-
-            font-family: var(--font-body);
-
-        }
-
-        .eyebrow,
-        .section-label {
-
-            font-family: var(--font-body);
-
-            font-weight: 700;
-
-            letter-spacing: 2.5px;
-
-            font-size: 11px;
-
-            text-transform: uppercase;
-
-            color: var(--blue);
-
-        }
-
-        /* ==========================================
-           PRODUCT CARDS
-        ========================================== */
-
-        .cards {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap: 22px;
-
-        }
-
-        .card {
-
-            padding: 30px;
-
-            border: 1px solid var(--line);
-
-            border-radius: 16px;
-
-            background: #fff;
-
-            display: flex;
-
-            flex-direction: column;
-
-            min-width: 0;
-
-        }
-
-        .card h3 {
-
-            font-size: 22px;
-
-            font-weight: 700;
-
-            line-height: 1.35;
-
-            letter-spacing: -0.035em;
-
-            margin: 0 0 13px;
-
-        }
-
-        .card p {
-
-            color: var(--muted);
-
-            font-family: var(--font-body);
-
-            font-size: 15px;
-
-            line-height: 1.85;
-
-            margin: 0 0 22px;
-
-            flex: 1;
-
-        }
-
-        .card a {
-
-            font-family: var(--font-body);
-
-            font-weight: 700;
-
-            letter-spacing: -0.015em;
-
-            color: var(--blue);
-
-            text-decoration: none;
-
-        }
-
-        .card a:hover {
-            text-decoration: underline;
-        }
-
-        /* ==========================================
-           GENERAL BUTTONS
-        ========================================== */
-
-        .actions {
-
-            display: flex;
-
-            gap: 14px;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            margin-top: 25px;
-
-        }
-
-        .actions a {
-            text-decoration: none;
-        }
-
-        .button.primary-button,
-        .button.secondary-button {
-
-            display: inline-block;
-
-            padding: 13px 22px;
-
-            border-radius: 9px;
-
-            font-family: var(--font-body);
-
-            font-weight: 700;
-
-            letter-spacing: -0.015em;
-
-            transition:
-                transform 0.25s ease,
-                filter 0.25s ease,
-                border-color 0.25s ease;
-
-        }
-
-        .button.primary-button {
-
-            background: #006aa6;
-
-            color: #fff;
-
-        }
-
-        .button.secondary-button {
-
-            border: 1px solid #9bc8e2;
-
-            color: #075f91;
-
-            background: #fff;
-
-        }
-
-        .button:hover {
-
-            filter: brightness(0.95);
-
-            transform: translateY(-2px);
-
-        }
-
-        /* ==========================================
-           HERO BUTTONS
-           COMPLETELY TRANSPARENT
-        ========================================== */
-
-        .site-hero .actions .button.primary-button,
-        .site-hero .actions .button.secondary-button {
-
-            background: transparent;
-
-            background-color: transparent;
-
-            background-image: none;
-
-            color: #073d5c;
-
-            border: 1.5px solid rgba(0, 74, 115, 0.85);
-
-            box-shadow: none;
-
-            backdrop-filter: none;
-
-            -webkit-backdrop-filter: none;
-
-            padding: 14px 24px;
-
-            border-radius: 10px;
-
-            font-size: 14px;
-
-            font-weight: 800;
-
-            text-decoration: none;
-
-            text-shadow:
-                0 1px 2px rgba(255, 255, 255, 0.85);
-
-            transition:
-                transform 0.25s ease,
-                border-color 0.25s ease,
-                color 0.25s ease;
-
-        }
-
-        .site-hero .actions .button.primary-button:hover,
-        .site-hero .actions .button.secondary-button:hover {
-
-            background: transparent;
-
-            background-color: transparent;
-
-            background-image: none;
-
-            color: #002f4d;
-
-            border-color: #003f66;
-
-            box-shadow: none;
-
-            filter: none;
-
-            transform: translateY(-3px);
-
-        }
-
-        .site-hero .actions .button.primary-button:focus-visible,
-        .site-hero .actions .button.secondary-button:focus-visible {
-
-            outline: 3px solid #006aa6;
-
-            outline-offset: 4px;
-
-        }
-
-        /* ==========================================
-           CUSTOM DEVELOPMENT
-        ========================================== */
-
-        .service-highlight {
-
-            margin-top: 25px;
-
-            border: 1px solid #b8def3;
-
-            background:
-                linear-gradient(
-                    125deg,
-                    #fff,
-                    #edf8ff
-                );
-
-            border-radius: 18px;
-
-            padding: 34px;
-
-            display: grid;
-
-            grid-template-columns: 1fr auto;
-
-            align-items: center;
-
-            gap: 25px;
-
-        }
-
-        .service-highlight h3 {
-
-            font-size: clamp(23px, 3vw, 30px);
-
-            margin: 10px 0;
-
-        }
-
-        .service-highlight p {
-
-            color: var(--muted);
-
-            line-height: 1.8;
-
-            margin: 0;
-
-        }
-
-        .service-highlight .button {
-
-            white-space: nowrap;
-
-            text-decoration: none;
-
-        }
-
-        .steps {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 20px;
-
-        }
-
-        .steps .card p {
-            margin-bottom: 0;
-        }
-
-        .section-copy {
-
-            max-width: 780px;
-
-            margin: 0 auto 32px;
-
-            color: var(--muted);
-
-            line-height: 1.9;
-
-            text-align: center;
-
-        }
-
-        /* ==========================================
-           TECHNOLOGY PARTNERS
-        ========================================== */
-
-        .kalxa-partners {
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #f7fbff 0%,
-                    #edf8ff 50%,
-                    #f8fcff 100%
-                );
-
-            padding: 85px 7%;
-
-            border-top: 1px solid #e0edf5;
-
-            border-bottom: 1px solid #e0edf5;
-
-        }
-
-        .partners-container {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-        }
-
-        .partners-header {
-
-            text-align: center;
-
-            max-width: 760px;
-
-            margin: 0 auto 42px;
-
-        }
-
-        .partners-header h2 {
-
-            font-size: clamp(30px, 4vw, 46px);
-
-            font-weight: 800;
-
-            line-height: 1.2;
-
-            letter-spacing: -0.045em;
-
-            margin: 14px 0;
-
-        }
-
-        .partners-description {
-
-            max-width: 650px;
-
-            margin: 0 auto;
-
-            font-family: var(--font-body);
-
-            font-size: 16px;
-
-            line-height: 1.85;
-
-            color: var(--muted);
-
-        }
-
-        .partners-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 20px;
-
-        }
-
-        .partner-card {
-
-            background: #fff;
-
-            padding: 32px 20px;
-
-            border: 1px solid #dbe9f3;
-
-            border-radius: 16px;
-
-            min-height: 160px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            justify-content: center;
-
-            text-align: center;
-
-            gap: 12px;
-
-            text-decoration: none;
-
-            color: var(--ink);
-
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease,
-                border-color 0.25s ease;
-
-        }
-
-        .partner-card:hover {
-
-            transform: translateY(-5px);
-
-            border-color: #86bfdf;
-
-            box-shadow:
-                0 12px 28px rgba(0, 76, 125, 0.08);
-
-        }
-
-        .partner-card:focus-visible {
-
-            outline: 3px solid #006aa6;
-
-            outline-offset: 4px;
-
-        }
-
-        .partner-name {
-
-            font-family: var(--font-heading);
-
-            font-size: 24px;
-
-            font-weight: 800;
-
-            letter-spacing: -0.045em;
-
-            line-height: 1.3;
-
-        }
-
-        .partner-role {
-
-            font-family: var(--font-body);
-
-            font-size: 12px;
-
-            font-weight: 600;
-
-            color: #667987;
-
-            line-height: 1.5;
-
-        }
-
-        .partners-note {
-
-            max-width: 720px;
-
-            margin: 30px auto 0;
-
-            text-align: center;
-
-            font-size: 12px;
-
-            line-height: 1.8;
-
-            color: #71818d;
-
-        }
-
-        /* ==========================================
-           CONTACT BAND
-        ========================================== */
-
-        .contact-band {
-
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    120deg,
-                    #f4fbff,
-                    #e4f4ff,
-                    #f7fcff
-                );
-
-            padding: 65px 7%;
-
-        }
-
-        .contact-band p {
-
-            color: var(--muted);
-
-            font-family: var(--font-body);
-
-            font-size: 15px;
-
-            line-height: 1.85;
-
-        }
-
-        .contact-band .section-label {
-
-            color: var(--blue);
-
-        }
-
-        /* ==========================================
-           FOOTER
-        ========================================== */
-
-        .company-footer {
-
-            background:
-                linear-gradient(
-                    120deg,
-                    #edf8ff,
-                    #d6efff 45%,
-                    #f5fbff
-                );
-
-            padding: 60px 7% 30px;
-
-            border-top: 1px solid #c4e3f5;
-
-            color: #263746;
-
-            font-family: var(--font-body);
-
+        .carousel-track {
+            grid-auto-columns: minmax(250px, 42%);
         }
 
         .footer-main {
+            gap: 35px;
+        }
+    }
 
-            display: grid;
-
-            grid-template-columns: 1.2fr 1fr;
-
-            gap: 70px;
-
-            padding-bottom: 40px;
-
+    @media (max-width: 760px) {
+        .navbar {
+            min-height: 72px;
+            padding: 13px 5%;
         }
 
-        .footer-company h3 {
-
-            font-size: 24px;
-
-            font-weight: 800;
-
-            letter-spacing: -0.04em;
-
-            margin: 0 0 16px;
-
+        .brand-text strong {
+            font-size: 26px;
         }
 
-        .footer-company p,
-        .footer-company address {
-
-            font-size: 14px;
-
-            line-height: 1.85;
-
-            color: #344b5b;
-
-            font-style: normal;
-
+        .brand-text span {
+            max-width: 210px;
+            font-size: 8px;
+            letter-spacing: .7px;
         }
 
-        .footer-navigation h3 {
-
-            font-size: 18px;
-
-            margin: 0 0 20px;
-
+        .menu-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .footer-navigation-grid {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 30px;
-
-        }
-
-        .footer-link-group {
-
-            display: flex;
-
+        .navbar nav {
+            position: absolute;
+            top: calc(100% + 1px);
+            left: 0;
+            right: 0;
+            display: none;
+            align-items: stretch;
             flex-direction: column;
-
-            gap: 12px;
-
+            gap: 4px;
+            padding: 15px 5% 20px;
+            border-bottom: 1px solid var(--line);
+            background: #fff;
+            box-shadow: 0 15px 25px rgba(17, 61, 91, 0.08);
         }
 
-        .footer-link-group h4 {
-
-            font-size: 12px;
-
-            letter-spacing: 1px;
-
-            text-transform: uppercase;
-
-            color: #526d80;
-
-            margin: 0 0 4px;
-
+        .navbar nav.open {
+            display: flex;
         }
 
-        .footer-link-group a,
-        .footer-support a {
-
-            color: #263746;
-
-            text-decoration: none;
-
+        .navbar nav a {
+            padding: 13px;
             font-size: 14px;
-
-            line-height: 1.6;
-
-            overflow-wrap: anywhere;
-
         }
 
-        .footer-link-group a:hover,
-        .footer-support a:hover {
-
-            color: var(--blue);
-
-            text-decoration: underline;
-
+        .site-hero {
+            min-height: 500px;
+            padding: 78px 5% 95px;
         }
 
-        /* ==========================================
-           FOOTER SUPPORT
-        ========================================== */
-
-        .footer-support {
-
-            border-block: 1px solid #c4e3f5;
-
-            padding: 25px 0;
-
+        .site-hero h1 {
+            font-size: clamp(39px, 10vw, 58px);
         }
 
-        .footer-support h4 {
-            margin: 0 0 12px;
+        .hero-lead {
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        .hero-slideshow::after {
+            background: linear-gradient(
+                180deg,
+                rgba(246,251,255,.92),
+                rgba(236,248,255,.86)
+            );
+        }
+
+        .stats-panel {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 17px 10px;
+            margin-top: -28px;
+        }
+
+        .stat-item {
+            padding: 19px 8px;
+        }
+
+        .stat-item:nth-child(2) {
+            border-right: none;
+        }
+
+        .stat-item:nth-child(-n+2) {
+            border-bottom: 1px solid #e3edf4;
+        }
+
+        .section-shell {
+            padding-top: 63px;
+            padding-bottom: 63px;
+        }
+
+        .section-title {
+            margin-bottom: 30px;
+        }
+
+        .carousel-heading {
+            align-items: flex-start;
+        }
+
+        .carousel-controls {
+            display: none;
+        }
+
+        .carousel-track {
+            grid-auto-columns: minmax(250px, 82%);
+            gap: 14px;
+        }
+
+        .benefit-grid,
+        .steps-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .service-highlight {
+            grid-template-columns: 1fr;
+            padding: 27px;
+        }
+
+        .service-highlight .button {
+            justify-self: start;
+        }
+
+        .partners-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .kalxa-partners {
+            padding: 60px 5%;
+        }
+
+        .footer-main {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .company-footer {
+            padding: 45px 5% 25px;
         }
 
         .footer-support-links {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
 
-            display: flex;
-
-            align-items: center;
-
-            flex-wrap: wrap;
-
-            gap: 18px 30px;
-
+    @media (max-width: 420px) {
+        .site-hero {
+            min-height: 475px;
         }
 
-        .footer-contact-link {
+        .site-hero h1 {
+            font-size: 38px;
+        }
 
-            display: inline-flex;
+        .hero-badge {
+            font-size: 9px;
+            letter-spacing: 1px;
+        }
 
-            align-items: center;
-
+        .actions {
             gap: 10px;
-
-            text-decoration: none;
-
-            font-family: var(--font-body);
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            color: #263746;
-
-            transition:
-                transform 0.25s ease,
-                opacity 0.25s ease;
-
         }
 
-        .footer-contact-link i {
-
-            font-size: 19px;
-
-            color: #006aa6;
-
-            transition: transform 0.25s ease;
-
+        .hero-inner .actions {
+            flex-direction: column;
+            align-items: stretch;
+            max-width: 290px;
+            margin-inline: auto;
+            margin-top: 25px;
         }
 
-        .footer-contact-link:hover {
-
-            transform: translateY(-2px);
-
-            opacity: 0.85;
-
+        .hero-inner .button {
+            width: 100%;
         }
 
-        .footer-contact-link:hover i {
-
-            transform: scale(1.12);
-
+        .carousel-heading h2 {
+            font-size: 27px;
         }
 
-        .footer-contact-link:focus-visible {
-
-            outline: 2px solid #006aa6;
-
-            outline-offset: 5px;
-
-            border-radius: 3px;
-
+        .partners-grid {
+            grid-template-columns: 1fr;
         }
 
-        .footer-bottom {
+        .partner-card {
+            min-height: 120px;
+        }
 
-            display: flex;
+        .footer-navigation-grid {
+            gap: 18px;
+        }
 
-            justify-content: space-between;
-
-            gap: 15px;
-
-            flex-wrap: wrap;
-
-            padding-top: 22px;
-
+        .footer-link-group a {
             font-size: 12px;
+        }
+    }
 
-            color: #526d80;
+    /* REDUCED MOTION */
 
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
         }
 
-        .footer-bottom p {
-            margin: 0;
+        *,
+        *::before,
+        *::after {
+            scroll-behavior: auto !important;
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
         }
+    }
+</style>
 
-        /* ==========================================
-           TABLET
-        ========================================== */
+</head><body><a class="skip-link" href="#main">Skip to content</a>
 
-        @media (max-width: 900px) {
+<!-- NAVIGATION -->
 
-            .partners-grid {
+<header class="navbar">
 
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
-            }
-
-        }
-
-        /* ==========================================
-           MOBILE
-        ========================================== */
-
-        @media (max-width: 760px) {
-
-            .site-hero {
-
-                min-height: 400px;
-
-                padding: 80px 5%;
-
-            }
-
-            .site-hero .inner {
-                max-width: 100%;
-            }
-
-            .site-hero h1,
-            .site-hero h2 {
-
-                font-size: clamp(36px, 9vw, 52px);
-
-                line-height: 1.12;
-
-            }
-
-            .site-hero .lead {
-
-                font-size: 16px;
-
-                line-height: 1.8;
-
-            }
-
-            .section-shell {
-                padding: 60px 5%;
-            }
-
-            .cards,
-            .steps,
-            .footer-main,
-            .service-highlight {
-                grid-template-columns: 1fr;
-            }
-
-            .service-highlight .button {
-
-                white-space: normal;
-
-                text-align: center;
-
-            }
-
-            .kalxa-partners {
-                padding: 65px 5%;
-            }
-
-            .partners-header {
-                margin-bottom: 30px;
-            }
-
-            .company-footer {
-                padding: 50px 5% 25px;
-            }
-
-            .footer-main {
-                gap: 35px;
-            }
-
-            .footer-navigation-grid {
-                gap: 15px;
-            }
-
-        }
-
-        @media (max-width: 650px) {
-
-            /* ======================================
-               MOBILE HERO BACKGROUND
-
-               Overlay: 20%
-            ====================================== */
-
-            .hero-slide {
-
-                background-position: center center;
-
-            }
-
-            .hero-slideshow::after {
-
-                background:
-                    linear-gradient(
-                        180deg,
-                        rgba(255, 255, 255, 0.20),
-                        rgba(245, 251, 255, 0.20)
-                    );
-
-            }
-
-            /* Transparent hero buttons */
-
-            .site-hero .actions {
-
-                gap: 12px;
-
-            }
-
-            .site-hero .actions .button.primary-button,
-            .site-hero .actions .button.secondary-button {
-
-                background: transparent;
-
-                background-color: transparent;
-
-                background-image: none;
-
-                border: 1.5px solid rgba(0, 74, 115, 0.85);
-
-                color: #073d5c;
-
-                padding: 13px 17px;
-
-                font-size: 13px;
-
-                max-width: 100%;
-
-            }
-
-            .section-title h2 {
-                font-size: 30px;
-            }
-
-            .partners-grid {
-                gap: 12px;
-            }
-
-            .partner-card {
-
-                padding: 24px 12px;
-
-                min-height: 135px;
-
-                border-radius: 12px;
-
-            }
-
-            .partner-name {
-                font-size: 19px;
-            }
-
-            .partner-role {
-                font-size: 11px;
-            }
-
-            .footer-support-links {
-
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                gap: 18px;
-
-            }
-
-            .footer-contact-link {
-                font-size: 14px;
-            }
-
-            .footer-contact-link i {
-                font-size: 20px;
-            }
-
-        }
-
-        @media (max-width: 400px) {
-
-            .footer-navigation-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .partners-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .site-hero .actions {
-
-                flex-direction: column;
-
-                align-items: center;
-
-            }
-
-            .site-hero .actions .button {
-
-                width: 100%;
-
-                max-width: 270px;
-
-            }
-
-        }
-
-        /* ==========================================
-           REDUCED MOTION
-        ========================================== */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-            .hero-slide {
-
-                transition: none;
-
-                will-change: auto;
-
-            }
-
-            .hero-indicator {
-
-                transition: none;
-
-            }
-
-            .partner-card,
-            .footer-contact-link,
-            .footer-contact-link i,
-            .button {
-
-                transition: none;
-
-            }
-
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-    <a class="skip-link" href="#main">
-        Skip to content
+    <a class="brand" href="/index.html" aria-label="KALXA Home">
+        <span class="brand-text">
+            <strong>KALXA</strong>
+            <span>DIGITAL TECHNOLOGY &amp; PLATFORM SERVICES</span>
+        </span>
     </a>
 
-    <!-- ==========================================
-         NAVIGATION
-    ========================================== -->
+    <button
+        class="menu-button"
+        id="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+    >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
 
-    <header class="navbar">
+    <nav id="nav-menu" aria-label="Main navigation">
+        <a href="/index.html" aria-current="page">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/faq.html">FAQs</a>
+        <a href="/contact.html">Contact</a>
+    </nav>
 
-        <a
-            class="brand"
-            href="/index.html"
-            aria-label="KALXA Home"
-        >
+</header>
 
-            <span class="brand-text">
+<main id="main">
 
-                <strong>KALXA</strong>
+    <!-- HERO -->
 
-                <span>
-                    DIGITAL TECHNOLOGY &amp; PLATFORM SERVICES
-                </span>
+    <section class="site-hero" aria-labelledby="hero-title">
 
-            </span>
-
-        </a>
-
-        <button
-            class="menu-button"
-            id="menu-button"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="nav-menu"
-        >
-            ☰
-        </button>
-
-        <nav
-            id="nav-menu"
-            aria-label="Main navigation"
-        >
-
-            <a href="/index.html" aria-current="page">
-                Home
-            </a>
-
-            <a href="/about.html">
-                About Us
-            </a>
-
-            <a href="/services.html">
-                Services
-            </a>
-
-            <a href="/pricing.html">
-                Pricing
-            </a>
-
-            <a href="/faq.html">
-                FAQs
-            </a>
-
-            <a href="/contact.html">
-                Contact
-            </a>
-
-        </nav>
-
-    </header>
-
-    <main id="main">
-
-        <!-- ==========================================
-             HERO WITH FIVE BACKGROUND IMAGES
-        ========================================== -->
-
-        <section
-            class="site-hero"
-            aria-label="KALXA Digital Technology"
-        >
-
-            <!-- ======================================
-                 BACKGROUND SLIDESHOW
-                 FIVE IMAGES
-            ====================================== -->
+        <div class="hero-slideshow" aria-hidden="true">
 
             <div
-                class="hero-slideshow"
-                aria-hidden="true"
-            >
-
-                <!-- SLIDE 1 -->
-
-                <div
-                    class="hero-slide active"
-                    style="background-image: url('/images/kalxa-hero-bg.png');"
-                ></div>
-
-                <!-- SLIDE 2 -->
-
-                <div
-                    class="hero-slide"
-                    style="background-image: url('/images/kalxa-hero-bg-1.png');"
-                ></div>
-
-                <!-- SLIDE 3 -->
-
-                <div
-                    class="hero-slide"
-                    style="background-image: url('/images/kalxa-hero-bg-2.png');"
-                ></div>
-
-                <!-- SLIDE 4 -->
-
-                <div
-                    class="hero-slide"
-                    style="background-image: url('/images/kalxa-hero-bg-3.png');"
-                ></div>
-
-                <!-- SLIDE 5: NEW -->
-
-                <div
-                    class="hero-slide"
-                    style="background-image: url('/images/kalxa-hero-bg-3.png');"
-                ></div>
-
-            </div>
-
-            <!-- ======================================
-                 HERO CONTENT
-            ====================================== -->
-
-            <div class="inner">
-
-                <p class="eyebrow">
-                    Digital AdTech
-                </p>
-
-                <div class="actions">
-
-                    <a
-                        class="button primary-button"
-                        href="#products"
-                    >
-                        Explore Our Products →
-                    </a>
-
-                    <a
-                        class="button secondary-button"
-                        href="/about.html"
-                    >
-                        About KALXA
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- ======================================
-                 SLIDESHOW INDICATORS
-                 FIVE BUTTONS
-            ====================================== -->
+                class="hero-slide active"
+                style="background-image:url('/images/kalxa-hero-bg.png')"
+            ></div>
 
             <div
-                class="hero-slide-indicators"
-                role="group"
-                aria-label="Background slideshow controls"
-            >
+                class="hero-slide"
+                style="background-image:url('/images/kalxa-hero-bg-1.png')"
+            ></div>
 
-                <button
-                    class="hero-indicator active"
-                    type="button"
-                    aria-label="Show background image 1"
-                    aria-pressed="true"
-                    data-slide="0"
-                ></button>
+            <div
+                class="hero-slide"
+                style="background-image:url('/images/kalxa-hero-bg-2.png')"
+            ></div>
 
-                <button
-                    class="hero-indicator"
-                    type="button"
-                    aria-label="Show background image 2"
-                    aria-pressed="false"
-                    data-slide="1"
-                ></button>
+            <div
+                class="hero-slide"
+                style="background-image:url('/images/kalxa-hero-bg-3.png')"
+            ></div>
 
-                <button
-                    class="hero-indicator"
-                    type="button"
-                    aria-label="Show background image 3"
-                    aria-pressed="false"
-                    data-slide="2"
-                ></button>
+            <div
+                class="hero-slide"
+                style="background-image:url('/images/kalxa-hero-bg-1.png')"
+            ></div>
 
-                <button
-                    class="hero-indicator"
-                    type="button"
-                    aria-label="Show background image 4"
-                    aria-pressed="false"
-                    data-slide="3"
-                ></button>
+        </div>
 
-                <!-- FIFTH INDICATOR: NEW -->
+        <div class="hero-inner">
 
-                <button
-                    class="hero-indicator"
-                    type="button"
-                    aria-label="Show background image 5"
-                    aria-pressed="false"
-                    data-slide="4"
-                ></button>
-
+            <div class="hero-badge">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                Built for KwaNdebele. Open to possibility.
             </div>
 
-        </section>
+            <h1 id="hero-title">
+                KwaNdebele's Local Economy,
+                <span class="luxury-text">Connected.</span>
+            </h1>
 
-        <!-- ==========================================
-             PRODUCTS
-        ========================================== -->
-
-        <section
-            class="section-shell soft"
-            id="products"
-        >
-
-            <div class="section-inner">
-
-                <div class="section-title">
-
-                    <p class="section-label">
-                       Who we are
-                    </p>
-
-                    <p>
-                        KALXA is the operating system for the KwaNdebele economy. We connect businesses, 
-                        events, creators, local job opportunities and communities through one digital ecosystem—helping businesses get discovered,
-                        events attract audiences, and creators earn from their work.
-                    </p>
-
-                </div>
-
-                <div class="cards">
-
-                    <p class="section-label">
-                        Services
-                    </p>
-
-
-                    <article class="card">
-
-                        <h3>
-                            KwaNdebele Kalxa Hub
-                        </h3>
-
-                        <p>
-                           The definitive publication about KwaNdebele —
-                            its creators, its businesses,its economy, its history, and overall its Kalxa."
-                            
-                        </p>
-
-                        <a href="/ticketing.html">
-                            Explore KwaNdebele →
-                        </a>
-
-                    </article>
-
-                    <article class="card">
-
-                        <h3>
-                            Ticketing &amp; Business Profiles
-                        </h3>
-
-                        <p>
-                            Event ticketing, event management
-                            and restaurant discovery tools.
-                        </p>
-
-                        <a href="/ticketing.html">
-                            Explore Ticketing →
-                        </a>
-
-                    </article>
-
-                    <article class="card">
-
-                        <h3>
-                            Content Creator CRM
-                        </h3>
-
-                        <p>
-                            Helping creators publish content,
-                            connect with fans and manage audiences.
-                        </p>
-
-                        <a href="/creator-crm.html">
-                            Explore Creator Tools →
-                        </a>
-
-                    </article>
-
-                    <article class="card">
-
-                        <h3>
-                            Kalxa Discovery
-                        </h3>
-
-                        <p>
-                            Helping people discover local businesses,
-                            services and opportunities.
-                        </p>
-
-                        <a href="/discovery.html">
-                            Explore Discovery →
-                        </a>
-
-                    </article>
-
-                    <article class="card">
-
-                        <h3>
-                            Business Finance
-                        </h3>
-
-                        <p>
-                            Business automation and financial
-                            workflow tools.
-                            <strong>In development.</strong>
-                        </p>
-
-                        <a href="/business-finance.html">
-                            Learn More →
-                        </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ==========================================
-             CUSTOM DEVELOPMENT
-        ========================================== -->
-
-        <section
-            class="section-shell"
-            id="custom-services"
-        >
-
-            <div class="section-inner">
-
-                <div class="section-title">
-
-                    <p class="section-label">
-                        CUSTOM DEVELOPMENT SERVICES
-                    </p>
-
-                    <h3>
-                        We Build Websites, Mobile Apps
-                        &amp; Business Systems
-                    </h3>
-
-                </div>
-
-                <div class="service-highlight">
-
-                    <div>
-
-                        <h3>
-                            💻 Tailored to your business
-                        </h3>
-
-                        <p>
-                            Whether you need a powerful website,
-                            a custom application, or a full business
-                            management system, KALXA builds technology
-                            that moves your business forward —
-                            on your terms.
-                        </p>
-
-                    </div>
-
-                    <a
-                        class="button primary-button"
-                        href="/custom-development.html"
-                    >
-                        Build With KALXA →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ==========================================
-             TECHNOLOGY THAT POWERS KALXA
-        ========================================== -->
-
-        <!-- ==========================================
-             CONTACT
-        ========================================== -->
-
-        <section class="contact-band">
-
-            <p class="section-label">
-                GET IN TOUCH
-            </p>
-
-            <p>
-                Interested in a KALXA product,
-                custom development or a business partnership?
+            <p class="hero-lead">
+                Discover local businesses, explore services and opportunities,
+                find events, and connect with the people shaping our community.
+                KALXA brings local discovery and digital business tools together
+                in one growing ecosystem.
             </p>
 
             <div class="actions">
 
                 <a
                     class="button primary-button"
-                    href="/contact.html"
+                    href="https://tickets.kalxa.co.za/"
                 >
-                    Contact Us →
+                    <i class="fa-solid fa-store" aria-hidden="true"></i>
+                    Explore Businesses
                 </a>
 
                 <a
                     class="button secondary-button"
-                    href="https://wa.me/27766114909"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="https://tickets.kalxa.co.za/"
                 >
-                    WhatsApp Us
+                    <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                    List Your Business
+                </a>
+
+                <a
+                    class="button secondary-button"
+                    href="/discovery.html"
+                >
+                    <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                    Discover Opportunities
                 </a>
 
             </div>
 
-        </section>
+            <p class="hero-trust-line">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                One connected ecosystem for businesses, residents and local opportunities.
+            </p>
 
-    </main>
+        </div>
 
-    <!-- ==========================================
-         FOOTER
-    ========================================== -->
+        <div
+            class="hero-slide-indicators"
+            role="group"
+            aria-label="Hero background controls"
+        >
+            <button class="hero-indicator active" type="button" aria-label="Show background image 1" aria-pressed="true" data-slide="0"></button>
+            <button class="hero-indicator" type="button" aria-label="Show background image 2" aria-pressed="false" data-slide="1"></button>
+            <button class="hero-indicator" type="button" aria-label="Show background image 3" aria-pressed="false" data-slide="2"></button>
+            <button class="hero-indicator" type="button" aria-label="Show background image 4" aria-pressed="false" data-slide="3"></button>
+            <button class="hero-indicator" type="button" aria-label="Show background image 5" aria-pressed="false" data-slide="4"></button>
+        </div>
 
-    <footer class="company-footer">
+    </section>
 
-        <div class="footer-main">
+    <!-- STATISTICS -->
 
-            <div class="footer-company">
+    <section class="stats-section" aria-label="KALXA platform statistics">
 
-                <p><strong>KALXA (PTY) LTD</strong><br>Registration number: 2026/767893/07</p>
+        <div class="stats-panel">
 
-                <p>Registered address:<br>KwaMhlanga, 1022<br>Mpumalanga<br>South Africa</p>
+            <div class="stat-item">
+                <span class="stat-icon">
+                    <i class="fa-solid fa-store" aria-hidden="true"></i>
+                </span>
+                <strong class="stat-number" data-stat="businesses">—</strong>
+                <span class="stat-label">Businesses listed</span>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-icon">
+                    <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                </span>
+                <strong class="stat-number" data-stat="services">—</strong>
+                <span class="stat-label">Services and categories</span>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-icon">
+                    <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                </span>
+                <strong class="stat-number" data-stat="events">—</strong>
+                <span class="stat-label">Events published</span>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-icon">
+                    <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                </span>
+                <strong class="stat-number" data-stat="opportunities">—</strong>
+                <span class="stat-label">Local opportunities</span>
+            </div>
+
+        </div>
+
+        <p class="stats-note">
+            Platform statistics will appear here when connected to verified live data.
+        </p>
+
+    </section>
+
+    <!-- KALXA PRODUCTS -->
+
+    <section class="section-shell" id="products">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <p class="section-label">Explore the ecosystem</p>
+                <h2>One platform. More ways to connect.</h2>
+                <p>
+                    KALXA brings together digital tools that help local businesses
+                    showcase their offerings and help residents discover what's
+                    happening around them.
+                </p>
+            </div>
+
+            <div class="carousel-heading">
+                <div>
+                    <h2>Discover KALXA</h2>
+                    <p>Swipe through our products to find the service you need.</p>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-arrow" type="button" data-carousel-prev="products-track" aria-label="Previous products">
+                        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <button class="carousel-arrow" type="button" data-carousel-next="products-track" aria-label="Next products">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="carousel-track" id="products-track" aria-label="KALXA products">
+
+                <article class="product-card">
+                    <span class="product-icon">
+                        <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+                    </span>
+                    <h3>KwaNdebele Kalxa Hub</h3>
+                    <p>
+                        Explore local businesses, entrepreneurs, community
+                        developments, culture, events and stories from KwaNdebele.
+                    </p>
+                    <a class="text-link" href="https://news.kalxa.co.za/">
+                        Explore Kalxa Stories
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-icon">
+                        <i class="fa-solid fa-store" aria-hidden="true"></i>
+                    </span>
+                    <h3>Business Profiles</h3>
+                    <p>
+                        Help customers discover restaurants and local businesses,
+                        view business information and explore available photos,
+                        videos and customer experiences.
+                    </p>
+                    <a class="text-link" href="https://tickets.kalxa.co.za/">
+                        Explore Business Profiles
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-icon">
+                        <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                    </span>
+                    <h3>Kalxa Ticketing</h3>
+                    <p>
+                        Discover events and give event organisers tools to promote
+                        events and manage online ticketing.
+                    </p>
+                    <a class="text-link" href="https://tickets.kalxa.co.za/">
+                        Explore Ticketing
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-icon">
+                        <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                    </span>
+                    <h3>Kalxa Discovery</h3>
+                    <p>
+                        Explore local services and temporary work opportunities,
+                        and help residents connect with opportunities in their area.
+                    </p>
+                    <a class="text-link" href="/discovery.html">
+                        Discover Opportunities
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-icon">
+                        <i class="fa-solid fa-video" aria-hidden="true"></i>
+                    </span>
+                    <h3>Content Creator CRM</h3>
+                    <p>
+                        Digital tools designed to help creators organise their
+                        content, connect with their audiences and manage creator
+                        activities.
+                    </p>
+                    <a class="text-link" href="/creator-crm.html">
+                        Explore Creator Tools
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-icon">
+                        <i class="fa-solid fa-code" aria-hidden="true"></i>
+                    </span>
+                    <h3>Custom Development</h3>
+                    <p>
+                        Websites, applications and business software designed
+                        around specific business requirements.
+                    </p>
+                    <a class="text-link" href="/custom-development.html">
+                        Build With KALXA
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-icon">
+                        <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                    </span>
+                    <h3>Business Finance</h3>
+                    <p>
+                        A planned part of the KALXA ecosystem focused on future
+                        business finance and workflow tools.
+                        <strong>In development.</strong>
+                    </p>
+                    <a class="text-link" href="/business-finance.html">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
 
             </div>
 
-            <nav
-                class="footer-navigation"
-                aria-label="Footer navigation"
+        </div>
+
+    </section>
+
+    <!-- BUSINESS SHOWCASE -->
+
+    <section class="section-shell business-showcase" id="businesses">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <p class="section-label">Support local</p>
+                <h2>Discover businesses in your community.</h2>
+                <p>
+                    Find local businesses and explore what they offer through
+                    KALXA's growing business directory.
+                </p>
+            </div>
+
+            <div class="carousel-heading">
+                <div>
+                    <h2>Explore local business categories</h2>
+                    <p>
+                        Start with the kind of business or service you're looking for.
+                    </p>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-arrow" type="button" data-carousel-prev="business-track" aria-label="Previous business categories">
+                        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <button class="carousel-arrow" type="button" data-carousel-next="business-track" aria-label="Next business categories">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="carousel-track" id="business-track" aria-label="Local business categories">
+
+                <article class="business-card">
+                    <div class="business-card-visual">
+                        <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                    </div>
+                    <div class="business-card-body">
+                        <span class="business-category">Food &amp; Dining</span>
+                        <h3>Restaurants &amp; Cafés</h3>
+                        <p>Discover places to eat, explore menus and view available business information.</p>
+                        <a class="text-link" href="https://tickets.kalxa.co.za/">
+                            Find Restaurants
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="business-card">
+                    <div class="business-card-visual">
+                        <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+                    </div>
+                    <div class="business-card-body">
+                        <span class="business-category">Retail</span>
+                        <h3>Shops &amp; Local Retail</h3>
+                        <p>Explore local businesses and find out what they offer before getting in touch.</p>
+                        <a class="text-link" href="https://tickets.kalxa.co.za/">
+                            Explore Businesses
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="business-card">
+                    <div class="business-card-visual">
+                        <i class="fa-solid fa-scissors" aria-hidden="true"></i>
+                    </div>
+                    <div class="business-card-body">
+                        <span class="business-category">Personal Care</span>
+                        <h3>Salons &amp; Beauty</h3>
+                        <p>Discover local personal-care businesses and the services they provide.</p>
+                        <a class="text-link" href="https://tickets.kalxa.co.za/">
+                            Explore Businesses
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="business-card">
+                    <div class="business-card-visual">
+                        <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                    </div>
+                    <div class="business-card-body">
+                        <span class="business-category">Professional Services</span>
+                        <h3>Local Service Providers</h3>
+                        <p>Explore local services and find providers who may be able to help with your needs.</p>
+                        <a class="text-link" href="https://tickets.kalxa.co.za/">
+                            Find Services
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="business-note">
+                These cards represent business categories, not individual business listings.
+                Use the directory to check which businesses are currently available.
+            </p>
+
+            <div class="actions">
+                <a class="button primary-button" href="https://tickets.kalxa.co.za/">
+                    Explore the Business Directory
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BUSINESS BENEFITS -->
+
+    <section class="section-shell" id="business-benefits">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <p class="section-label">For business owners</p>
+                <h2>Give your business another way to be discovered.</h2>
+                <p>
+                    KALXA provides digital tools that help businesses present
+                    their offerings and connect with their local community.
+                </p>
+            </div>
+
+            <div class="benefit-grid">
+
+                <article class="benefit-card">
+                    <span class="product-icon">
+                        <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                    </span>
+                    <h3>Get Discovered</h3>
+                    <p>
+                        Give potential customers another place to find your business
+                        information and explore what you offer.
+                    </p>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="product-icon">
+                        <i class="fa-solid fa-images" aria-hidden="true"></i>
+                    </span>
+                    <h3>Showcase Your Business</h3>
+                    <p>
+                        Present your business with available profile details,
+                        photographs, videos and customer experiences according
+                        to your plan.
+                    </p>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="product-icon">
+                        <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+                    </span>
+                    <h3>Promote Your Offerings</h3>
+                    <p>
+                        Explore relevant opportunities to promote specials,
+                        events and business stories through KALXA's products.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="actions">
+                <a class="button primary-button" href="https://tickets.kalxa.co.za/">
+                    Get Your Business on KALXA
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+
+                <a class="button secondary-button" href="/pricing.html">
+                    View Our Pricing
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HOW IT WORKS -->
+
+    <section class="section-shell soft" id="how-it-works">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <p class="section-label">Simple to explore</p>
+                <h2>How KALXA connects the local economy.</h2>
+                <p>
+                    A straightforward way for residents to discover what's around
+                    them and for businesses to establish a digital presence.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+
+                <article class="step-card">
+                    <span class="step-number">01</span>
+                    <h3>Discover</h3>
+                    <p>
+                        Explore local businesses, services, events and opportunities
+                        across the KALXA ecosystem.
+                    </p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">02</span>
+                    <h3>Connect</h3>
+                    <p>
+                        View available information, explore profiles and use the
+                        contact or ticketing options provided by each service.
+                    </p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">03</span>
+                    <h3>Participate</h3>
+                    <p>
+                        Businesses can showcase their offerings while residents
+                        discover and engage with their local community.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TESTIMONIALS -->
+
+    <section class="section-shell testimonials-section" id="testimonials">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <p class="section-label">Community voices</p>
+                <h2>Built around local businesses and people.</h2>
+                <p>
+                    We want KALXA to deliver meaningful value to the people and
+                    businesses it serves. Genuine feedback helps us improve.
+                </p>
+            </div>
+
+            <div class="carousel-heading">
+                <div>
+                    <h2>Experiences matter</h2>
+                    <p>
+                        This section is ready for feedback from real KALXA users
+                        and participating businesses.
+                    </p>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-arrow" type="button" data-carousel-prev="testimonials-track" aria-label="Previous testimonials">
+                        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <button class="carousel-arrow" type="button" data-carousel-next="testimonials-track" aria-label="Next testimonials">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="carousel-track" id="testimonials-track" aria-label="Testimonials">
+
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="No rating yet">
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                    </div>
+                    <p class="testimonial-quote">
+                        Your experience with KALXA could help other local businesses
+                        understand how the platform works. Share your honest feedback
+                        with us to be considered for this section.
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Business feedback wanted</strong>
+                        <span>For participating businesses</span>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="No rating yet">
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                    </div>
+                    <p class="testimonial-quote">
+                        Have you discovered a useful business, event or opportunity
+                        through KALXA? We welcome honest feedback about your experience.
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Community feedback wanted</strong>
+                        <span>For KALXA users</span>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="No rating yet">
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                    </div>
+                    <p class="testimonial-quote">
+                        We are building digital tools for the local economy.
+                        Your suggestions can help shape what KALXA improves next.
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Help shape KALXA</strong>
+                        <span>Feedback and suggestions</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="testimonial-disclaimer">
+                These are feedback invitations, not customer testimonials. Replace them
+                with genuine, permission-based testimonials when they become available.
+            </p>
+
+            <div class="actions">
+                <a class="button secondary-button" href="/contact.html">
+                    Share Your Feedback
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CUSTOM DEVELOPMENT -->
+
+    <section class="section-shell" id="custom-services">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <p class="section-label">Custom development services</p>
+                <h2>Technology designed around your business.</h2>
+                <p>
+                    Beyond the KALXA ecosystem, we work on digital solutions
+                    tailored to specific business needs.
+                </p>
+            </div>
+
+            <div class="service-highlight">
+
+                <div>
+                    <p class="section-label">Build with KALXA</p>
+                    <h3>Websites, applications and business systems.</h3>
+                    <p>
+                        Whether you need a professional website, a custom application
+                        or a business management system, KALXA can discuss your
+                        requirements and help identify a suitable technology solution.
+                    </p>
+                </div>
+
+                <a class="button primary-button" href="/custom-development.html">
+                    Discuss Your Project
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="section-shell soft" id="faq">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <p class="section-label">Need to know more?</p>
+                <h2>Frequently asked questions.</h2>
+                <p>
+                    A few quick answers to help you find the right part of KALXA.
+                </p>
+            </div>
+
+            <div class="faq-list">
+
+                <details class="faq-item">
+                    <summary>What is KALXA?</summary>
+                    <div class="faq-answer">
+                        <p>
+                            KALXA is a digital technology and platform ecosystem
+                            connecting local business discovery, business profiles,
+                            event ticketing, creator tools and local opportunities.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How can I list my business?</summary>
+                    <div class="faq-answer">
+                        <p>
+                            Visit the KALXA business platform to explore the available
+                            business profile options and follow the registration or
+                            profile-claiming instructions provided there.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I use KALXA to promote an event?</summary>
+                    <div class="faq-answer">
+                        <p>
+                            Kalxa Ticketing provides event-related tools. Visit the
+                            ticketing platform to explore the available event
+                            registration and promotion options.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What is Kalxa Discovery?</summary>
+                    <div class="faq-answer">
+                        <p>
+                            Kalxa Discovery helps residents explore local services
+                            and temporary work opportunities. The availability of
+                            work and earnings is not guaranteed.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can KALXA build a custom website or application?</summary>
+                    <div class="faq-answer">
+                        <p>
+                            KALXA offers custom development services. Contact us
+                            with your requirements so we can discuss your project.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How can I contact KALXA?</summary>
+                    <div class="faq-answer">
+                        <p>
+                            Visit our contact page, email lasie@kalxa.co.za or use
+                            the WhatsApp contact option on this website.
+                        </p>
+                    </div>
+                </details>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TECHNOLOGY PARTNERS -->
+
+    <section class="kalxa-partners" id="partners">
+
+        <div class="partners-container">
+
+            <div class="partners-header">
+                <p class="section-label">Technology ecosystem</p>
+                <h2>Built to work with digital tools.</h2>
+                <p class="partners-description">
+                    KALXA's services may use third-party platforms for payments,
+                    hosting and other technical capabilities. Availability depends
+                    on the relevant product and integration.
+                </p>
+            </div>
+
+            <div class="partners-grid">
+
+                <a
+                    class="partner-card"
+                    href="https://paystack.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span class="partner-name">Paystack</span>
+                    <span class="partner-role">Payment technology</span>
+                </a>
+
+                <a
+                    class="partner-card"
+                    href="https://yoco.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span class="partner-name">Yoco</span>
+                    <span class="partner-role">Payment technology</span>
+                </a>
+
+                <a
+                    class="partner-card"
+                    href="https://www.hostafrica.co.za/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span class="partner-name">HostAfrica</span>
+                    <span class="partner-role">Web hosting and domains</span>
+                </a>
+
+            </div>
+
+            <p class="partners-note">
+                The companies shown are technology providers relevant to the KALXA
+                ecosystem. Their inclusion does not by itself imply a formal
+                sponsorship or partnership agreement.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FINAL CTA -->
+
+    <section class="contact-band">
+
+        <p class="section-label">Let's build together</p>
+
+        <h2>Be part of KwaNdebele's connected local economy.</h2>
+
+        <p>
+            Whether you're a business owner, resident, event organiser or entrepreneur,
+            explore how KALXA's digital ecosystem can support your next step.
+        </p>
+
+        <div class="actions">
+
+            <a class="button primary-button" href="https://tickets.kalxa.co.za/">
+                Explore KALXA
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+
+            <a class="button secondary-button" href="/contact.html">
+                Contact Our Team
+            </a>
+
+            <a
+                class="button secondary-button"
+                href="https://wa.me/27766114909"
+                target="_blank"
+                rel="noopener noreferrer"
             >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                WhatsApp Us
+            </a>
 
-                <h3>
-                    Quick Links
-                </h3>
+        </div>
 
-                <div class="footer-navigation-grid">
+    </section>
 
-                    <div class="footer-link-group">
+</main>
 
-                        <h4>
-                            Company
-                        </h4>
+<!-- FOOTER -->
 
-                        
+<footer class="company-footer">
 
-                        <a href="/index.html">
-                            Home
-                        </a>
+    <div class="footer-main">
 
-                        <a href="/about.html">
-                            About Us
-                        </a>
+        <div class="footer-company">
 
-                        <a href="/services.html">
-                            Services
-                        </a>
+            <h3>KALXA (PTY) LTD</h3>
 
-                        <a href="/custom-development.html">
-                            Custom Development
-                        </a>
+            <p>
+                Digital technology and platform services connecting businesses,
+                residents and opportunities.
+            </p>
 
-                        <a href="/pricing.html">
-                            Pricing
-                        </a>
+            <p>
+                <strong>Registration number:</strong><br>
+                2026/767893/07
+            </p>
 
-                        <a href="/faq.html">
-                            FAQs
-                        </a>
+            <address>
+                <strong>Registered address:</strong><br>
+                KwaMhlanga, 1022<br>
+                Mpumalanga<br>
+                South Africa
+            </address>
 
-                        <a href="/contact.html">
-                            Contact
-                        </a>
+        </div>
 
-                    </div>
+        <nav class="footer-navigation" aria-label="Footer navigation">
 
-                    <div class="footer-link-group">
+            <h3>Quick Links</h3>
 
-                        <h4>
-                            Legal &amp; Policies
-                        </h4>
+            <div class="footer-navigation-grid">
 
-                        <a href="/terms.html">
-                            Terms &amp; Conditions
-                        </a>
+                <div class="footer-link-group">
 
-                        <a href="/privacy.html">
-                            Privacy Policy
-                        </a>
+                    <h4>Company</h4>
 
-                        <a href="/refund.html">
-                            Refund Policy
-                        </a>
-
-                        <a href="/cancellation.html">
-                            Cancellation Policy
-                        </a>
-
-                        <a href="/delivery.html">
-                            Digital Delivery
-                        </a>
-
-                    </div>
+                    <a href="/index.html">Home</a>
+                    <a href="/about.html">About Us</a>
+                    <a href="/services.html">Services</a>
+                    <a href="/custom-development.html">Custom Development</a>
+                    <a href="/pricing.html">Pricing</a>
+                    <a href="/faq.html">FAQs</a>
+                    <a href="/contact.html">Contact</a>
 
                 </div>
 
-            </nav>
+                <div class="footer-link-group">
 
-        </div>
+                    <h4>Legal &amp; Policies</h4>
 
-        <!-- ==========================================
-             CUSTOMER SUPPORT
-        ========================================== -->
+                    <a href="/terms.html">Terms &amp; Conditions</a>
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/refund.html">Refund Policy</a>
+                    <a href="/cancellation.html">Cancellation Policy</a>
+                    <a href="/delivery.html">Digital Delivery</a>
 
-        <div class="footer-support">
-
-            <h4>
-                Customer Support &amp; Business Enquiries
-            </h4>
-
-            <div class="footer-support-links">
-
-                <!-- EMAIL -->
-
-                <a
-                    href="mailto:lasie@kalxa.co.za"
-                    class="footer-contact-link"
-                    aria-label="Email KALXA"
-                >
-
-                    <i
-                        class="fa-solid fa-envelope"
-                        aria-hidden="true"
-                    ></i>
-
-                    <span>
-                        lasie@kalxa.co.za
-                    </span>
-
-                </a>
-
-                <!-- PHONE -->
-
-                <a
-                    href="tel:+27766114909"
-                    class="footer-contact-link"
-                    aria-label="Call KALXA"
-                >
-
-                    <i
-                        class="fa-solid fa-phone"
-                        aria-hidden="true"
-                    ></i>
-
-                    <span>
-                        +27 76 611 4909
-                    </span>
-
-                </a>
-
-                <!-- WHATSAPP -->
-
-                <a
-                    href="https://wa.me/27766114909"
-                    class="footer-contact-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Chat with KALXA on WhatsApp"
-                >
-
-                    <i
-                        class="fa-brands fa-whatsapp"
-                        aria-hidden="true"
-                    ></i>
-
-                    <span>
-                        WhatsApp Us
-                    </span>
-
-                </a>
+                </div>
 
             </div>
 
+        </nav>
+
+    </div>
+
+    <div class="footer-support">
+
+        <h4>Customer Support &amp; Business Enquiries</h4>
+
+        <div class="footer-support-links">
+
+            <a
+                href="mailto:lasie@kalxa.co.za"
+                class="footer-contact-link"
+                aria-label="Email KALXA"
+            >
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span>lasie@kalxa.co.za</span>
+            </a>
+
+            <a
+                href="tel:+27766114909"
+                class="footer-contact-link"
+                aria-label="Call KALXA"
+            >
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span>+27 76 611 4909</span>
+            </a>
+
+            <a
+                href="https://wa.me/27766114909"
+                class="footer-contact-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat with KALXA on WhatsApp"
+            >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                <span>WhatsApp Us</span>
+            </a>
+
         </div>
 
-    </footer>
+    </div>
 
-    <!-- ==========================================
-         EXISTING JAVASCRIPT
-    ========================================== -->
+    <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> KALXA (PTY) LTD. All rights reserved.</p>
+        <p>Connecting people, businesses and opportunities.</p>
+    </div>
 
-    <script
-        src="/js/main.js?v=3"
-        defer
-    ></script>
+</footer>
 
-    <!-- ==========================================
-         HERO SLIDESHOW JAVASCRIPT
+<!-- EXISTING SITE JAVASCRIPT -->
 
-         Changes image every 4 seconds.
-         Automatically supports all five slides.
-    ========================================== -->
+<script src="/js/main.js?v=3" defer></script>
 
-    <script>
+<!-- HOMEPAGE INTERACTIONS -->
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            function () {
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
 
-                const slides = Array.from(
-                    document.querySelectorAll(".hero-slide")
+        /* MOBILE NAVIGATION */
+
+        const menuButton = document.getElementById("menu-button");
+        const navMenu = document.getElementById("nav-menu");
+
+        if (menuButton && navMenu) {
+
+            menuButton.addEventListener("click", function () {
+
+                const isOpen = navMenu.classList.toggle("open");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
                 );
 
-                const indicators = Array.from(
-                    document.querySelectorAll(".hero-indicator")
+                menuButton.setAttribute(
+                    "aria-label",
+                    isOpen ? "Close navigation menu" : "Open navigation menu"
                 );
 
-                if (slides.length <= 1) {
+                menuButton.innerHTML = isOpen
+                    ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
+                    : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+
+            });
+
+            navMenu.querySelectorAll("a").forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    navMenu.classList.remove("open");
+
+                    menuButton.setAttribute("aria-expanded", "false");
+                    menuButton.setAttribute("aria-label", "Open navigation menu");
+
+                    menuButton.innerHTML =
+                        '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+
+                });
+
+            });
+
+            document.addEventListener("click", function (event) {
+
+                if (
+                    !navMenu.contains(event.target) &&
+                    !menuButton.contains(event.target)
+                ) {
+                    navMenu.classList.remove("open");
+                    menuButton.setAttribute("aria-expanded", "false");
+                    menuButton.setAttribute("aria-label", "Open navigation menu");
+
+                    menuButton.innerHTML =
+                        '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+                }
+
+            });
+
+        }
+
+        /* HERO BACKGROUND SLIDESHOW */
+
+        const slides = Array.from(
+            document.querySelectorAll(".hero-slide")
+        );
+
+        const indicators = Array.from(
+            document.querySelectorAll(".hero-indicator")
+        );
+
+        const hero = document.querySelector(".site-hero");
+
+        const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
+
+        let currentSlide = 0;
+        let slideshowTimer = null;
+        const slideInterval = 5000;
+
+        function showSlide(index) {
+
+            if (!slides.length) {
+                return;
+            }
+
+            currentSlide = (index + slides.length) % slides.length;
+
+            slides.forEach(function (slide, slideIndex) {
+
+                slide.classList.toggle(
+                    "active",
+                    slideIndex === currentSlide
+                );
+
+            });
+
+            indicators.forEach(function (indicator, indicatorIndex) {
+
+                const active = indicatorIndex === currentSlide;
+
+                indicator.classList.toggle("active", active);
+
+                indicator.setAttribute(
+                    "aria-pressed",
+                    String(active)
+                );
+
+            });
+
+        }
+
+        function stopSlideshow() {
+
+            if (slideshowTimer !== null) {
+                window.clearInterval(slideshowTimer);
+                slideshowTimer = null;
+            }
+
+        }
+
+        function startSlideshow() {
+
+            stopSlideshow();
+
+            if (
+                slides.length <= 1 ||
+                reducedMotion.matches ||
+                document.hidden
+            ) {
+                return;
+            }
+
+            slideshowTimer = window.setInterval(function () {
+                showSlide(currentSlide + 1);
+            }, slideInterval);
+
+        }
+
+        indicators.forEach(function (indicator) {
+
+            indicator.addEventListener("click", function () {
+
+                const index = Number(indicator.dataset.slide);
+
+                if (Number.isInteger(index) && index >= 0 && index < slides.length) {
+                    showSlide(index);
+                    startSlideshow();
+                }
+
+            });
+
+        });
+
+        if (hero) {
+
+            hero.addEventListener("mouseenter", stopSlideshow);
+            hero.addEventListener("mouseleave", startSlideshow);
+
+            hero.addEventListener("focusin", stopSlideshow);
+            hero.addEventListener("focusout", startSlideshow);
+
+        }
+
+        document.addEventListener("visibilitychange", function () {
+
+            if (document.hidden) {
+                stopSlideshow();
+            } else {
+                startSlideshow();
+            }
+
+        });
+
+        if (typeof reducedMotion.addEventListener === "function") {
+
+            reducedMotion.addEventListener("change", startSlideshow);
+
+        }
+
+        showSlide(0);
+        startSlideshow();
+
+        /* HORIZONTAL CAROUSEL CONTROLS */
+
+        document.querySelectorAll("[data-carousel-next]").forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                const track = document.getElementById(
+                    button.dataset.carouselNext
+                );
+
+                if (!track) {
                     return;
                 }
 
-                let currentSlide = 0;
+                const firstCard = track.firstElementChild;
 
-                let slideshowTimer = null;
+                const distance = firstCard
+                    ? firstCard.getBoundingClientRect().width + 18
+                    : track.clientWidth * 0.8;
 
-                const slideInterval = 4000;
+                track.scrollBy({
+                    left: distance,
+                    behavior: reducedMotion.matches ? "auto" : "smooth"
+                });
 
-                const reducedMotion = window.matchMedia(
-                    "(prefers-reduced-motion: reduce)"
+            });
+
+        });
+
+        document.querySelectorAll("[data-carousel-prev]").forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                const track = document.getElementById(
+                    button.dataset.carouselPrev
                 );
 
-                /* =====================================
-                   DISPLAY A SPECIFIC SLIDE
-                ===================================== */
-
-                function showSlide(index) {
-
-                    if (
-                        index < 0 ||
-                        index >= slides.length
-                    ) {
-                        return;
-                    }
-
-                    currentSlide = index;
-
-                    slides.forEach(
-                        function (slide, slideIndex) {
-
-                            slide.classList.toggle(
-                                "active",
-                                slideIndex === currentSlide
-                            );
-
-                        }
-                    );
-
-                    indicators.forEach(
-                        function (indicator, indicatorIndex) {
-
-                            const isActive =
-                                indicatorIndex === currentSlide;
-
-                            indicator.classList.toggle(
-                                "active",
-                                isActive
-                            );
-
-                            indicator.setAttribute(
-                                "aria-pressed",
-                                String(isActive)
-                            );
-
-                        }
-                    );
-
+                if (!track) {
+                    return;
                 }
 
-                /* =====================================
-                   NEXT SLIDE
-                ===================================== */
+                const firstCard = track.firstElementChild;
 
-                function nextSlide() {
+                const distance = firstCard
+                    ? firstCard.getBoundingClientRect().width + 18
+                    : track.clientWidth * 0.8;
 
-                    const nextIndex =
-                        (currentSlide + 1) % slides.length;
+                track.scrollBy({
+                    left: -distance,
+                    behavior: reducedMotion.matches ? "auto" : "smooth"
+                });
 
-                    showSlide(nextIndex);
+            });
 
-                }
+        });
 
-                /* =====================================
-                   STOP AUTOMATIC SLIDESHOW
-                ===================================== */
+        /* CURRENT YEAR */
 
-                function stopSlideshow() {
+        const yearElement = document.getElementById("current-year");
 
-                    if (slideshowTimer !== null) {
+        if (yearElement) {
+            yearElement.textContent = String(new Date().getFullYear());
+        }
 
-                        clearInterval(slideshowTimer);
+        /*
+         * LIVE STATISTICS
+         *
+         * Statistics intentionally remain as placeholders until
+         * the real KALXA backend endpoints are connected.
+         *
+         * Do not replace these with invented business counts.
+         */
 
-                        slideshowTimer = null;
-
-                    }
-
-                }
-
-                /* =====================================
-                   START AUTOMATIC SLIDESHOW
-                ===================================== */
-
-                function startSlideshow() {
-
-                    stopSlideshow();
-
-                    if (
-                        reducedMotion.matches ||
-                        document.hidden
-                    ) {
-                        return;
-                    }
-
-                    slideshowTimer = setInterval(
-                        nextSlide,
-                        slideInterval
-                    );
-
-                }
-
-                /* =====================================
-                   MANUAL SLIDE SELECTION
-                ===================================== */
-
-                indicators.forEach(
-                    function (indicator) {
-
-                        indicator.addEventListener(
-                            "click",
-                            function () {
-
-                                const slideIndex =
-                                    Number(
-                                        indicator.dataset.slide
-                                    );
-
-                                if (
-                                    Number.isInteger(slideIndex)
-                                ) {
-
-                                    showSlide(slideIndex);
-
-                                    startSlideshow();
-
-                                }
-
-                            }
-                        );
-
-                    }
-                );
-
-                /* =====================================
-                   PAUSE WHEN TAB IS HIDDEN
-                ===================================== */
-
-                document.addEventListener(
-                    "visibilitychange",
-                    function () {
-
-                        if (document.hidden) {
-
-                            stopSlideshow();
-
-                        } else {
-
-                            startSlideshow();
-
-                        }
-
-                    }
-                );
-
-                /* =====================================
-                   ACCESSIBILITY:
-                   REDUCED MOTION
-                ===================================== */
-
-                if (
-                    typeof reducedMotion.addEventListener ===
-                    "function"
-                ) {
-
-                    reducedMotion.addEventListener(
-                        "change",
-                        startSlideshow
-                    );
-
-                }
-
-                /* =====================================
-                   INITIALISE
-                ===================================== */
-
-                showSlide(0);
-
-                startSlideshow();
-
-            }
-        );
-
-    </script>
+    });
+</script>
 
 </body>
-
 </html>
