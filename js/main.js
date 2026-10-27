@@ -112,11 +112,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================
+    // UPDATE STATISTIC ELEMENTS
+    // ==========================================================
+
+    function updateStatistic(statisticName, value) {
+        const selectors = statisticElements[statisticName];
+
+        if (!selectors) {
+            console.warn(
+                `KALXA: No selectors configured for ${statisticName}.`
+            );
+
+            return;
+        }
+
+        const elements = findStatisticElements(selectors);
+
+        console.info(
+            `KALXA: ${statisticName} elements found:`,
+            elements.length
+        );
+
+        if (elements.length === 0) {
+            console.warn(
+                `KALXA: No HTML elements found for ${statisticName}.`,
+                selectors
+            );
+
+            return;
+        }
+
+        elements.forEach((element) => {
+            element.textContent = formatStatistic(value);
+        });
+
+        console.info(
+            `KALXA: Updated ${statisticName} to ${value}.`
+        );
+    }
+
+    // ==========================================================
     // FETCH AND DISPLAY LIVE STATISTICS
     // ==========================================================
 
     async function loadLiveStatistics() {
         console.info('KALXA: Loading live statistics...');
+        console.info('KALXA: Statistics endpoint:', statsEndpoint);
 
         try {
             const response = await fetch(statsEndpoint, {
@@ -129,6 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 cache: 'no-store'
             });
 
+            console.info(
+                'KALXA: Statistics HTTP status:',
+                response.status
+            );
+
             if (!response.ok) {
                 throw new Error(
                     `Statistics request failed: HTTP ${response.status}`
@@ -140,6 +186,20 @@ document.addEventListener('DOMContentLoaded', () => {
             console.info('KALXA: Statistics API response:', data);
 
             // --------------------------------------------------
+            // VALIDATE API RESPONSE
+            // --------------------------------------------------
+
+            if (
+                !data ||
+                typeof data !== 'object' ||
+                Array.isArray(data)
+            ) {
+                throw new Error(
+                    'The statistics API returned an invalid response.'
+                );
+            }
+
+            // --------------------------------------------------
             // UPDATE BUSINESS COUNT
             // --------------------------------------------------
 
@@ -147,23 +207,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 Number.isSafeInteger(data.businesses_listed) &&
                 data.businesses_listed >= 0
             ) {
-                const businessElements = findStatisticElements(
-                    statisticElements.businesses_listed
+                updateStatistic(
+                    'businesses_listed',
+                    data.businesses_listed
                 );
-
-                console.info(
-                    'KALXA: Business statistic elements found:',
-                    businessElements.length
-                );
-
-                businessElements.forEach((element) => {
-                    element.textContent = formatStatistic(
-                        data.businesses_listed
-                    );
-                });
             } else {
                 console.warn(
-                    'KALXA: businesses_listed is missing or invalid.'
+                    'KALXA: businesses_listed is missing or invalid.',
+                    data.businesses_listed
                 );
             }
 
@@ -175,34 +226,52 @@ document.addEventListener('DOMContentLoaded', () => {
                 Number.isSafeInteger(data.events_published) &&
                 data.events_published >= 0
             ) {
-                const eventElements = findStatisticElements(
-                    statisticElements.events_published
+                updateStatistic(
+                    'events_published',
+                    data.events_published
                 );
-
-                console.info(
-                    'KALXA: Event statistic elements found:',
-                    eventElements.length
-                );
-
-                eventElements.forEach((element) => {
-                    element.textContent = formatStatistic(
-                        data.events_published
-                    );
-                });
             } else {
                 console.warn(
-                    'KALXA: events_published is missing or invalid.'
+                    'KALXA: events_published is missing or invalid.',
+                    data.events_published
                 );
             }
 
+            console.info(
+                'KALXA: Live statistics loading completed.'
+            );
+
         } catch (error) {
             console.error(
-                'KALXA: Unable to load live statistics. Check the API request and browser console.',
+                'KALXA: Unable to load live statistics.',
                 error
             );
+
+            console.error(
+                'KALXA: Check whether main.js loaded correctly, ' +
+                'whether the API is reachable, and whether its ' +
+                'CORS settings allow requests from about.kalxa.co.za.'
+            );
         }
+
+        // ------------------------------------------------------
+        // DIAGNOSTIC INFORMATION
+        // ------------------------------------------------------
+
+        console.info(
+            'KALXA: Businesses HTML element:',
+            document.querySelector('[data-stat="businesses"]')
+        );
+
+        console.info(
+            'KALXA: Events HTML element:',
+            document.querySelector('[data-stat="events"]')
+        );
     }
 
-    // Load statistics without blocking the rest of the page.
+    // ==========================================================
+    // START LIVE STATISTICS
+    // ==========================================================
+
     loadLiveStatistics();
 });
