@@ -63,19 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
     // KALXA LIVE STATISTICS
     // ==========================================================
-    //
-    // Data source:
-    // https://tickets.kalxa.co.za/api/public/stats
-    //
-    // Currently available:
-    // - businesses_listed
-    // - events_published
-    //
-    // IMPORTANT:
-    // - Do not invent statistics.
-    // - Do not replace unavailable values with zero.
-    // - Preserve existing HTML values if the API fails.
-    // ==========================================================
 
     const statsEndpoint =
         'https://tickets.kalxa.co.za/api/public/stats';
@@ -129,6 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
 
     async function loadLiveStatistics() {
+        console.info('KALXA: Loading live statistics...');
+
         try {
             const response = await fetch(statsEndpoint, {
                 method: 'GET',
@@ -148,6 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
 
+            console.info('KALXA: Statistics API response:', data);
+
             // --------------------------------------------------
             // UPDATE BUSINESS COUNT
             // --------------------------------------------------
@@ -160,11 +151,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     statisticElements.businesses_listed
                 );
 
+                console.info(
+                    'KALXA: Business statistic elements found:',
+                    businessElements.length
+                );
+
                 businessElements.forEach((element) => {
                     element.textContent = formatStatistic(
                         data.businesses_listed
                     );
                 });
+            } else {
+                console.warn(
+                    'KALXA: businesses_listed is missing or invalid.'
+                );
             }
 
             // --------------------------------------------------
@@ -179,19 +179,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     statisticElements.events_published
                 );
 
+                console.info(
+                    'KALXA: Event statistic elements found:',
+                    eventElements.length
+                );
+
                 eventElements.forEach((element) => {
                     element.textContent = formatStatistic(
                         data.events_published
                     );
                 });
+            } else {
+                console.warn(
+                    'KALXA: events_published is missing or invalid.'
+                );
             }
 
         } catch (error) {
-            // Keep the page usable if the API is temporarily
-            // unavailable. Do not display fabricated counts.
-
-            console.warn(
-                'KALXA live statistics are temporarily unavailable.',
+            console.error(
+                'KALXA: Unable to load live statistics. Check the API request and browser console.',
                 error
             );
         }
