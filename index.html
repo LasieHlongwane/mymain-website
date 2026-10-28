@@ -1991,114 +1991,85 @@
 
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- TESTIMONIALS --><section class="section-shell testimonials-section" id="testimonials"><div class="section-inner">
 
-    <section class="section-shell testimonials-section" id="testimonials">
+    <div class="section-title">
+        <p class="section-label">Community voices</p>
 
-        <div class="section-inner">
+        <h2>Built around local businesses and people.</h2>
 
-            <div class="section-title">
-                <p class="section-label">Community voices</p>
-                <h2>Built around local businesses and people.</h2>
-                <p>
-                    We want KALXA to deliver meaningful value to the people and
-                    businesses it serves. Genuine feedback helps us improve.
-                </p>
-            </div>
+        <p>
+            We want KALXA to deliver meaningful value to the people and
+            businesses it serves. Genuine feedback helps us improve.
+        </p>
+    </div>
 
-            <div class="carousel-heading">
-                <div>
-                    <h2>Experiences matter</h2>
-                    <p>
-                        This section is ready for feedback from real KALXA users
-                        and participating businesses.
-                    </p>
-                </div>
+    <div class="carousel-heading">
+        <div>
+            <h2>Experiences matter</h2>
 
-                <div class="carousel-controls">
-                    <button class="carousel-arrow" type="button" data-carousel-prev="testimonials-track" aria-label="Previous testimonials">
-                        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                    </button>
-                    <button class="carousel-arrow" type="button" data-carousel-next="testimonials-track" aria-label="Next testimonials">
-                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="carousel-track" id="testimonials-track" aria-label="Testimonials">
-
-                <article class="testimonial-card">
-                    <div class="testimonial-stars" aria-label="No rating yet">
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                    </div>
-                    <p class="testimonial-quote">
-                        Your experience with KALXA could help other local businesses
-                        understand how the platform works. Share your honest feedback
-                        with us to be considered for this section.
-                    </p>
-                    <div class="testimonial-author">
-                        <strong>Business feedback wanted</strong>
-                        <span>For participating businesses</span>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <div class="testimonial-stars" aria-label="No rating yet">
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                    </div>
-                    <p class="testimonial-quote">
-                        Have you discovered a useful business, event or opportunity
-                        through KALXA? We welcome honest feedback about your experience.
-                    </p>
-                    <div class="testimonial-author">
-                        <strong>Community feedback wanted</strong>
-                        <span>For KALXA users</span>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <div class="testimonial-stars" aria-label="No rating yet">
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        <i class="fa-regular fa-star" aria-hidden="true"></i>
-                    </div>
-                    <p class="testimonial-quote">
-                        We are building digital tools for the local economy.
-                        Your suggestions can help shape what KALXA improves next.
-                    </p>
-                    <div class="testimonial-author">
-                        <strong>Help shape KALXA</strong>
-                        <span>Feedback and suggestions</span>
-                    </div>
-                </article>
-
-            </div>
-
-            <p class="testimonial-disclaimer">
-                These are feedback invitations, not customer testimonials. Replace them
-                with genuine, permission-based testimonials when they become available.
+            <p>
+                Hear directly from people and businesses sharing their
+                experiences with KALXA.
             </p>
-
-            <div class="actions">
-                <a class="button secondary-button" href="/contact.html">
-                    Share Your Feedback
-                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                </a>
-            </div>
-
         </div>
 
-    </section>
+        <div class="carousel-controls" id="testimonials-controls" hidden>
+
+            <button
+                class="carousel-arrow"
+                type="button"
+                data-carousel-prev="testimonials-track"
+                aria-label="Previous testimonials"
+            >
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            </button>
+
+            <button
+                class="carousel-arrow"
+                type="button"
+                data-carousel-next="testimonials-track"
+                aria-label="Next testimonials"
+            >
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+
+        </div>
+    </div>
+
+    <div
+        class="carousel-track"
+        id="testimonials-track"
+        aria-label="Approved KALXA testimonials"
+        aria-live="polite"
+    >
+
+        <p class="testimonials-message" id="testimonials-loading">
+            Loading community voices...
+        </p>
+
+    </div>
+
+    <p
+        class="testimonials-message"
+        id="testimonials-empty"
+        hidden
+    >
+        Community voices are growing. Approved testimonials from KALXA
+        users and participating businesses will appear here.
+    </p>
+
+    <p
+        class="testimonials-message"
+        id="testimonials-error"
+        hidden
+    >
+        Community voices are temporarily unavailable. Please check back later.
+    </p>
+
+</div>
+
+</section><!-- END TESTIMONIALS -->
 
     <!-- CUSTOM DEVELOPMENT -->
 
