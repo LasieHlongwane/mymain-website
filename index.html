@@ -2678,20 +2678,18 @@
 })();
 </script>
 
-<!-- LIVE KALXA STATISTICS: TICKETING + DISCOVERY -->
-
-<script>
+<!-- LIVE KALXA STATISTICS: TICKETING + DISCOVERY --><script>
 (function () {
     "use strict";
 
     /*
      * KALXA PUBLIC STATISTICS APIs
      *
-     * Ticketing provides:
+     * Ticketing:
      * - Businesses listed
      * - Events published
      *
-     * Discovery provides:
+     * Discovery:
      * - Services and categories
      * - Local opportunities
      */
@@ -2723,18 +2721,10 @@
         )
     };
 
-    /*
-     * Keep track of which APIs successfully responded.
-     */
-
     const apiStatus = {
         ticketing: false,
         discovery: false
     };
-
-    /*
-     * Keep track of which individual statistics were updated.
-     */
 
     const statisticStatus = {
         businesses: false,
@@ -2743,9 +2733,17 @@
         opportunities: false
     };
 
+    /*
+     * Format numbers for display.
+     */
+
     function formatStatistic(value) {
         return new Intl.NumberFormat("en-ZA").format(value);
     }
+
+    /*
+     * Display a diagnostic message on the homepage.
+     */
 
     function setDiagnostic(message) {
         if (diagnosticElement) {
@@ -2755,9 +2753,20 @@
         console.info("KALXA statistics:", message);
     }
 
+    /*
+     * Update one statistic only when its value is valid.
+     */
+
     function updateStatistic(element, value) {
+        if (!element) {
+            console.error(
+                "KALXA statistics: The required HTML element is missing."
+            );
+
+            return false;
+        }
+
         if (
-            !element ||
             typeof value !== "number" ||
             !Number.isSafeInteger(value) ||
             value < 0
@@ -2771,8 +2780,8 @@
     }
 
     /*
-     * Update the status message without allowing one API's
-     * failure to hide the successful results from the other.
+     * Update the diagnostic message based on the results
+     * from both APIs.
      */
 
     function updateDiagnostic() {
@@ -2797,86 +2806,96 @@
             return;
         }
 
+        const available = [];
+
+        if (statisticStatus.businesses) {
+            available.push(
+                "Businesses: " +
+                statisticElements.businesses.textContent
+            );
+        }
+
+        if (statisticStatus.services) {
+            available.push(
+                "Services and categories: " +
+                statisticElements.services.textContent
+            );
+        }
+
+        if (statisticStatus.events) {
+            available.push(
+                "Events: " +
+                statisticElements.events.textContent
+            );
+        }
+
+        if (statisticStatus.opportunities) {
+            available.push(
+                "Local opportunities: " +
+                statisticElements.opportunities.textContent
+            );
+        }
+
+        const failedSources = [];
+
+        if (!apiStatus.ticketing) {
+            failedSources.push("Ticketing");
+        }
+
+        if (!apiStatus.discovery) {
+            failedSources.push("Discovery");
+        }
+
         if (successfulCount > 0) {
-            const available = [];
-
-            if (statisticStatus.businesses) {
-                available.push(
-                    "businesses: " +
-                    statisticElements.businesses.textContent
-                );
-            }
-
-            if (statisticStatus.services) {
-                available.push(
-                    "services and categories: " +
-                    statisticElements.services.textContent
-                );
-            }
-
-            if (statisticStatus.events) {
-                available.push(
-                    "events: " +
-                    statisticElements.events.textContent
-                );
-            }
-
-            if (statisticStatus.opportunities) {
-                available.push(
-                    "local opportunities: " +
-                    statisticElements.opportunities.textContent
-                );
-            }
-
-            const failedSources = [];
-
-            if (!apiStatus.ticketing) {
-                failedSources.push("Ticketing");
-            }
-
-            if (!apiStatus.discovery) {
-                failedSources.push("Discovery");
-            }
-
-            setDiagnostic(
+            let message =
                 "Live statistics partially connected. " +
                 available.join("; ") +
-                "." +
-                (
-                    failedSources.length
-                        ? " Could not connect to: " +
-                          failedSources.join(" and ") +
-                          "."
-                        : ""
-                )
-            );
+                ".";
+
+            if (failedSources.length > 0) {
+                message +=
+                    " Could not connect to: " +
+                    failedSources.join(" and ") +
+                    ".";
+            }
+
+            setDiagnostic(message);
 
             return;
         }
 
         setDiagnostic(
-            "Unable to load live statistics. Please try again later."
+            "Unable to load live statistics. " +
+            "Please try again later."
         );
     }
 
     /*
-     * Fetch JSON from one API.
-     *
-     * This function verifies the HTTP status and JSON response
-     * before allowing the results to update the page.
+     * FETCH AND VALIDATE AN API RESPONSE.
      */
 
     async function fetchStatistics(endpoint, sourceName) {
-        const response = await fetch(endpoint, {
-            method: "GET",
-            mode: "cors",
-            credentials: "omit",
-            headers: {
-                "Accept": "application/json"
-            },
-            cache: "no-store",
-            redirect: "follow"
-        });
+        let response;
+
+        try {
+            response = await fetch(endpoint, {
+                method: "GET",
+                mode: "cors",
+                credentials: "omit",
+                headers: {
+                    "Accept": "application/json"
+                },
+                cache: "no-store",
+                redirect: "follow"
+            });
+        } catch (error) {
+            throw new Error(
+                sourceName +
+                " request failed. The browser could not access the API. " +
+                "Check network access and CORS settings. Details: " +
+                error.message
+            );
+        }
 
         if (!response.ok) {
             throw new Error(
@@ -2897,11 +2916,22 @@
         ) {
             throw new Error(
                 sourceName +
-                " API did not return JSON."
+                " API did not return JSON. Content-Type: " +
+                (contentType || "missing")
             );
         }
 
-        const data = await response.json();
+        let data;
+
+        try {
+            data = await response.json();
+        } catch (error) {
+            throw new Error(
+                sourceName +
+                " API returned invalid JSON. Details: " +
+                error.message
+            );
+        }
 
         if (
             !data ||
@@ -2918,14 +2948,7 @@
     }
 
     /*
-     * LOAD TICKETING STATISTICS
-     *
-     * Expected JSON fields:
-     *
-     * {
-     *     "businesses_listed": 13,
-     *     "events_published": 10
-     * }
+     * LOAD TICKETING STATISTICS.
      */
 
     async function loadTicketingStatistics() {
@@ -2972,14 +2995,7 @@
     }
 
     /*
-     * LOAD DISCOVERY STATISTICS
-     *
-     * Expected JSON fields:
-     *
-     * {
-     *     "local_opportunities": 2,
-     *     "services_and_categories": 11
-     * }
+     * LOAD DISCOVERY STATISTICS.
      */
 
     async function loadDiscoveryStatistics() {
@@ -3020,16 +3036,23 @@
                 "Unable to load Discovery statistics:",
                 error
             );
+
+            /*
+             * Show the actual Discovery error on the homepage
+             * so it can be checked without opening developer tools.
+             */
+
+            setDiagnostic(
+                "Discovery statistics error: " +
+                error.message
+            );
         }
 
         updateDiagnostic();
     }
 
     /*
-     * INITIALISE
-     *
-     * Both requests run independently. If one API fails,
-     * statistics from the other API can still appear.
+     * INITIALISE BOTH API REQUESTS INDEPENDENTLY.
      */
 
     async function loadAllStatistics() {
@@ -3044,6 +3067,10 @@
 
         updateDiagnostic();
     }
+
+    /*
+     * Start only after the HTML elements are available.
+     */
 
     if (document.readyState === "loading") {
         document.addEventListener(
