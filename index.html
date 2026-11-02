@@ -1664,16 +1664,16 @@
 
         <div class="hero-inner">
 
-            <div class="hero-badge reveal">
+            <div class="hero-badge reveal" data-i18n="hero_badge">
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                 Every place has its own Kalxa
             </div>
 
-            <h1 id="hero-title" class="reveal">
+            <h1 id="hero-title" class="reveal" data-i18n="hero_title">
                 Connecting <span class="highlight">Local Economy</span> through Smart Digital Tools.
             </h1>
 
-            <p class="hero-trust-line reveal">
+            <p class="hero-trust-line reveal" data-i18n="hero_subtitle">
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                 One unified ecosystem for businesses, residents, and growth opportunities.
             </p>
@@ -1681,17 +1681,17 @@
             <div class="actions reveal">
                 <a class="button primary-button" href="https://tickets.kalxa.co.za/">
                     <i class="fa-solid fa-store" aria-hidden="true"></i>
-                    Explore Businesses
+                    <span data-i18n="btn_explore">Explore Businesses</span>
                 </a>
 
                 <button class="button secondary-button" type="button" data-open-modal="onboarding-modal">
                     <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
-                    List Your Business
+                    <span data-i18n="btn_list">List Your Business</span>
                 </button>
 
                 <a class="button secondary-button" href="/discovery.html">
                     <i class="fa-solid fa-compass" aria-hidden="true"></i>
-                    Discover Opportunities
+                    <span data-i18n="btn_discover">Discover Opportunities</span>
                 </a>
 
                 <a class="button secondary-button" href="https://news.kalxa.co.za">
@@ -1723,7 +1723,7 @@
                     <i class="fa-solid fa-store" aria-hidden="true"></i>
                 </span>
                 <strong class="stat-number skeleton" data-stat="businesses">120</strong>
-                <span class="stat-label">Businesses listed</span>
+                <span class="stat-label" data-i18n="stat_biz">Businesses listed</span>
             </div>
 
             <div class="stat-item">
@@ -1731,7 +1731,7 @@
                     <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
                 </span>
                 <strong class="stat-number skeleton" data-stat="services">45</strong>
-                <span class="stat-label">Services &amp; Categories</span>
+                <span class="stat-label" data-i18n="stat_services">Services &amp; Categories</span>
             </div>
 
             <div class="stat-item">
@@ -1739,7 +1739,7 @@
                     <i class="fa-solid fa-ticket" aria-hidden="true"></i>
                 </span>
                 <strong class="stat-number skeleton" data-stat="events">18</strong>
-                <span class="stat-label">Events Published</span>
+                <span class="stat-label" data-i18n="stat_events">Events Published</span>
             </div>
 
             <div class="stat-item">
@@ -1747,7 +1747,7 @@
                     <i class="fa-solid fa-compass" aria-hidden="true"></i>
                 </span>
                 <strong class="stat-number skeleton" data-stat="opportunities">32</strong>
-                <span class="stat-label">Local Opportunities</span>
+                <span class="stat-label" data-i18n="stat_opps">Local Opportunities</span>
             </div>
 
         </div>
@@ -1775,8 +1775,8 @@
         <div class="section-inner">
 
             <div class="section-title reveal">
-                <p class="section-label">Businesses</p>
-                <h2>Give Your Business Premium Visibility</h2>
+                <p class="section-label" data-i18n="sec_biz_label">Businesses</p>
+                <h2 data-i18n="sec_biz_title">Give Your Business Premium Visibility</h2>
             </div>
 
             <!-- INTERACTIVE SEARCH FILTER BAR -->
@@ -2505,10 +2505,95 @@
 })();
 </script>
 
-<!-- REGION & LANGUAGE SWITCHER COMPONENT INITIALIZATION -->
+<!-- LIVE MULTI-LANGUAGE TRANSLATION ENGINE & SWITCHER -->
 <script>
 (function () {
     "use strict";
+
+    /* TRANSLATION DICTIONARIES */
+    const translations = {
+        en: {
+            "hero_badge": "Every place has its own Kalxa",
+            "hero_title": "Connecting Local Economy through Smart Digital Tools.",
+            "hero_subtitle": "One unified ecosystem for businesses, residents, and growth opportunities.",
+            "btn_explore": "Explore Businesses",
+            "btn_list": "List Your Business",
+            "btn_discover": "Discover Opportunities",
+            "stat_biz": "Businesses listed",
+            "stat_services": "Services & Categories",
+            "stat_events": "Events Published",
+            "stat_opps": "Local Opportunities",
+            "sec_biz_label": "Businesses",
+            "sec_biz_title": "Give Your Business Premium Visibility"
+        },
+        nr: {
+            "hero_badge": "Indawo yoke inegalelo layo e-Kalxa",
+            "hero_title": "Ukuhlanganisa Umnotho Wendawo ngamathuluzi wezobuchwepheshe.",
+            "hero_subtitle": "Uhlelo olulodwa lwamabhizinisi, abahlali kanye namathuba wokukhula.",
+            "btn_explore": "Hlola Amabhizinisi",
+            "btn_list": "Faka Ibhizinisi Lakho",
+            "btn_discover": "Thola Amathuba",
+            "stat_biz": "Amabhizinisi abhalisiwe",
+            "stat_services": "Imisebenzi nemikhakha",
+            "stat_events": "Imicimbi eshicilelwe",
+            "stat_opps": "Amathuba wendawo",
+            "sec_biz_label": "Amabhizinisi",
+            "sec_biz_title": "Nikeza Ibhizinisi Lakho Ukubonakala Okuphezulu"
+        },
+        zu: {
+            "hero_badge": "Indawo ngayinye inegalelo layo e-Kalxa",
+            "hero_title": "Ukuxhumanisa Umnotho Wendawo ngamathuluzi ezobuchwepheshe.",
+            "hero_subtitle": "Uhlelo olulodwa lwamabhizinisi, izakhamuzi, namathuba okukhula.",
+            "btn_explore": "Hlola Amabhizinisi",
+            "btn_list": "Bhalisa Ibhizinisi Lakho",
+            "btn_discover": "Thola Amathuba",
+            "stat_biz": "Amabhizinisi abhalisiwe",
+            "stat_services": "Amasevisi nezigaba",
+            "stat_events": "Imicimbi eshicilelwe",
+            "stat_opps": "Amathuba wendawo",
+            "sec_biz_label": "Amabhizinisi",
+            "sec_biz_title": "Nikeza Ibhizinisi Lakho Ukubonakala Okuphezulu"
+        },
+        nso: {
+            "hero_badge": "Lefelo le lengwe le le lengwe le na le Kalxa ya lona",
+            "hero_title": "Kgokagano ya Ekonomi ya Selegae ka Dithulusu tša Dithekenoloji.",
+            "hero_subtitle": "Tekanyo e tee ya dikgwebo, baagi, le menyetla ya kgolo.",
+            "btn_explore": "Hlahloba Dikgwebo",
+            "btn_list": "Ngwadisisa Kgwebo Ya Gago",
+            "btn_discover": "Utolla Menyetla",
+            "stat_biz": "Dikgwebo tše di ngwadišitšwego",
+            "stat_services": "Ditirelo le magoro",
+            "stat_events": "Ditiragalo tše di phasalatšwego",
+            "stat_opps": "Menyetla ya selegae",
+            "sec_biz_label": "Dikgwebo",
+            "sec_biz_title": "Fa Kgwebo Ya Gago Botumo bjo Bogolo"
+        },
+        af: {
+            "hero_badge": "Elke plek het sy eie Kalxa",
+            "hero_title": "Verbind Plaaslike Ekonomie deur Slim Digitale Gereedskap.",
+            "hero_subtitle": "Een verenigde ekosisteem vir besighede, inwoners en groei geleenthede.",
+            "btn_explore": "Verken Besighede",
+            "btn_list": "Lys Jou Besigheid",
+            "btn_discover": "Ontdek Geleenthede",
+            "stat_biz": "Besighede gelys",
+            "stat_services": "Dienste & Kategorieë",
+            "stat_events": "Gebeure gepubliseer",
+            "stat_opps": "Plaaslike geleenthede",
+            "sec_biz_label": "Besighede",
+            "sec_biz_title": "Gee Jou Besigheid Premium Sigbaarheid"
+        }
+    };
+
+    function applyTranslations(langCode) {
+        const dict = translations[langCode] || translations.en;
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            if (dict[key]) {
+                el.textContent = dict[key];
+            }
+        });
+        document.documentElement.setAttribute("lang", langCode);
+    }
 
     function setupDropdown(triggerId, dropdownId, labelId, storageKey, onSelectCallback) {
         const trigger = document.getElementById(triggerId);
@@ -2518,7 +2603,6 @@
 
         const options = dropdown.querySelectorAll(".selector-option");
 
-        // Load saved value
         const savedVal = localStorage.getItem(storageKey);
         if (savedVal) {
             options.forEach(opt => {
@@ -2527,15 +2611,16 @@
                     options.forEach(o => o.classList.remove("active"));
                     opt.classList.add("active");
                     label.textContent = savedVal;
+                    if (opt.dataset.langCode) {
+                        applyTranslations(opt.dataset.langCode);
+                    }
                 }
             });
         }
 
-        // Toggle visibility
         trigger.addEventListener("click", (e) => {
             e.stopPropagation();
             const isOpen = dropdown.classList.contains("open");
-            // Close all dropdowns
             document.querySelectorAll(".selector-dropdown").forEach(d => d.classList.remove("open"));
             document.querySelectorAll(".selector-pill").forEach(p => p.setAttribute("aria-expanded", "false"));
 
@@ -2545,7 +2630,6 @@
             }
         });
 
-        // Handle option click
         options.forEach(opt => {
             opt.addEventListener("click", () => {
                 const name = opt.dataset.regionName || opt.dataset.langName;
@@ -2557,13 +2641,16 @@
                 dropdown.classList.remove("open");
                 trigger.setAttribute("aria-expanded", "false");
 
+                if (opt.dataset.langCode) {
+                    applyTranslations(opt.dataset.langCode);
+                }
+
                 if (typeof onSelectCallback === "function") {
                     onSelectCallback(opt.dataset);
                 }
             });
         });
 
-        // Close on outer click
         document.addEventListener("click", (e) => {
             if (!trigger.contains(e.target) && !dropdown.contains(e.target)) {
                 dropdown.classList.remove("open");
@@ -2573,12 +2660,10 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        // Region Switcher
         setupDropdown("region-pill", "region-dropdown", "current-region-label", "kalxa_region", (data) => {
             console.info("Region changed to Zone ID:", data.regionId);
         });
 
-        // Language Switcher
         setupDropdown("language-pill", "language-dropdown", "current-lang-label", "kalxa_lang", (data) => {
             console.info("Language changed to Code:", data.langCode);
         });
