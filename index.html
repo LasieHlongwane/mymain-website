@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0879bd">
 
+    <!-- ENTERPRISE SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data:;">
+
+    <!-- PROGRESSIVE WEB APP (PWA) CONFIGURATION -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="KALXA">
+    <link rel="apple-touch-icon" href="/images/kalxa-hero-bg.png">
+
     <meta
         name="description"
         content="Discover local businesses, services, events and opportunities with KALXA. Explore digital business tools and technology services connecting KwaNdebele's local economy."
@@ -1742,6 +1754,15 @@
     "use strict";
 
     function initialiseHomepage() {
+
+        /* PWA SERVICE WORKER REGISTRATION */
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/sw.js").catch((err) => {
+                    console.info("Service worker registration skipped or unavailable:", err.message);
+                });
+            });
+        }
 
         /* DARK / LIGHT THEME TOGGLE */
         const themeToggleBtn = document.getElementById("theme-toggle");
