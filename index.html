@@ -104,6 +104,70 @@
             --radius-lg: 28px;
         }
 
+        /* DARK THEME VARIABLES */
+        html.dark-theme {
+            --ink: #f8fafc;
+            --muted: #94a3b8;
+            --blue: #38bdf8;
+            --blue-dark: #bae6fd;
+            --blue-light: rgba(56, 189, 248, 0.1);
+            --accent-glow: rgba(56, 189, 248, 0.2);
+            --line: #1e293b;
+            --surface: #0f172a;
+            --surface-subtle: #090d16;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 16px 36px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.6);
+        }
+
+        html.dark-theme body {
+            background: #0b0f19;
+        }
+
+        html.dark-theme .navbar {
+            background: rgba(15, 23, 42, 0.85);
+            border-bottom-color: rgba(30, 41, 59, 0.8);
+        }
+
+        html.dark-theme .navbar nav a {
+            color: #cbd5e1;
+        }
+
+        html.dark-theme .stats-panel,
+        html.dark-theme .business-card,
+        html.dark-theme .faq-item,
+        html.dark-theme .benefit-card,
+        html.dark-theme .step-card,
+        html.dark-theme .testimonial-card {
+            background: #111827;
+            border-color: #1e293b;
+        }
+
+        html.dark-theme .hero-slideshow::after {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(11, 15, 25, 0.9) 100%);
+        }
+
+        html.dark-theme .hero-badge {
+            background: rgba(15, 23, 42, 0.85);
+            color: #38bdf8;
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        html.dark-theme .search-filter-input {
+            background: #111827;
+            border-color: #1e293b;
+            color: #f8fafc;
+        }
+
+        html.dark-theme .business-showcase {
+            background: linear-gradient(180deg, #0b0f19 0%, #0f172a 100%);
+        }
+
+        html.dark-theme .service-highlight {
+            background: linear-gradient(135deg, #111827 0%, #0c2035 100%);
+            border-color: #0369a1;
+        }
+
         *,
         *::before,
         *::after {
@@ -122,6 +186,7 @@
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
             background: #fff;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         body, button, a {
@@ -198,6 +263,7 @@
             box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            transition: background 0.3s ease, border-color 0.3s ease;
         }
 
         .brand {
@@ -231,6 +297,34 @@
             font-weight: 700;
             color: var(--muted);
             text-transform: uppercase;
+        }
+
+        .navbar-actions-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--surface);
+            color: var(--blue-dark);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--blue);
+            background: var(--blue-light);
+            color: var(--blue);
         }
 
         .navbar nav {
@@ -276,7 +370,7 @@
             appearance: none;
             border: 1px solid var(--line);
             border-radius: 10px;
-            background: #fff;
+            background: var(--surface);
             color: var(--blue-dark);
             font-size: 20px;
             cursor: pointer;
@@ -311,7 +405,7 @@
                 padding: 16px 5% 20px;
                 border-top: 1px solid var(--line);
                 border-bottom: 1px solid var(--line);
-                background: #fff;
+                background: var(--surface);
                 box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             }
 
@@ -356,7 +450,7 @@
                 justify-content: center;
                 gap: 8px;
                 padding: 14px 12px;
-                background: #fff;
+                background: var(--surface);
                 color: var(--blue-dark);
                 font-family: var(--heading);
                 font-size: 13px;
@@ -418,7 +512,7 @@
 
         @media (max-width: 760px) {
             .live-toast {
-                display: none; /* Hide on mobile to avoid overlap with sticky bar */
+                display: none;
             }
         }
 
@@ -434,6 +528,10 @@
             overflow: hidden;
             padding: 110px 7% 130px;
             background: #f0f8ff;
+        }
+
+        html.dark-theme .site-hero {
+            background: #090d16;
         }
 
         .hero-slideshow {
@@ -515,7 +613,7 @@
             line-height: 1.08;
             font-weight: 800;
             letter-spacing: -0.04em;
-            color: #0f172a;
+            color: var(--ink);
         }
 
         .site-hero h1 span.highlight {
@@ -567,13 +665,13 @@
 
         .secondary-button {
             color: var(--blue-dark);
-            background: rgba(255, 255, 255, 0.9);
+            background: var(--surface);
             border-color: #cbd5e1;
             box-shadow: var(--shadow-sm);
         }
 
         .secondary-button:hover {
-            background: #fff;
+            background: var(--surface);
             border-color: var(--blue);
             color: var(--blue);
         }
@@ -623,7 +721,7 @@
             position: relative;
             z-index: 4;
             padding: 0 7%;
-            background: #fff;
+            background: var(--surface);
         }
 
         .stats-panel {
@@ -634,7 +732,7 @@
             padding: 34px 20px;
             border: 1px solid var(--line);
             border-radius: var(--radius-lg);
-            background: #fff;
+            background: var(--surface);
             box-shadow: var(--shadow-md);
         }
 
@@ -686,7 +784,7 @@
             text-align: center;
         }
 
-        /* LIVE SYSTEM STATUS BADGES */
+        /* LIVE SYSTEM STATUS BADGES WITH LATENCY PING */
         .system-status-container {
             display: flex;
             align-items: center;
@@ -704,8 +802,8 @@
             gap: 6px;
             padding: 4px 10px;
             border-radius: 100px;
-            background: #f1f5f9;
-            border: 1px solid #e2e8f0;
+            background: var(--surface-subtle);
+            border: 1px solid var(--line);
             font-weight: 600;
         }
 
@@ -776,7 +874,7 @@
             padding: 16px 20px 16px 50px;
             border: 1px solid var(--line);
             border-radius: var(--radius-md);
-            background: #fff;
+            background: var(--surface);
             color: var(--ink);
             font-size: 15px;
             box-shadow: var(--shadow-sm);
@@ -822,7 +920,7 @@
             border: 1px solid var(--line);
             border-radius: 50%;
             color: var(--blue-dark);
-            background: #fff;
+            background: var(--surface);
             cursor: pointer;
             transition: all 0.2s ease;
             box-shadow: var(--shadow-sm);
@@ -853,7 +951,7 @@
         /* BUSINESS CARDS WITH SPOTLIGHT GLOW */
 
         .business-showcase {
-            background: linear-gradient(180deg, #ffffff 0%, #f4f9fd 100%);
+            background: linear-gradient(180deg, var(--surface) 0%, var(--surface-subtle) 100%);
         }
 
         .business-card {
@@ -862,7 +960,7 @@
             overflow: hidden;
             border: 1px solid var(--line);
             border-radius: var(--radius-lg);
-            background: #fff;
+            background: var(--surface);
             box-shadow: var(--shadow-sm);
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
@@ -956,7 +1054,7 @@
             padding: 44px;
             border: 1px solid #bae6fd;
             border-radius: var(--radius-lg);
-            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+            background: linear-gradient(135deg, var(--surface) 0%, var(--blue-light) 100%);
             box-shadow: var(--shadow-sm);
         }
 
@@ -1204,16 +1302,27 @@
         </span>
     </a>
 
-    <button
-        class="menu-button"
-        id="menu-button"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="nav-menu"
-    >
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-    </button>
+    <div class="navbar-actions-group">
+        <button
+            class="theme-toggle-btn"
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark and light theme"
+        >
+            <i class="fa-solid fa-moon" id="theme-icon" aria-hidden="true"></i>
+        </button>
+
+        <button
+            class="menu-button"
+            id="menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+        >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+    </div>
 
     <nav id="nav-menu" aria-label="Main navigation">
         <a href="/index.html" aria-current="page">Home</a>
@@ -1329,7 +1438,7 @@
             Connecting to KALXA live statistics...
         </p>
 
-        <!-- LIVE SYSTEM STATUS BADGES -->
+        <!-- LIVE SYSTEM STATUS BADGES WITH LATENCY PING -->
         <div class="system-status-container">
             <div class="status-badge" id="status-ticketing">
                 <span class="status-dot"></span> Ticketing API: Connecting...
@@ -1626,13 +1735,39 @@
 
 <script src="/js/main.js?v=4" defer></script>
 
-<!-- HOMEPAGE INTERACTIONS, SCROLL REVEAL, SEARCH FILTER & LIVE TOASTS -->
+<!-- HOMEPAGE INTERACTIONS, THEME TOGGLE, SCROLL REVEAL & LIVE TOASTS -->
 
 <script>
 (function () {
     "use strict";
 
     function initialiseHomepage() {
+
+        /* DARK / LIGHT THEME TOGGLE */
+        const themeToggleBtn = document.getElementById("theme-toggle");
+        const themeIcon = document.getElementById("theme-icon");
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem("kalxa_theme");
+        if (savedTheme === "dark") {
+            htmlElement.classList.add("dark-theme");
+            if (themeIcon) themeIcon.className = "fa-solid fa-sun";
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener("click", () => {
+                htmlElement.classList.toggle("dark-theme");
+                const isDark = htmlElement.classList.contains("dark-theme");
+
+                if (isDark) {
+                    localStorage.setItem("kalxa_theme", "dark");
+                    if (themeIcon) themeIcon.className = "fa-solid fa-sun";
+                } else {
+                    localStorage.setItem("kalxa_theme", "light");
+                    if (themeIcon) themeIcon.className = "fa-solid fa-moon";
+                }
+            });
+        }
 
         /* SCROLL REVEAL OBSERVER */
         const revealElements = document.querySelectorAll(".reveal");
@@ -1818,7 +1953,7 @@
 })();
 </script>
 
-<!-- LIVE KALXA STATISTICS: TICKETING + DISCOVERY -->
+<!-- LIVE KALXA STATISTICS WITH LATENCY PING -->
 
 <script>
 (function () {
@@ -1851,16 +1986,15 @@
         if (diagnosticElement) {
             diagnosticElement.textContent = message;
         }
-        console.info("KALXA statistics:", message);
     }
 
-    function updateSystemBadge(serviceName, isOperational) {
+    function updateSystemBadge(serviceName, isOperational, latencyMs) {
         const badge = serviceName === "Ticketing" ? ticketingStatusBadge : discoveryStatusBadge;
         if (!badge) return;
 
         if (isOperational) {
             badge.className = "status-badge operational";
-            badge.innerHTML = `<span class="status-dot"></span> ${serviceName} API: Operational`;
+            badge.innerHTML = `<span class="status-dot"></span> ${serviceName} API: Operational (${latencyMs}ms)`;
         } else {
             badge.className = "status-badge degraded";
             badge.innerHTML = `<span class="status-dot"></span> ${serviceName} API: Offline`;
@@ -1878,13 +2012,7 @@
         const successfulCount = Object.values(statisticStatus).filter(Boolean).length;
 
         if (successfulCount === 4) {
-            setDiagnostic(
-                "All live statistics connected successfully. " +
-                "Businesses: " + statisticElements.businesses.textContent +
-                "; Services: " + statisticElements.services.textContent +
-                "; Events: " + statisticElements.events.textContent +
-                "; Opportunities: " + statisticElements.opportunities.textContent + "."
-            );
+            setDiagnostic("All live statistics and endpoints connected successfully.");
             return;
         }
 
@@ -1897,6 +2025,7 @@
     }
 
     async function fetchStatistics(endpoint, sourceName) {
+        const startTime = performance.now();
         let response;
         try {
             response = await fetch(endpoint, {
@@ -1911,35 +2040,39 @@
             throw new Error(sourceName + " request failed: " + error.message);
         }
 
+        const endTime = performance.now();
+        const latency = Math.round(endTime - startTime);
+
         if (!response.ok) throw new Error(sourceName + " returned HTTP " + response.status);
 
-        return await response.json();
+        const data = await response.json();
+        return { data, latency };
     }
 
     async function loadTicketingStatistics() {
         try {
-            const data = await fetchStatistics(API_ENDPOINTS.ticketing, "Ticketing");
+            const { data, latency } = await fetchStatistics(API_ENDPOINTS.ticketing, "Ticketing");
             apiStatus.ticketing = true;
             statisticStatus.businesses = updateStatistic(statisticElements.businesses, data.businesses_listed);
             statisticStatus.events = updateStatistic(statisticElements.events, data.events_published);
-            updateSystemBadge("Ticketing", true);
+            updateSystemBadge("Ticketing", true, latency);
         } catch (error) {
             console.error("Unable to load Ticketing statistics:", error);
-            updateSystemBadge("Ticketing", false);
+            updateSystemBadge("Ticketing", false, 0);
         }
         updateDiagnostic();
     }
 
     async function loadDiscoveryStatistics() {
         try {
-            const data = await fetchStatistics(API_ENDPOINTS.discovery, "Discovery");
+            const { data, latency } = await fetchStatistics(API_ENDPOINTS.discovery, "Discovery");
             apiStatus.discovery = true;
             statisticStatus.services = updateStatistic(statisticElements.services, data.services_and_categories);
             statisticStatus.opportunities = updateStatistic(statisticElements.opportunities, data.local_opportunities);
-            updateSystemBadge("Discovery", true);
+            updateSystemBadge("Discovery", true, latency);
         } catch (error) {
             console.error("Unable to load Discovery statistics:", error);
-            updateSystemBadge("Discovery", false);
+            updateSystemBadge("Discovery", false, 0);
         }
         updateDiagnostic();
     }
