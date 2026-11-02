@@ -640,6 +640,46 @@
             text-align: center;
         }
 
+        /* LIVE SYSTEM STATUS BADGES */
+        .system-status-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 14px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 100px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            display: inline-block;
+        }
+
+        .status-badge.operational .status-dot {
+            background: #10b981;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+        }
+
+        .status-badge.degraded .status-dot {
+            background: #f59e0b;
+        }
+
         /* GENERAL SECTIONS */
 
         .section-shell {
@@ -657,7 +697,7 @@
 
         .section-title {
             max-width: 720px;
-            margin: 0 auto 48px;
+            margin: 0 auto 36px;
             text-align: center;
         }
 
@@ -676,6 +716,40 @@
             font-size: clamp(32px, 4vw, 46px);
             font-weight: 800;
             line-height: 1.15;
+        }
+
+        /* INTERACTIVE SEARCH FILTER BAR */
+        .search-filter-wrapper {
+            max-width: 540px;
+            margin: 0 auto 36px;
+            position: relative;
+        }
+
+        .search-filter-input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            background: #fff;
+            color: var(--ink);
+            font-size: 14px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+        }
+
+        .search-filter-input:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 4px var(--blue-light);
+        }
+
+        .search-filter-icon {
+            position: absolute;
+            top: 50%;
+            left: 18px;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-size: 15px;
         }
 
         /* CAROUSELS */
@@ -745,6 +819,10 @@
             background: #fff;
             box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
+        }
+
+        .business-card.hidden {
+            display: none !important;
         }
 
         .business-card:hover {
@@ -1202,6 +1280,16 @@
             Connecting to KALXA live statistics...
         </p>
 
+        <!-- LIVE SYSTEM STATUS BADGES -->
+        <div class="system-status-container">
+            <div class="status-badge" id="status-ticketing">
+                <span class="status-dot"></span> Ticketing API: Connecting...
+            </div>
+            <div class="status-badge" id="status-discovery">
+                <span class="status-dot"></span> Discovery API: Connecting...
+            </div>
+        </div>
+
     </section>
 
     <!-- BUSINESS SHOWCASE -->
@@ -1213,6 +1301,18 @@
             <div class="section-title reveal">
                 <p class="section-label">Businesses</p>
                 <h2>Give Your Business Premium Visibility</h2>
+            </div>
+
+            <!-- INTERACTIVE SEARCH FILTER BAR -->
+            <div class="search-filter-wrapper reveal">
+                <i class="fa-solid fa-magnifying-glass search-filter-icon" aria-hidden="true"></i>
+                <input
+                    type="text"
+                    id="business-search-input"
+                    class="search-filter-input"
+                    placeholder="Search categories (e.g. restaurant, retail, hospitality)..."
+                    aria-label="Filter business categories"
+                >
             </div>
 
             <div class="carousel-heading reveal">
@@ -1229,7 +1329,7 @@
             <div class="carousel-track reveal" id="business-track" aria-label="Local business categories">
 
                 <!-- RESTAURANTS AND CAFES -->
-                <article class="business-card">
+                <article class="business-card" data-search-terms="restaurant food cafe dining">
                     <div class="business-card-visual">
                         <img src="images/restaurant.jpg" alt="Restaurant dining area showcasing a local food business" loading="lazy" decoding="async">
                     </div>
@@ -1244,7 +1344,7 @@
                 </article>
 
                 <!-- SHOPS AND RETAIL -->
-                <article class="business-card">
+                <article class="business-card" data-search-terms="shop retail store business shopping">
                     <div class="business-card-visual">
                         <img src="images/retail.jpg" alt="Retail shop with products displayed for customers" loading="lazy" decoding="async">
                     </div>
@@ -1259,7 +1359,7 @@
                 </article>
 
                 <!-- ACCOMMODATION -->
-                <article class="business-card">
+                <article class="business-card" data-search-terms="lounge accommodation guest house apartment hospitality hotel">
                     <div class="business-card-visual">
                         <img src="images/lounges-accommodation.jpg" alt="Comfortable hospitality venue" loading="lazy" decoding="async">
                     </div>
@@ -1274,7 +1374,7 @@
                 </article>
 
                 <!-- PROFESSIONAL SERVICES -->
-                <article class="business-card">
+                <article class="business-card" data-search-terms="professional services consultancy freelance provider contractor">
                     <div class="business-card-visual">
                         <img src="images/professional-services.jpg" alt="Organised professional workspace" loading="lazy" decoding="async">
                     </div>
@@ -1471,7 +1571,7 @@
 
 <script src="/js/main.js?v=4" defer></script>
 
-<!-- HOMEPAGE INTERACTIONS & SCROLL REVEAL -->
+<!-- HOMEPAGE INTERACTIONS, SCROLL REVEAL & SEARCH FILTER -->
 
 <script>
 (function () {
@@ -1505,6 +1605,27 @@
         } else {
             revealElements.forEach((el) => {
                 el.classList.add("active");
+            });
+        }
+
+        /* INTERACTIVE BUSINESS SEARCH FILTER */
+        const searchInput = document.getElementById("business-search-input");
+        const businessCards = document.querySelectorAll(".business-card");
+
+        if (searchInput) {
+            searchInput.addEventListener("input", (e) => {
+                const query = e.target.value.toLowerCase().trim();
+
+                businessCards.forEach((card) => {
+                    const terms = card.getAttribute("data-search-terms") || "";
+                    const textContent = card.textContent.toLowerCase();
+
+                    if (query === "" || terms.includes(query) || textContent.includes(query)) {
+                        card.classList.remove("hidden");
+                    } else {
+                        card.classList.add("hidden");
+                    }
+                });
             });
         }
 
@@ -1623,6 +1744,8 @@
     };
 
     const diagnosticElement = document.getElementById("stats-diagnostic");
+    const ticketingStatusBadge = document.getElementById("status-ticketing");
+    const discoveryStatusBadge = document.getElementById("status-discovery");
 
     const statisticElements = {
         businesses: document.querySelector('[data-stat="businesses"]'),
@@ -1643,6 +1766,19 @@
             diagnosticElement.textContent = message;
         }
         console.info("KALXA statistics:", message);
+    }
+
+    function updateSystemBadge(serviceName, isOperational) {
+        const badge = serviceName === "Ticketing" ? ticketingStatusBadge : discoveryStatusBadge;
+        if (!badge) return;
+
+        if (isOperational) {
+            badge.className = "status-badge operational";
+            badge.innerHTML = `<span class="status-dot"></span> ${serviceName} API: Operational`;
+        } else {
+            badge.className = "status-badge degraded";
+            badge.innerHTML = `<span class="status-dot"></span> ${serviceName} API: Offline`;
+        }
     }
 
     function updateStatistic(element, value) {
@@ -1700,8 +1836,10 @@
             apiStatus.ticketing = true;
             statisticStatus.businesses = updateStatistic(statisticElements.businesses, data.businesses_listed);
             statisticStatus.events = updateStatistic(statisticElements.events, data.events_published);
+            updateSystemBadge("Ticketing", true);
         } catch (error) {
             console.error("Unable to load Ticketing statistics:", error);
+            updateSystemBadge("Ticketing", false);
         }
         updateDiagnostic();
     }
@@ -1712,8 +1850,10 @@
             apiStatus.discovery = true;
             statisticStatus.services = updateStatistic(statisticElements.services, data.services_and_categories);
             statisticStatus.opportunities = updateStatistic(statisticElements.opportunities, data.local_opportunities);
+            updateSystemBadge("Discovery", true);
         } catch (error) {
             console.error("Unable to load Discovery statistics:", error);
+            updateSystemBadge("Discovery", false);
         }
         updateDiagnostic();
     }
