@@ -16,6 +16,37 @@
 
     <link rel="canonical" href="https://kalxa.co.za/">
 
+    <!-- STRUCTURED DATA (LOCAL BUSINESS / ORGANIZATION SCHEMA) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "KALXA (PTY) LTD",
+      "url": "https://kalxa.co.za/",
+      "logo": "https://kalxa.co.za/images/kalxa-hero-bg.png",
+      "foundingDate": "2026",
+      "taxID": "2026/767893/07",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "KwaMhlanga",
+        "addressLocality": "KwaMhlanga",
+        "postalCode": "1022",
+        "addressRegion": "Mpumalanga",
+        "addressCountry": "ZA"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+27-76-611-4909",
+        "contactType": "customer support",
+        "email": "lasie@kalxa.co.za",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": [
+        "https://wa.me/27766114909"
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -77,6 +108,7 @@
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
             background: #fff;
+            padding-bottom: 0; /* Adjusted dynamically when mobile sticky bar shows */
         }
 
         body, button, a {
@@ -264,6 +296,57 @@
             .navbar nav a {
                 padding: 12px 16px;
                 font-size: 15px;
+            }
+        }
+
+        /* MOBILE STICKY THUMB CTA BAR */
+        .mobile-sticky-bar {
+            display: none;
+        }
+
+        @media (max-width: 760px) {
+            body {
+                padding-bottom: 72px;
+            }
+
+            .mobile-sticky-bar {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 998;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1px;
+                background: #e2e8f0;
+                border-top: 1px solid #cbd5e1;
+                box-shadow: 0 -4px 16px rgba(15, 23, 42, 0.1);
+                backdrop-filter: blur(12px);
+            }
+
+            .sticky-action {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 14px 12px;
+                background: #fff;
+                color: var(--blue-dark);
+                font-family: var(--heading);
+                font-size: 13px;
+                font-weight: 700;
+                text-decoration: none;
+                text-align: center;
+                transition: background 0.2s ease;
+            }
+
+            .sticky-action.whatsapp {
+                background: #25d366;
+                color: #fff;
+            }
+
+            .sticky-action:active {
+                opacity: 0.9;
             }
         }
 
@@ -1266,6 +1349,16 @@
     </section>
 
 </main>
+
+<!-- MOBILE STICKY THUMB BAR -->
+<div class="mobile-sticky-bar" aria-label="Quick mobile actions">
+    <a href="https://tickets.kalxa.co.za/" class="sticky-action">
+        <i class="fa-solid fa-store" aria-hidden="true"></i> Directory
+    </a>
+    <a href="https://wa.me/27766114909" target="_blank" rel="noopener noreferrer" class="sticky-action whatsapp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Us
+    </a>
+</div>
 
 <!-- FOOTER -->
 
