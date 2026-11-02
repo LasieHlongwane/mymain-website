@@ -12,6 +12,20 @@
 
     <meta name="robots" content="index, follow">
 
+    <!-- OPEN GRAPH / SOCIAL SHARE PREVIEW TAGS -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kalxa.co.za/">
+    <meta property="og:title" content="KALXA | Connecting Local Economy">
+    <meta property="og:description" content="Discover local businesses, services, events and opportunities with KALXA. Explore digital business tools and technology services connecting KwaNdebele's local economy.">
+    <meta property="og:image" content="https://kalxa.co.za/images/kalxa-hero-bg.png">
+
+    <!-- TWITTER CARD TAGS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://kalxa.co.za/">
+    <meta name="twitter:title" content="KALXA | Connecting Local Economy">
+    <meta name="twitter:description" content="Discover local businesses, services, events and opportunities with KALXA. Explore digital business tools connecting KwaNdebele's local economy.">
+    <meta name="twitter:image" content="https://kalxa.co.za/images/kalxa-hero-bg.png">
+
     <title>KALXA | Connecting Local Economy</title>
 
     <link rel="canonical" href="https://kalxa.co.za/">
@@ -108,7 +122,6 @@
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
             background: #fff;
-            padding-bottom: 0; /* Adjusted dynamically when mobile sticky bar shows */
         }
 
         body, button, a {
@@ -136,6 +149,19 @@
 
         p {
             overflow-wrap: break-word;
+        }
+
+        /* SCROLL REVEAL ANIMATION STATES */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .skip-link {
@@ -299,7 +325,7 @@
             }
         }
 
-        /* MOBILE STICKY THUMB CTA BAR */
+        /* MOBILE STICKY THUMB BAR */
         .mobile-sticky-bar {
             display: none;
         }
@@ -1028,6 +1054,10 @@
                 animation-duration: 0.01ms !important;
                 transition-duration: 0.01ms !important;
             }
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
         }
     </style>
 </head>
@@ -1085,21 +1115,21 @@
 
         <div class="hero-inner">
 
-            <div class="hero-badge">
+            <div class="hero-badge reveal">
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                 Every place has its own Kalxa
             </div>
 
-            <h1 id="hero-title">
+            <h1 id="hero-title" class="reveal">
                 Connecting <span class="highlight">Local Economy</span> through Smart Digital Tools.
             </h1>
 
-            <p class="hero-trust-line">
+            <p class="hero-trust-line reveal">
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                 One unified ecosystem for businesses, residents, and growth opportunities.
             </p>
 
-            <div class="actions">
+            <div class="actions reveal">
                 <a class="button primary-button" href="https://tickets.kalxa.co.za/">
                     <i class="fa-solid fa-store" aria-hidden="true"></i>
                     Explore Businesses
@@ -1130,7 +1160,7 @@
 
     <!-- STATISTICS -->
 
-    <section class="stats-section" aria-label="KALXA platform statistics">
+    <section class="stats-section reveal" aria-label="KALXA platform statistics">
 
         <div class="stats-panel">
 
@@ -1180,12 +1210,12 @@
 
         <div class="section-inner">
 
-            <div class="section-title">
+            <div class="section-title reveal">
                 <p class="section-label">Businesses</p>
                 <h2>Give Your Business Premium Visibility</h2>
             </div>
 
-            <div class="carousel-heading">
+            <div class="carousel-heading reveal">
                 <div class="carousel-controls">
                     <button class="carousel-arrow" type="button" data-carousel-prev="business-track" aria-label="Previous business categories">
                         <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
@@ -1196,7 +1226,7 @@
                 </div>
             </div>
 
-            <div class="carousel-track" id="business-track" aria-label="Local business categories">
+            <div class="carousel-track reveal" id="business-track" aria-label="Local business categories">
 
                 <!-- RESTAURANTS AND CAFES -->
                 <article class="business-card">
@@ -1260,7 +1290,7 @@
 
             </div>
 
-            <div class="actions">
+            <div class="actions reveal">
                 <a class="button primary-button" href="https://tickets.kalxa.co.za/">
                     Explore the Business Directory
                     <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -1273,7 +1303,7 @@
 
     <!-- TESTIMONIALS -->
 
-    <section class="section-shell soft" id="testimonials">
+    <section class="section-shell soft reveal" id="testimonials">
         <div class="section-inner">
             <div class="section-title">
                 <p class="section-label">Testimonials</p>
@@ -1307,7 +1337,7 @@
 
     <!-- CUSTOM DEVELOPMENT -->
 
-    <section class="section-shell" id="custom-services">
+    <section class="section-shell reveal" id="custom-services">
         <div class="section-inner">
             <div class="service-highlight">
                 <div>
@@ -1327,7 +1357,7 @@
 
     <!-- FINAL CTA -->
 
-    <section class="contact-band">
+    <section class="contact-band reveal">
         <p class="section-label">Let's build together</p>
         <h2>Be part of your area's connected local economy.</h2>
         <p>
@@ -1362,7 +1392,7 @@
 
 <!-- FOOTER -->
 
-<footer class="company-footer">
+<footer class="company-footer reveal">
 
     <div class="footer-main">
 
@@ -1441,7 +1471,7 @@
 
 <script src="/js/main.js?v=4" defer></script>
 
-<!-- HOMEPAGE INTERACTIONS -->
+<!-- HOMEPAGE INTERACTIONS & SCROLL REVEAL -->
 
 <script>
 (function () {
@@ -1449,10 +1479,38 @@
 
     function initialiseHomepage() {
 
+        /* SCROLL REVEAL OBSERVER */
+        const revealElements = document.querySelectorAll(".reveal");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        if (!reducedMotion.matches && "IntersectionObserver" in window) {
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px 0px -50px 0px",
+                threshold: 0.1
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach((el) => {
+                revealObserver.observe(el);
+            });
+        } else {
+            revealElements.forEach((el) => {
+                el.classList.add("active");
+            });
+        }
+
         const slides = Array.from(document.querySelectorAll(".hero-slide"));
         const indicators = Array.from(document.querySelectorAll(".hero-indicator"));
         const hero = document.querySelector(".site-hero");
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
         let currentSlide = 0;
         let slideshowTimer = null;
