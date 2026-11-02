@@ -151,9 +151,21 @@
         html.dark-theme .benefit-card,
         html.dark-theme .step-card,
         html.dark-theme .testimonial-card,
-        html.dark-theme .modal-box {
+        html.dark-theme .modal-box,
+        html.dark-theme .selector-dropdown {
             background: #111827;
             border-color: #1e293b;
+            color: #f8fafc;
+        }
+
+        html.dark-theme .selector-pill {
+            background: #111827;
+            border-color: #1e293b;
+            color: #f8fafc;
+        }
+
+        html.dark-theme .selector-option {
+            color: #f8fafc;
         }
 
         html.dark-theme .hero-slideshow::after {
@@ -437,7 +449,8 @@
         .navbar-actions-group {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .theme-toggle-btn {
@@ -460,6 +473,107 @@
             border-color: var(--blue);
             background: var(--blue-light);
             color: var(--blue);
+        }
+
+        /* REGION & LANGUAGE SWITCHER COMPONENT STYLES */
+        .selector-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 14px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--surface);
+            color: var(--ink);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .selector-pill:hover {
+            border-color: var(--blue);
+            background: var(--blue-light);
+            color: var(--blue);
+        }
+
+        .selector-pill i {
+            color: var(--blue);
+            font-size: 14px;
+        }
+
+        .selector-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            z-index: 10003;
+            width: 260px;
+            padding: 12px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            background: var(--surface);
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .selector-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-header {
+            margin: 0 0 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .selector-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 12px;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: transparent;
+            color: var(--ink);
+            font-size: 14px;
+            font-weight: 500;
+            text-align: left;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .selector-option:hover {
+            background: var(--blue-light);
+            color: var(--blue);
+        }
+
+        .selector-option.active {
+            background: var(--blue-light);
+            color: var(--blue);
+            font-weight: 700;
+        }
+
+        .selector-option.active::after {
+            content: "✓";
+            font-size: 13px;
+            color: var(--blue);
+        }
+
+        .selector-container {
+            position: relative;
+            display: inline-block;
         }
 
         .navbar nav {
@@ -1438,6 +1552,70 @@
     </a>
 
     <div class="navbar-actions-group">
+        <!-- REGION SELECTOR COMPONENT -->
+        <div class="selector-container" id="region-selector-container">
+            <button
+                class="selector-pill"
+                id="region-pill"
+                type="button"
+                aria-label="Select Region"
+                aria-expanded="false"
+                aria-controls="region-dropdown"
+            >
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span id="current-region-label">KwaMhlanga</span>
+                <i class="fa-solid fa-chevron-down" style="font-size:10px; margin-left:2px;" aria-hidden="true"></i>
+            </button>
+
+            <div class="selector-dropdown" id="region-dropdown" role="menu">
+                <p class="dropdown-header">Select Region / Economic Hub</p>
+                <button class="selector-option active" role="menuitem" data-region-id="1" data-region-name="KwaMhlanga">
+                    <span>KwaMhlanga (Mpumalanga)</span>
+                </button>
+                <button class="selector-option" role="menuitem" data-region-id="2" data-region-name="Midrand">
+                    <span>Midrand (Gauteng)</span>
+                </button>
+                <button class="selector-option" role="menuitem" data-region-id="3" data-region-name="Tshwane">
+                    <span>Tshwane / Pretoria</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- LANGUAGE SELECTOR COMPONENT -->
+        <div class="selector-container" id="language-selector-container">
+            <button
+                class="selector-pill"
+                id="language-pill"
+                type="button"
+                aria-label="Select Language"
+                aria-expanded="false"
+                aria-controls="language-dropdown"
+            >
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                <span id="current-lang-label">English</span>
+                <i class="fa-solid fa-chevron-down" style="font-size:10px; margin-left:2px;" aria-hidden="true"></i>
+            </button>
+
+            <div class="selector-dropdown" id="language-dropdown" role="menu">
+                <p class="dropdown-header">Select Platform Language</p>
+                <button class="selector-option active" role="menuitem" data-lang-code="en" data-lang-name="English">
+                    <span>English</span>
+                </button>
+                <button class="selector-option" role="menuitem" data-lang-code="nr" data-lang-name="isiNdebele">
+                    <span>isiNdebele</span>
+                </button>
+                <button class="selector-option" role="menuitem" data-lang-code="zu" data-lang-name="isiZulu">
+                    <span>isiZulu</span>
+                </button>
+                <button class="selector-option" role="menuitem" data-lang-code="nso" data-lang-name="Sepedi">
+                    <span>Sepedi</span>
+                </button>
+                <button class="selector-option" role="menuitem" data-lang-code="af" data-lang-name="Afrikaans">
+                    <span>Afrikaans</span>
+                </button>
+            </div>
+        </div>
+
         <button
             class="theme-toggle-btn"
             id="theme-toggle"
@@ -2324,6 +2502,87 @@
     } else {
         loadAllStatistics();
     }
+})();
+</script>
+
+<!-- REGION & LANGUAGE SWITCHER COMPONENT INITIALIZATION -->
+<script>
+(function () {
+    "use strict";
+
+    function setupDropdown(triggerId, dropdownId, labelId, storageKey, onSelectCallback) {
+        const trigger = document.getElementById(triggerId);
+        const dropdown = document.getElementById(dropdownId);
+        const label = document.getElementById(labelId);
+        if (!trigger || !dropdown || !label) return;
+
+        const options = dropdown.querySelectorAll(".selector-option");
+
+        // Load saved value
+        const savedVal = localStorage.getItem(storageKey);
+        if (savedVal) {
+            options.forEach(opt => {
+                const matchVal = opt.dataset.regionName || opt.dataset.langName;
+                if (matchVal === savedVal) {
+                    options.forEach(o => o.classList.remove("active"));
+                    opt.classList.add("active");
+                    label.textContent = savedVal;
+                }
+            });
+        }
+
+        // Toggle visibility
+        trigger.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.contains("open");
+            // Close all dropdowns
+            document.querySelectorAll(".selector-dropdown").forEach(d => d.classList.remove("open"));
+            document.querySelectorAll(".selector-pill").forEach(p => p.setAttribute("aria-expanded", "false"));
+
+            if (!isOpen) {
+                dropdown.classList.add("open");
+                trigger.setAttribute("aria-expanded", "true");
+            }
+        });
+
+        // Handle option click
+        options.forEach(opt => {
+            opt.addEventListener("click", () => {
+                const name = opt.dataset.regionName || opt.dataset.langName;
+                options.forEach(o => o.classList.remove("active"));
+                opt.classList.add("active");
+                label.textContent = name;
+                localStorage.setItem(storageKey, name);
+
+                dropdown.classList.remove("open");
+                trigger.setAttribute("aria-expanded", "false");
+
+                if (typeof onSelectCallback === "function") {
+                    onSelectCallback(opt.dataset);
+                }
+            });
+        });
+
+        // Close on outer click
+        document.addEventListener("click", (e) => {
+            if (!trigger.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.remove("open");
+                trigger.setAttribute("aria-expanded", "false");
+            }
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Region Switcher
+        setupDropdown("region-pill", "region-dropdown", "current-region-label", "kalxa_region", (data) => {
+            console.info("Region changed to Zone ID:", data.regionId);
+        });
+
+        // Language Switcher
+        setupDropdown("language-pill", "language-dropdown", "current-lang-label", "kalxa_lang", (data) => {
+            console.info("Language changed to Code:", data.langCode);
+        });
+    });
 })();
 </script>
 
