@@ -150,7 +150,8 @@
         html.dark-theme .faq-item,
         html.dark-theme .benefit-card,
         html.dark-theme .step-card,
-        html.dark-theme .testimonial-card {
+        html.dark-theme .testimonial-card,
+        html.dark-theme .modal-box {
             background: #111827;
             border-color: #1e293b;
         }
@@ -165,7 +166,9 @@
             border-color: rgba(56, 189, 248, 0.3);
         }
 
-        html.dark-theme .search-filter-input {
+        html.dark-theme .search-filter-input,
+        html.dark-theme .modal-form-input,
+        html.dark-theme .modal-form-select {
             background: #111827;
             border-color: #1e293b;
             color: #f8fafc;
@@ -226,6 +229,126 @@
 
         p {
             overflow-wrap: break-word;
+        }
+
+        /* SKELETON SHIMMER LOADER */
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: 200px 0; }
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, var(--line) 25%, var(--surface-subtle) 50%, var(--line) 75%);
+            background-size: 400px 100%;
+            animation: shimmer 1.4s infinite linear;
+            color: transparent !important;
+            border-radius: 6px;
+            user-select: none;
+            display: inline-block;
+            min-width: 60px;
+        }
+
+        /* INTERACTIVE ONBOARDING MODAL */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10005;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            width: 100%;
+            max-width: 480px;
+            padding: 32px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            background: var(--surface);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(20px);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-overlay.open .modal-box {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .modal-close {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: var(--surface-subtle);
+            color: var(--muted);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--ink);
+            background: var(--line);
+        }
+
+        .modal-form-group {
+            margin-bottom: 16px;
+        }
+
+        .modal-form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--muted);
+        }
+
+        .modal-form-input,
+        .modal-form-select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            background: var(--surface);
+            color: var(--ink);
+            font-size: 15px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+        }
+
+        .modal-form-input:focus,
+        .modal-form-select:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 4px var(--blue-light);
         }
 
         /* SCROLL REVEAL ANIMATION STATES */
@@ -1383,10 +1506,10 @@
                     Explore Businesses
                 </a>
 
-                <a class="button secondary-button" href="https://tickets.kalxa.co.za/organizer/signup">
+                <button class="button secondary-button" type="button" data-open-modal="onboarding-modal">
                     <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
                     List Your Business
-                </a>
+                </button>
 
                 <a class="button secondary-button" href="/discovery.html">
                     <i class="fa-solid fa-compass" aria-hidden="true"></i>
@@ -1421,7 +1544,7 @@
                 <span class="stat-icon">
                     <i class="fa-solid fa-store" aria-hidden="true"></i>
                 </span>
-                <strong class="stat-number" data-stat="businesses">—</strong>
+                <strong class="stat-number skeleton" data-stat="businesses">120</strong>
                 <span class="stat-label">Businesses listed</span>
             </div>
 
@@ -1429,7 +1552,7 @@
                 <span class="stat-icon">
                     <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
                 </span>
-                <strong class="stat-number" data-stat="services">—</strong>
+                <strong class="stat-number skeleton" data-stat="services">45</strong>
                 <span class="stat-label">Services &amp; Categories</span>
             </div>
 
@@ -1437,7 +1560,7 @@
                 <span class="stat-icon">
                     <i class="fa-solid fa-ticket" aria-hidden="true"></i>
                 </span>
-                <strong class="stat-number" data-stat="events">—</strong>
+                <strong class="stat-number skeleton" data-stat="events">18</strong>
                 <span class="stat-label">Events Published</span>
             </div>
 
@@ -1445,7 +1568,7 @@
                 <span class="stat-icon">
                     <i class="fa-solid fa-compass" aria-hidden="true"></i>
                 </span>
-                <strong class="stat-number" data-stat="opportunities">—</strong>
+                <strong class="stat-number skeleton" data-stat="opportunities">32</strong>
                 <span class="stat-label">Local Opportunities</span>
             </div>
 
@@ -1671,6 +1794,39 @@
     <span id="toast-message">New local business profile verified in KwaMhlanga.</span>
 </div>
 
+<!-- QUICK ONBOARDING MODAL -->
+<div class="modal-overlay" id="onboarding-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h3 id="modal-title">Quick Business Onboarding</h3>
+            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+        <p style="font-size: 14px; color: var(--muted); margin-bottom: 20px; line-height: 1.6;">
+            Start your listing instantly. Enter your business details below to pre-load your profile on KALXA.
+        </p>
+        <form id="onboarding-form">
+            <div class="modal-form-group">
+                <label for="biz-name">Business Name</label>
+                <input type="text" id="biz-name" class="modal-form-input" placeholder="e.g. KwaMhlanga Lounge" required>
+            </div>
+            <div class="modal-form-group">
+                <label for="biz-category">Category</label>
+                <select id="biz-category" class="modal-form-select" required>
+                    <option value="restaurant">Food & Dining / Restaurant</option>
+                    <option value="retail">Retail Shop / Store</option>
+                    <option value="hospitality">Hospitality / Accommodation</option>
+                    <option value="services">Professional Services</option>
+                </select>
+            </div>
+            <button type="submit" class="button primary-button" style="width: 100%; margin-top: 10px;">
+                Continue to Registration <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
 <!-- FOOTER -->
 
 <footer class="company-footer reveal">
@@ -1752,7 +1908,7 @@
 
 <script src="/js/main.js?v=4" defer></script>
 
-<!-- HOMEPAGE INTERACTIONS, THEME TOGGLE, SCROLL REVEAL & LIVE TOASTS -->
+<!-- HOMEPAGE INTERACTIONS, THEME TOGGLE, MODAL, SCROLL REVEAL & LIVE TOASTS -->
 
 <script>
 (function () {
@@ -1792,6 +1948,55 @@
                     localStorage.setItem("kalxa_theme", "light");
                     if (themeIcon) themeIcon.className = "fa-solid fa-moon";
                 }
+            });
+        }
+
+        /* INTERACTIVE ONBOARDING MODAL */
+        const modal = document.getElementById("onboarding-modal");
+        const modalCloseBtn = document.getElementById("modal-close-btn");
+        const onboardingForm = document.getElementById("onboarding-form");
+        const openModalButtons = document.querySelectorAll("[data-open-modal='onboarding-modal']");
+
+        function openModal() {
+            if (!modal) return;
+            modal.classList.add("open");
+            modal.setAttribute("aria-hidden", "false");
+            const firstInput = document.getElementById("biz-name");
+            if (firstInput) firstInput.focus();
+        }
+
+        function closeModal() {
+            if (!modal) return;
+            modal.classList.remove("open");
+            modal.setAttribute("aria-hidden", "true");
+        }
+
+        openModalButtons.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        });
+
+        if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
+        if (modal) {
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) closeModal();
+            });
+        }
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modal && modal.classList.contains("open")) {
+                closeModal();
+            }
+        });
+
+        if (onboardingForm) {
+            onboardingForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const bizName = encodeURIComponent(document.getElementById("biz-name").value.trim());
+                const bizCat = encodeURIComponent(document.getElementById("biz-category").value);
+                window.location.href = `https://tickets.kalxa.co.za/organizer/signup?name=${bizName}&category=${bizCat}`;
             });
         }
 
@@ -1930,7 +2135,7 @@
             hero.addEventListener("mouseenter", stopSlideshow);
             hero.addEventListener("mouseleave", startSlideshow);
             hero.addEventListener("focusin", stopSlideshow);
-            hero.addEventListener("focusout", startSlideshow);
+            hero.addEventListener("focusout", stopSlideshow);
         }
 
         document.addEventListener("visibilitychange", () => {
@@ -1979,7 +2184,7 @@
 })();
 </script>
 
-<!-- LIVE KALXA STATISTICS WITH LATENCY PING -->
+<!-- LIVE KALXA STATISTICS WITH SKELETON REMOVAL & LATENCY PING -->
 
 <script>
 (function () {
@@ -2031,6 +2236,7 @@
         if (!element) return false;
         if (typeof value !== "number" || !Number.isSafeInteger(value) || value < 0) return false;
         element.textContent = formatStatistic(value);
+        element.classList.remove("skeleton");
         return true;
     }
 
@@ -2085,6 +2291,8 @@
         } catch (error) {
             console.error("Unable to load Ticketing statistics:", error);
             updateSystemBadge("Ticketing", false, 0);
+            if (statisticElements.businesses) statisticElements.businesses.classList.remove("skeleton");
+            if (statisticElements.events) statisticElements.events.classList.remove("skeleton");
         }
         updateDiagnostic();
     }
@@ -2099,6 +2307,8 @@
         } catch (error) {
             console.error("Unable to load Discovery statistics:", error);
             updateSystemBadge("Discovery", false, 0);
+            if (statisticElements.services) statisticElements.services.classList.remove("skeleton");
+            if (statisticElements.opportunities) statisticElements.opportunities.classList.remove("skeleton");
         }
         updateDiagnostic();
     }
